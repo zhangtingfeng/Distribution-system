@@ -1,0 +1,12 @@
+﻿@using Web_Service.ViewModels.UserOrder
+@{
+    ViewBag.Title = "订单管理";
+    Layout = "~/Views/Shared/_HeadFootLayout.cshtml";
+}
+
+@Html.Partial("_OrderDetailPartial", new OrderDetailPartialViewModel(ViewBag.OrderId,"Html"))
+
+@section Scripts {
+   @Html.Partial("_OrderDetailPartial", new OrderDetailPartialViewModel(ViewBag.OrderId, "Javascript")) 
+}
+

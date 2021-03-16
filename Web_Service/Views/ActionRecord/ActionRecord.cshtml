@@ -1,0 +1,244 @@
+﻿@using Web_Service.ViewModels.Common
+@{
+    ViewBag.Title = "API操作日志";
+    Layout = "~/Views/Shared/_HeadFootLayout.cshtml";
+}
+
+
+@section Scripts {
+
+    <style type="text/css">
+        td {
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+            padding-left: 3px !important;
+            padding-right: 3px !important;
+        }
+    </style>
+    <script type="text/javascript">
+        //日期控件
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            weekStart: 7,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 0,
+            minView: 0,
+            forceParse: 0,
+            format: "yyyy-mm-dd hh:ii:ss",
+            pickerPosition: "bottom-left"
+        });
+
+        function initSearchForm($scope) {
+            resetForm($scope);
+            //1：Request  2:Response  3:CallBackRequest  4:CallBackResponse
+            $scope.ActionTypeList = [
+                { id: '1', text: 'Request' },
+                { id: '2', text: 'Response' },
+                { id: '3', text: 'CallBackRequest' },
+                { id: '4', text: 'CallBackResponse' }
+            ];
+        };
+
+        function resetForm($scope) {
+            var sDate = new Date();
+            var eDate = new Date();
+            //sDate.setMonth(sDate.getDay() - 3);
+            sDate.setDate(sDate.getDate() - 3);
+            $scope._ActionRecordView.formData.data = {
+                BeginTime: sDate.getFullYear() + '-' + (sDate.getMonth() + 1) + '-' + sDate.getDate(),
+                EndTime: eDate.getFullYear() + '-' + (eDate.getMonth() + 1) + '-' + eDate.getDate(),
+                ChannelID: '',
+                ActionType: '',
+                SerialDecimal: '',
+                TransactionNumber: '',
+                LicenseNo: ''
+            };
+        }
+
+        //获取操作类型名称
+        function getActionTypeText($scope, key) {
+            var strRst = '';
+            if ($scope.ActionTypeList) {
+                for (var i = 0; i < $scope.ActionTypeList.length; i++) {
+                    if ($scope.ActionTypeList[i].id == key) {
+                        strRst = $scope.ActionTypeList[i].text;
+                        break;
+                    }
+                }
+            }
+            return strRst;
+        }
+
+        function searchForm($scope, Restangular) {
+            $scope._ActionRecordView.formData.paging.pageSize = 20;
+
+
+            Restangular.one('ActionRecord').post('ActionRecord', $scope._ActionRecordView.formData).then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                console.log(result.data);
+
+                $scope._ActionRecordView.dataList = result.data;
+                if ($scope._ActionRecordView.dataList) {
+                    for (var i = 0; i < $scope._ActionRecordView.dataList.length; i++) {
+
+                        $scope._ActionRecordView.dataList[i].ActionTypeText = getActionTypeText($scope, $scope._ActionRecordView.dataList[i].ActionType);
+                    }
+                }
+
+                //console.log($scope._ActionRecordView.dataList);
+
+                $scope._ActionRecordView.formData.paging.dataCount = result.paging.dataCount;
+                $scope._ActionRecordView.formData.paging.pageSize = result.paging.pageSize;
+                $scope._ActionRecordView.formData.paging.calPages();
+
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+            });
+        }
+
+        _app.controller("myController", [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope._ActionRecordView = { formData: new ResultAPIModel() };
+                initSearchForm($scope);
+                resetForm($scope);
+                searchForm($scope, Restangular);
+                $scope.isLockForm = false;
+
+                $scope._ActionRecordViewSearchFormEvent = function () {
+                    $scope._ActionRecordView.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                };
+
+                $scope._ActionRecordViewResetFormEvent = function () {
+                    $scope._ActionRecordView.formData.paging.pageNumber = 1;
+                    resetForm($scope);
+                    searchForm($scope, Restangular);
+                };
+
+                $scope._ActionRecordViewGoPrevPageEvent = function () {
+                    $scope._ActionRecordView.formData.paging.pageNumber = $scope._ActionRecordView.formData.paging.getPrevPageNumber();
+                    searchForm($scope, Restangular);
+                };
+
+                $scope._ActionRecordViewGoNextPageEvent = function () {
+                    $scope._ActionRecordView.formData.paging.pageNumber = $scope._ActionRecordView.formData.paging.getNextPageNumber();
+                    searchForm($scope, Restangular);
+                };
+
+                $scope._ActionRecordViewGoPageEvent = function () {
+                    $scope._ActionRecordView.formData.paging.pageNumber = this.page ? this.page.pageNumber : $scope._ActionRecordView.formData.paging.pageNumber;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope._ActionRecordViewGoFirstPageEvent = function () {
+                    $scope._ActionRecordView.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope._ActionRecordViewGoEndPageEvent = function () {
+                    $scope._ActionRecordView.formData.paging.pageNumber = $scope._ActionRecordView.formData.paging.maxPageNumber();
+                    searchForm($scope, Restangular);
+                }
+            }
+        ]);
+    </script>
+}
+
+<div ng-controller="myController">
+    <h3 class="page-header">API访问响应记录</h3>
+    <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" placeholder="操作开始时间" readonly="readonly" ng-model="_ActionRecordView.formData.data.BeginTime">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" placeholder="操作结束时间" readonly="readonly" ng-model="_ActionRecordView.formData.data.EndTime">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf00b; 合作渠道号")" ng-model="_ActionRecordView.formData.data.ChannelID">
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf00b; 操作流水号")" ng-model="_ActionRecordView.formData.data.SerialDecimal">
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf00b; 操作交易码")" ng-model="_ActionRecordView.formData.data.TransactionNumber">
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3 placeholder">
+            <div class="form-group">
+                <select class="form-control" ng-model="_ActionRecordView.formData.data.ActionType">
+                    <option value="">全部操作类型</option>
+                    <option ng-repeat="Action in ActionTypeList" value="{{Action.id}}">{{Action.text}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf00b; 车牌号码")" ng-model="_ActionRecordView.formData.data.LicenseNo">
+            </div>
+        </div>
+        <div class="form-group col-md-3">
+            <div class="col-md-6" style="padding: 0px 7px 0px 0px;">
+                <button type="button" ng-click="_ActionRecordViewSearchFormEvent()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("&#xf002; 检索")</button>
+            </div>
+            <div class="col-md-6" style="padding: 0px 0px 0px 7px;">
+                <button type="button" ng-click="_ActionRecordViewResetFormEvent()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("&#xf0e2; 重置")</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>操作时间</th>
+                    <th>交易码</th>
+                    <th>操作类型</th>
+                    @*<th>合作渠道</th>*@
+                    <th>流水号</th>
+                    <th>车牌号码</th>
+                    <th>来源IP</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in _ActionRecordView.dataList">
+                    <td ng-bind="data.ActionTime | date:'yyyy-MM-dd HH:mm:ss.sss'"></td>
+                    <td ng-bind="data.TransactionNumber"></td>
+                    <td ng-bind="data.ActionTypeText"></td>
+                    @*<td ng-bind="data.ChannelName+'【'+data.ChannelID+'】'"></td>*@
+                    <td ng-bind="data.SerialDecimal"></td>
+                    <td ng-bind="data.LicenseNo"></td>
+                    <td ng-bind="data.SourceIP"></td>
+                    <td style="vertical-align: middle">
+                        <a href="~/ActionRecord/ActionDetail/{{data.APIActionRecordID}}" target="_blank">详情</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @Html.Partial("UI/_PagingViewPartial", new PagingViewPartialViewModel("_ActionRecordView"))
+
+</div>

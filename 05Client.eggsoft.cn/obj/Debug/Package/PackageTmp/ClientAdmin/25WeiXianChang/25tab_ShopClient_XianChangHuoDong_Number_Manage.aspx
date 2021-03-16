@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="25tab_ShopClient_XianChangHuoDong_Number_Manage.aspx.cs" Inherits="_05Client.eggsoft.cn.ClientAdmin._25WeiXianChang._25tab_ShopClient_XianChangHuoDong_Number_Manage" %>

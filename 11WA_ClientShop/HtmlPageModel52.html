@@ -1,0 +1,316 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>新乡市鑫丰驾校</title>
+    <meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no,inital-scale=1.0,maximum-scale=1.0;" />
+    <!-- Mobile Devices Support @begin -->
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control" />
+    <meta content="no-cache" http-equiv="pragma" />
+    <meta content="0" http-equiv="expires" />
+    <meta content="telephone=no, address=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Mobile Devices Support @end -->
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <link href="/Templet/02ShiYi/skin/ys.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" type="text/css" href="/Templet/02ShiYi/skin/box_swipe.css?version=css201709121928" media="all">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/swipe.js?version=js201709121928"></script>
+    <script type="text/javascript" src="/Templet/01WYJS/js/func_Image.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/mall_Templet1.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link href="/Templet/01WYJS/Css/base.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link href="/Templet/01WYJS/Css/font-awesome.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link href="/Templet/01WYJS/Css/itemListTemplate.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link href="/Templet/03LiuShenMa/Css/02Templet01.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/SearchBar-mobile-template.css?version=css201709121928">
+    <link href="/Templet/05StyleModel/Css/StyleSheet5.css?version=css201709121928" rel="stylesheet" />
+
+    <script src='/Scripts/FootMarker_Location.js'></script>
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    <script type="text/javascript">
+        var varUserID = "8568";///传递给 product.js   传递变量
+        var varServiceURL = "https://testService.eggsoft.cn";///传递给 product.js   传递变量
+        var varShopClientID = "1";///传递给 product.js   传递变量
+        function load_Multi() {
+            doVisitThisPage(); doDefault_Banner();
+        }
+
+        function doVisitThisPage() {
+            var url = "https://testService.eggsoft.cn/Pub/doVisiDefault.asmx/doVisitDefaultAction?strpInt_QueryString_ParentID=8568&strpub_Int_Session_CurUserID=8568&strpub_Int_ShopClientID=1";
+
+            var result = -1;
+            $.ajax({
+                type: "POST",
+                url: url,
+                dataType: "jsonp",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                jsonpCallback: "jsonp1Callback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                contentType: "application/json; charset=utf-8",
+                success: function (json) {
+                    result = parseInt(json.ErrorCode);
+                    return;
+                },
+                error: function () {
+                }
+            });
+            return result;
+        }
+        function doDefault_Banner() {
+            $.ajax({
+                type: 'GET',
+                url: '/Handler/Default_Banner.ashx',
+                dataType: 'text',
+                data: 'strpub_Int_ShopClientID=1',
+                beforeSend: function () {
+                    $("#Anounce_spro_con").append('<img style="margin: 0px auto;display:block;" src="/images/loading.gif"/>');
+                },
+                success: function (msg) {
+                    //alert(msg);
+                    $("#Anounce_spro_con").html(msg);
+                },
+                error: function (data) {
+                }
+            })
+        }
+
+
+    </script>
+    <script type="text/javascript">
+        var WeiXin_imgAllPageUrl = 'http://qiniu.eggsoft.cn/Upload/000001_sh/HeadImage/User008568.jpg';
+        var WeiXin_lineAllPageLink = 'http://csoliver.eggsoft.cn/sagent-8568/default.aspx';
+        var WeiXin_descAppPageContent = '张廷锋 专注移动分销 上海时仪电子 有限公司,微店推荐 移动商务服务1-1移动商务服务1移动商务服务护肤';
+        var WeiXin_shareAppAllPageTitle = '张廷锋 专注移动分销 上海时仪电子 有限公司';
+        var WeiXin_appidAllPage = '';
+        var path = WeiXin_lineAllPageLink;
+    </script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: 'wxb97da79b8bad5e74',
+                timestamp: 1475660981,
+                nonceStr: 'EECCA5B6365D9607EE5A9D336962C534',
+                signature: '8120525745f11ee5b180e9996d84696000b540e5',
+                jsApiList: [
+                  // 所有要调用url=http://csoliver.eggsoft.cn/的 API 都要加到这个列表中
+                   'onMenuShareTimeline', 'getLatestAddress', 'editAddress',
+            'onMenuShareAppMessage'
+                ]
+            });
+            wx.ready(function () {
+                wx.onMenuShareAppMessage({
+                    title: WeiXin_shareAppAllPageTitle, // 分享标题
+                    desc: WeiXin_descAppPageContent, // 分享描述
+                    link: path, // 分享链接
+                    imgUrl: WeiXin_imgAllPageUrl, // 分享图标
+                    type: '', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        //	alert("arg1");
+                        // ShareCallBackFunction(arg1);
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        //  alert("用户取消分享朋友后执行的回调函数");
+                        // 用户取消分享后执行的回调函数
+                    },
+
+                });
+
+                wx.onMenuShareTimeline({
+                    title: WeiXin_shareAppAllPageTitle, // 分享标题
+                    link: path, // 分享链接
+                    imgUrl: WeiXin_imgAllPageUrl, // 分享图标
+                    success: function () {
+                        ///alert("arg2");
+                        ShareShopFunction();
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        //  alert("用户取消分享朋友圈后执行的回调函数");
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+
+
+
+            });
+            wx.error(function (res) {
+                alert(res.errMsg);
+            });
+        });</script>
+
+    <script src="/Templet/05StyleModel/Js/StyleSheet5.js"></script>
+</head>
+<body onLoad="load_Multi();" onResize="AutoResizeThisImage()">
+    <div id="guoKuoHead">
+        <div id="imgHead">
+
+            <img src="/Templet/05StyleModel/Images/001Head.jpg" />
+        </div>
+
+        <div id="CenterShowInfo">
+            <div id="divGuoKuodeMoney">
+                郭阔的金库
+            </div>
+            <div id="divGuoKuodeMoneyShouYI">
+                收益:18888元
+            </div>
+            <div id="divGuoKuodeMoneyID">
+                ID:1666
+            </div>
+        </div>
+        <div id="DaZhuanPan">
+        </div>
+    </div>
+    <div id="Anounce_spro_con" class="spro_con" style="background-color:black;">
+    </div>
+    <div style="clear: both;"></div>
+
+    <div id="divIconList">
+        <ul>
+            <li>
+                <img src="Templet/05StyleModel/Images/button01.png" /><br />
+                <div class="navText">推荐即赚钱</div>
+            </li>
+            <li>
+                <img src="Templet/05StyleModel/Images/button02.png" /><br />
+                <div class="navText">聊聊</div>
+            </li>
+            <li>
+                <img src="Templet/05StyleModel/Images/button03.png" /><br />
+                <div class="navText">推荐给朋友</div>
+            </li>
+            <li>
+                <img src="Templet/05StyleModel/Images/button04.png" /><br />
+                <div class="navText">免费试驾</div>
+            </li>
+            <li>
+                <img src="Templet/05StyleModel/Images/button05.png" /><br />
+                <div class="navText">预约练车</div>
+            </li>
+            <li>
+                <img src="Templet/05StyleModel/Images/button06.png" /><br />
+                <div class="navText">预约报名</div>
+            </li>
+            <li>
+                <img src="Templet/05StyleModel/Images/button07.png" /><br />
+                <div class="navText">教练评分</div>
+            </li>
+            <li>
+                <img src="Templet/05StyleModel/Images/button08.png" /><br />
+                <div class="navText">团购群</div>
+            </li>
+            <li>
+                <img src="Templet/05StyleModel/Images/button09.png" /><br />
+                <div class="navText">报名须知</div>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div style="clear: both;"></div>
+
+
+
+    <div id="ShopMakeOwnerEdit" style="display:block;width:100%;"></div>    <div style="clear: both;"></div>
+
+    <a href="javascript:void(0);" class="WX_backtop J_backTop J_ytag" id="gotopbtn">返回顶部</a>
+    <script type="text/javascript">
+        //注册当点击返回顶部的时候，回到网页顶部
+        $('#gotopbtn').click(function () {
+            $('body').scrollTop(0);
+            test();
+        });
+        //注册当页面发生滚动事件的时候，判断他有没有滚动条，如果有滚动条就显示“返回”，如果没有就不返回
+        window.onscroll = test;
+        function test() {
+            if ($('body').scrollTop() == 0) {
+                $('#gotopbtn').removeClass("WX_backtop_active");
+            } else {
+                $('#gotopbtn').addClass("WX_backtop_active");
+            }
+        }
+        $('#menu').click(function () {
+            $('#menulist').toggle();
+        });
+    </script>
+    <div id="foot777er">
+        <!-- 底部 -->
+        <div id="WUC_Bottom">
+            <style type="text/css">
+                body:after {
+                    content: '';
+                    display: block;
+                    height: 50px;
+                    width: 100%;
+                    border-bottom: 10px;
+                }
+            </style>
+            <div class="bottom_navs">
+                <ul>
+                    <a id="icontact0" href="javascript:;">
+                        <li id="line_Right0" style="width:33%;">
+                            <span class="FootMenu">逛街</span>
+                        </li>
+                    </a>
+                    <a id="icontact1" href="javascript:;">
+                        <li id="line_Right1" style="width:33%;border-left:1px solid #ccc;">
+                            <span class="FootMenu">申请代理</span>
+                        </li>
+                    </a>
+                    <a id="icontact2" href="javascript:;">
+                        <li id="line_Right2" style="width:33%;border-left:1px solid #ccc;">
+                            <span class="FootMenu">我</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="open_nav" id="divContact0" style="display: none">
+                <script type="text/javascript">var varButton0 = 5</script>
+                <div class="open_nav_conter">
+                    <ul>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/huodong/weikanjia/default.html?kanjiaid=2">微砍价</a></li>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/product-6.aspx">露思LUSS</a></li>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/product-2.aspx">微代理商城</a></li>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/game/003howcolor/index.html?gameid=4">看你有多色</a></li>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/">逛街</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="open_nav" id="divContact1" style="display: none">
+                <script type="text/javascript">var varButton1 = 4</script>
+                <div class="open_nav_conter">
+                    <ul>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/showagentbookmark.aspx">代理证书</a></li>
+                        <li><a href="sms:18017648246">发短信</a></li>
+                        <li><a href="tel:18017648246">打电话</a></li>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/edityourshop.aspx">申请代理</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="open_nav" id="divContact2" style="display: none">
+                <script type="text/javascript">var varButton2 = 4</script>
+                <div class="open_nav_conter">
+                    <ul>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/addfunction/salesorder.html">业绩排行榜</a></li>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/cart.aspx">购物车</a></li>
+                        <li><a href="https://000001shiyidianzi.eggsoft.cn/mywebuy.aspx">我</a></li>
+                        <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=ulrbzpne0m4mz1eb2enzdyhkddgbm9iq">店主QQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src='/Scripts/FootMarker_Location.js'></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+﻿@using Web_Service.ViewModels.Common
+@{
+    ViewBag.Title = "清除方案缓存";
+    Layout = "~/Views/Shared/_HeadFootLayout.cshtml";
+    var userSession = new InsureApi.Mvc.XUserSession(this.Context);
+    var appSet = new Web_Service.Common.Config.AppSettings();
+}
+
+<div class="main ng-scope" ng-controller="listController">
+    <h3 class="page-header">清除方案缓存</h3>
+
+    <div ng-show="!CarNumber">
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode(" &#xf1b9; 车牌")" ng-model="formData.data.LicenseNo">
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode(" &#xf007; 车主姓名")" ng-model="formData.data.CarMasterName">
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                        <input class="form-control" size="16" type="text" value="" placeholder="方案开始时间" readonly="readonly" ng-model="formData.data.CreateStartTime">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                        <input class="form-control" size="16" type="text" value="" placeholder="方案结束时间" readonly="readonly" ng-model="formData.data.CreateEndTime">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="formData.data.InsuranceProvince" ng-change="_SelectedProvinceEvent()">
+                        <option value="" selected="selected">@HttpUtility.HtmlDecode("&#xf00b; 省份")</option>
+                        <option ng-repeat="data in InsuranceProvinceList" value="{{data.ProvinceCode}}">{{data.ProvinceName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="formData.data.InsuranceCity">
+                        <option value="" selected="selected">@HttpUtility.HtmlDecode("&#xf00b; 城市")</option>
+                        <option ng-repeat="CityList in InsuranceCityList" value="{{CityList.CityCode}}">{{CityList.CityName}}</option>
+                    </select>
+                </div>
+            </div>
+            @*<div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="formData.data.InsuranceCompany">
+                        <option value="0">@HttpUtility.HtmlDecode("&#xf19c; 保险公司")</option>
+                        <option ng-repeat="insuranceCompany in InsuranceCompanyLists" value="{{insuranceCompany.CompanyID}}">{{insuranceCompany.CompanyName}}</option>
+                    </select>
+                </div>
+            </div>*@
+            <div class="col-xs-6 col-sm-3 placeholder" style="margin-bottom: 15px;">
+                <div class=" col-md-6" style="padding: 0px 7px 0px 0px;">
+                    <button type="button" ng-click="ClearInsureHistoryEvent()" class="btn btn-default btn-block">
+                        @HttpUtility.HtmlDecode("&#xf002; 清除")
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script>
+        //日期控件
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            weekStart: 7,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            format: "yyyy-mm-dd",
+            pickerPosition: "bottom-left"
+        });
+
+        //保险公司
+        function GetInsuranceCompany($scope, Restangular) {
+            Restangular.one('CarOfferPriority/CarOfferPriority').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                var InsuranceCompanyList = [];
+                for (var i = 0; i < result.data.length; i++) {
+                    InsuranceCompanyList.push(result.data[i]);
+                }
+                $scope.InsuranceCompanyLists = InsuranceCompanyList;
+
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+                $scope.isLoading = false;
+            });
+        }
+
+        function initSearchForm($scope) {
+            resetForm($scope);
+        };
+
+        //清除缓存动作
+        function clearInsureHistory($scope, restangular) {
+
+            if (!$scope.formData.data.LicenseNo) {
+                alertError("请输入车牌");
+                return;
+            }
+
+            restangular.one('Insurance/InsureHistory').post('post', $scope.formData).then(function (result) {
+                if (result.resultMessage.errorMessage !== "") {
+                    //$scope.message = result.resultmessage.errormessage;
+                    return;
+                }
+                //console.log(result.data);
+
+                var strTemp = "";
+                
+                if ($scope.formData.data.LicenseNo) {
+                    strTemp += "\n车牌：" + $scope.formData.data.LicenseNo;
+                }
+
+                if ($scope.formData.data.CarMasterName) {
+                    strTemp += "\n车主：" + $scope.formData.data.CarMasterName;
+                }
+
+                if ($scope.formData.data.CreateStartTime) {
+                    strTemp += "\n开始时间：" + $scope.formData.data.CreateStartTime;
+                }
+
+                if ($scope.formData.data.CreateEndTime) {
+                    strTemp += "\n结束时间：" + $scope.formData.data.CreateEndTime;
+                }
+
+                if ($scope.formData.data.InsuranceProvince) {
+                    strTemp += "\n省份代码：" + $scope.formData.data.InsuranceProvince;
+                }
+
+                if ($scope.formData.data.InsuranceCity) {
+                    strTemp += "\n城市代码：" + $scope.formData.data.InsuranceCity;
+                }
+
+
+                alertSuccess("根据如下条件：" + strTemp + "\n成功清除" + result.data + "条报价方案");
+
+                //$scope.dataList = result.data;
+
+            }, function error(reason) {
+                // An error has occurred
+                $scope.message = '查询失败';
+            });
+        };
+
+        function resetForm($scope) {
+            //var sDate = new Date();
+            //var eDate = new Date();
+            //sDate.setMonth(sDate.getMonth() - 3);
+            $scope.formData.data = {
+                //CreateStartTime: sDate.getFullYear() + '-' + (sDate.getMonth() + 1) + '-' + sDate.getDate(),
+                //CreateEndTime: eDate.getFullYear() + '-' + (eDate.getMonth() + 1) + '-' + eDate.getDate(),
+                CreateStartTime: '',
+                CreateEndTime: '',
+                CarMasterName: '',
+                LicenseNo: '',
+                InsuranceProvince: '',
+                InsuranceCity: ''
+            };
+        }
+
+
+        //省信息
+        var _ProvinceInfo = function () {
+            this.ProvinceCode = '';
+            this.ProvinceName = '';
+            this.CityList = [];
+        }
+
+        //城市信息
+        var _CityInfo = function () {
+            this.CityCode = '';
+            this.CityName = '';
+        }
+
+        //设置下拉框的省市（行驶城市）
+        function IsContions($scope, pobj, cobj) {
+            if (pobj && cobj && $scope.InsuranceProvinceList) {
+                var pflag = false;
+                for (var i = 0; i < $scope.InsuranceProvinceList.length; i++) {
+                    if ($scope.InsuranceProvinceList[i].ProvinceCode == pobj.ProvinceCode) {
+                        var cflag = false;
+                        for (var j = 0; j < $scope.InsuranceProvinceList[i].CityList; j++) {
+                            if ($scope.InsuranceProvinceList[i].CityList[j].CityCode == cobj.CityCode) {
+                                cflag = true;
+                                break;
+                            }
+                        }
+
+                        if (!cflag) {
+                            $scope.InsuranceProvinceList[i].CityList.push(cobj);
+                        }
+
+                        pflag = true;
+                        break;
+                    }
+                }
+                if (!pflag) {
+                    pobj.CityList.push(cobj);
+                    $scope.InsuranceProvinceList.push(pobj);
+                }
+            }
+        }
+
+        //选择省（行驶城市的省）
+        function _SelectedProvince($scope) {
+            $scope.formData.data.InsuranceCity = '';
+            $scope.InsuranceCityList = [];
+            if ($scope.InsuranceProvinceList) {
+                for (var i = 0; i < $scope.InsuranceProvinceList.length; i++) {
+                    if ($scope.InsuranceProvinceList[i].ProvinceCode == $scope.formData.data.InsuranceProvince) {
+                        $scope.InsuranceCityList = $scope.InsuranceProvinceList[i].CityList;
+                        break;
+                    }
+                }
+            }
+        }
+
+        //可选城市
+        function GetInsuranceCity($scope, restangular) {
+            restangular.one('Insurance/InsuranceCity/d').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                if (result.data) {
+                    for (var i = 0; i < result.data.length; i++) {
+                        var pInfo = new _ProvinceInfo();
+                        pInfo.ProvinceCode = result.data[i].ProvinceCode;
+                        pInfo.ProvinceName = result.data[i].ProvinceName;
+                        var cInfo = new _CityInfo();
+                        cInfo.CityCode = result.data[i].CityCode;
+                        cInfo.CityName = result.data[i].CityName;
+                        IsContions($scope, pInfo, cInfo);
+                    }
+                }
+            }, function error(reason) {
+                alertError('网络通讯异常');
+            });
+        }
+
+        _app.controller('listController', [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope.formData = new ResultAPIModel();
+
+                $scope.InsuranceProvinceList = [];
+                $scope.InsuranceCityList = [];
+
+                initSearchForm($scope);
+                GetInsuranceCity($scope, Restangular);
+                GetInsuranceCompany($scope, Restangular);
+
+                $scope.ClearInsureHistoryEvent = function () {
+                    clearInsureHistory($scope, Restangular);
+                };
+
+                //选择省份
+                $scope._SelectedProvinceEvent = function () {
+                    _SelectedProvince($scope);
+                }
+
+            }
+        ]);
+    </script>
+}

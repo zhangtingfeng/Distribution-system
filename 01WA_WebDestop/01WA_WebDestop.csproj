@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B409ECCF-66A5-4FF1-B863-8B7E79062553}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_01WA_WebDestop</RootNamespace>
+    <AssemblyName>01WA_WebDestop</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="01LogisticalPrice\01QueryForm.aspx" />
+    <Content Include="01LogisticalPrice\02QueryList.aspx" />
+    <Content Include="01LogisticalPrice\16sucai_p20161009105_0da.JPG" />
+    <Content Include="ClientAdmin\default.aspx" />
+    <Content Include="ClientAdmin\Image\AdminLogin_wbsys.css" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_footer.jpg" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_middle_shadow.jpg" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_title.jpg" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_title.png" />
+    <Content Include="ClientAdmin\Image\background.css" />
+    <Content Include="ClientAdmin\Image\background.gif" />
+    <Content Include="ClientAdmin\Image\bbs.css" />
+    <Content Include="ClientAdmin\Image\bg1.gif" />
+    <Content Include="ClientAdmin\Image\bg2.gif" />
+    <Content Include="ClientAdmin\Image\bottombg.gif" />
+    <Content Include="ClientAdmin\Image\curve_b_l.gif" />
+    <Content Include="ClientAdmin\Image\curve_b_r.gif" />
+    <Content Include="ClientAdmin\Image\curve_b_r[1].gif" />
+    <Content Include="ClientAdmin\Image\curve_center.gif" />
+    <Content Include="ClientAdmin\Image\curve_t_l[1].gif" />
+    <Content Include="ClientAdmin\Image\curve_t_r.gif" />
+    <Content Include="ClientAdmin\Image\curve_t_r[1].gif" />
+    <Content Include="ClientAdmin\Image\forumHeaderBackground.gif" />
+    <Content Include="ClientAdmin\Image\forumHeaderBackgroundAlternate.gif" />
+    <Content Include="ClientAdmin\Image\forum_footer.gif" />
+    <Content Include="ClientAdmin\Image\img.gif" />
+    <Content Include="ClientAdmin\Image\IMG_20131005_120%2810-05-12-1.gif" />
+    <Content Include="ClientAdmin\Image\jquery-calendar.css" />
+    <Content Include="ClientAdmin\Image\jquery-calendar.js" />
+    <Content Include="ClientAdmin\Image\lan0.gif" />
+    <Content Include="ClientAdmin\Image\lan1.gif" />
+    <Content Include="ClientAdmin\Image\lan12.gif" />
+    <Content Include="ClientAdmin\Image\lighthiliteleft.gif" />
+    <Content Include="ClientAdmin\Image\lighthilitemid.gif" />
+    <Content Include="ClientAdmin\Image\lighthiliteright.gif" />
+    <Content Include="ClientAdmin\Image\lightnormleft.gif" />
+    <Content Include="ClientAdmin\Image\lightnormmid.gif" />
+    <Content Include="ClientAdmin\Image\lightnormright.gif" />
+    <Content Include="ClientAdmin\Image\lightpressedleft.gif" />
+    <Content Include="ClientAdmin\Image\lightpressedmid[1].gif" />
+    <Content Include="ClientAdmin\Image\lightpressedright.gif" />
+    <Content Include="ClientAdmin\Image\login_01.gif" />
+    <Content Include="ClientAdmin\Image\login_01.png" />
+    <Content Include="ClientAdmin\Image\LOW_LEFT.GIF" />
+    <Content Include="ClientAdmin\Image\LOW_MID.GIF" />
+    <Content Include="ClientAdmin\Image\low_mid[1].gif" />
+    <Content Include="ClientAdmin\Image\low_right.gif" />
+    <Content Include="ClientAdmin\Image\menudown.gif" />
+    <Content Include="ClientAdmin\Image\menuup.gif" />
+    <Content Include="ClientAdmin\Image\MID_LEFT.GIF" />
+    <Content Include="ClientAdmin\Image\mid_right.gif" />
+    <Content Include="ClientAdmin\Image\navspacer.gif" />
+    <Content Include="ClientAdmin\Image\nofollow.gif" />
+    <Content Include="ClientAdmin\Image\o_addfile.jpg" />
+    <Content Include="ClientAdmin\Image\plus.gif" />
+    <Content Include="ClientAdmin\Image\Product.gif" />
+    <Content Include="ClientAdmin\Image\RTE_TB.GIF" />
+    <Content Include="ClientAdmin\Image\SBL_YLW.GIF" />
+    <Content Include="ClientAdmin\Image\SBM_YLW.GIF" />
+    <Content Include="ClientAdmin\Image\SBR_YLW.GIF" />
+    <Content Include="ClientAdmin\Image\SPACER.GIF" />
+    <Content Include="ClientAdmin\Image\spacer[1].gif" />
+    <Content Include="ClientAdmin\Image\stats_bg.gif" />
+    <Content Include="ClientAdmin\Image\tabs_m_tile.gif" />
+    <Content Include="ClientAdmin\Image\title.gif" />
+    <Content Include="ClientAdmin\Image\titlebg.gif" />
+    <Content Include="ClientAdmin\Image\title_bg_quit.gif" />
+    <Content Include="ClientAdmin\Image\topbg.gif" />
+    <Content Include="ClientAdmin\Image\tree_folder3.gif" />
+    <Content Include="ClientAdmin\Image\tree_folder4.gif" />
+    <Content Include="ClientAdmin\Image\UP_LEFT.GIF" />
+    <Content Include="ClientAdmin\Image\UP_MID.GIF" />
+    <Content Include="ClientAdmin\Image\UP_RIGHT.GIF" />
+    <Content Include="ClientAdmin\skin\default.css" />
+    <Content Include="ClientAdmin\skin\default.js" />
+    <Content Include="ClientAdmin\skin\Images\Add.png" />
+    <Content Include="ClientAdmin\skin\Images\admin_logo.jpg" />
+    <Content Include="ClientAdmin\skin\Images\bot_logo.jpg" />
+    <Content Include="ClientAdmin\skin\Images\Delete.png" />
+    <Content Include="ClientAdmin\skin\Images\left_bg.jpg" />
+    <Content Include="ClientAdmin\skin\Images\left_meu.jpg" />
+    <Content Include="ClientAdmin\skin\Images\line.jpg" />
+    <Content Include="ClientAdmin\skin\Images\Login_botbg.jpg" />
+    <Content Include="ClientAdmin\skin\Images\Login_logo.jpg" />
+    <Content Include="ClientAdmin\skin\Images\main_t_bg.jpg" />
+    <Content Include="ClientAdmin\skin\Images\nothing.png" />
+    <Content Include="ClientAdmin\skin\Images\rig_mov.gif" />
+    <Content Include="ClientAdmin\skin\Images\save.png" />
+    <Content Include="ClientAdmin\skin\Images\SelectJPG.png" />
+    <Content Include="ClientAdmin\skin\Images\tj.png" />
+    <Content Include="ClientAdmin\skin\Images\Zhengwen.png" />
+    <Content Include="ClientAdmin\skin\Resource-0.css" />
+    <Content Include="05XianChangHuoDong\Css\base.css" />
+    <Content Include="05XianChangHuoDong\Css\screen_lottery_free.css" />
+    <Content Include="05XianChangHuoDong\Css\screen_shake.css" />
+    <Content Include="05XianChangHuoDong\Css\zAlert.css" />
+    <Content Include="05XianChangHuoDong\Images\2.jpg" />
+    <Content Include="05XianChangHuoDong\Images\3c95a5df3dceb9334c4e522c483634de_640_1181.jpg" />
+    <Content Include="05XianChangHuoDong\Images\4.jpg" />
+    <Content Include="05XianChangHuoDong\Images\4d1de04c5b1c79ccd999891d1d761a11_350_175.gif" />
+    <Content Include="05XianChangHuoDong\Images\db7fb69362e09de1241f76ab24a0f734_258_258.jpg" />
+    <Content Include="05XianChangHuoDong\Images\ff07e678b4a02c5f5718d31fd7c687d9_260_151.png" />
+    <Content Include="05XianChangHuoDong\Images\join_bg.jpg" />
+    <Content Include="05XianChangHuoDong\Images\lot-happy.png" />
+    <Content Include="05XianChangHuoDong\Images\lot-title.png" />
+    <Content Include="05XianChangHuoDong\Images\lot_nouser.jpg" />
+    <Content Include="05XianChangHuoDong\Images\qrcode_wxsyb88_1.jpg" />
+    <Content Include="05XianChangHuoDong\Images\saved_resource.jpg" />
+    <Content Include="05XianChangHuoDong\Images\screen_icons.png" />
+    <Content Include="05XianChangHuoDong\Images\screen_icons11.png" />
+    <Content Include="05XianChangHuoDong\Images\screen_shake_track.jpg" />
+    <Content Include="05XianChangHuoDong\Images\screen_shake_track_line.png" />
+    <Content Include="05XianChangHuoDong\Images\shake_cup.png" />
+    <Content Include="05XianChangHuoDong\Images\system-loading-big.gif" />
+    <Content Include="05XianChangHuoDong\Js\base.js" />
+    <Content Include="05XianChangHuoDong\Js\baseWF_ChouJiang.js" />
+    <Content Include="05XianChangHuoDong\Js\modernizr.min.js" />
+    <Content Include="05XianChangHuoDong\Js\screen_lottery_free.js" />
+    <Content Include="05XianChangHuoDong\Js\screen_shake_free.js" />
+    <Content Include="05XianChangHuoDong\Js\zAlert.js" />
+    <Content Include="05XianChangHuoDong\Mp3\Blank_NoAnySound.mp3" />
+    <Content Include="05XianChangHuoDong\Mp3\lottery_getone.mp3" />
+    <Content Include="05XianChangHuoDong\Mp3\lottery_running.mp3" />
+    <Content Include="05XianChangHuoDong\Mp3\shake_cutdown.mp3" />
+    <Content Include="05XianChangHuoDong\Mp3\shake_gameover.mp3" />
+    <Content Include="05XianChangHuoDong\Mp3\shake_new.mp3" />
+    <Content Include="05XianChangHuoDong\Mp3\shake_outride.mp3" />
+    <Content Include="05XianChangHuoDong\result_list_ChouJiang.aspx" />
+    <Content Include="05XianChangHuoDong\result_list.aspx" />
+    <Content Include="05XianChangHuoDong\WF_ChouJiang.aspx" />
+    <Content Include="05XianChangHuoDong\WF_YaoYiYao.aspx" />
+    <Content Include="Control\CheckCode.aspx" />
+    <Content Include="Control\ErrorPages\FileNotFound.aspx" />
+    <Content Include="Control\ErrorPages\GeneralError.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="ClientAdmin\Login.aspx" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="01LogisticalPrice\01QueryForm.aspx.cs">
+      <DependentUpon>01QueryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="01LogisticalPrice\01QueryForm.aspx.designer.cs">
+      <DependentUpon>01QueryForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="01LogisticalPrice\02QueryList.aspx.cs">
+      <DependentUpon>02QueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="01LogisticalPrice\02QueryList.aspx.designer.cs">
+      <DependentUpon>02QueryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="05XianChangHuoDong\result_list_ChouJiang.aspx.cs">
+      <DependentUpon>result_list_ChouJiang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="05XianChangHuoDong\result_list_ChouJiang.aspx.designer.cs">
+      <DependentUpon>result_list_ChouJiang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="05XianChangHuoDong\result_list.aspx.cs">
+      <DependentUpon>result_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="05XianChangHuoDong\result_list.aspx.designer.cs">
+      <DependentUpon>result_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="05XianChangHuoDong\WF_ChouJiang.aspx.cs">
+      <DependentUpon>WF_ChouJiang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="05XianChangHuoDong\WF_ChouJiang.aspx.designer.cs">
+      <DependentUpon>WF_ChouJiang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="05XianChangHuoDong\WF_YaoYiYao.aspx.cs">
+      <DependentUpon>WF_YaoYiYao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="05XianChangHuoDong\WF_YaoYiYao.aspx.designer.cs">
+      <DependentUpon>WF_YaoYiYao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CheckCode.aspx.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Control\ErrorPages\FileNotFound.aspx.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Control\ErrorPages\GeneralError.aspx.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PubClass\Pub.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientAdmin\skin\Images\admin_logo.psd" />
+    <Content Include="ClientAdmin\skin\Images\bot_logo.psd" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_footer.psd" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_title.psd" />
+    <Content Include="ClientAdmin\Image\login_02.psd" />
+    <Content Include="ClientAdmin\Image\title.psd" />
+    <Content Include="ClientAdmin\Image\title1.psd" />
+    <Content Include="ClientAdmin\FunctionCanContinus.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\53_TestWebDestop.eggsoft.cn.pubxml" />
+    <Content Include="SiteUrls.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02ThreeLevel\01EggsoftShop_Public_CL\EggsoftShop_Public_CL.csproj">
+      <Project>{9f1e52f6-96a9-4432-85e8-e03a2c75103a}</Project>
+      <Name>EggsoftShop_Public_CL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\Eggsoft.Common\Eggsoft.Common.csproj">
+      <Project>{df6af6e5-1df5-48b2-b3af-fea8e72bcf63}</Project>
+      <Name>Eggsoft.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.BLL\EggsoftWX.BLL.csproj">
+      <Project>{38910fa2-2b1c-4e94-aee3-3eacab7147fb}</Project>
+      <Name>EggsoftWX.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.IDAL\EggsoftWX.IDAL.csproj">
+      <Project>{bb96243c-30b8-4073-b466-99c4f24ac74e}</Project>
+      <Name>EggsoftWX.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.Model\EggsoftWX.Model.csproj">
+      <Project>{3d3bd020-2be2-40ab-b53b-846a5b210f9d}</Project>
+      <Name>EggsoftWX.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.SQLServerDAL\EggsoftWX.SQLServerDAL.csproj">
+      <Project>{1252602b-8588-433e-b8c5-24667ece6bb5}</Project>
+      <Name>EggsoftWX.SQLServerDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\UrlRewriting\UrlRewriting.csproj">
+      <Project>{a2bd41af-3f83-4083-9c5d-04d46004565b}</Project>
+      <Name>UrlRewriting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12518</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8001</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

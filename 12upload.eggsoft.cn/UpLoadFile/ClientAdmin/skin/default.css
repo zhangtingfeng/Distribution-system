@@ -1,0 +1,496 @@
+@CHARSET "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    color: #6790BE;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #446995;
+    }
+
+.mtop10 {
+    margin-top: 10px;
+}
+
+.mtop20 {
+    margin-top: 20px;
+}
+
+.styleRight {
+    text-align: right;
+}
+
+td {
+    font-size: 14px;
+}
+
+body {
+    font-family: "微软雅黑","Microsoft YaHei";
+    color: #606060;
+    font-size: 12px;
+    background: #fff;
+}
+
+.blubg {
+    background-color: #4771a1;
+}
+
+.imgbor {
+    border: 2px solid #fff;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    box-shadow: 0px 0px 2px 3px #ccc;
+    -moz-box-shadow: 0px 0px 2px 3px #ccc;
+}
+
+.shop_login {
+}
+
+.login_title {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.login_middle {
+    width: 680px;
+    height: 350px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #e6eff8;
+    border: #6B8199 5px solid;
+}
+
+.login_t {
+    font-size: 22px;
+    color: #446995;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 50px;
+}
+
+.login_l {
+    float: left;
+    height: 100%;
+    min-height: 320px;
+    width: 420px;
+    background-color: #FFFFFF;
+}
+
+.login_c {
+    padding-left: 50px;
+}
+
+    .login_c li {
+        line-height: 30px;
+    }
+
+    .login_c span {
+        font-size: 16px;
+    }
+
+select {
+    height: 28px;
+    line-height: 28px;
+}
+
+input {
+    line-height: 28px;
+     height: 28px;
+}
+
+.l_input {
+    border: 1px solid #E7E7E7;
+    line-height: 28px;
+    padding-left: 5px;
+}
+
+.b_input {
+    background: #4E78A8;
+    border: 1px solid #4270A4;
+    width: 100px;
+    height: 35px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.b_reset {
+    border: none;
+    background: #ADC3DB;
+    border: 1px solid #ccc;
+    width: 100px;
+    height: 35px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login_r {
+    float: right;
+    width: 240px;
+    padding: 10px 5px;
+    line-height: 30px;
+    color: #919499;
+    font-size: 14px;
+}
+
+    .login_r p {
+        padding-top: 60px;
+    }
+
+.login_footer {
+    width: 680px;
+    margin: 10px auto 0;
+    border-top: 5px solid #5077A2;
+    border-left: #4C729F 5px solid;
+    border-right: #4C729F 5px solid;
+    padding-top: 50px;
+    background: url(Images/Login_botbg.jpg) repeat-x;
+    text-align: center;
+}
+
+
+.mtab, .altrowstable {
+    border: 1px solid #EFEFEF;
+}
+
+    .mtab tr {
+        border-bottom: 1px solid #EFEFEF;
+    }
+
+    .mtab th, .mtab td {
+        line-height: 26px;
+    }
+
+    .mtab th {
+        background: #F8F8F8;
+        height: 35px;
+    }
+
+    .mtab tr:hover {
+        background: #EAF7FF;
+    }
+
+.mhead h1 {
+    display: block;
+    line-height: 45px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.mselct {
+    line-height: 35px;
+    padding-left: 30px;
+    background: #EAF7FF;
+    border-top: #999 1px solid;
+}
+
+#def_head {
+    padding-left: 30px;
+    height: 105px;
+    line-height: 100px;
+    background: #005E9E;
+    color: #fff;
+    font-size: 48px;
+}
+
+.navPoint {
+    text-indent: -9999px;
+}
+
+.main_t {
+    height: 42px;
+    line-height: 42px;
+    background: url(Images/main_t_bg.jpg) repeat-x;
+}
+
+    .main_t span {
+        display: block;
+        text-align: center;
+        width: 225px;
+        color: #000;
+        font-size: 16px;
+    }
+
+.leftbg {
+    background: #E7E7E7 url(Images/left_bg.jpg) repeat-y right;
+}
+
+.menu_title, .menu_title2 {
+    background: url(Images/line.jpg) no-repeat bottom center;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 14px;
+    padding-left: 30px;
+}
+
+    .menu_title SPAN {
+        display: block;
+        height: 40px;
+        padding-left: 30px;
+        COLOR: #215dc6;
+        POSITION: relative;
+        background: url(Images/rig_mov.gif) no-repeat 90% 15px;
+    }
+
+    .menu_title2 SPAN {
+        display: block;
+        height: 40px;
+        padding-left: 30px;
+        COLOR: #FF6600;
+        POSITION: relative;
+        background: url(Images/rig_mov.gif) no-repeat 90% -25px;
+    }
+
+.sec_menu {
+    BORDER-RIGHT: white 1px solid;
+    width: 180px;
+    background: #F7F7F7;
+    line-height: 30px;
+    OVERFLOW: hidden;
+    margin-left: 35px;
+}
+    /*table.LiSec_menu td{border-radius: 5px 0 0 5px;    color: #000000;    font-size: 16px;    width:100%;    } 
+
+table.LiSec_menu td a{ border-radius: 5px 0 0 5px;color: #000000;font-size: 14px; width:100%;}  
+table.LiSec_menu td a:hover{ background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8) !important;    border-radius: 5px 0 0 5px;    color: #000000;    font-size: 14px;    } 
+*/
+    .sec_menu li {
+        font-size: 12px;
+        border-bottom: 1px solid #fefefe;
+        padding-left: 25px;
+    }
+
+#FontSmall span {
+    font-size: 12px;
+    color: #999;
+}
+
+.title {
+    background: #EAF7FF;
+    color: #222;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.mtabs td {
+    line-height: 26px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.mtab1 tr {
+}
+
+.tdbghover {
+    background: #F0FAFF;
+}
+
+.styleTable {
+    background: #F0FAFF;
+    text-align: center;
+    margin: auto;
+}
+
+.style5 {
+    padding-left: 10px;
+}
+
+#Table_Show textarea {
+    width: 400px;
+}
+
+.centerAuto {
+    margin: auto;
+    text-align: center;
+}
+
+.picCss {
+    max-height: 100px;
+    width: 100%;
+}
+
+table.altrowstable {
+    font-family: verdana,arial,sans-serif;
+    font-size: 11px;
+    color: #333333;
+    border-width: 1px;
+    border-color: #a9c6c9;
+    border-collapse: collapse;
+}
+
+    table.altrowstable th {
+        border: 1px solid #fff;
+        padding: 8px;
+    }
+
+    table.altrowstable td {
+        border: 1px solid #efefef;
+        padding: 8px;
+        border-collapse: collapse;
+    }
+
+        table.altrowstable td img {
+            background: url(images/left_meu.jpg) no-repeat center;
+        }
+
+.oddrowcolor {
+    background-color: #d4e3e5;
+}
+
+.evenrowcolor {
+    background-color: #e3e3e3;
+}
+
+.picCss {
+    max-height: 100px;
+}
+
+.stylePercent40 {
+    width: 30%;
+}
+
+.styleMiddle {
+    text-align: center;
+}
+
+.pleft10 .ystd1 {
+    padding-left: 5%;
+}
+
+.centerAuto img {
+    height: 80px;
+    padding: 5px;
+}
+
+.styleVisibleFalse {
+    display: none;
+}
+
+.style1Percent20 {
+    width: 20%;
+}
+
+#AspNetPager2 {
+    width: 100%;
+    padding-top: 12px;
+}
+
+    #AspNetPager2 .page-pre {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #bbb;
+    }
+
+        #AspNetPager2 .page-pre:hover {
+            background: #ddd;
+        }
+
+        #AspNetPager2 .page-pre a {
+            line-height: 20px;
+            color: #666;
+        }
+
+            #AspNetPager2 .page-pre a:hover {
+                color: #333;
+            }
+
+    #AspNetPager2 .page-num {
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 10px;
+        padding: 5px 8px;
+        border-radius: 3px;
+        border: 1px solid #bbb;
+    }
+
+    #AspNetPager2 .page-num-Current {
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 10px;
+        padding: 5px 8px;
+        border-radius: 3px;
+        border: 1px solid #bbb;
+        color: #FF0000;
+    }
+
+    #AspNetPager2 .page-num:hover {
+        background: #ddd;
+    }
+
+    #AspNetPager2 .page-more {
+        display: none;
+    }
+
+    #AspNetPager2 a .page-num {
+        line-height: 20px;
+        color: #666;
+    }
+
+    #AspNetPager2 a:hover .page-num {
+        color: #333;
+    }
+
+    #AspNetPager2 .page-cur .page-num {
+        border: 1px solid #666;
+        background: #999;
+        color: #fff;
+    }
+
+    #AspNetPager2 .page-next {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
+
+        #AspNetPager2 .page-next a:link {
+            color: #666;
+        }
+
+        #AspNetPager2 .page-next a:visited {
+            color: #666;
+        }
+
+        #AspNetPager2 .page-next:hover {
+            background: #ddd;
+        }
+
+        #AspNetPager2 .page-next a:active {
+            color: #666;
+        }
+
+    #AspNetPager2 .page-disabled {
+        color: #999;
+    }
+
+        #AspNetPager2 .page-disabled:hover {
+            background: none;
+        }
+
+.downlist {
+    position: relative;
+}
+
+
+.styleOrder {
+    text-align: center;
+}

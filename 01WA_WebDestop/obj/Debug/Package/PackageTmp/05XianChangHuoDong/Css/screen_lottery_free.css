@@ -1,0 +1,336 @@
+.Lottery.Panel {
+    left: 50%;
+    top: 17%;
+    width: 90%;
+    height: 72%;
+    margin-left: -45%;
+    display: none;
+    position: absolute;
+    opacity: 0;
+}
+
+.lottery-left {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-image: none;
+    width: 60%;
+    height: 100%;
+    margin-right: 2%;
+    float: left;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lottery-right {
+    padding: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-image: none;
+    width: 36%;
+    height: 98%;
+    overflow: auto;
+    float: left;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lottery-title {
+    background: url("../Images/lot-title.png") no-repeat 10px;
+    width: 100%;
+    height: 60px;
+    color: rgb(255, 255, 255);
+    line-height: 60px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 35px;
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    position: relative;
+}
+
+    .lottery-title .title-label {
+        margin-left: 50px;
+    }
+
+    .lottery-title .userNumber-label {
+        text-align: right;
+        right: 100px;
+        position: absolute;
+    }
+
+    .lottery-title .usercount-label {
+        text-align: right;
+        right: 10px;
+        position: absolute;
+    }
+
+.lottery-bottom {
+    width: 100%;
+    height: 60px;
+    bottom: 0px;
+    border-top-color: rgba(255, 255, 255, 0.4);
+    border-top-width: 1px;
+    border-top-style: solid;
+    position: absolute;
+}
+
+    .lottery-bottom .round-num {
+        color: rgb(255, 255, 255);
+        line-height: 60px;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+.select-panel div {
+    text-align: center;
+    display: inline-block;
+}
+
+.select-button {
+    border: 1px solid rgb(255, 255, 255);
+    border-image: none;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.select-value {
+    width: 40px;
+    height: 28px;
+}
+
+.lottery-bottom .button-happy {
+    background: url("../Images/lot-happy.png") no-repeat 15px;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-image: none;
+    top: 50%;
+    width: 80px;
+    height: 40px;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    line-height: 40px;
+    padding-left: 40px;
+    font-size: 20px;
+    margin-top: -20px;
+    position: absolute;
+    cursor: pointer;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+.lottery-bottom .button-showresult {
+    padding: 0px 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-image: none;
+    top: 50%;
+    width: 80px;
+    height: 40px;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: -20px;
+    position: absolute;
+    cursor: pointer;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+.lottery-bottom .button-reload {
+    padding: 0px 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-image: none;
+    top: 50%;
+    width: 80px;
+    height: 40px;
+    right: 120px;
+    color: rgb(255, 255, 255);
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: -20px;
+    position: absolute;
+    cursor: pointer;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+.lottery-bottom .button-save {
+    padding: 0px 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-image: none;
+    top: 50%;
+    width: 80px;
+    height: 40px;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: -20px;
+    position: absolute;
+    cursor: pointer;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+.lottery-bottom .button-reset {
+    padding: 0px 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-image: none;
+    top: 50%;
+    width: 80px;
+    height: 40px;
+    right: 120px;
+    color: rgb(255, 255, 255);
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: -20px;
+    position: absolute;
+    cursor: pointer;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+.lottery-run {
+    margin: -150px auto auto -150px;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+.user {
+    background: url("../Images/lot_nouser.jpg") no-repeat center / contain;
+    z-index: 100;
+}
+
+    .user .nick-name {
+        display: none;
+    }
+
+.lottery-run .user {
+    background: url("../Images/lot_nouser.jpg") no-repeat center / contain;
+    margin: 15px auto;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-image: none;
+    width: 200px;
+    height: 200px;
+    overflow: visible;
+    position: relative;
+    box-shadow: 5px 5px 3px rgba(125,125,125,0.4);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+    .lottery-run .user .nick-name {
+        left: -50%;
+        width: 200%;
+        height: 30px;
+        text-align: center;
+        bottom: -34px;
+        color: rgb(255, 255, 255);
+        line-height: 20px;
+        font-size: 18px;
+        display: block;
+        position: absolute;
+    }
+
+.result-line {
+    background: rgb(255, 255, 255);
+    margin: 3px auto;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+
+:first-child.result-line {
+    margin-top: 0px;
+}
+
+:last-child.result-line {
+    margin-bottom: 0px;
+}
+
+.result-line .result-num {
+    display: inline-block;
+}
+
+.result-line .user {
+    display: inline-block;
+}
+
+    .result-line .user .nick-name {
+        display: inline-block;
+    }
+
+.result-line .result-num {
+    background: silver;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    line-height: 30px;
+    font-size: 16px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.result-line .user {
+    background: url("../Images/lot_nouser.jpg") no-repeat center;
+    background-size: contain;
+    border: 1px solid silver;
+    border-image: none;
+    left: 50px;
+    top: 5px;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    position: absolute;
+}
+
+    .result-line .user .nick-name {
+        left: 70px;
+        top: 0px;
+        width: 500%;
+        height: 60px;
+        text-align: left;
+        line-height: 60px;
+        overflow: visible;
+        font-size: 20px;
+        display: block;
+        position: absolute;
+    }
+
+.lottery-run .control {
+     display: none;
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    bottom: 10px;
+    width: 100px;
+    height: 18px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffa342;
+    background: -moz-linear-gradient(top,#faeded,#ffa342),url(../Images/lot-happy.png) 15px center no-repeat;
+    background: -ms-linear-gradient(top,#faeded,#ffa342),url(../Images/lot-happy.png) 15px center no-repeat;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#faeded),to(#ffa342)),url(../Images/lot-happy.png) 15px center no-repeat;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #000
+
+
+}

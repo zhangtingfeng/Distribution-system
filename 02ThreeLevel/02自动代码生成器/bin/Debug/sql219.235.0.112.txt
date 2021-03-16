@@ -1,0 +1,1 @@
+﻿Data Source=219.235.0.112,3699;Initial Catalog=Shop.Earh17.com;Persist Security Info=True;Persist Security Info=True;User ID=ShopEarh17;Password=ShopEarh17com2wsx;;Enlist=true;Pooling=true;Max Pool Size = 300; Min Pool Size=0; Connection Lifetime = 300;packet size=1000;

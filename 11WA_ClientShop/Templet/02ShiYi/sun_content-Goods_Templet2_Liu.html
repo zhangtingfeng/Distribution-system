@@ -1,0 +1,859 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+        var WeiXin_imgAllPageUrl = '###_PulicChageWeiXin_Small_Goods_Picture###';
+        var WeiXin_lineAllPageLink = '###_PulicChageWeiXin_MySonWillOpenLind_Goods###';
+        var WeiXin_descAppPageContent = '###_PulicChageWeiXin_Des_Goods###';
+        var WeiXin_shareAppAllPageTitle = '###_PulicChageWeiXin_Title_Goods###';
+        var WeiXin_appidAllPage = '';
+        var path=WeiXin_lineAllPageLink;
+
+        var varGoodID="###GoodID###";///传递给 product.js   传递变量
+        var varServiceURL="###ServiceURL###";///传递给 product.js   传递变量
+        var varUserID= "###UserID###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+        var varNetUserSafeCode = "###NetUserSafeCode###";///传递给 product.js   传递变量
+
+    </script>
+    <title>###ShopTitleName###--###ShopGoodName###</title>
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+    <!-- Mobile Devices Support @begin -->
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control" />
+    <meta content="no-cache" http-equiv="pragma" />
+    <meta content="0" http-equiv="expires" />
+    <meta content="telephone=no, address=no" name="format-detection" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Mobile Devices Support @end -->
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    <link href="/Templet/01WYJS/Css/common.css?version=css201709121928" rel="stylesheet" />
+    <!--<script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>-->
+    <script src="/Scripts/jquery-1.8.2.min.js"></script>
+    <link href="/Templet/02ShiYi/skin/ys_LiuGoods.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/foot_Goods.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link type="text/css" rel="stylesheet" href="/Templet/02ShiYi/skin/YJJ_styleCss.css?version=css201709121928">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/YJJScripy.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/Shopping_Vouchers.css?version=css201709121928" rel="stylesheet" type="text/css" />
+    <script src="/Templet/02ShiYi/js/Shopping_Vouchers.js?version=js201709121928" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/Templet/02ShiYi/skin/box_swipe_Liu_Templet2.css?version=css201709121928"
+          media="all">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/swipe.js?version=js201709121928"></script>
+    <script src="/Scripts/md5.js?version=js201709121928"></script>
+<script type="text/javascript">
+        $(function () {
+            $("#style_clor a:first").addClass("style_select");
+            $("#style_clor a:first").addClass("current");
+            $(".iprice").text($("#style_clor a:first").children("span").attr("title"));
+            $("#style_clor a").click(function () {
+                $(this).addClass("style_select"); //添加样式
+                $(this).addClass('current').siblings().removeClass('current');
+                $(".iprice").text($(this).children("span").attr("title"));
+                $(this).siblings().removeClass(); //移除样式
+
+                var varTitle = $(this).attr("title");
+                var varTitleValue = document.getElementById("BuySelectType_Multi").value;
+
+                document.getElementById("BuySelectType_Multi").value = varTitle;
+                var varTitleValue1 = document.getElementById("BuySelectType_Multi").value;
+                ShowPriceAuto();
+            })
+            document.getElementById("BuySelectType_Multi").value = $("#style_clor a:first").attr("title");
+            //ShowPriceAuto();
+        })
+
+        function loadBuySelectType_Multi(){
+            ShowPriceAuto();
+            doVisitThisPage();
+            doVisitUserListImgeAndName();
+            doMakeHtml_AnnouncePic_GoodList();
+            doMakeHtml_MultiMediaSay();
+            doMakeHtml_DaoBao();
+            doMakeHtml_LongInfo();
+            doInfoAlert_Msg(###UserID###);
+            APPCODE_GetGoodErWeiMaImage("###strUploadHttp###","Goods", ###ToShopCilentID###, "###strhttpUrl###", ###ParentID###, ###GoodID###);
+            do_AutoSelectGouWuQuan();///如果有购物券 替用户默认选定
+        }
+
+        function doVisitThisPage() {
+            var url="###ServiceURL###/Pub/doVisitGood.asmx/doVisitGoodAction?strIntGoodID=###GoodID###&strpInt_QueryString_ParentID=###DBParentID###&strpub_Int_Session_CurUserID=###UserID###&strpub_Int_ShopClientID=###ToShopCilentID###";
+
+            var result=-1;
+            $.ajax({
+                type: "POST",
+                url: url,
+                dataType: "jsonp",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                jsonpCallback: "jsonp8Callback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                contentType: "application/json; charset=utf-8",
+                success: function (json) {
+                    ///result = parseInt(json.ErrorCode);
+                    return;
+                },
+                error: function () {
+                }
+            });
+
+
+            return result;
+        }
+
+
+
+        function showGoodsMe(var0Or1) {
+            if (var0Or1 == 0) {
+                $("#divc1_PingLunInfo").hide();
+                $("#divc1_LongInfo").show();
+
+
+                var div = document.getElementById('Li2_____');
+                div.className = '';
+
+                var div = document.getElementById('Li1_right_Board_Right');
+                div.className = 'TwoButtonSelect';
+
+
+
+            }
+            else if (var0Or1 == 1) {
+                $("#divc1_PingLunInfo").show();
+                $("#divc1_LongInfo").hide();
+
+
+                var div = document.getElementById('Li1_right_Board_Right');
+                div.className = '';
+
+                var div = document.getElementById('Li2_____');
+                div.className = 'TwoButtonSelect';
+            }
+
+        }
+
+    </script>
+
+
+    <script type="text/javascript" language="javascript">
+
+        function doVisitUserListImgeAndName() {
+            //var city = $("#Text1").val();
+            $.ajax({
+                type:'GET',
+                url:'/Handler/Product.ashx',
+                dataType: 'text',
+                data:'strGoodID='+'###GoodID###',
+                beforeSend:function(){
+                    $("#HeadImageList_07").append('<img style=\"margin: 0px auto;display:block;\" src="/images/loading.gif"/>');
+                },
+                success:function(msg)
+                {
+                    //alert(msg);
+                    $("#HeadImageList_07").html('<ul>'+msg+'</ul>');
+                },
+                error: function(data){
+                    //alert(data);
+                }
+            })
+        }
+
+        function doMakeHtml_AnnouncePic_GoodList() {
+            //var city = $("#Text1").val();
+            varURL = varServiceURL + "/Pub/doClickThis_HowToGetProduct.asmx/doGetProduct_newTmpletAnnouncePic_GoodList";
+
+            $.ajax({
+                type:'GET',
+                url:varURL,
+                dataType: "jsonp",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                data:'strGoodID='+'###GoodID###',
+                jsonpCallback: "jsonp201607031724Callback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                contentType: "application/json; charset=utf-8",
+                beforeSend:function(){
+                    $("#Anounce").append('<img style=\"margin: 0px auto;display:block;\" src="/images/loading.gif"/>');
+                },
+                success:function(json)
+                {
+                    result = parseInt(json.ErrorCode);
+                    if (result==0){
+                        //alert(msg);
+                        $("#Anounce").html(decodeURIComponent(json.msg));
+                    };
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                }
+            })
+        }
+        function doMakeHtml_MultiMediaSay() {
+            //var city = $("#Text1").val();
+            $.ajax({
+                type:'GET',
+                url:'/Handler/Product_MultiMediaSay.ashx',
+                dataType: 'text',
+                data:'strGoodID='+'###GoodID###'+'&Int_ShopClientID=###ToShopCilentID###'+'&pub_Int_Session_CurUserID=###UserID###',
+                beforeSend:function(){
+                    $("#MultiMediaSay").append('<img style=\"margin: 0px auto;display:block;\" src="/images/loading.gif"/>');
+                },
+                success:function(msg)
+                {
+                    //alert(msg);
+                    $("#MultiMediaSay").html(msg);
+                },
+                error: function(data){
+                    // alert(data);
+                }
+            })
+        }
+        function doMakeHtml_DaoBao() {
+            //var city = $("#Text1").val();
+            $.ajax({
+                type:'GET',
+                url:'/Handler/Product_Dao.ashx',
+                dataType: 'text',
+                data:'strGoodID='+'###GoodID###'+'&Int_ShopClientID=###ToShopCilentID###'+'&pub_Int_Session_CurUserID=###UserID###',
+                beforeSend:function(){
+                    $("#ID_DABao").append('<img style=\"margin: 0px auto;display:block;\" src="/images/loading.gif"/>');
+                },
+                success:function(msg)
+                {
+                    //alert(msg);
+                    $("#ID_DABao").html(msg);
+                },
+                error: function(data){
+                    //alert(data);
+                }
+            })
+        }
+
+        function doMakeHtml_LongInfo() {
+            $.ajax({
+                type:'GET',
+                url:'/Handler/Product_LongInfo.ashx',
+                dataType: 'text',
+                data:'strGoodID='+'###GoodID###',
+                beforeSend:function(){
+                    $("#divc1_LongInfo").append('<img style=\"margin: 0px auto;display:block;\" src="/images/loading.gif"/>');
+                },
+                success:function(msg)
+                {
+                    //alert(msg);
+                    $("#divc1_LongInfo").html(msg);
+                },
+                error: function(data){
+                    //alert(data);
+                }
+            })
+        }
+
+    </script>
+
+
+    <link href="/Templet/01WYJS/js/jquery.alert.v1.2/jquery.alert.css" rel="stylesheet" />
+    <script src="/Templet/01WYJS/js/jquery.alert.v1.2/jquery.easydrag.js"></script>
+    <script src="/Templet/01WYJS/js/jquery.alert.v1.2/jquery.alert.js"></script>
+    ###WeiXin__o2o_FootMarker_Location_###
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    <script src="/Templet/01WYJS/js/Product.js?version=js201709121928"></script>
+    <script src="/Templet/01WYJS/js/layer.m.js"></script>
+    <link href="/Templet/01WYJS/Css/layer.css" rel="stylesheet" />
+    ###_PulicChageWeiXin###
+</head>
+<body onload="loadBuySelectType_Multi();">
+
+    ###IFSubscribeHeader###
+    <div class="spro_con">
+        <div id="Anounce">
+
+
+        </div>
+
+        <div id="MultiMediaSay">
+
+        </div>
+    </div>
+    <div id="GoodInfo_01">
+        <div id="GoodErWiema">
+            <a href="#" id="ErWeiMaSaoHref">
+                <img id="ErWeiMaSao" src="/Templet/02ShiYi/skin/Images/ScanningGoods.jpg" style="width:44px;height:44px;display:none;" title="点击扫一扫" />
+            </a>
+        </div>
+        <div id="GoodName">
+            <div id="GoodName_Center">
+                ###ShopGoodName###
+            </div>
+        </div>
+    </div>
+    <div id="GoodInfo_Price_02">
+        <ul>
+            <li>
+                ###ShopClient_Dictionaries_PromotionalPrice###:<span id="PromotePriceWillPay">¥###PromotePrice###</span><span style="display:none;" id="PromotePriceTotalNoneShow">###PromotePriceTotalNoneShowDecimal###</span>
+            </li>
+            <li style="width: 3px;"></li>
+            <li>###ShopClient_Dictionaries_PriceText###<span id="delPrice">###Price###</span></li>
+            <li><span id="ZheKou">(###PriceZheJou###折)</span></li>
+            <li><span id="okImg"></span></li>
+            <li><span id="okImg_HitCount">###HitCount###</span></li>
+            <li style="width: 3px;"></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="GoodInfo_Price_02_YunFei" style="display:none;">
+        <ul>
+            <li>
+                <span id="Promote_02_YunFei"></span>
+            </li>
+        </ul>
+    </div>
+    <div id="GoodInfo_Count_03">
+        <ul>
+            <li>
+                <span id="YJJ_inputs_Line">
+                    <span class="YJJ_Left_number">数量:</span>
+                    <input type="button" value="-" id="jian" onclick="jian()" class="YJJ_inputs_left" />
+                    <input type="text" readonly="readonly" size="3" id="values" class="YJJ_values_values"
+                           value="###MinSalesdCount_MinOrderNum###" />
+                    <input type="text" size="3" id="MinOrderNum" style="display: none;" value="###MinSalesdCount_MinOrderNum###" />
+                    <input type="text" size="3" id="MaxOrderNum" style="display: none;" value="###MaxSalesdCount_MinOrderNum###" />
+                    <input type="button" value="+" id="add" onclick="add()" class="YJJ_inputs_Right" />
+                    <span id="spans"></span>
+                    <input type="text" size="3" id="BuySelectType_Multi" name="BuySelectType_Multi" style="display: none;"
+                           value="0" />
+                    <span id="Get_UnitNameFromGoodID">###Get_UnitNameFromGoodID###</span>
+                </span>
+            </li>
+            <li style=""></li>
+            <li>
+                <div class="spro_c2">
+                    ###ShopClient_Dictionaries_StockBalance###:###isSaled_KuCunLiang###
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="spro_con_01">
+        ###Shopping_Vouchers_Beans_Money### ###ChildPriceList### ###SecondBuyInfo###
+    </div>
+    <div id="MyBossImage_06">
+
+
+        <!--<div class="DisplayIMGText">-->
+        <ul>
+            <li>
+                ###ByShareAskCount###
+            </li>
+            <li>
+                ###MyBossImage###
+            </li>
+            <li>
+                ###BossNickNameShow###
+            </li>
+
+        </ul>
+        <!--</div>
+        <li>
+           <div class="zan">-->
+        <!--   </div>-->
+        <!--</li>
+        <li>
+
+        </li>-->
+
+    </div>
+    <div id="HeadImageList_07" ###CheckBox_CloseGoodsShareAndStatus###>
+        <ul></ul>
+    </div>
+
+    <div id="DistributionMoney_List_From_Good_ID_08">
+        <ul>
+            ###DistributionMoney_List_From_Good_ID###
+        </ul>
+    </div>
+
+    <div style="clear: both;">
+    </div>
+    <!--<div class="spro_btn">
+        <div id="buybtn" class="Q-buy-btn_Now spro_mybtn">
+            ###CanBuy###
+        </div>
+        <div id="cartbtn" class="spro_mybtn###CanAddCartAninate###">
+            ###CanAddCart###
+        </div>
+    </div>-->
+    <div id="TwoButton_List__09">
+        <ul>
+            <li id="Li1_right_Board_Right" onclick="showGoodsMe(0);" class="TwoButtonSelect">商品详情</li>
+            <li id="Li2_____" onclick="showGoodsMe(1);" class="">商品评价(###MeAndOthersPeopleSaySomthingCount###)</li>
+        </ul>
+    </div>
+
+    <div class="spro_contxt">
+        <!--<div class="spro_ct_Only_OneLine">
+            <ul>
+                <li id="Li1" class="hover bor_r"></li>
+            </ul>
+        </div>-->
+        <div id="divc1_LongInfo" class="divc1" style="display: block;">
+            <!--###ShortInfo###-->
+        </div>
+
+        <div id="divc1_PingLunInfo" class="divc1" style="display: none;">
+            <div>
+                ###InfoAlert_TalkMe_Page###
+            </div>
+            <div id="divc2" style="display: block;">
+                <div class="plconlist">
+                    <ul>
+                        ###OthersPeopleSaySomthing###
+                    </ul>
+                </div>
+                <a name="LableSay"></a>
+                ###IHaveBuyIwilSaySomething###
+            </div>
+        </div>
+    </div>
+    <!--<div class="spro_contxt">
+        <div class="spro_ct_Only_OneLine">
+            <ul>
+                <li id="divt1" class="hover bor_r"></li>
+            </ul>
+        </div>
+        <div id="divc1_LongInfo" class="divc1" style="display: block;">
+
+        </div>
+    </div>-->
+
+
+
+    <div id="Button_ErWeiMa" style="display: none;">
+        ###____Button_ErWeiMa###
+    </div>
+
+
+
+
+
+    <div class="lrbtn" style="display:none;">
+        <div>
+            <a href="###PreGoods###"><span class="lrbtn_l">上一个</span></a><a href="###NextGoods###">
+                <span class="lrbtn_r">下一个</span>
+            </a>
+        </div>
+    </div>
+    <div id="ID_DABao" class="lrbtn_Good_Height">
+        
+    </div>
+
+    <div id="div_PayStatus" style="width: 56px; z-index: 1001; position: absolute; display: none;
+        top: 0; text-align: center; left: 0;">
+        <img src="/Templet/02ShiYi/skin/Images/Cart.png" />
+    </div>
+
+    <script type="text/javascript">
+        function Check_NeedRegIfBuy()
+        {
+            if (###ShopClient_Dictionaries_Check_NeedRegIfBuy###)//apps
+            {
+                if(confirm('必须关注才能进行支付，现在关注吗？'))
+                {
+                    var varlink="###ShopClient_Dictionaries_Check_NeedRegIfBuy___Link###";
+                    window.location.href=varlink;
+                }
+                else
+                {
+
+                }
+                flag=false;
+                return false;
+
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $("#button_AddShopCar").click(function() {
+
+                if (Check_NeedRegIfBuy()==false) return;
+
+                $("#div_PayStatus").stop();
+                $("#div_PayStatus").css("display", "block");
+
+                var AnimateDestinationOffSet = $("#left04").offset();
+
+
+                var DestinationL=AnimateDestinationOffSet.left + 20;
+                var DestinationH=AnimateDestinationOffSet.top + 10;
+
+                $("#div_PayStatus").css("left", $("#button_AddShopCar").offset().left).css("top", $("#button_AddShopCar").offset().top-400).animate({ left:DestinationL , top:DestinationH}, 1000, animateFinished);
+                //            $("#div_PayStatus").css("left", $(".Q-buy-btn").offset().left).css("top", $(".Q-buy-btn").offset().top).animate({ left: $(".J-shoping-num").offset().left - 50, top: $(".J-shoping-num").offset().top - 60 }, 1000, animateFinished);
+            });
+
+            //立即购买
+            $("#button_BuyNow").click(function() {
+                if (Check_NeedRegIfBuy()==false) return;
+
+                if (###Salesd###)
+                {
+                    $.alerts.okButton = "确定";
+                    jAlert("此商品已下架！", '提示');
+                    return;
+                    //alert("此商品已下架！");
+                    //return false;
+                }
+                else
+                {
+
+                    var varlink="###SAgentPath###/product.aspx?type=buynow&"+GetURLBuy();
+                    window.location.href=varlink;
+
+                    return true;
+                }
+            });
+
+
+        });
+
+        function GetURLBuy() {
+
+            var val = document.getElementById("values").value;
+
+
+            var VarMultiType=document.getElementById("BuySelectType_Multi").value;
+
+            if (VarMultiType == "undefined") {
+                VarMultiType=0;
+            }
+
+            var url="UserID=###UserID###&goodid=###GoodID###&buycount=" + val + "&multibuytype=" + VarMultiType;
+
+
+            var meSpanOnleyOneShow_Number_Wealth = document.getElementById("SpanOnleyOneShow_Number_Wealth");
+            if (!meSpanOnleyOneShow_Number_Wealth == false) {
+                var varmeSpanOnleyOneShow_Number_Wealth = meSpanOnleyOneShow_Number_Wealth.innerHTML;
+                if (varmeSpanOnleyOneShow_Number_Wealth == "1") {
+                    var va_Span3Status_Money_Wealth = "0";
+
+                    var varSpan1Status_Wealth = document.getElementById("Span2ClickButton_Wealth").checked; //是否财富积分开关
+                    if (varSpan1Status_Wealth == true) {
+                        va_Span3Status_Money_Wealth = document.getElementById("NowCanUseMoney2_Wealth").innerHTML;
+                        url += "&Type_Wealth=1&_Wealth_=" + va_Span3Status_Money_Wealth;
+                    }
+                }
+            }
+
+
+            var meSpanOnleyOneShow_Number_Vouchers_Bean=document.getElementById("SpanOnleyOneShow_Number_Vouchers_Bean");
+            if (!meSpanOnleyOneShow_Number_Vouchers_Bean==false)
+            {
+                var varmeSpanOnleyOneShow_Number_Vouchers_Bean = meSpanOnleyOneShow_Number_Vouchers_Bean.innerHTML;
+                if (varmeSpanOnleyOneShow_Number_Vouchers_Bean=="2")
+                {
+                    var va_Span2Status_Money_Money ="0";
+
+                    var varSpan2Status_Money = document.getElementById("Span2ClickButton_WeiBaiQuan").checked; //是否开关
+                    if (varSpan2Status_Money == true) {
+                        va_Span2Status_Money_Money=document.getElementById("NowCanUseMoney2_Vouchers").innerHTML;
+                        url+= "&TypeNumber_Vouchers_Bean=2&VouchersMoney_=" + va_Span2Status_Money_Money;
+                    }
+                }
+                else  if (varmeSpanOnleyOneShow_Number_Vouchers_Bean=="3")
+                {
+                    var va_Span3Status_Money_Bean ="0";
+
+                    var varSpan2Status_Bean = document.getElementById("Span3ClickButton_Shoping_Bean").checked; //是否开关
+                    if (varSpan3Status_Bean == true) {
+                        va_Span3Status_Money_Bean=document.getElementById("NowCanUseBean3").innerHTML;
+                        url+= "&TypeNumber_Vouchers_Bean=3&Bean_=" + va_Span3Status_Money_Bean;
+                    }
+                }
+                else  if (varmeSpanOnleyOneShow_Number_Vouchers_Bean=="4")
+                {
+
+                    //var varSpan4Status_Vouchers = document.getElementById('Span4Status_Number_Vouchers_Bean_Money').checked; //是否开关
+                    var varSpan4Status_Vouchers = document.getElementById('Span4ChangeYouHuiQuan').value; //是否选择了购物券
+                    
+                    var va_VouchersNum_Span4Status_Vouchers ="0";
+                    var va_VouchersMoney_Span4Status_Vouchers ="0";
+
+                    if (varSpan4Status_Vouchers !=-1) {
+                        va_VouchersNum_Span4Status_Vouchers=document.getElementById("NowCanUse_Vouchers_Num4").innerHTML;
+                        va_VouchersMoney_Span4Status_Vouchers=document.getElementById("NowCanUse_Vouchers_Money4").innerHTML;
+                        url+= "&TypeNumber_Vouchers_Bean=4&VouchersNum_=" + va_VouchersNum_Span4Status_Vouchers+ "&VouchersMoney_=" + va_VouchersMoney_Span4Status_Vouchers;
+                    }
+                }
+
+            }
+
+
+            var meSpanOnleyOneShow_Number_Money=document.getElementById("SpanOnleyOneShow_Number_Money");
+            if (!meSpanOnleyOneShow_Number_Money==false)
+            {
+                var varmeSpanOnleyOneShow_Number_Money = meSpanOnleyOneShow_Number_Money.innerHTML;
+                if (varmeSpanOnleyOneShow_Number_Money=="1")
+                {
+                    var va_Span3Status_Money_Money ="0";
+
+                    var varSpan1Status_Money = document.getElementById("Span1ClickButton_Shoping_Money").checked; //是否现金开关
+                    if (varSpan1Status_Money == true) {
+                        va_Span3Status_Money_Money=document.getElementById("NowCanUseMoney1").innerHTML;
+                        url+= "&Type_Money=1&_Money_=" + va_Span3Status_Money_Money;
+                    }
+                }
+            }
+            var TSign = hex_md5_8(String(###UserID###) + String(###GoodID###) + String(val)+ String(VarMultiType));
+            url += "&TSign=" + TSign;
+
+            return url;
+        }
+
+        function animateFinished() {
+
+            $("#div_PayStatus").css("display", "none");
+            var url="###ServiceURL###/Order/DoOrder.asmx/_Service_AddToCart?"+GetURLBuy();
+            //调用函数
+            var res = testAsync(url);
+        }
+
+        function testAsync(url) {
+            var result=-1;
+            $.ajax({
+                type: "get",
+                url: url,
+                dataType: "jsonp",async:false,
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                jsonpCallback: "jsonp7Callback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                contentType: "application/json; charset=utf-8",
+                success: function (json) {
+                    result = parseInt(json.ErrorCode);
+
+                    $.alerts.okButton = "确定";
+                    //jAlert("此商品已下架！", '提示', callBackvardoT);
+
+                    if (result==-1)
+                    {
+                        jAlert("购物车添加失败！", '提示');
+                        // alert ("购物车添加失败！");
+                    }
+                    else if (result==-2)
+                    {
+                        jAlert("购物车添加失败！购买限制，在订单中已存在！", '提示');
+                        // alert ("购物车添加失败！购买限制，在订单中已存在");
+                    }
+                    else if (result==-3)
+                    {
+                        jAlert("购物车添加失败！购物券已被使用", '提示');
+                        //alert ("购物车添加失败！购物券已被使用");
+                    }
+                    else if (result == -44) {
+                        jAlert("购物车添加失败！库存不足", '提示');
+                    }
+                    return;
+                    
+                },
+                error: function () {
+                    // debugger;
+                    // alert('fail');
+                }
+            });
+
+
+            return result;
+        }
+    </script>
+
+    <script type="text/javascript">
+        function ShowPriceAuto() {
+            var strbuyCount = document.getElementById("values").value;
+            var VarMultiType="";
+            var varMoneyCredits="";
+            var varCanCheckMoney2_Vouchers="";
+            var varSpan3Status_Bean="";
+            var varNowCanUse_Vouchers_Num4_Number="";
+            var varMoneyWealth = "";////财富
+
+            var var_ID_BuySelectType_Multi=document.getElementById("BuySelectType_Multi");
+            if (var_ID_BuySelectType_Multi!=null)
+            {
+                VarMultiType=var_ID_BuySelectType_Multi.value;
+                if(VarMultiType=='undefined'){
+                    VarMultiType='';
+                }
+            }
+
+            var varSpanOnleyOneShow_Number_Wealth = document.getElementById("SpanOnleyOneShow_Number_Wealth").innerHTML;
+            if (varSpanOnleyOneShow_Number_Wealth == "1") {
+                var var_ID_CanCheckMoney2_Wealth = document.getElementById("CanCheckMoney2_Wealth");
+                if (var_ID_CanCheckMoney2_Wealth != null) {
+                    varMoneyWealth = var_ID_CanCheckMoney2_Wealth.innerHTML;
+                }
+            }
+
+
+            var varSpanOnleyOneShow_Number_Vouchers_Bean=document.getElementById("SpanOnleyOneShow_Number_Vouchers_Bean").innerHTML;
+            if (varSpanOnleyOneShow_Number_Vouchers_Bean=="2")
+            {
+                var var_ID_CanCheckMoney2_Vouchers=document.getElementById("CanCheckMoney2_Vouchers");
+                if (var_ID_CanCheckMoney2_Vouchers!=null)
+                {
+                    varCanCheckMoney2_Vouchers=var_ID_CanCheckMoney2_Vouchers.innerHTML;
+                }
+            }
+            else if (varSpanOnleyOneShow_Number_Vouchers_Bean=="3")
+            {
+                var var_ID_CanCheckBean3=document.getElementById("CanCheckBean3");
+                if (var_ID_CanCheckBean3!=null)
+                {
+                    varSpan3Status_Bean=var_ID_CanCheckBean3.innerHTML;
+                }
+            }
+            else if (varSpanOnleyOneShow_Number_Vouchers_Bean=="4")
+            {
+                var var_ID_NowCanUse_Vouchers_Money4=document.getElementById("NowCanUse_Vouchers_Money4");
+                if (var_ID_NowCanUse_Vouchers_Money4!=null)
+                {
+                    varNowCanUse_Vouchers_Num4_Number=var_ID_NowCanUse_Vouchers_Money4.innerHTML;
+                }
+            }
+
+            var varSpanOnleyOneShow_Number_Money=document.getElementById("SpanOnleyOneShow_Number_Money").innerHTML;
+            if (varSpanOnleyOneShow_Number_Money=="1")
+            {
+                var var_ID_CanCheckMoney1=document.getElementById("CanCheckMoney1");
+                if (var_ID_CanCheckMoney1!=null)
+                {
+                    varMoneyCredits=var_ID_CanCheckMoney1.innerHTML;
+                }
+            }
+
+            var varURL="###ServiceURL###/Order/DoOrder.asmx/CountCurPrice?strUserID=###UserID###&strGoodID=###GoodID###&strbuyCount="+strbuyCount+"&strMultiBuyType="+VarMultiType+"&strMoneyCredits="+varMoneyCredits+"&strVouchersNum_List="+varNowCanUse_Vouchers_Num4_Number+"&strMoneyWeBuy8Credits="+varCanCheckMoney2_Vouchers+"&strBeans="+varSpan3Status_Bean+"";
+            var TSign = hex_md5_8(String(###UserID###) + String(varGoodID) + varNetUserSafeCode);
+            varURL += "&TSign=" + TSign;
+
+
+            $.ajax({
+                type: "get",
+                url: varURL,
+                dataType: "jsonp",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                jsonpCallback: "jsonp2Callback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                contentType: "application/json; charset=utf-8",
+                success: function (json) {
+                    ShowPriceAuto_Document_AllGoodMoney(json.GoodMoney);
+                    ShowPriceAuto_Document(json.ShowPayGoodMoney);
+                    ShowYunFei_Document(json.YunFei);
+                    do_AutoSelectGiveAnswer();
+                },
+                error: function (e) {
+                    // debugger;
+                    // alert('fail');
+                }
+            });
+        }
+        function ShowYunFei_Document(varText) {
+
+            document.getElementById("Promote_02_YunFei").innerHTML =""+varText;
+            if (varText!="")
+            {
+                $("#GoodInfo_Price_02_YunFei").css("display","block");
+            }
+
+        }
+
+        function ShowPriceAuto_Document(varText) {
+            document.getElementById("PromotePriceWillPay").innerHTML ="¥"+varText;
+        }
+        function ShowPriceAuto_Document_AllGoodMoney(varText) {
+            document.getElementById("PromotePriceTotalNoneShow").innerHTML =varText;
+        }
+    </script>
+
+
+    <script type="text/javascript">
+
+        function Show_ReCountRedWalletAndMoneyAuto() {
+            if (document.getElementById("Span4ChangeYouHuiQuan") && document.getElementById("Span4ChangeYouHuiQuan").value!="-1")///简单处理 不要选择优惠券
+            {
+                document.getElementById("SpanOnleyOneShow_Number_Vouchers_Bean").innerHTML = "0";
+                $('#Span4ChangeYouHuiQuan').val(-1).change();///简单处理 不要选择优惠券
+            }
+
+
+            var VarMultiType='';
+            var var_ID_BuySelectType_Multi=document.getElementById("BuySelectType_Multi");
+            if (var_ID_BuySelectType_Multi!=null)
+            {
+                VarMultiType=var_ID_BuySelectType_Multi.value;
+                if(VarMultiType=='undefined'){
+                    VarMultiType='';
+                }
+            }
+
+
+            var strbuyCount = document.getElementById("values").value;
+            var varURL = "###ServiceURL###/Order/DoOrder.asmx/Count_Do_CountyuEArgMoney?strGoodID=###GoodID###&strbuyCount=" + strbuyCount + "&strUserID=###UserID###"+ "&strMultiBuyType="+VarMultiType;
+           
+            var TSign = hex_md5_8(String(###GoodID###) + String(strbuyCount) + String(###UserID###) + String(VarMultiType) +  varNetUserSafeCode);///String(varpOperationCenterID)+String(varOperationIDGoods) +
+            varURL += "&TSign=" + TSign;
+            
+            $.ajax({
+                type: "get",
+                url: varURL,
+                dataType: "jsonp",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                jsonpCallback: "jsonp3Callback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                contentType: "application/json; charset=utf-8",
+                success: function (json) {
+                    Show_ReCountRedWalletAndMoneyAuto_Document(json.ShowminReturnCountMoney,json.ShowminCountMoney_Vouchers,json.ShowminCountMoney_Wealth,json.ShowminCountMoney_Vouchers_YouHuiQuan)
+                },
+                error: function () {
+                    // debugger;
+                    // alert('fail');
+                }
+            });
+        }
+      
+    </script>
+
+    <script type="text/javascript">
+        function getUserID_For_Shopping_Vouchers_js() {
+            return ###UserID###;
+        }
+        function getToShopCilentID_For_Shopping_Vouchers_js() {
+            return ###ToShopCilentID###;
+        }
+
+    </script>
+
+    <div id="bottom_navs_Good_Foot">
+        <div id="left01" onclick="window.location.href='/'">
+            首页
+        </div>
+        <div id="left02">
+            <div id="button_AddShopCar">
+                加入购物车
+            </div>
+        </div>
+        <div id="left04" onclick="window.location.href='/cart.aspx'">
+            购物车
+        </div>
+        <div id="left03">
+            <div id="button_BuyNow">
+                立即购买
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

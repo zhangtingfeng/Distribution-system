@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/11WA_ClientShop_deploy" />
+  <setParameter name="Shop.Earth17.Com_ConnectionString-Web.config Connection String" value="Data Source=120.24.81.198,3699;Initial Catalog=Shop.Earh17.comTest;Persist Security Info=True;User ID=Shop.eggsoft.cn;Password=Shop.Earh17.comShop.eggsoft.cn;Enlist=true;Pooling=true;Max Pool Size = 300; Min Pool Size=0; Connection Lifetime = 300;packet size=1000;" />
+</parameters>

@@ -1,0 +1,184 @@
+﻿@CHARSET "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "微软雅黑","Microsoft YaHei";
+    font-size: 14px;
+    background: none repeat scroll 0 0 #F4F4F4;
+    color: #333;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(images/back.jpg);
+}
+
+ul, ol {
+    list-style: none outside none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    border: 0 none;
+    vertical-align: middle;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 640px;
+}
+
+h1, h2, ol, ul, li, p, input {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+}
+
+a, a:visited {
+    color: #8D8D8D;
+    text-decoration: none;
+}
+
+.webuy8_body {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#add_form50Percent {
+    width:100%;
+    background-color: #fff;
+    display:block;
+    height:90px;
+}
+#add_form50Percent li{
+    width:48%;
+    float:left;
+    margin-left:1%;
+}
+#addressform {
+    width: 98%;
+    margin: 10px auto;
+}
+
+    #addressform [type=text] {
+        font-size: 14px;
+        margin-top: 17px;
+        float: right;
+        width: 65%;
+        height: 30px;
+    }
+
+#add_form li {
+    clear: both;
+}
+
+#add_form input {
+    border: none;
+    border: 1px solid #eee;
+}
+
+#add_form span {
+    line-height: 35px;
+    float: left;
+    width: 25%;
+    height: 30px;
+    margin-top: 19px;
+    font-family: "微软雅黑","Microsoft YaHei";
+    font-size: 14px;
+}
+
+.Clickbutton {
+    background-color: #fff;
+    border: 2px solid #c0c0c0;
+    height: 45px;
+    line-height: 45px;
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "微软雅黑","Microsoft YaHei";
+}
+
+.add01 {
+    background-color: #fff;
+    height: 40px;
+    min-height: 56px;
+    text-align: left;
+    text-indent: 5%;
+    width: 100%;
+    color: black;
+    font-size: 14px;
+    line-height: 60px;
+    font-weight: 500;
+    font-family: "微软雅黑","Microsoft YaHei";
+}
+
+.share-popup {
+    display: none;
+    width: 100%;
+    top: 5px;
+    z-index: 999999;
+    position: fixed;
+    text-align: center;
+    height: 100%;
+    min-height: 800px;
+    background-color: rgba(0,0,0,.8);
+}
+
+#add_form {
+    background-color: #fff;
+    padding: 10px 10px 10px 10px;
+    height: 275px;
+}
+
+    #add_form select {
+        margin-right: 2px;
+        height: 30px;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 4px;
+    }
+
+#addressform textarea {
+    margin: 10px 0;
+    font-size: 14px;
+    width: 100%;
+    height: 150px;
+}
+
+#addressform .history {
+    background-color: white;
+    margin: 4px;
+    height: 100%;
+    padding: 4px;
+    float: left;
+}
+
+[name=addresses] {
+    font-size: 14px;
+    margin-top: 17px;
+}
+
+.RadioButtonList_Address_SmallFont {
+    width: 100%;
+    background: #fff;
+}
+
+    .RadioButtonList_Address_SmallFont td {
+        /*padding: 10px 10px 5px 10px;*/
+        font-family: "微软雅黑","Microsoft YaHei";
+        font-size: 14px;
+    }

@@ -1,0 +1,273 @@
+﻿@using Web_Service.ViewModels.Common
+@{
+    ViewBag.Title = "Other操作日志";
+    Layout = "~/Views/Shared/_HeadFootLayout.cshtml";
+    var appSettings = new Web_Service.Common.Config.AppSettings();
+}
+
+
+@section Scripts {
+    <script type="text/javascript">
+        _appSettingWebApiUrl = '@appSettings.QybBXApiLogEveryday';
+
+      
+        _app.config(function (RestangularProvider) {
+            RestangularProvider.setBaseUrl('@appSettings.QybBXApiLogEveryday');
+            RestangularProvider.setDefaultHeaders({ 'Content-Type': 'application/json' });
+        });
+
+
+        //日期控件
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            weekStart: 7,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 0,
+            minView: 0,
+            forceParse: 0,
+            format: "yyyy-mm-dd hh:ii:ss",
+            pickerPosition: "bottom-left"
+        });
+
+        function initSearchForm($scope) {
+            resetForm($scope);
+            //1：Request  2:Response  3:CallBackRequest  4:CallBackResponse
+            $scope.ActionTypeList = [
+                { id: '1', text: 'Request' },
+                { id: '2', text: 'Response' },
+                { id: '3', text: 'CallBackRequest' },
+                { id: '4', text: 'CallBackResponse' }
+            ];
+        };
+
+        function resetForm($scope) {
+            var sDate = new Date();
+            var eDate = new Date();
+            sDate.setDate(sDate.getDate() - 1);
+
+            $scope._LogsEveryDayView.formData.data = {
+                BeginTime: sDate.getFullYear() + '-' + (sDate.getMonth() + 1) + '-' + sDate.getDate() + ' ' + sDate.getHours() + ':' + sDate.getMinutes() + ':' + sDate.getSeconds(),
+                EndTime: eDate.getFullYear() + '-' + (eDate.getMonth() + 1) + '-' + eDate.getDate() + ' ' + sDate.getHours() + ':' + sDate.getMinutes() + ':' + sDate.getSeconds(),
+                ChannelID: '',
+                ActionType: '',
+                SerialDecimal: '',
+                TransactionNumber: ''
+            };
+        }
+
+       
+
+        //获取操作类型名称
+        function getActionTypeText($scope, key) {
+            var strRst = '';
+            if ($scope.ActionTypeList) {
+                for (var i = 0; i < $scope.ActionTypeList.length; i++) {
+                    if ($scope.ActionTypeList[i].id == key) {
+                        strRst = $scope.ActionTypeList[i].text;
+                        break;
+                    }
+                }
+            }
+            return strRst;
+        }
+
+        function searchForm($scope, Restangular) {
+            console.log("开始执行搜索");
+            document.getElementById("loading").style.display = "block";
+
+            $scope._LogsEveryDayView.formData.paging.pageSize = 20;
+
+            Restangular.one('LogsEveryDay').post('LogsEveryDay', $scope._LogsEveryDayView.formData).then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                console.log(result.data);
+
+                $scope._LogsEveryDayView.dataList = result.data;
+                if ($scope._LogsEveryDayView.dataList) {
+                    for (var i = 0; i < $scope._LogsEveryDayView.dataList.length; i++) {
+
+                        $scope._LogsEveryDayView.dataList[i].ActionTypeText = getActionTypeText($scope, $scope._LogsEveryDayView.dataList[i].ActionType);
+                    }
+                }
+
+                //console.log($scope._LogsEveryDayView.dataList);
+
+                $scope._LogsEveryDayView.formData.paging.dataCount = result.paging.dataCount;
+                $scope._LogsEveryDayView.formData.paging.pageSize = result.paging.pageSize;
+
+                $scope._LogsEveryDayView.formData.paging.calPages();
+                console.log("执行完毕搜索");
+                document.getElementById("loading").style.display = "none";
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+            });
+        }
+
+        _app.controller("myController", [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope._LogsEveryDayView = { formData: new ResultAPIModel() };
+                initSearchForm($scope);
+                resetForm($scope);
+                searchForm($scope, Restangular);
+                $scope.isLockForm = false;
+
+                $scope._LogsEveryDayViewSearchFormEvent = function () {
+                    $scope._LogsEveryDayView.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                };
+
+                $scope._LogsEveryDayViewResetFormEvent = function () {
+                    $scope._LogsEveryDayView.formData.paging.pageNumber = 1;
+                    resetForm($scope);
+                    searchForm($scope, Restangular);
+                };
+
+                $scope._LogsEveryDayViewGoPrevPageEvent = function () {
+                    $scope._LogsEveryDayView.formData.paging.pageNumber = $scope._LogsEveryDayView.formData.paging.getPrevPageNumber();
+                    searchForm($scope, Restangular);
+                };
+
+                $scope._LogsEveryDayViewGoNextPageEvent = function () {
+                    $scope._LogsEveryDayView.formData.paging.pageNumber = $scope._LogsEveryDayView.formData.paging.getNextPageNumber();
+                    searchForm($scope, Restangular);
+                };
+
+                $scope._LogsEveryDayViewGoPageEvent = function () {
+                    $scope._LogsEveryDayView.formData.paging.pageNumber = this.page ? this.page.pageNumber : $scope._LogsEveryDayView.formData.paging.pageNumber;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope._LogsEveryDayViewGoFirstPageEvent = function () {
+                    $scope._LogsEveryDayView.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope._LogsEveryDayViewGoEndPageEvent = function () {
+                    $scope._LogsEveryDayView.formData.paging.pageNumber = $scope._LogsEveryDayView.formData.paging.maxPageNumber();
+                    searchForm($scope, Restangular);
+                }
+
+                //字符串转日期格式，strDate要转为日期格式的字符串 
+                function getDate(strDate) {
+                    var st = strDate;
+                    var a = st.split(" ");
+                    var b = a[0].split("-");
+                    var c = a[1].split(":");
+                    var date = new Date(b[0], b[1], b[2], c[0], c[1], c[2]);
+                    return date;
+                }
+
+                $scope.ChangeBeginTime = function () {
+                    //debugger;
+                    //console.log(11111111);
+                    console.log($scope._LogsEveryDayView.formData.data.BeginTime);
+
+                    var sDate = getDate($scope._LogsEveryDayView.formData.data.BeginTime);
+                    var eDate = new Date();
+                    eDate.setDate(sDate.getDate() + 1);
+
+                    $scope._LogsEveryDayView.formData.data.EndTime = eDate.getFullYear() + '-' + (eDate.getMonth() + 1) + '-' + eDate.getDate() + ' ' + sDate.getHours() + ':' + sDate.getMinutes() + ':' + sDate.getSeconds();
+                }
+               
+
+            }
+        ]);
+    </script>
+}
+
+<div ng-controller="myController">
+    <h3 class="page-header">Other操作日志记录</h3>
+    <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy HH:mm:ss" data-link-format="yyyy-mm-dd HH:mm:ss">
+                    <input class="form-control" size="16" type="text" value="" placeholder="操作开始时间" readonly="readonly" ng-change="ChangeBeginTime()" ng-model="_LogsEveryDayView.formData.data.BeginTime">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy HH:mm:ss" data-link-format="yyyy-mm-dd HH:mm:ss">
+                    <input class="form-control" size="16" type="text" value="" placeholder="操作结束时间" readonly="readonly" ng-model="_LogsEveryDayView.formData.data.EndTime">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf00b; 主标题")" ng-model="_LogsEveryDayView.formData.data.LogsSubject">
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf00b; 副标题")" n ng-model="_LogsEveryDayView.formData.data.LogsSubSubject">
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf00b; 模糊检索")" ng-model="_LogsEveryDayView.formData.data.LogsContent">
+            </div>
+        </div>
+        <div class="form-group col-md-3">
+            <div class="col-md-6" style="padding: 0px 7px 0px 0px;">
+                <button type="button" ng-click="_LogsEveryDayViewSearchFormEvent()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("&#xf002; 检索")</button>
+                <div id="loading" class="loadingztf">Loading pages...</div>  
+            </div>
+            <div class="col-md-6" style="padding: 0px 0px 0px 7px;">
+                <button type="button" ng-click="_LogsEveryDayViewResetFormEvent()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("&#xf0e2; 重置")</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>操作时间</th>
+                    <th>主标题</th>
+                    <th>副标题</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in _LogsEveryDayView.dataList">
+                    <td ng-bind="data.CreateTime | date:'yyyy-MM-dd HH:mm:ss'"></td>
+                    <td ng-bind="data.LogsSubject"></td>
+                    <td ng-bind="data.LogsSubSubject"></td>
+                    <td style="vertical-align: middle">
+                        <a href="~/LogsEveryDay/Detail/{{data.LogsEveryDayID}}" target="_blank">详情</a> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @Html.Partial("UI/_PagingViewPartial", new PagingViewPartialViewModel("_LogsEveryDayView"))
+    <style type="text/css">
+        .loadingztf {
+            width: 160px;
+            height: 56px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            line-height: 56px;
+            color: #fff;
+            padding-left: 60px;
+            font-size: 15px;
+            background: #000 url(images/loader.gif) no-repeat 10px 50%;
+            opacity: 0.7;
+            z-index: 9999;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            border-radius: 20px;
+            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+        }
+    </style>  
+</div>

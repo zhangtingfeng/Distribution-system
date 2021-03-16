@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Other操作日志";
+    Layout = "~/Views/Shared/_HeadFootLayout.cshtml";
+    var appSettings = new Web_Service.Common.Config.AppSettings();
+}
+<div class="main ng-scope" ng-controller="detailController">
+    <h3 class="page-header" style="margin-top:20px;"><a href="@Url.Action("Index", "LogsEveryDay")">Other操作日志</a> / <span>操作详情</span></h3>
+    <h3 class="page-header" style="margin-top:20px;">Other操作详情</h3>
+
+    <form class="form-horizontal" role="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">操作时间：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.CreateTime | date:'yyyy-MM-dd HH:mm:ss'"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">主标题：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.LogsSubject"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">副标题：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.LogsSubSubject"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">日志内容：</label>
+                    <div class="col-sm-8">
+                        <textarea rows="50" cols="180" ng-bind="formData.data.LogsContent" readonly="readonly"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        _appSettingWebApiUrl = '@appSettings.QybBXApiLogEveryday';
+        _app.config(function (RestangularProvider) {
+            RestangularProvider.setBaseUrl('@appSettings.QybBXApiLogEveryday');
+            RestangularProvider.setDefaultHeaders({ 'Content-Type': 'application/json' });
+        });
+        $(function () {
+            $('input').attr('readonly', 'readonly');
+        });
+
+        //取操作明细
+        function getCustomerDetail($scope, Restangular) {
+
+            Restangular.one("LogsEveryDay/LogsEveryDay/" + '@ViewBag.LogsEveryDayID').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                   || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+                $scope.formData.data = result.data;
+
+                //console.info(result.data);
+
+            }, function (error) {
+                alertError('网络通讯异常');
+            });
+        };
+
+        //初始化data
+        function resetForm($scope) {
+            $scope.formData.data = {
+                LogsSubject: '',
+                LogsSubSubject: '',
+                CreateTime: '',
+                LogsContent: ''
+            };
+        }
+
+        _app.controller('detailController', [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope.formData = new ResultAPIModel();
+                resetForm($scope);
+                //resetForm($scope);
+                getCustomerDetail($scope, Restangular);
+            }
+        ]);
+
+    </script>
+}

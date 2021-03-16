@@ -1,0 +1,95 @@
+
+.td_right{
+	text-align: left;
+	width: 80%;
+	/*border-bottom: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;;*/
+	font-size:20px;
+	line-height:20px;
+}
+.td_left{
+		border-bottom: 1px solid #cccccc;
+}
+.tr_button{
+	border: 1px solid red;
+}
+.user_DIV {
+	font-size: 12px;
+	
+}
+.user_Info{
+	width: 98%;
+	/*height: 170px;*/
+/*	background: orange;*/
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	padding-top: 20px;
+	margin: auto;
+	margin-top: 10px;
+	/*position: relative;*/
+}
+
+.user_Info #txtName
+{
+    width: 98%;
+    
+    } 
+
+.user_Info #txtLocalCall
+{
+    width: 98%;
+    
+    } 
+ .user_Info #province
+{
+    width: 98%;
+ 
+    
+    }   
+    .user_Info #Text_Address_New_By_LiuZong
+{
+    width: 98%;
+ 
+    
+    }  
+ 
+
+
+.user_Name{
+	width: 100%;
+	height: 20px;
+/*	position: absolute;*/
+	/*top: 80px;*/
+	/*left: 90px;*/
+	/*background:#FFF;*/
+	font-size: 14px;
+	/*z-index: 4;*/
+	text-align: center;
+	line-height: 20px;
+	margin: auto;
+	font-weight: bold;
+	
+}
+
+.user_DIV {
+
+	padding-top: 30px;
+	
+	
+}
+
+.user_DIV table{
+	background: #fbfffe;
+	border-top: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	line-height: 28px;
+	font-size: 12px;
+	margin: auto;
+}
+
+.ul_li
+{
+    float:left;
+    margin-left:10px;
+}

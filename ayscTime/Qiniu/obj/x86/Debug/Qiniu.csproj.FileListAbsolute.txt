@@ -1,0 +1,10 @@
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\bin\x86\Debug\Qiniu.dll
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\bin\x86\Debug\Qiniu.pdb
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\bin\x86\Debug\Qiniu.xml
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\bin\x86\Debug\Newtonsoft.Json.dll
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\bin\x86\Debug\Newtonsoft.Json.xml
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\obj\x86\Debug\Qiniu.csproj.CoreCompileInputs.cache
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\obj\x86\Debug\Qiniu.csproj.CopyComplete
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\obj\x86\Debug\Qiniu.dll
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\obj\x86\Debug\Qiniu.pdb
+E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\ayscTime\Qiniu\obj\x86\Debug\Qiniu.csprojAssemblyReference.cache

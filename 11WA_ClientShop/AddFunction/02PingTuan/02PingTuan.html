@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>团购中心</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <script src="/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <link href="/AddFunction/02PingTuan/css/02PingTuanList.css" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Game/GameUserID.js?version=js201709121928"></script>
+   <script type="text/javascript">
+        var varServiceURL = localStorage.getItem('ServiceServicesURL201709121928_Open_0609');
+        var varUserID = localStorage.getItem('CurUserID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+        var varShopClientID = localStorage.getItem('GetShopClientID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+    </script>
+    <script src="/AddFunction/02PingTuan/JS/00TuanGou.js"></script>
+    <script src="/AddFunction/02PingTuan/JS/02PingTuan.js" type="text/javascript"></script>
+    <script src="/Templet/01WYJS/js/layer.m.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/layer.css?version=css201709121928" rel="stylesheet" />
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="/Templet/01WYJS/js/Base.js?version =js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/mall.css?version=css201709121928" type="text/css" rel="stylesheet">
+
+
+
+</head>
+<body onload="do02PingTuanListDocumnet()">
+    <section style="padding-bottom: 50px;">
+        <div class="content" style="padding-top:0rem;">
+            <div class="pro-list">
+                <div class="tit">
+                    <div class="mobile">团购商品</div>
+                </div>
+                <div id="LoadTuanGouGoodList" class="pro-list-con">
+                </div>
+            </div>
+            <div class="pro-list" style="display:none;">
+                <div class="tit ntit">
+                    <div class="mobile">辣妈必败</div>
+                </div>
+                <div class="pro-list-con">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="idPub_03Footer_html_lsTuanGou">
+    </div>
+</body>
+</html>

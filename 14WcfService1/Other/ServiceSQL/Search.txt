@@ -1,0 +1,45 @@
+﻿SELECT TOP 1000 [Name],(ISNULL(len(name)-len(REPLACE(name,'{0}','')),0))*100000,
+   (ISNULL(len(Class1Name)-len(REPLACE(Class1Name,'{0}','')),0))*10000,
+   (ISNULL(len(Class2Name)-len(REPLACE(Class2Name,'{0}','')),0))*1000,
+   (ISNULL(len(Class3Name)-len(REPLACE(Class3Name,'{0}','')),0))*100,
+   (ISNULL(len(ShortInfo)-len(REPLACE(ShortInfo,'{0}','')),0))*10,
+   (ISNULL(len(GoodName_Class)-len(REPLACE(GoodName_Class,'{0}','')),0))*5,
+   (ISNULL(len(LongInfo)-len(REPLACE(LongInfo,'{0}','')),0))*1,
+      [ShortInfo]
+      ,[LongInfo]
+      ,[IsDeleted]
+      ,[isSaled]
+      ,[Class1Name]
+      ,[Class2Name]
+      ,[Class3Name]
+      ,[GoodMultiName]
+      ,[ID]
+      ,[ShopClient_ID]
+      ,[Class1_ID]
+      ,[Class2_ID]
+      ,[Class3_ID]
+      ,[Good_ClassID]
+      ,[GoodName_Class]
+  FROM (SELECT   tab_Goods.Name, tab_Goods.ShortInfo, tab_Goods.LongInfo, tab_Goods.IsDeleted, 
+                tab_Goods.isSaled, tab_Class1.ClassName AS Class1Name, tab_Class2.ClassName AS Class2Name, 
+                tab_Class3.ClassName AS Class3Name, tab_Goods_MultiSelectTypePrice.GoodMultiName, tab_Goods.ID, 
+                tab_Goods.ShopClient_ID, tab_Goods.Class1_ID, tab_Goods.Class2_ID, tab_Goods.Class3_ID, 
+                tab_Goods.Good_Class AS Good_ClassID, tab_Goods_Class.ClassName AS GoodName_Class
+FROM      tab_Goods LEFT OUTER JOIN
+                tab_Goods_Class ON tab_Goods.ShopClient_ID = tab_Goods_Class.UserID AND 
+                tab_Goods.Good_Class = tab_Goods_Class.ID LEFT OUTER JOIN
+                tab_Goods_MultiSelectTypePrice ON 
+                tab_Goods.ID = tab_Goods_MultiSelectTypePrice.GoodID LEFT OUTER JOIN
+                tab_Class3 ON tab_Goods.ShopClient_ID = tab_Class3.ShopClientID AND 
+                tab_Goods.Class3_ID = tab_Class3.ID LEFT OUTER JOIN
+                tab_Class2 ON tab_Goods.ShopClient_ID = tab_Class2.ShopClientID AND 
+                tab_Goods.ID = tab_Class2.ID LEFT OUTER JOIN
+                tab_Class1 ON tab_Goods.ShopClient_ID = tab_Class1.ShopClientID AND 
+                tab_Goods.Class1_ID = tab_Class1.ID  where tab_Goods.ShopClient_ID={1} and (tab_Goods.name like '%{0}%' or tab_Goods.ShortInfo like '%{0}%' or tab_Goods.LongInfo like '%{0}%' or tab_Goods_Class.ClassName like '%{0}%')) as [V1] where ShopClient_ID={1} and (name like '%{0}%' or Class1Name like '%{0}%' or Class2Name like '%{0}%' or Class3Name like '%{0}%' or ShortInfo like '%{0}%' or LongInfo like '%{0}%' or GoodName_Class like '%{0}%')
+   order by ((ISNULL(len(name)-len(REPLACE(name,'{0}','')),0))*100000+
+   (ISNULL(len(Class1Name)-len(REPLACE(Class1Name,'{0}','')),0))*10000+
+   (ISNULL(len(Class2Name)-len(REPLACE(Class2Name,'{0}','')),0))*1000+
+   (ISNULL(len(Class3Name)-len(REPLACE(Class3Name,'{0}','')),0))*100+
+   (ISNULL(len(ShortInfo)-len(REPLACE(ShortInfo,'{0}','')),0))*10+
+   (ISNULL(len(GoodName_Class)-len(REPLACE(GoodName_Class,'{0}','')),0))*5+
+   (ISNULL(len(LongInfo)-len(REPLACE(LongInfo,'{0}','')),0))*1) desc

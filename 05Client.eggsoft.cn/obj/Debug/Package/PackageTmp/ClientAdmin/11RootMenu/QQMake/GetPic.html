@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <script language="JavaScript">
+<!--
+var flashID;
+
+	function getID(swfID) {
+		if (navigator.appName.indexOf("Microsoft") > -1) {
+			flashID = window[swfID];
+		} else {
+			flashID = document[swfID];
+		}
+	}
+
+	function loadFrontImg(str){
+		flashID.changeFrontImg(str);
+	}
+
+//-->
+    </script>
+</head>
+<body bgcolor="#ffffff" onload="getID('makepic');">
+    <div style="text-align:center">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="800" height="800" id="makepic" align="middle">
+            <param name="allowScriptAccess" value="sameDomain" />
+            <param name="movie" value="makepic.swf" />
+            <param name="quality" value="high" />
+            <param name="bgcolor" value="#ffffff" />
+            <embed src="makepic.swf" quality="high" bgcolor="#ffffff" width="600" height="600" name="makepic" align="middle" swliveconnect="true"
+                   allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+        </object>
+    </div>
+</body>
+</html>

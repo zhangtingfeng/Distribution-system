@@ -1,0 +1,311 @@
+﻿记录时间：2018-12-29 00:05:33,512 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:05:33 388:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:05:33,528 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:05:33 388:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:05:53,528 
+线程ID:[10] 
+日志级别：INFO  
+描述：
+记录时间：2018-12-29 00:05:58,246 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:05:58 244:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:05:58,250 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:05:58 244:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:05:59,743 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:05:59 741:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:05:59,748 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:05:59 741:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:07:02,973 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:07:02 972:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:07:41,618 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:07:41 616:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:07:41,626 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:07:41 616:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:07:53,754 
+线程ID:[27] 
+日志级别：INFO  
+描述：2018-12-29 00:07:53 752:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:07:53,765 
+线程ID:[27] 
+日志级别：INFO  
+描述：2018-12-29 00:07:53 752:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:08:16,486 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:08:16 484:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+记录时间：2018-12-29 00:08:16,500 
+线程ID:[10] 
+日志级别：INFO  
+描述：2018-12-29 00:08:16 484:▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+Error Msg：无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Stack：   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+Ect：
+无法将类型“Newtonsoft.Json.Linq.JObject”隐式转换为“string”。存在一个显式转换(是否缺少强制转换?)
+Anonymously Hosted DynamicMethods Assembly
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 _14WcfService1.SmallProgram.index.CodeGetOpenid(String Code, Int32 ShopClientID) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 239
+   在 _14WcfService1.SmallProgram.index.updateUser(HttpRequest context) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 291
+   在 _14WcfService1.SmallProgram.index.Page_Load(Object sender, EventArgs e) 位置 E:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\SmallProgram\index.aspx.cs:行号 36
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+------------------------add by end--------------------记录时间：2018-12-29 00:08:38,441 
+线程ID:[10] 
+日志级别：INFO  
+描述：
+记录时间：2018-12-29 00:10:23,633 
+线程ID:[10] 
+日志级别：INFO  
+描述：{"ID":55151,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: Psq2Ma03228631 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":658,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:23","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:23","SafeCode":"1423F4EA45C14CD79205280695E528FF","CreatTime":"2018/12/29 0:10:23","Updatetime":"2018/12/29 0:10:23","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:10:29,771 
+线程ID:[11] 
+日志级别：INFO  
+描述：{"ID":55152,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: EN1OUA04298790 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":659,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:29","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:29","SafeCode":"8870CCF257E34B07BCB97ED71372B5D8","CreatTime":"2018/12/29 0:10:29","Updatetime":"2018/12/29 0:10:29","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:10:34,417 
+线程ID:[29] 
+日志级别：INFO  
+描述：{"ID":55153,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: QKZh.A04348609 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":660,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:34","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:34","SafeCode":"ECACAE76C6AF448492DDDA0CC150E406","CreatTime":"2018/12/29 0:10:34","Updatetime":"2018/12/29 0:10:34","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:10:35,479 
+线程ID:[10] 
+日志级别：INFO  
+描述：{"ID":55154,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: Y8P03a04358703 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":661,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:35","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:35","SafeCode":"A20EBFD687234497941DE083565DD053","CreatTime":"2018/12/29 0:10:35","Updatetime":"2018/12/29 0:10:35","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:10:36,219 
+线程ID:[25] 
+日志级别：INFO  
+描述：{"ID":55155,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: u65B4a04358609 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":662,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:36","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:36","SafeCode":"F3653E98EF144EF889D62B8B4D700744","CreatTime":"2018/12/29 0:10:36","Updatetime":"2018/12/29 0:10:36","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:10:37,024 
+线程ID:[10] 
+日志级别：INFO  
+描述：{"ID":55156,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: _yF9IA04368676 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":663,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:37","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:37","SafeCode":"534BF3B2515B4EF79F94F39E489D4AAE","CreatTime":"2018/12/29 0:10:37","Updatetime":"2018/12/29 0:10:37","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:10:38,155 
+线程ID:[25] 
+日志级别：INFO  
+描述：{"ID":55157,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: miGANA04378703 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":664,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:38","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:38","SafeCode":"5C351E977731419B93270A45E537F548","CreatTime":"2018/12/29 0:10:38","Updatetime":"2018/12/29 0:10:38","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:10:39,068 
+线程ID:[18] 
+日志级别：INFO  
+描述：{"ID":55158,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: XZmQ504388755 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":665,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:39","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:39","SafeCode":"B1F57E455BA24394A347BB0D1DA3BF84","CreatTime":"2018/12/29 0:10:39","Updatetime":"2018/12/29 0:10:39","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:10:40,050 
+线程ID:[38] 
+日志级别：INFO  
+描述：{"ID":55159,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: yf04398702 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":666,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:10:40","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:10:40","SafeCode":"22C94E34437B42B4A1A80823C109870E","CreatTime":"2018/12/29 0:10:40","Updatetime":"2018/12/29 0:10:40","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:11:50,999 
+线程ID:[12] 
+日志级别：INFO  
+描述：{"ID":55160,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: aCutFa05108635 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":667,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:11:50","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:11:50","SafeCode":"07BAB35C6EAB4E28B42BE425866BA0D0","CreatTime":"2018/12/29 0:11:50","Updatetime":"2018/12/29 0:11:50","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:11:52,308 
+线程ID:[11] 
+日志级别：INFO  
+描述：{"ID":55161,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: n26I705118684 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":668,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:11:52","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:11:52","SafeCode":"16E411F7FEAF45EC875E8D9744EDF24A","CreatTime":"2018/12/29 0:11:52","Updatetime":"2018/12/29 0:11:52","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:11:52,802 
+线程ID:[15] 
+日志级别：INFO  
+描述：{"ID":55162,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: XM19Na05128623 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":669,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:11:52","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:11:52","SafeCode":"C99B9EE6AB46403C82E917CD665B1C26","CreatTime":"2018/12/29 0:11:52","Updatetime":"2018/12/29 0:11:52","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:11:53,687 
+线程ID:[16] 
+日志级别：INFO  
+描述：{"ID":55163,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: SfnahA05138718 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":670,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:11:53","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:11:53","SafeCode":"FAD8B9BB37094AF395734B36748A92DC","CreatTime":"2018/12/29 0:11:53","Updatetime":"2018/12/29 0:11:53","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+记录时间：2018-12-29 00:12:38,980 
+线程ID:[21] 
+日志级别：INFO  
+描述：{"ID":55164,"ContactMan":"","ContactPhone":"","UserRealName":"","Country":"中国","Sheng":"上海","City":"闵行","Area":"","PostCode":"","Sex":true,"Email":"","Address":"","IDCard":"","Default_Address":0,"OpenID":"","unionID":"","SmallProgramOpenID":"{\"errcode\":40163,\"errmsg\":\"code been used, hints: [ req_id: MshAVA05588749 ]\"}","HeadImageUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJUn7Hbn2xgCKibmORHUAOqEBp8JLRIWibHnsfia4SXbcNpRqDxXZuqfqCeK2LWnF7ic2xoLvtIziaOnfA/132","Api_Authorize":false,"Subscribe":false,"IFShowCityHelp":false,"RemainingSum":0.00,"IFSendWeiBaiQuan":false,"IFSendWeiBaiQuan_LiuZong":false,"SocialPlatform":"SmallProgram","ShopClientID":1,"AlipayNumOrWeiXinPay":"","ShopUserID":671,"ParentID":null,"TeamID":null,"HowToGetProduct":0,"DefaultO2OShop":null,"multi_DuoKeFu_Lastupdatetime":"2018/12/29 0:12:38","Password":"","UserAccount":"","InsertTime":"2018/12/29 0:12:38","SafeCode":"D347822ABA4C417D86FE852E5F794CEA","CreatTime":"2018/12/29 0:12:38","Updatetime":"2018/12/29 0:12:38","CreateBy":"","UpdateBy":"","NickName":"张廷锋自助","Isdeleted":0}
+------------------------add by end--------------------记录时间：2018-12-29 00:15:36,359 
+线程ID:[33] 
+日志级别：INFO  
+描述：{"state":-1,"Err":"读取openID失败","ErrData":"{"errcode":40163,"errmsg":"code been used, hints: [ req_id: cyOXGA07368745 ]"}"}
+记录时间：2018-12-29 00:15:37,686 
+线程ID:[5] 
+日志级别：INFO  
+描述：{"state":-1,"Err":"读取openID失败","ErrData":"{"errcode":40163,"errmsg":"code been used, hints: [ req_id: MmqdRA07378695 ]"}"}
+------------------------add by end--------------------

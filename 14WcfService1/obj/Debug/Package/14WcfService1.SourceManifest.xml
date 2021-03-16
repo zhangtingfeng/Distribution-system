@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="F:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\obj\Debug\Package\PackageTmp" />
+  <setAcl path="F:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="F:\Works_Dream\0060eggsoft.cnvs2015_GaoErFu\14WcfService1\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

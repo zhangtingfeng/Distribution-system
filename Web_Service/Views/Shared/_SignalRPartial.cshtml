@@ -1,0 +1,51 @@
+﻿@{
+    var appSettings = new Web_Service.Common.Config.AppSettings();
+}
+
+@*<script src="~/signalr/hubs"></script>*@
+<!--SignalR script to update the chat page and send messages.-->
+<script>
+    @*$(function () {
+        // Reference the auto-generated proxy for the hub.
+        var chat = $.connection.chatHub;
+        // Create a function that the hub can call back to display messages.
+        chat.client.alertNewMessage = function (title, content) {
+            // Add the message to the page.
+            alertSignalrPNotify('@HttpUtility.HtmlDecode("&#xf003; ")' + title, content, 'info', 3000);
+            if (typeof refreshMessageCount != 'undefined') refreshMessageCount(_layoutScope, _layoutRestangular);
+            if (typeof _NewsScope != 'undefined' && typeof _NewsRestangular != 'undefined') searchForm(_NewsScope, _NewsRestangular);
+        };
+        // Start the connection.
+        $.connection.hub.start().done(function () {
+            var formData = new ResultAPIModel();
+            chat.server.userConnect(formData.userCookie.userID);
+        });
+
+        function alertSignalrPNotify(title, msg, type, delay) {
+            //PNotify.removeAll();
+
+            var message = '<span class="alertMessageText">' + msg + '</span>';
+            var notice = new PNotify({
+                title: title,
+                type: type,
+                text: message,
+                icon: false,
+                delay: delay,
+                //stack: false,
+                //before_open: function (PNotify) {
+                //    PNotify.get().css({
+                //        "top": 30,
+                //        "left": ($(window).width()) - (PNotify.get().width()) - 30
+                //    });
+                //},
+                buttons: {
+                    closer: true,
+                    sticker: false
+                }
+            });
+            notice.get().click(function () {
+                notice.remove();
+            });
+        }
+    });*@
+</script>

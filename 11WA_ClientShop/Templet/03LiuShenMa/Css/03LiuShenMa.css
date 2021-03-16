@@ -1,0 +1,195 @@
+﻿#Redline {
+    width: 100%;
+    max-width: 640px;
+    background-color: red;
+    display: block;
+    clear: both;
+    height: 6px;
+    margin-top: -5px;
+    background: -moz-linear-gradient(left top,#c60001,#f62a2b) repeat scroll 0 0 rgba(0,0,0,0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#c60001',endColorStr='#f62a2b',gradientType='0');
+    background: -o-linear-gradient(left top,#c60001,#f62a2b);
+    background: -webkit-gradient(linear,left top,right bottom,from(#c60001),to(#f62a2b));
+}
+
+.classOneGood {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    background-color: #e3e2e2;
+    position: relative;
+}
+
+    .classOneGood .thisboard {
+        height: 118px;
+        margin-left: 3px;
+        margin-top: 2px;
+        margin-right: 3px;
+        padding-left: 3px;
+        padding-right: 2px;
+        padding-top: 4px;
+        background-color: white;
+    }
+
+        .classOneGood .thisboard .box {
+            height: 110px;
+            float: left;
+            width: 30%;
+            overflow: hidden;
+        }
+
+        .classOneGood .thisboard .RightDataGoods {
+            float: left;
+            width: 68%;
+            margin-left: 5px;
+        }
+
+
+            .classOneGood .thisboard .RightDataGoods .gameCenterthisBlock {
+                margin-top: 4px;
+                height: 40px;
+                display: block;
+                width: 100%;
+                overflow: hidden;
+                max-height: 40px;
+                table-layout: fixed;
+                overflow-y: hidden;
+            }
+
+                .classOneGood .thisboard .RightDataGoods .gameCenterthisBlock .gameCenter {
+                    height: 40px;
+                    position: relative;
+                    text-align: left;
+                    display: table;
+                    width: 100%;
+                    overflow: hidden;
+                    max-height: 74px;
+                    table-layout: fixed;
+                    overflow-y: hidden;
+                }
+
+                    .classOneGood .thisboard .RightDataGoods .gameCenterthisBlock .gameCenter .RightDataGoods_GoodName {
+                        position: inherit;
+                        text-align: left;
+                        font-size: 14px;
+                        overflow: hidden;
+                        line-height: 37px;
+                        padding-left: 2px;
+                        display: table-cell;
+                        border: 0 inset #f0f0f0;
+                        vertical-align: middle;
+                        word-break: break-all;
+                        word-wrap: break-word;
+                        line-height: 20px;
+                    }
+
+            .classOneGood .thisboard .RightDataGoods .RightDataGoods_GoodName RightDataGoods_GoodName_Center {
+                display: inline-block;
+                border: 0 inset #f0f0f0;
+                line-height: 36px;
+                text-align: left;
+                vertical-align: middle;
+                font-size: .6em;
+                word-break: break-all;
+                word-wrap: break-word;
+            }
+
+            .classOneGood .thisboard .RightDataGoods .RightDataGoods_Goodline01 {
+                height: 32px;
+                position: relative;
+                text-align: left;
+                overflow: hidden;
+            }
+
+                .classOneGood .thisboard .RightDataGoods .RightDataGoods_Goodline01 .RedPrice {
+                    color: red;
+                    margin-left: 2px;
+                    font-size: 16px;
+                }
+
+                .classOneGood .thisboard .RightDataGoods .RightDataGoods_Goodline01 .BlueSend {
+                    color: blue;
+                    font-size: 14px;
+                }
+
+                .classOneGood .thisboard .RightDataGoods .RightDataGoods_Goodline01 .okImg {
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    background-image: url("../Images/ok.png");
+                    background-size: 14px;
+                    background-repeat: no-repeat;
+                    margin-left: 12px;
+                }
+
+                .classOneGood .thisboard .RightDataGoods .RightDataGoods_Goodline01 .okText {
+                    color: red;
+                    font-size: 14px;
+                }
+
+                .classOneGood .thisboard .RightDataGoods .RightDataGoods_Goodline01 .oldPrice {
+                    color: #808080;
+                    font-size: 12px;
+                    text-decoration: line-through; /* css注释说明：设置.divcss5对象删除线样式 */
+                }
+
+                .classOneGood .thisboard .RightDataGoods .RightDataGoods_Goodline01 .BtnBuyNow {
+                    background: -moz-linear-gradient(center top, #f15a5f, #e3474c) repeat scroll 0 0 rgba(0, 0, 0, 0);
+                    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#f15a5f',endColorStr='#e3474c',gradientType='0');
+                    background: -o-linear-gradient(left top,#f15a5f,#e3474c);
+                    background: -webkit-gradient(linear,left top,right bottom,from(#f15a5f),to(#e3474c));
+                    border: 1px solid #e3474c;
+                    border-radius: 3px;
+                    color: #fff;
+                    display: inline-block;
+                    font-size: 12px;
+                    height: 28px;
+                    line-height: 28px;
+                    text-align: center;
+                    bottom: 15px;
+                    min-width: 70px;
+                    margin-right: 10px;
+                    float: right;
+                }
+
+
+
+.NewStyle3jx_map_bd {
+    height: auto;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+
+    .NewStyle3jx_map_bd .ClassClickStyle {
+        margin-top: 10px;
+        height: 20px;
+        line-height: 20px;
+        display: block;
+    }
+
+
+        .NewStyle3jx_map_bd .ClassClickStyle .Classname {
+            border-left-width: 5px;
+            border-left-style: solid;
+            border-left-color: red;
+            margin-left: 8px;
+            padding-left: 5px;
+        }
+
+
+        .NewStyle3jx_map_bd .ClassClickStyle .More {
+            float: right;
+            padding-right: 8px;
+        }
+
+
+.SAgent_ChoiceGood {
+    display: block;
+    clear: both;
+    height: 50px;
+    background: white url("/Templet/03LiuShenMa/Images/FaveriMore.jpg") no-repeat;
+    background-size: 100% 50px;
+    width: 100%;
+}

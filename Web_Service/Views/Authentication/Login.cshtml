@@ -1,0 +1,143 @@
+﻿@using Web_App.ViewModels.User
+@model AuthenticationViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_SingleLayout.cshtml";
+}
+
+<style type="text/css">
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #eee;
+    }
+
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+            .form-signin .form-control:focus {
+                z-index: 2;
+            }
+
+        .form-signin input[type="text"] {
+            margin-bottom: -1px;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+</style>
+
+<div class="container" ng-controller="authenticationController">
+    <div class="login-logobox">
+        <img src="~/Source/images/logo-box.png" width="129" height="129" />
+    </div>
+    @using (Html.BeginForm("login", "Authentication", FormMethod.Post, new { @id = "form", @class = "form-signin" }))
+    {
+        <input type="text" id="txtUserAccount" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf007; 用户名")" required="required"
+               autofocus="autofocus" ng-model="formData.data.UserAccount" ng-keypress="submitFormKeyPressEvent($event)"
+               ng-disabled="isLockForm" />
+
+        <input type="password" id="txtUserPassword" class="form-control" placeholder="@HttpUtility.HtmlDecode("&#xf084; 密码")" required="required"
+               ng-model="formData.data.UserPassword" ng-keypress="submitFormKeyPressEvent($event)"
+               ng-disabled="isLockForm" />
+
+        <button class="btn btn-lg btn-primary btn-block" ng-disabled="isLockForm" type="button" ng-click="submitFormEvent()"><span ng-bind="isLockForm ? '登录中...' : '登录'"></span></button>
+        <div style="display:none;">
+            @Html.TextBoxFor(o => o.ReturnUrl)
+            @Html.TextBoxFor(o => o.UserAccount, new { @ng_model = "formData.data.UserAccount" })
+            @Html.TextBoxFor(o => o.UserIDRSA, new { @ng_model = "formData.data.UserIDRSA" })
+            @Html.TextBoxFor(o => o.UserIDMD5, new { @ng_model = "formData.data.UserIDMD5" })
+            @Html.TextBoxFor(o => o.UserName, new { @ng_model = "formData.data.UserName" })
+        </div>
+    }
+</div>
+@section Scripts {
+    <script type="text/javascript">
+    _app.controller("authenticationController", ['$scope', 'Restangular', function ($scope, Restangular) {
+        $scope.formData = new ResultAPIModel();
+        $scope.formData.data = {
+            UserAccount: '@Model.UserAccount',
+            UserPassword: '',
+            UserIDRSA: '',
+            UserIDMD5: '',
+            UserName: '',
+            UserID: ''
+        };
+        $scope.isLockForm = false;
+        var errorMessage = '@ViewBag.errorMsg';
+        if (errorMessage != '') {
+            alertError(errorMessage);
+        }
+
+        $scope.submitFormKeyPressEvent = function (event) {
+            if (event.keyCode !== 13) return;
+            $scope.submitFormEvent();
+        }
+
+        $scope.submitFormEvent = function () {
+            if (!$scope.formData.data.UserAccount) {
+                alertError("请输入用户名");
+                jQuery('#txtUserAccount').focus();
+                return;
+            }
+
+            if (!$scope.formData.data.UserPassword) {
+                alertError("请输入用户密码");
+                jQuery('#txtUserPassword').focus();
+                return;
+            }
+
+            $scope.isLockForm = true;
+            Restangular.one('user').post("authentication", $scope.formData)
+            .then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    $scope.isLockForm = false;
+                    return;
+                }
+
+                $scope.formData.data = result.data;
+
+                //cookie
+                cookieSet('userID', result.data.UserID);
+                cookieSet('userAccount', result.data.UserAccount);
+                cookieSet('userName', result.data.UserName);
+
+                setTimeout(function () {
+                    jQuery('#form').submit();
+                }, 100);
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+                $scope.isLockForm = false;
+            });
+        }
+    }]);
+    </script>
+}
+

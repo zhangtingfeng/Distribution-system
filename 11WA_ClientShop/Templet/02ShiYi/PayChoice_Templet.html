@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>支付方式选择</title>
+
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+    <!-- Mobile Devices Support @begin -->
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control" />
+    <meta content="no-cache" http-equiv="pragma" />
+    <meta content="0" http-equiv="expires" />
+    <meta content="telephone=no, address=no" name="format-detection" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Mobile Devices Support @end -->
+    <link href="/Templet/02ShiYi/skin/Oliver.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+
+</head>
+
+<body style="display:none;">
+
+
+
+    <div class="spro_con">
+        <div class="spro_btn">
+
+            ###Aplipay###
+            ###WeiXinPay###
+            ###KuaiQianpay###
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            host = window.location.host;
+
+            var path = window.location.href;
+            var pathAddInt = path.lastIndexOf("?");
+            if (pathAddInt > 0) {
+                path = path.substring(0, pathAddInt);
+            }
+            else {
+                path = path;
+            }
+
+            var varpath = path.toLowerCase();
+
+            //var intpos = varpath.indexOf("apps.eggsoft.cn");
+            //var intpos = varpath.indexOf("localhost:28199");
+
+            //
+            //f (intpos > -1) {  //目前只有支付宝啊
+            //    //$("#buyKuaibtn").click();
+            // $("#buybtn").click(); //alert a 模拟点击
+
+            //}
+
+            //
+            //f (intpos > -1) {  //目前只有微信啊
+            //    //$("#buyKuaibtn").click();
+            $("#cartbtn").click(); //alert a 模拟点击
+
+            //}
+        });
+
+
+
+    </script>
+
+
+</body>
+</html>

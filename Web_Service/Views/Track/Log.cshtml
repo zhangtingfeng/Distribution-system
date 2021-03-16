@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "投保管理";
+}
+<div ng-controller="detailController">
+    <h3 class="page-header"><a href="@Url.Action("Index")">投保管理</a> / <span>日志</span></h3>
+    <h3 class="page-header">日志详情</h3>
+    <div class="row">
+        <pre ng-bind="formData.data.ReturnErrorCode"></pre>
+    </div>
+    <div class="row">
+        <pre ng-bind="formData.data.FreeGivePriceXML"></pre>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        function searchForm($scope, restangular) {
+            restangular.one('Insurance/CarInsureQueryTask/' + '@ViewBag.QueryTaskID').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                $scope.formData.data = result.data;
+
+                setTimeout(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                }, 1000);
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+                $scope.isLoading = false;
+            });
+        };
+
+        function resetForm($scope) {
+            $scope.formData.data = {
+                ReturnErrorCode: '',
+                FreeGivePriceXML: ''
+            };
+        }
+
+        _app.controller('detailController', [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope.formData = new ResultAPIModel();
+
+                resetForm($scope);
+                searchForm($scope, Restangular);
+            }
+        ]);
+
+    </script>
+}

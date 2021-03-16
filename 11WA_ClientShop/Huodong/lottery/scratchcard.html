@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<link rel="stylesheet" href="../resources/lottery/css/activity-style.css" type="text/css" media="screen,print"/>
+<meta CHARSET="UTF-8">
+<meta name="viewport"
+	content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <meta http-equiv="pragma" content="no-cache"> 
+     <meta http-equiv="cache-control" content="no-cache"> 
+     <meta http-equiv="expires" content="0"> 
+<title>刮刮乐-神马网络科技</title>
+</head>
+<body data-role="page" class="activity-scratch-card-winning">
+<script type="text/javascript" src="../resources/jquery/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="../resources/lottery/js/wScratchPad.js"></script>
+		<div class="main">
+			<div class="cover">
+				<img src="../resources/lottery/images/activity-scratch-card-bannerbg.png">
+				<div id="prize" > </div>
+				<div id="scratchpad">
+				</div>
+			</div>
+			<div class="content">
+				<div class="boxcontent boxwhite">
+					<div class="box">
+						<div class="title-brown">
+							<span>
+								奖项设置：
+							</span>
+						</div>
+						<div class="Detail">
+						<p>
+								特等奖： 微商城。奖品数量：1
+							</p>
+							<p>
+								一等奖：微官网。奖品数量：3
+							</p>
+							<p>
+								二等奖： 服务号 。奖品数量：5
+							</p>
+							<p>
+								三等奖：订阅号 。奖品数量：5
+							</p>
+							<p>
+								幸运奖：杯子 。奖品数量：200
+							</p>
+							<p style="color: red">
+							如刮到奖品请截图或直接展示给我们的工作人员,否则视为无效。
+							<br/>本次活动抽奖分为 刮刮卡 及 幸运大转盘, 您只可以选择其中的一个参与，谢谢。
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="boxcontent boxwhite">
+					<div class="box">
+						<div class="title-brown">
+							活动说明：
+						</div>
+						<div class="Detail">
+							<p class="red">
+								本次活动由 神马网络科技 举办，如果你刮到奖品，请截图或直接到我们的展台出示给我们的工作人员，方便对奖。
+								<br/>本次活动抽奖分为 刮刮卡 及 幸运大转盘 你可以选择其中的一个参与，谢谢。
+								<br/>注：一人只有一次机会
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="clear:both;">
+			</div>
+		</div>
+		<script type="text/javascript">
+
+			$("#scratchpad").wScratchPad({
+				width			: 200,					// set width - best to match image width
+				height			: 60,
+				 color: 'grey',//覆盖的刮刮层的颜色  
+			        image: '../resources/lottery/images/100.png', //刮奖结果图片  
+				cursor : '../resources/lottery/images/mario.png',
+				scratchMove : function(e, percent) {
+					if (percent > 70)
+						this.clear();
+					$(this.canvas).css('margin-right', $(this.canvas).css('margin-right') == "0px" ? "1px" : "0px");
+				},
+				scratchDown:function(e,percent){
+					$(this.canvas).css('margin-right', $(this.canvas).css('margin-right') == "0px" ? "1px" : "0px");
+				},
+				scratchUp:function(e,percent){
+					$(this.canvas).css('margin-right', $(this.canvas).css('margin-right') == "0px" ? "1px" : "0px");
+				}
+			});
+
+	</script>
+	</body>
+</html>

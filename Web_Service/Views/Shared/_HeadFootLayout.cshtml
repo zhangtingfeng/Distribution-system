@@ -1,0 +1,243 @@
+﻿@using InsureApi.Mvc
+@{
+    //var userSession = new XUserSession(this.Context);
+    //if (userSession.user.IsZhongYinRole == "1" && (ViewBag.Title != "订单管理" && ViewBag.Title != "待报价管理" && ViewBag.Title != "用户消息"))
+    //{
+    //    Response.Redirect("~/Authentication/Logout");
+    //}
+
+    //if (userSession.user.IsAdminRole == "0" && (ViewBag.Title == "保币收入" || ViewBag.Title == "保币支出"))
+    //{
+    //    Response.Redirect("~/Authentication/Logout");
+    //}
+
+    //var menuShow = userSession.user.IsZhongYinRole == "0" ? "1" : "0";
+}
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>保多多API后台管理</title>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div ng-controller="layoutNavController">
+        <header class="uw-thinstrip">
+            <div class="align-left">
+                <nav class="uw-logo-strip-nav">
+                    <ul class="uw-logo-links">
+                        <li><a href="@Url.Action("Index", "Track")">保多多API后台管理</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="align-right">
+                <nav class="uw-thin-strip-nav">
+                    <ul class="uw-thin-links">
+                        <li ng-repeat="(k,v) in MenuData">
+                            <a href="javascript:void(0)"
+                               ng-click="gotoFirstMenu(k)"
+                               ng-style="v.isShow == '1' ? {display:'block'} : {display:'none'}"><span ng-bind-html="k"></span><span class="badge" style="display: none; color: #0fb187; background-color:white;" ng-style="arr[k]>1 ? {display:'inline-block'} : {display:'none'}" ng-bind="arr[k]"></span></a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="uw-user-strip-nav">
+                    <ul class="uw-user-links">
+                        <li><span class="uw-user" ng-bind="UserName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                        <li style="display:none;"><a href="@Url.Action("Index", "News")">消息(<em style="font-style: initial;" id="Readcount" ng-bind="_NewsViewUnReadMessageCount.formData.data.UnReadMessageCount"></em>)</a></li>
+                        <li><a class="uw-user" href="~/Authentication/Logout">退出</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <header class="uw-second-thinstrip">
+            <div class="align-right">
+                <nav class="uw-thin-strip-nav">
+                    <ul class="uw-thin-links">
+                        <li ng-repeat="data in MenuData[CurrentFirstMenu].data" ng-style="data.isShow == '1' ? {display:'block'} : {display:'none'}"
+                            ng-class="CurrentSecondMenu == data.name ? 'active' : ''">
+                            <a href="javascript:void(0)"
+                               ng-click="gotoSecondMenu(data.name, data.url)">
+                                <span ng-bind="data.name"></span>
+                                <span class="badge" style="display: none;" ng-style="arr[data.name]>1 && CurrentSecondMenu == data.name ? {display:'inline-block','background-color':'#0fb187', 'color':'white'} :arr[data.name]>0 && CurrentSecondMenu != data.name? {display:'inline-block','background-color':'white','color':'#0fb187'}:{display:'none'}" ng-bind="arr[data.name]"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        @RenderBody()
+
+        <!-- system modal start -->
+        <div id="qyb_modal" class="modal fade">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> [Title]</h5>
+                    </div>
+                    <div class="modal-body small">
+                        <p>[Message]</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary ok" data-dismiss="modal">[BtnOk]</button>
+                        <button type="button" class="btn btn-default cancel" data-dismiss="modal">[BtnCancel]</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- system modal end -->
+    </div>
+    <footer>
+        <div class="bottom">
+            <div class="container">
+                <img class="f-logo" src="~/Source/images/logo-white.png">
+                2015 &copy;亲益保 ALL RIGHTS RESERVED
+            </div>
+        </div>
+    </footer>
+
+    @Html.Partial("_JavascriptPartial")
+    @Html.Partial("_SignalRPartial")
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        var _headFootLayoutMenuData = {
+            '报价': {
+                data: [
+                    { name: '报价管理', url: '@Url.Action("Index", "Track")', isShow: '1' }
+                ],
+                isShow: '1'
+            },
+            '订单': {
+                data: [
+                    { name: '订单管理', url: '@Url.Action("Index", "UserOrder")', isShow: '1' }
+                ],
+                isShow: '1'
+            },
+            '报价车辆': {
+                data: [
+                    { name: '报价车辆管理', url: '@Url.Action("Index", "InsureQuoteCar")', isShow: '1' }
+                ],
+                isShow: '1'
+            },
+            '操作日志': {
+                data: [
+                    { name: 'API操作日志', url: '@Url.Action("ActionRecord", "ActionRecord")', isShow: '1' },
+                    { name: 'Other操作日志', url: '@Url.Action("Index", "LogsEveryDay")', isShow: '1' }
+                ],
+                isShow: '1'
+            },
+            '方案缓存': {
+                data: [
+                    { name: '清除方案缓存', url: '@Url.Action("Index", "InsureHistory")', isShow: '1' }
+                ],
+                isShow: '1'
+            }
+        };
+
+        var _layoutScope;
+        var _layoutRestangular;
+
+        _app.controller("layoutNavController", [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                _layoutScope = $scope;
+                _layoutRestangular = Restangular;
+                //消息
+                $scope._NewsViewUnReadMessageCount = { formData: new ResultAPIModel() };
+
+                $scope._NumberCount = { formData: new ResultAPIModel() };
+
+                $scope.UserAccount = cookieGet('userAccount');
+                $scope.UserName = cookieGet('userName');
+                $scope.UserID = $scope._NewsViewUnReadMessageCount.formData.userCookie.userID;
+                $scope.MenuData = _headFootLayoutMenuData;
+
+                //refreshMessageCount($scope, Restangular);
+
+                //GetUserNumberCount($scope, Restangular);
+
+                $scope.CurrentFirstMenu = '其他';
+                $scope.CurrentSecondMenu = '报价管理';
+                var pathName = '@ViewBag.Title';
+                for (var key in _headFootLayoutMenuData) {
+                    for (var i = 0; i < _headFootLayoutMenuData[key].data.length; i++) {
+                        if (pathName.toLowerCase().indexOf(_headFootLayoutMenuData[key].data[i].name.toLowerCase()) >= 0) {
+                            $scope.CurrentFirstMenu = key;
+                            $scope.CurrentSecondMenu = _headFootLayoutMenuData[key].data[i].name;
+                        }
+                    }
+                }
+
+                $scope.gotoFirstMenu = function (menuName) {
+                    $scope.CurrentFirstMenu = menuName;
+                }
+
+                $scope.gotoSecondMenu = function (menuName, url) {
+                    $scope.CurrentSecondMenu = menuName;
+                    window.open(url, '_self');
+                }
+            }
+        ]);
+
+        function refreshMessageCount($scope, Restangular) {
+            Restangular.one('User/UserMessage/' + $scope.UserID).get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+                if (result.data) {
+                    if (result.data == null || result.data == "") {
+                        $scope._NewsViewUnReadMessageCount.formData.data.UnReadMessageCount = 0;
+                    } else {
+                        $scope._NewsViewUnReadMessageCount.formData.data = result.data;
+                    }
+                }
+            }, function error(reason) {
+                // An error has occurred
+                alertError('查询失败');
+            });
+        }
+
+        function GetUserNumberCount($scope, Restangular) {
+            Restangular.one('User/UserNumberCount/' + $scope.UserID).get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+                $scope.arr = [];
+                for (var i = 0; i < result.data.length; i++) {
+                    //if (result.data[i].TaskType == '保币支出') {
+                    //    $scope.arr["保币支出"] = result.data[i].Count;
+                    //}
+                    //if (result.data[i].TaskType == '车辆信息管理') {
+                    //    $scope.arr["车辆信息管理"] = result.data[i].Count;
+                    //}
+                    //if (result.data[i].TaskType == '用户管理') {
+                    //    $scope.arr["用户管理"] = result.data[i].Count;
+                    //}
+                    //if (result.data[i].TaskType == '订单管理') {
+                    //    $scope.arr["订单管理"] = result.data[i].Count;
+                    //}
+                }
+                //$scope.arr["客户"] = $scope.arr["保币支出"] + $scope.arr["用户管理"] + $scope.arr["车辆信息管理"];
+                //$scope.arr["订单"] = $scope.arr["订单管理"];
+            }, function error(reason) {
+                // An error has occurred
+                alertError('查询失败');
+            });
+        }
+    </script>
+</body>
+</html>

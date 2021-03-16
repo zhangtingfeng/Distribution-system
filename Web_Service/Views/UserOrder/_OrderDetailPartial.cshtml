@@ -1,0 +1,342 @@
+﻿@using Web_Service.ViewModels.Common
+@using Web_Service.ViewModels.UserOrder
+@model OrderDetailPartialViewModel
+
+@if (Model.HtmlType.Equals("Html"))
+{
+    
+    <div ng-controller="OrderController">
+
+        <div ng-hide="_OrderDetailView.formData.data.ActivityID"><h3 class="page-header"><a href="@Url.Action("Index")">订单管理</a> / <span>订单详情</span></h3></div>
+
+        <div class="row">
+            <div class="col-sm-3"><label>城市：</label><span ng-bind="_OrderDetailView.formData.data.CityName"></span></div>
+        </div>
+        <h3 class="page-header">
+            订单信息
+        </h3>
+        <div class="row">
+            <div class="panel-body">
+                <div class="col-md-12 placeholder">
+                    <div class="col-md-6"><label>订单号：</label><span ng-bind="_OrderDetailView.formData.data.InsuranceOrderID"></span></div>
+                    <div class="col-md-6"><label>订单时间：</label><span ng-bind="_OrderDetailView.formData.data.InsuranceOrderTime | date:'yyyy-MM-dd HH:mm'"></span></div>
+                </div>
+                <div class="col-md-12 placeholder">
+                    @*<div class="col-md-6"><label>客户名称：</label><span ng-bind="_OrderDetailView.formData.data.VipName"></span></div>*@
+                    <div class="col-md-6"><label>投保公司：</label><span ng-bind="_OrderDetailView.formData.data.CompanyName"></span></div>
+                    <div class="col-md-6"><label>起保日期：</label><span ng-bind="_OrderDetailView.formData.data.StartDate | date:'yyyy-MM-dd'"></span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>保费合计：</label><span ng-bind="_OrderDetailView.formData.data.OrderAmount | currency:'￥' "></span></div>
+                    <div class="col-md-6">
+                        <label>订单状态：</label><span ng-bind="_OrderDetailView.formData.data.InsuranceOrderStatuText"></span>
+                        &nbsp;&nbsp;<a ng-href="~/UserOrder/Log/{{'@Model.OrderID'}}" target="_blank">查看日志</a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>支付方式：</label><span ng-bind="_OrderDetailView.formData.data.Payment == '0' ? '上门收费' : '在线支付'"></span></div>
+                    <div class="col-md-6"><label>核单说明：</label><span ng-bind="_OrderDetailView.formData.data.InsuranceOrderStatuMessage"></span></div>
+                </div>
+                <div class="col-md-12" style="display: none">
+                    <div class="col-md-3"><button class="btn btn-danger btn-block" ng-click="goPayEvent()" ng-hide="data.InsuranceCompanyBusinessType != '0' || _OrderDetailView.formData.data.HeBaoPayUrl == '' || _OrderDetailView.formData.data.InsuranceOrderStatu==4">立即支付</button></div>
+                </div>
+            </div>
+        </div><!--订单信息-->
+        <h3 class="page-header">
+            收单信息
+        </h3>
+        <div class="row">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>收单人：</label><span ng-bind="_OrderDetailView.formData.data.GetOrderPeopleName"></span></div>
+                    <div class="col-md-6"><label>手机：</label><span ng-bind="_OrderDetailView.formData.data.GetOrderPeoplePhone"></span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>收单地址：</label><span ng-bind="_OrderDetailView.formData.data.GetOrderPeopleProvince+_OrderDetailView.formData.data.GetOrderPeopleCity+' '+_OrderDetailView.formData.data.GetOrderPeopleArea+' '+_OrderDetailView.formData.data.GetOrderPeopleAddress"></span></div>
+                </div>
+            </div>
+        </div>
+        <!--收单信息-->
+        <h3 class="page-header">
+            车主信息
+        </h3>
+        <div class="row">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>姓名：</label><span ng-bind="_OrderDetailView.formData.data.CarMasterName"></span></div>&nbsp;
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>身份证：</label><span ng-bind="_OrderDetailView.formData.data.CarMasterIdentifyNumber"></span></div>
+                </div>
+            </div>
+        </div><!--车主信息-->
+        <h3 class="page-header">
+            投保人信息
+        </h3>
+        <div class="row">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>姓名：</label><span ng-bind="_OrderDetailView.formData.data.InsurePeopleName"></span></div>
+                    <div class="col-md-6"><label>手机：</label><span ng-bind="_OrderDetailView.formData.data.InsurePeoplePhone"></span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>身份证：</label><span ng-bind="_OrderDetailView.formData.data.InsurePeopleIdentifyNumber"></span></div>
+                </div>
+            </div>
+        </div><!--投保人信息-->
+        <h3 class="page-header">
+            被保人信息
+        </h3>
+        <div class="row">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>姓名：</label><span ng-bind="_OrderDetailView.formData.data.InsuredPeopleName"></span></div>
+                    <div class="col-md-6"><label>手机：</label><span ng-bind="_OrderDetailView.formData.data.InsuredPeoplePhone"></span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>身份证：</label><span ng-bind="_OrderDetailView.formData.data.InsuredPeopleIdentifyNumber"></span></div>
+                </div>
+            </div>
+        </div><!--被保人信息-->
+        <h3 class="page-header">
+            车辆信息
+        </h3>
+        <div class="row">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>车主姓名：</label><span ng-bind="_OrderDetailView.formData.data.CarMasterName"></span></div>
+                    <div class="col-md-6"><label>车牌号：</label><span ng-bind="_OrderDetailView.formData.data.CarNumber"></span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>品牌型号：</label><span ng-bind="_OrderDetailView.formData.data.CarBrand | date:'yyyy-MM-dd'"></span></div>
+                    <div class="col-md-6"><label>车架号：</label><span ng-bind="_OrderDetailView.formData.data.CarIdentifiedCode"></span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>发动机号：</label><span ng-bind="_OrderDetailView.formData.data.EngineNumber"></span></div>
+                    <div class="col-md-6"><label>行驶城市：</label><span ng-bind="_OrderDetailView.formData.data.CityName"></span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6"><label>注册日期：</label><span ng-bind="_OrderDetailView.formData.data.CarRegisteredDate | date:'yyyy-MM-dd'"></span></div>
+                    <div class="col-md-6"><label>保险到期日：</label><span ng-bind="_OrderDetailView.formData.data.InsureEndDate=='0001-01-01T00:00:00'?'': _OrderDetailView.formData.data.InsureEndDate | date:'yyyy-MM-dd'"></span></div>
+                </div>
+            </div>
+        </div><!--车辆信息-->
+        <h3 class="page-header">承保商</h3>
+        <div class="row">
+            <div class="panel-body">
+                <div class="col-md-6" ng-hide="_OrderDetailView.formData.data.OrderAmountBusinessTotal == '0'">
+                    <label>商业险保单号：</label><span ng-bind="_OrderDetailView.formData.data.BusProposalNo"></span>
+                </div>
+                <div class="col-md-6 text-right" ng-hide="_OrderDetailView.formData.data.OrderAmountBusinessTotal == '0'">
+                    &nbsp;
+                </div>
+                <div class="col-md-12" ng-hide="_OrderDetailView.formData.data.OrderAmountBusinessTotal == '0'">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-4 text-center">险种</th>
+                                    <th class="col-md-4 text-center">保额（元）</th>
+                                    <th class="col-md-4 text-center">保费（元）</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="data in _OrderDetailView.formData.data.Detail | busQuery">
+                                    <td class="text-center" ng-bind="data.ProductName + ((data.ProductPlan == '') ? '' : '(' + data.ProductPlan + ')')"></td>
+                                    <td class="text-center" ng-bind="data.ProductName.indexOf('不计免赔')>= 0 ? '' : (data.ProductAmount | currency:'￥')"></td>
+                                    <td class="text-center" ng-bind="data.EndProductPrice | currency:'￥'"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><label>保费合计</label></td>
+                                    <td></td>
+                                    <td class="text-center"><label ng-bind="_OrderDetailView.formData.data.OrderAmountBusinessTotal | currency:'￥'"></label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-6" ng-hide="_OrderDetailView.formData.data.OrderAmountJQXTotal == '0'">
+                    <label>交强险保单号：</label><span ng-bind="_OrderDetailView.formData.data.BzProposalNo"></span>
+                </div>
+                <div class="col-md-6 text-right" ng-hide="_OrderDetailView.formData.data.OrderAmountJQXTotal == '0'">
+                    &nbsp;
+                </div>
+                <div class="col-md-12" ng-hide="_OrderDetailView.formData.data.OrderAmountJQXTotal == '0'">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-4 text-center">险种</th>
+                                    <th class="col-md-4 text-center">保额（元）</th>
+                                    <th class="col-md-4 text-center">保费（元）</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="data in _OrderDetailView.formData.data.Detail | jqxQuery">
+                                    <td class="text-center" ng-bind="data.ProductName + ((data.ProductPlan == '') ? '' : '(' + data.ProductPlan + ')')"></td>
+                                    <td class="text-center" ng-bind="data.ProductAmount | currency:'￥'"></td>
+                                    <td class="text-center" ng-bind="data.EndProductPrice | currency:'￥'"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><label>保费合计</label></td>
+                                    <td></td>
+                                    <td class="text-center"><label ng-bind="_OrderDetailView.formData.data.OrderAmountJQXTotal | currency:'￥'"></label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><!--承保信息-->
+        @Html.Partial("~/Views/Track/_QuoteContentDetail.cshtml", new PagePartialViewModel("_OrderDetailView"))
+        
+        <div class="row">
+
+        </div><!--保险条款-->
+    </div>
+}
+
+
+
+@if (Model.HtmlType.Equals("Javascript"))
+{
+    <script type="text/javascript">
+        var _OrderDetailViewScope;
+        var _OrderDetailViewRestangular;
+
+        //初始化formData.data
+        function _OrderDetailViewInitForm($scope) {
+            $scope._OrderDetailView = { formData: new ResultAPIModel() };
+            $scope._OrderDetailView.UserOrderID = '@Model.OrderID';
+        };
+
+        function _OrderDetailViewSearchForm($scope, restangular) {
+            _OrderDetailViewSearchFormByID($scope, restangular, $scope._OrderDetailView.UserOrderID);
+        }
+
+        function _OrderDetailViewSearchFormByParentPage(UserOrderID) {
+            _OrderDetailViewSearchFormByID(_OrderDetailViewScope, _OrderDetailViewRestangular, UserOrderID);
+        }
+
+        //查询
+        function _OrderDetailViewSearchFormByID($scope, restangular, UserOrderID) {
+            if (!UserOrderID) return;
+
+            restangular.one('Order/UserOrders/' + UserOrderID + '/' + $scope._OrderDetailView.formData.userCookie.userID).get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                $scope._OrderDetailView.formData.data = result.data;
+
+                switch (String($scope._OrderDetailView.formData.data.State)) {
+                    case '-1':
+                        $scope._OrderDetailView.formData.data.StateText = '编辑中';
+                        break;
+                    case '0':
+                        $scope._OrderDetailView.formData.data.StateText = '待审核';
+                        break;
+                    case '1':
+                        $scope._OrderDetailView.formData.data.StateText = '审核通过';
+                        break;
+                    case '2':
+                        $scope._OrderDetailView.formData.data.StateText = '审核未通过';
+                        break;
+                    case '3':
+                        $scope._OrderDetailView.formData.data.StateText = '已发布';
+                        break;
+                    case '4':
+                        $scope._OrderDetailView.formData.data.StateText = '下架';
+                        break;
+                    case '5':
+                        $scope._OrderDetailView.formData.data.StateText = '结束';
+                        break;
+                }
+
+                console.log($scope._OrderDetailView.formData.data);
+                setTimeout(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                }, 1000);
+
+            }, function (reason) {
+                alertError('网络通讯异常');
+            });
+        };
+
+        _app.controller('OrderController', [
+            '$scope', 'Restangular', function ($scope, restangular) {
+                _OrderDetailViewScope = $scope;
+                _OrderDetailViewRestangular = restangular;
+
+                _OrderDetailViewInitForm($scope);
+                _OrderDetailViewSearchForm($scope, restangular);
+
+                $scope.isdisabled = true;
+
+                $scope.returnBack = function () {
+                    history.go(-1);
+                };
+
+                $scope.goPayEvent = function () {
+                    window.open($scope._OrderDetailView.formData.data.HeBaoPayUrl, '_blank');
+                }
+                //根据ID获取Text  报价方案获取Text内容
+                $scope._QuoteCommonGetPlanText = function (id, type) {
+                    return _JavascriptQuotePlanDataGetText(id, type);
+                }
+                $scope.goHeBaoEvent = function () {
+                    restangular.one('Insurance/InsureHeBao/' + $scope._OrderDetailView.UserOrderID).get().then(function (result) {
+                        if (result.resultMessage.message != ""
+                            || result.resultMessage.errorMessage != "") {
+                            alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                            return;
+                        }
+
+                        if (result.data) {
+                            alertSuccess("重新核保中!");
+                            $scope.isdisabled = false;
+                        }
+
+                    }, function (reason) {
+                        $scope.isdisabled = true;
+                        alertError('网络通讯异常');
+                    });
+                }
+            }
+        ]);
+
+        _app.filter('busQuery', function () {
+            return function (datas) {
+                var newDatas = [];
+                datas = datas || [];
+                for (var i = 0; i < datas.length; i++) {
+                    if (datas[i].ProductID == '200'
+                        || datas[i].ProductID.toUpperCase() == 'pcCarShipTaxInfoDto'.toUpperCase()) {
+                        continue;
+                    }
+                    newDatas.push(datas[i]);
+                }
+                return newDatas;
+            }
+        });
+
+        _app.filter('jqxQuery', function () {
+            return function (datas) {
+                var newDatas = [];
+                datas = datas || [];
+                for (var i = 0; i < datas.length; i++) {
+                    if (datas[i].ProductID == '200'
+                        || datas[i].ProductID.toUpperCase() == 'pcCarShipTaxInfoDto'.toUpperCase()) {
+                        newDatas.push(datas[i]);
+                    }
+                }
+                return newDatas;
+            }
+        });
+    </script>
+}
+
+

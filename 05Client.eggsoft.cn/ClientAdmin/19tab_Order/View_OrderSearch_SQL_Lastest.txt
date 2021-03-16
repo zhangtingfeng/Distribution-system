@@ -1,0 +1,154 @@
+﻿DECLARE @V_OrderSearch00 Table
+(
+GreatParentIDNickName nvarchar(500),GreatParentIDUserRealName nvarchar(500),
+ShopNameGreatParentID nvarchar(500),GrandParentIDNickName nvarchar(500),GrandParentIDUserRealName nvarchar(500),
+ShopNameGrandParentID nvarchar(500),ParentIDNickName nvarchar(500),ParentIDUserRealName nvarchar(500),
+ShopNameParentID nvarchar(500),ID bigint,OrderID bigint,GoodID bigint,
+Discount float,GoodName nvarchar(500),GoodPrice decimal(10, 2),
+CreatDateTime datetime,OrderCount bigint,Pinglun nvarchar(MAX),
+ParentID bigint,GrandParentID bigint,GreatParentID bigint,
+Over7DaysToBeans bit,VouchersNum_List nvarchar(250),Beans bigint,
+MoneyCredits decimal(10, 2),MoneyWeBuy8Credits decimal(10, 2),isdeleted bit,
+Freight decimal(10, 2),FreightShowText nvarchar(250)
+)
+
+
+insert into @V_OrderSearch00(GreatParentIDNickName,GreatParentIDUserRealName,
+                 ShopNameGreatParentID, GrandParentIDNickName,GrandParentIDUserRealName, 
+			  ShopNameGrandParentID, ParentIDNickName, ParentIDUserRealName, 
+                ShopNameParentID, ID, OrderID, GoodID, 
+                Discount, GoodName, GoodPrice, 
+                CreatDateTime, OrderCount, Pinglun, 
+                ParentID, GrandParentID, GreatParentID, 
+                Over7DaysToBeans, VouchersNum_List, Beans, 
+                MoneyCredits, MoneyWeBuy8Credits, isdeleted, 
+                Freight, FreightShowText 
+) 
+SELECT DISTINCT 
+                TOP (100) PERCENT V_2947.GreatParentIDNickName, V_2947.GreatParentIDUserRealName, 
+                V_2947.ShopNameGreatParentID, V_2946.GrandParentIDNickName, V_2946.GrandParentIDUserRealName, 
+                V_2946.ShopNameGrandParentID, V_2945.ParentIDNickName, V_2945.ParentIDUserRealName, 
+                V_2945.ShopNameParentID, tab_Orderdetails.ID, tab_Orderdetails.OrderID, tab_Orderdetails.GoodID, 
+                tab_Orderdetails.Discount, tab_Orderdetails.GoodName, tab_Orderdetails.GoodPrice, 
+                tab_Orderdetails.CreatDateTime, tab_Orderdetails.OrderCount, tab_Orderdetails.Pinglun, 
+                tab_Orderdetails.ParentID, tab_Orderdetails.GrandParentID, tab_Orderdetails.GreatParentID, 
+                tab_Orderdetails.Over7DaysToBeans, tab_Orderdetails.VouchersNum_List, tab_Orderdetails.Beans, 
+                tab_Orderdetails.MoneyCredits, tab_Orderdetails.MoneyWeBuy8Credits, tab_Orderdetails.isdeleted, 
+                tab_Orderdetails.Freight, tab_Orderdetails.FreightShowText 
+FROM      tab_Orderdetails LEFT OUTER JOIN
+                    (SELECT DISTINCT 
+                                     tab_User.NickName AS ParentIDNickName, tab_User.UserRealName AS ParentIDUserRealName, 
+                                     tab_Orderdetails_3.ParentID, tab_Orderdetails_3.ID, 
+                                     tab_ShopClient_Agent_.ShopName AS ShopNameParentID
+                     FROM      tab_Orderdetails AS tab_Orderdetails_3 LEFT OUTER JOIN
+                                     tab_ShopClient_Agent_ ON 
+                                     tab_Orderdetails_3.ParentID = tab_ShopClient_Agent_.UserID   LEFT OUTER JOIN
+                                     tab_User ON tab_Orderdetails_3.ParentID = tab_User.ID where tab_User.ShopClientID=1) AS V_2945 ON 
+                tab_Orderdetails.ID = V_2945.ID LEFT OUTER JOIN
+                    (SELECT DISTINCT 
+                                     tab_User_2.NickName AS GrandParentIDNickName, 
+                                     tab_User_2.UserRealName AS GrandParentIDUserRealName, tab_Orderdetails_2.ID, 
+                                     tab_ShopClient_Agent__2.ShopName AS ShopNameGrandParentID
+                     FROM      tab_Orderdetails AS tab_Orderdetails_2 LEFT OUTER JOIN
+                                     tab_ShopClient_Agent_ AS tab_ShopClient_Agent__2 ON 
+                                     tab_Orderdetails_2.GrandParentID = tab_ShopClient_Agent__2.UserID LEFT OUTER JOIN
+                                     tab_User AS tab_User_2 ON tab_Orderdetails_2.GrandParentID = tab_User_2.ID) AS V_2946 ON 
+                tab_Orderdetails.ID = V_2946.ID LEFT OUTER JOIN
+                    (SELECT DISTINCT 
+                                     tab_User_1.NickName AS GreatParentIDNickName, 
+                                     tab_User_1.UserRealName AS GreatParentIDUserRealName, tab_Orderdetails_1.ID, 
+                                     tab_ShopClient_Agent__1.ShopName AS ShopNameGreatParentID
+                     FROM      tab_Orderdetails AS tab_Orderdetails_1 LEFT OUTER JOIN
+                                     tab_ShopClient_Agent_ AS tab_ShopClient_Agent__1 ON 
+                                     tab_Orderdetails_1.GreatParentID = tab_ShopClient_Agent__1.UserID LEFT OUTER JOIN
+                                     tab_User AS tab_User_1 ON tab_Orderdetails_1.GreatParentID = tab_User_1.ID) AS V_2947 ON 
+                tab_Orderdetails.ID = V_2947.ID
+ORDER BY tab_Orderdetails.ID DESC
+
+
+SELECT DISTINCT 
+                tab_User.ContactMan AS UserContactMan, tab_User.ContactPhone AS UserContactPhone, 
+                tab_User.NickName AS UserNickName, tab_User.UserRealName, V_OrderSearch04.PayStatus, 
+                V_OrderSearch04.isReceipt, V_OrderSearch04.CreateDateTime, V_OrderSearch04.UserID, 
+                V_OrderSearch04.DeliveryText, V_OrderSearch04.TotalMoney, V_OrderSearch04.OrderNum, 
+                V_OrderSearch04.ShopClient_ID, V_OrderSearch04.OrderName, V_OrderSearch04.User_Address, 
+                V_OrderSearch04.PayWay, V_OrderSearch04.PaywayOrderNum, V_OrderSearch04.PayDateTime, 
+                V_OrderSearch04.IsDeleted, V_OrderSearch04.O2OTakedID, V_OrderSearch04.allGoodName, 
+                V_OrderSearch04.allGoodPrice, V_OrderSearch04.OrderCount, V_OrderSearch04.Freight, 
+                V_OrderSearch04.TakeName, V_OrderSearch04.ShopAdress, V_OrderSearch04.TakePhone, 
+                V_OrderSearch04.ShopName, V_OrderSearch04.ShopContactMan, V_OrderSearch04.OrderID, 
+                V_OrderSearch04.GreatParentIDNickName, V_OrderSearch04.GreatParentIDUserRealName, 
+                V_OrderSearch04.ShopNameGreatParentID, V_OrderSearch04.GrandParentIDNickName, 
+                V_OrderSearch04.GrandParentIDUserRealName, V_OrderSearch04.ShopNameGrandParentID, 
+                V_OrderSearch04.ParentIDNickName, V_OrderSearch04.ParentIDUserRealName, 
+                V_OrderSearch04.ShopNameParentID
+FROM    (SELECT   V_OrderSearch02.PayStatus, V_OrderSearch02.isReceipt, V_OrderSearch02.CreateDateTime, 
+                V_OrderSearch02.UserID, V_OrderSearch02.DeliveryText, V_OrderSearch02.TotalMoney, 
+                V_OrderSearch02.OrderNum, V_OrderSearch02.ShopClient_ID, V_OrderSearch02.OrderName, 
+                V_OrderSearch02.User_Address, V_OrderSearch02.PayWay, 
+                V_OrderSearch02.PaywayOrderNum, V_OrderSearch02.PayDateTime, 
+                V_OrderSearch02.IsDeleted, V_OrderSearch02.O2OTakedID, V_OrderSearch02.allGoodName, 
+                V_OrderSearch02.allGoodPrice, V_OrderSearch02.OrderCount, V_OrderSearch02.Freight, 
+                V_OrderSearch03.TakeName, V_OrderSearch03.ShopAdress, V_OrderSearch03.TakePhone, 
+                V_OrderSearch03.ShopName, V_OrderSearch03.ShopContactMan, V_OrderSearch02.OrderID, 
+                V_OrderSearch02.GreatParentIDNickName, V_OrderSearch02.GreatParentIDUserRealName, 
+                V_OrderSearch02.ShopNameGreatParentID, V_OrderSearch02.GrandParentIDNickName, 
+                V_OrderSearch02.GrandParentIDUserRealName, V_OrderSearch02.ShopNameGrandParentID, 
+                V_OrderSearch02.ParentIDNickName, V_OrderSearch02.ParentIDUserRealName, 
+                V_OrderSearch02.ShopNameParentID
+FROM    (SELECT   tab_Order.ID AS OrderID, tab_Order.PayStatus, tab_Order.isReceipt, tab_Order.CreateDateTime, 
+                tab_Order.UserID, tab_Order.DeliveryText, tab_Order.TotalMoney, tab_Order.OrderNum, 
+                tab_Order.ShopClient_ID, tab_Order.OrderName, tab_Order.User_Address, tab_Order.PayWay, 
+                tab_Order.PaywayOrderNum, tab_Order.PayDateTime, tab_Order.IsDeleted, tab_Order.O2OTakedID, 
+                V_OrderSearch01.GoodName AS allGoodName, V_OrderSearch01.allGoodPrice, 
+                V_OrderSearch01.OrderCount, V_OrderSearch01.Freight, 
+                V_OrderSearch01.GreatParentIDNickName, V_OrderSearch01.GreatParentIDUserRealName, 
+                V_OrderSearch01.ShopNameGreatParentID, V_OrderSearch01.GrandParentIDNickName, 
+                V_OrderSearch01.GrandParentIDUserRealName, V_OrderSearch01.ShopNameGrandParentID, 
+                V_OrderSearch01.ParentIDNickName, V_OrderSearch01.ParentIDUserRealName, 
+                V_OrderSearch01.ShopNameParentID
+FROM     (SELECT   OrderID, SUM(Freight) AS Freight, SUM(OrderCount) AS OrderCount, SUM(OrderCount * GoodPrice) AS allGoodPrice, 
+                GoodName = (STUFF
+                    ((SELECT   ',' + GoodName
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), GreatParentIDNickName = (STUFF
+                    ((SELECT   ',' + GreatParentIDNickName
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), GreatParentIDUserRealName = (STUFF
+                    ((SELECT   ',' + GreatParentIDUserRealName
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), ShopNameGreatParentID = (STUFF
+                    ((SELECT   ',' + ShopNameGreatParentID
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), GrandParentIDNickName = (STUFF
+                    ((SELECT   ',' + GrandParentIDNickName
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), GrandParentIDUserRealName = (STUFF
+                    ((SELECT   ',' + GrandParentIDUserRealName
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), ShopNameGrandParentID = (STUFF
+                    ((SELECT   ',' + ShopNameGrandParentID
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), ParentIDNickName = (STUFF
+                    ((SELECT   ',' + ParentIDNickName
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), ParentIDUserRealName = (STUFF
+                    ((SELECT   ',' + ParentIDUserRealName
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, '')), ShopNameParentID = (STUFF
+                    ((SELECT   ',' + ShopNameParentID
+                      FROM      @V_OrderSearch00
+                      WHERE   OrderID = a.OrderID FOR XML PATH('')), 1, 1, ''))
+FROM      @V_OrderSearch00 a 
+GROUP BY OrderID) as V_OrderSearch01 INNER JOIN
+                tab_Order ON V_OrderSearch01.OrderID = tab_Order.ID) as V_OrderSearch02 LEFT OUTER JOIN
+              (SELECT   tab_ShopClient_O2O_TakeGoods.TakeName, tab_ShopClient_O2O_TakeGoods.TakePhone, 
+                tab_ShopClient_O2O_ShopInfo.ShopName, tab_ShopClient_O2O_ShopInfo.ContactMan AS ShopContactMan, 
+                tab_ShopClient_O2O_TakeGoods.ID AS TakeGoods_ID, tab_ShopClient_O2O_TakeGoods.UserID, 
+                tab_ShopClient_O2O_ShopInfo.ShopAdress
+FROM      tab_ShopClient_O2O_ShopInfo RIGHT OUTER JOIN
+                tab_ShopClient_O2O_TakeGoods ON 
+                tab_ShopClient_O2O_ShopInfo.ID = tab_ShopClient_O2O_TakeGoods.TakeO2OShopID) as V_OrderSearch03 ON V_OrderSearch02.UserID = V_OrderSearch03.UserID AND 
+                V_OrderSearch02.O2OTakedID = V_OrderSearch03.TakeGoods_ID) as V_OrderSearch04 LEFT OUTER JOIN
+                tab_User ON V_OrderSearch04.ShopClient_ID = tab_User.ShopClientID AND 
+                V_OrderSearch04.UserID = tab_User.ID

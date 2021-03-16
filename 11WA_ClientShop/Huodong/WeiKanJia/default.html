@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>微砍价_微云基石_吸粉工具测试</title>
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- Mobile Devices Support @begin -->
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Mobile Devices Support @end -->
+    <script type="text/javascript">
+        var varServiceURL = localStorage.getItem('ServiceServicesURL201709121928_Open_0609');
+        var varUserID = localStorage.getItem('CurUserID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+        var varShopClientID = localStorage.getItem('GetShopClientID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+    </script>
+
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <link href="/Templet/02ShiYi/skin/ys.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/Templet/02ShiYi/skin/box_swipe.css?version=css201709121928" media="all">
+    <link href="/Templet/01WYJS/Css/mall.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/common-v4.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Game/GameUserID.js?version=js201709121928"></script>
+    <script type="text/javascript" src="/Huodong/WeiKanJia/js/WeiKanJia.js?version=js201709121928"></script>
+    <link rel="stylesheet" type="text/css" href="/Huodong/WeiKanJia/Css/WeiKanJia.css?version=css201709121928" />
+    <script src="/Templet/01WYJS/js/layer.m.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/layer.css?version=css201709121928" rel="stylesheet" />
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="/Templet/02ShiYi/js/swipe.js?version =js201709121928"></script>
+    <script type="text/javascript" src="/Templet/01WYJS/js/Base.js?version =js201709121928"></script>
+</head>
+<body onload="loadBuySelectType_Multi();">
+    <div id="mcoverWeiKanJia" onclick="weChat()" style="display:none;">
+        <img src="/images/guide1.png" />
+        <a id="mcoverGuangGao" href="/">技术支持：微云基石</a>
+    </div>
+    <div class="spro_con">
+        <div id="Anounce">
+            <div style="-webkit-transform: translate3d(0,0,0);">
+                <div style="visibility: visible;" id="banner_box" class="box_swipe">
+                    <ul style="list-style: none; width: 1280px; transition: 500ms; -webkit-transition: 500ms; -webkit-transform: translate3d(0px, 0, 0);"></ul>
+                    <ol>
+                        <li class="on"></li>
+                        <li class=""></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="spro_btn" style="display:block;clear:both;">
+        <div id="Countdown">
+            <div class="time-item">
+                <span>倒计时</span>
+                <strong id="day_show">0</strong>天
+                <strong id="hour_show"><s id="h"></s>0</strong>时
+                <strong id="minute_show"><s></s>0</strong>分
+                <strong id="second_show"><s></s>0</strong>秒
+            </div>
+        </div>
+
+        <div id="IwantPartincontianer">
+            <div class="text" id="idMyKanJiaInfo" style="display:none;">
+            </div>
+
+            <table cellpadding="0" cellspacing="0" class="table" id="idMyKanJiaInfo_Helper_Table" style="display:none;">
+                <tbody>
+                    <tr class="th">
+                        <th colspan="2" class="leftborder">亲友团</th>
+                        <th width="107">砍掉金额</th>
+                        <th width="111" class="rightborder">砍后金额</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text" id="MaterInpuInfo_Text" style="display:none;">
+                <input type="hidden" name="headpic" value="http://wx.qlogo.cn/mmopen/0hyxic2RPrUyESlwtpFoB40W7qgrRWibQI4eL0m8md5q4Eu5wRb3qRdHCFbRHnSc5Iwib24RcggNeX2xaaG4VSBDz46vY5gReGN/0">
+                <input type="hidden" id="nickname" name="nickname" value="">
+                <input type="text" id="username" name="username" placeholder="填写您的姓名" style="margin:0">
+                <input name="tel" id="tel" type="text" placeholder="填写您的手机号码">
+            </div>
+            <div class="button" id="MaterInpuInfo_Button" style="display:none;">
+                <ul>
+                    <li><button onclick="try { IWantDoKanJia_Submit(); } catch (e) { alert('语句异常：' + e.message) }">马上报名参加活动</button></li>
+                </ul>
+            </div>
+        </div>
+        <div id="buybtnHead" class="Q-buy-btn_Now spro_mybtn" style="background-color:red;color:#fff;" onclick="try { HelpKanJia(); } catch (e) { alert('语句异常：' + e.message) }">
+            帮砍一刀
+        </div>
+        <div id="cartbtnHead" class="spro_mybtn" style="background-color:brown;color:#fff;" onclick="try { IWantDoKanJia(); } catch (e) { alert('语句异常：' + e.message) }">
+            我要发起
+        </div>
+    </div>
+
+    <div class="buybutton">
+
+        <button id="buybuttonNow" class="ClsbuybuttonNow" onclick="ASKPayAsync();"></button>
+
+    </div>
+
+    <div id="detailsKanJiaTopicDescContent">
+        <div class="title">活动描述</div>
+        <div class="spro_contxt_OneLine" id="idKanJiaTopicDescContent">
+
+        </div>
+    </div>
+
+    <div class="spro_btn">
+        <div id="buybtn" class="Q-buy-btn_Now spro_mybtn" style="background-color:red;color:#fff;" onclick="try { HelpKanJia(); } catch (e) { alert('语句异常：' + e.message) }">
+            帮砍一刀
+        </div>
+        <div id="cartbtn" class="spro_mybtn" style="background-color:brown;color:#fff;" onclick="try { IWantDoKanJia(); } catch (e) { alert('语句异常：' + e.message) }">
+            我要发起
+        </div>
+    </div>
+    <div class="buybutton">
+
+        <button id="buybuttonNow22" class="ClsbuybuttonNow" onclick="ASKPayAsync();"></button>
+
+    </div>
+    <div id="detailsKanJiaRule">
+        <div class="title">砍价规则</div>
+        <div class="spro_contxt_OneLine" id="idKanJiaRule">
+
+        </div>
+    </div>
+    <div id="idPub_03Footer_html_lsKanJiaRule">
+    </div>
+</body>
+</html>

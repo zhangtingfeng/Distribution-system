@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>保多多后台管理系统</title>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+    @Html.Partial("Javascript/_FlurryAgentPartial")
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    @Html.Partial("_JavascriptPartial")
+    @Html.Partial("_SignalRPartial")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

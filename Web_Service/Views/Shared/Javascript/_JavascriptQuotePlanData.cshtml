@@ -1,0 +1,53 @@
+﻿@using InsureApi.Entity.Common
+
+<script type="text/javascript">
+    var _JavascriptQuotePlanData = {
+        Basic: [{ id: '0', text: '不投保' }, { id: '1', text: '投保' }]
+        , ThirdPartyInsurances: [{ id: '1000000', text: '100万' },
+                                    { id: '500000', text: '50万' },
+                                    { id: '300000', text: '30万' },
+                                    { id: '200000', text: '20万' },
+                                    { id: '150000', text: '15万' },
+                                    { id: '50000', text: '5万' },
+                                    { id: '0', text: '不投保' }]
+        , CarDriverInsurances: [{ id: '100000', text: '10万' },
+                                    { id: '50000', text: '5万' },
+                                    { id: '20000', text: '2万' },
+                                    { id: '10000', text: '1万' },
+                                    { id: '0', text: '不投保' }]
+        , CarPassengerInsurances: [{ id: '30000', text: '3万' },
+                                    { id: '20000', text: '2万' },
+                                    { id: '10000', text: '1万' },
+                                    { id: '0', text: '不投保' }]
+        , CarGlassInsurances: [{ id: '2', text: '进口玻璃' },
+                                    { id: '1', text: '国产玻璃' },
+                                    { id: '0', text: '不投保' }]
+        , CarScratchInsurances: [{ id: '5000', text: '5000' },
+                                    { id: '2000', text: '2000' },
+                                    { id: '0', text: '不投保' }]
+    };
+
+    //根据ID获取Text
+    function _JavascriptQuotePlanDataGetText(id, type) {
+        for (var key in _JavascriptQuotePlanData) {
+            if (type && key != type) continue;
+            var datas = _JavascriptQuotePlanData[key];
+            for (var i = 0; i < datas.length; i++) {
+                if (id == datas[i].id) return datas[i].text;
+            }
+        }
+        return "";
+    }
+
+    var _JavascriptInsuranceOrderStatusData = [
+                { id: '@StateCode.InsuranceOrderStatus.HeDanZhong.Value', text: '@StateCode.InsuranceOrderStatus.HeDanZhong.Text' },
+                { id: '@StateCode.InsuranceOrderStatus.HeDanShiBai.Value', text: '@StateCode.InsuranceOrderStatus.HeDanShiBai.Text' },
+                { id: '@StateCode.InsuranceOrderStatus.DingDanShiXiao.Value', text: '@StateCode.InsuranceOrderStatus.DingDanShiXiao.Text' },
+                { id: '@StateCode.InsuranceOrderStatus.DaiFuKuang.Value', text: '@StateCode.InsuranceOrderStatus.DaiFuKuang.Text' },
+                { id: '@StateCode.InsuranceOrderStatus.YiFuKuang.Value', text: '@StateCode.InsuranceOrderStatus.YiFuKuang.Text' },
+                { id: '@StateCode.InsuranceOrderStatus.YiChuDan.Value', text: '@StateCode.InsuranceOrderStatus.YiChuDan.Text' },
+                { id: '@StateCode.InsuranceOrderStatus.ChuDanShiBai.Value', text: '@StateCode.InsuranceOrderStatus.ChuDanShiBai.Text' },
+                { id: '@StateCode.InsuranceOrderStatus.YiZhiFuDaiShengHe.Value', text: '@StateCode.InsuranceOrderStatus.YiZhiFuDaiShengHe.Text' },
+                { id: '@StateCode.InsuranceOrderStatus.TuiDan.Value', text: '@StateCode.InsuranceOrderStatus.TuiDan.Text' }
+    ];
+</script>

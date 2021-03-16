@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MultiButton_income_GiveMoney.aspx.cs" Inherits="_11WA_ClientShop.MultiButton_income_GiveMoney" %>

@@ -1,0 +1,140 @@
+﻿DECLARE @VTable_OrderSearch_New00_ShopClient{0} TABLE
+ (
+ GreatParentIDNickName NVARCHAR(50),
+ GreatParentIDUserRealName NVARCHAR(50),
+ ShopNameGreatParentID NVARCHAR(50),
+ GrandParentIDNickName NVARCHAR(50),
+ GrandParentIDUserRealName NVARCHAR(50),
+ ShopNameGrandParentID NVARCHAR(50),
+ ParentIDNickName NVARCHAR(50),
+ ParentIDUserRealName NVARCHAR(50),
+ ShopNameParentID NVARCHAR(50),
+ ID BIGINT,
+ OrderID BIGINT,
+ GoodID BIGINT,
+ Discount decimal(10, 2),
+ GoodName NVARCHAR(50),
+ GoodPrice BIGINT,
+CreatDateTime datetime,
+OrderCount BIGINT,
+ Pinglun NVARCHAR(MAX),
+ ParentID BIGINT,
+ GrandParentID BIGINT,
+ GreatParentID BIGINT,
+ Over7DaysToBeans bit,
+ VouchersNum_List nvarchar(300),
+ Beans bigint,
+ MoneyCredits decimal(10, 2),
+ MoneyWeBuy8Credits decimal(10, 2),
+ isdeleted bit,
+ Freight decimal(10, 2),
+ FreightShowText nvarchar(250)
+ )
+
+ INSERT INTO @VTable_OrderSearch_New00_ShopClient{0}(
+ GreatParentIDNickName,
+ GreatParentIDUserRealName,
+ ShopNameGreatParentID ,
+ GrandParentIDNickName ,
+ GrandParentIDUserRealName ,
+ ShopNameGrandParentID ,
+ ParentIDNickName ,
+ ParentIDUserRealName ,
+ ShopNameParentID ,
+ ID ,
+ OrderID ,
+ GoodID ,
+ Discount ,
+ GoodName ,
+ GoodPrice,
+CreatDateTime ,
+OrderCount ,
+ Pinglun ,
+ ParentID ,
+ GrandParentID ,
+ GreatParentID ,
+ Over7DaysToBeans ,
+ VouchersNum_List ,
+ Beans ,
+ MoneyCredits ,
+ MoneyWeBuy8Credits ,
+ isdeleted,
+ Freight,
+ FreightShowText 
+ )
+
+SELECT DISTINCT TOP (100) PERCENT View_2947.GreatParentIDNickName,
+ View_2947.GreatParentIDUserRealName,
+ View_2947.ShopNameGreatParentID,
+ View_2946.GrandParentIDNickName,
+ View_2946.GrandParentIDUserRealName,
+ View_2946.ShopNameGrandParentID,
+ View_2945.ParentIDNickName,
+ View_2945.ParentIDUserRealName,
+ View_2945.ShopNameParentID,
+ tab_Orderdetails.ID,
+ tab_Orderdetails.OrderID,
+ tab_Orderdetails.GoodID,
+ tab_Orderdetails.Discount,
+ tab_Orderdetails.GoodName,
+ tab_Orderdetails.GoodPrice,
+ tab_Orderdetails.CreatDateTime,
+ tab_Orderdetails.OrderCount,
+ tab_Orderdetails.Pinglun,
+ tab_Orderdetails.ParentID,
+ tab_Orderdetails.GrandParentID,
+ tab_Orderdetails.GreatParentID,
+ tab_Orderdetails.Over7DaysToBeans,
+ tab_Orderdetails.VouchersNum_List,
+ tab_Orderdetails.Beans,
+ tab_Orderdetails.MoneyCredits,
+ tab_Orderdetails.MoneyWeBuy8Credits,
+ tab_Orderdetails.isdeleted,
+ tab_Orderdetails.Freight,
+ tab_Orderdetails.FreightShowText
+FROM tab_Orderdetails
+ LEFT OUTER JOIN (SELECT DISTINCT tab_User.NickName AS ParentIDNickName,
+ tab_User.UserRealName AS ParentIDUserRealName,
+ tab_Orderdetails_3.ParentID,
+ tab_Orderdetails_3.ID,
+ tab_ShopClient_Agent_.ShopName AS ShopNameParentID
+ FROM tab_Orderdetails AS tab_Orderdetails_3
+ LEFT OUTER JOIN tab_ShopClient_Agent_
+ ON tab_Orderdetails_3.ParentID = tab_ShopClient_Agent_.UserID
+ LEFT OUTER JOIN tab_User
+ ON tab_Orderdetails_3.ParentID = tab_User.ID
+ WHERE ( tab_Orderdetails_3.ShopClient_ID = {0} )
+ and (tab_Orderdetails_3.isdeleted=0) and (tab_Orderdetails_3.Over7DaysToBeans={1})
+ AND ( tab_User.ShopClientID = {0} ) AND ( tab_Orderdetails_3.CreatDateTime >= '{2}' ) AND ( tab_Orderdetails_3.CreatDateTime <= '{3}' )) AS View_2945
+ ON tab_Orderdetails.ID = View_2945.ID
+ LEFT OUTER JOIN (SELECT DISTINCT tab_User_2.NickName AS GrandParentIDNickName,
+ tab_User_2.UserRealName AS GrandParentIDUserRealName,
+ tab_Orderdetails_2.ID,
+ tab_ShopClient_Agent__2.ShopName AS ShopNameGrandParentID
+ FROM tab_Orderdetails AS tab_Orderdetails_2
+ LEFT OUTER JOIN tab_ShopClient_Agent_ AS tab_ShopClient_Agent__2
+ ON tab_Orderdetails_2.GrandParentID = tab_ShopClient_Agent__2.UserID
+ LEFT OUTER JOIN tab_User AS tab_User_2
+ ON tab_Orderdetails_2.GrandParentID = tab_User_2.ID
+ WHERE ( tab_Orderdetails_2.ShopClient_ID = {0} )
+ and (tab_Orderdetails_2.isdeleted=0) and (tab_Orderdetails_2.Over7DaysToBeans={1})
+ AND ( tab_User_2.ShopClientID = {0} ) AND ( tab_Orderdetails_2.CreatDateTime >= '{2}' ) AND ( tab_Orderdetails_2.CreatDateTime <= '{3}' )) AS View_2946
+ ON tab_Orderdetails.ID = View_2946.ID
+ LEFT OUTER JOIN (SELECT DISTINCT tab_User_1.NickName AS GreatParentIDNickName,
+ tab_User_1.UserRealName AS GreatParentIDUserRealName,
+ tab_Orderdetails_1.ID,
+ tab_ShopClient_Agent__1.ShopName AS ShopNameGreatParentID
+ FROM tab_Orderdetails AS tab_Orderdetails_1
+ LEFT OUTER JOIN tab_ShopClient_Agent_ AS tab_ShopClient_Agent__1
+ ON tab_Orderdetails_1.GreatParentID = tab_ShopClient_Agent__1.UserID
+ LEFT OUTER JOIN tab_User AS tab_User_1
+ ON tab_Orderdetails_1.GreatParentID = tab_User_1.ID
+ WHERE ( tab_Orderdetails_1.ShopClient_ID = {0} )
+  and (tab_Orderdetails_1.isdeleted=0) and (tab_Orderdetails_1.Over7DaysToBeans={1})
+ AND ( tab_User_1.ShopClientID = {0} ) AND ( tab_Orderdetails_1.CreatDateTime >= '{2}' ) AND ( tab_Orderdetails_1.CreatDateTime <= '{3}' )) AS View_2947
+ ON tab_Orderdetails.ID = View_2947.ID
+WHERE ( tab_Orderdetails.ShopClient_ID = {0}
+ and (tab_Orderdetails.isdeleted=0) and (tab_Orderdetails.Over7DaysToBeans={1})
+ AND tab_Orderdetails.CreatDateTime >= '{2}'
+ AND tab_Orderdetails.CreatDateTime < '{3}' )
+ORDER  BY tab_Orderdetails.ID DESC

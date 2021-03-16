@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "API操作日志";
+    Layout = "~/Views/Shared/_HeadFootLayout.cshtml";
+}
+<div class="main ng-scope" ng-controller="detailController">
+    <h3 class="page-header" style="margin-top:20px;"><a href="@Url.Action("ActionRecord", "ActionRecord")">API操作日志管理</a> / <span>操作详情</span></h3>
+    <h3 class="page-header" style="margin-top:20px;">API操作详情</h3>
+
+    <form class="form-horizontal" role="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">操作时间：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.ActionTime | date:'yyyy-MM-dd HH:mm:ss'"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">操作类型：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.ActionTypeText"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">合作渠道号：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.ChannelName+'【'+formData.data.ChannelID+'】'"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">交易码：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.TransactionNumber"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">流水号：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.SerialDecimal"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">来源IP：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.SourceIP"></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">操作地址：</label>
+                    <div class="col-sm-8">
+                        <label class="control-label" ng-bind="formData.data.ActionUrl"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">json内容：</label>
+                    <div class="col-sm-8">
+                        @*<label class="control-label" ng-bind="formData.data.JsonString"></label>*@
+                        <textarea rows="50" cols="150" ng-bind="formData.data.JsonString" readonly="readonly"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script type="text/javascript">
+
+        $(function () {
+            $('input').attr('readonly', 'readonly');
+        });
+
+        //取操作明细
+        function getCustomerDetail($scope, Restangular) {
+            //$scope.formData.data.APIActionRecordID = '@ViewBag.APIActionRecordID';
+
+            //if (!$scope.formData.data.APIActionRecordID) return;
+
+            Restangular.one("ActionRecord/ActionRecord/" + '@ViewBag.APIActionRecordID').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                   || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+                $scope.formData.data = result.data;
+
+                if($scope.formData.data)
+                {
+                    switch($scope.formData.data.ActionType)
+                    {
+                        case 1:
+                            $scope.formData.data.ActionTypeText = 'Request';
+                            break;
+                        case 2:
+                            $scope.formData.data.ActionTypeText = 'Response';
+                            break;
+                        case 3:
+                            $scope.formData.data.ActionTypeText = 'CallBackRequest';
+                            break;
+                        case 4:
+                            $scope.formData.data.ActionTypeText = 'CallBackResponse';
+                            break;
+                    }
+                }
+
+                console.info(result.data);
+
+            }, function (error) {
+                alertError('网络通讯异常');
+            });
+        };
+
+        //初始化data
+        function resetForm($scope) {
+            $scope.formData.data = {
+                ActionType: '',
+                ActionTypeText: '',
+                ActionTime: '',
+                ChannelID: '',
+                SerialDecimal: '',
+                TransactionNumber: '',
+                JsonString: '',
+                ChannelName: '',
+                ActionUrl: '',
+                ErrorCode: '',
+                ErrorMessage: '',
+                SourceIP: ''
+            };
+        }
+
+        _app.controller('detailController', [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope.formData = new ResultAPIModel();
+                resetForm($scope);
+                //resetForm($scope);
+                getCustomerDetail($scope, Restangular);
+            }
+        ]);
+
+    </script>
+}

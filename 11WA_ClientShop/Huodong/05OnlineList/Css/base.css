@@ -1,0 +1,35 @@
+/*
+	Site by: shakexu
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { font-size: 12px; *font-size: small; color: #000; }
+
+html { -webkit-font-smoothing: antialiased; }
+
+div { word-break: break-all; word-wrap: break-word; zoom: 1; line-height: 18px; }
+
+table { border: 0; border-collapse: 0; border-spacing: 0; }
+
+img { border: 0; }
+
+ul , ul li { margin: 0; padding: 0; list-style: none; }
+
+em { margin: 0; padding: 0; font-style: normal; }
+
+p { margin: 0; padding: 0; }
+
+a , a:hover , a:active { outline: none; }
+a { color: #000; text-decoration: none; }
+a:link { color: #000; text-decoration: none; }
+a:visited { color: #000; text-decoration: none; }
+a:hover { color: #000; text-decoration: underline; }
+a:active { color: #000; text-decoration: underline; }
+
+.clear { clear: both; height: 1px; overflow: hidden; line-height: 0; zoom: 1; }
+
+#gray_box { width: 100%; height: 100%; z-index: 9000; position: absolute; left: 0; top: 0; background: #000; filter:alpha(opacity=60); opacity: 0.60; display: block; }
+
+.loading-gray { position: fixed; z-index: 2000; top: 0; right: 0; bottom: 0; left: 0; background: url(/Images/loading.gif) no-repeat center center; background-size: 32px 32px; color: #F00; font-size: 50px;}

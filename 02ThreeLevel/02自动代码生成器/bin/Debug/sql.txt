@@ -1,0 +1,1 @@
+﻿Data Source=139.196.200.168,21433;Initial Catalog=MHappy_Com__Pro;Persist Security Info=True;User ID=notsatest;Password=#EDC4rfv;Enlist=true;Pooling=true;Max Pool Size = 700; Min Pool Size=30; Connection Lifetime = 300;packet size=1000;

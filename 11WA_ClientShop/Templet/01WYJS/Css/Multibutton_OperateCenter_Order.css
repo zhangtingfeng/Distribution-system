@@ -1,0 +1,56 @@
+﻿
+#mcoverDrawMoney {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    z-index: 20000;
+}
+
+    #mcoverDrawMoney img {
+        position: fixed;
+        right: 18px;
+        top: 5px;
+        width: 260px;
+        height: 180px;
+        z-index: 20001;
+    }
+
+    #mcoverDrawMoney #mcoverGuangGao {
+        margin: 0px auto;
+        margin-bottom: 40px;
+        z-index: 20002;
+        color: white;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        display: block;
+        margin-left: -63px;
+    }
+
+
+.draw_input li {
+    /*padding: 11px 15px;*/
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D3DEE4;
+}
+
+    .draw_input li label {
+        display: block;
+        width: 32%;
+    }
+
+    .draw_input li input {
+        width: 65% !important;
+    }
+
+    .draw_input li textarea {
+        width: 65% !important;
+    }

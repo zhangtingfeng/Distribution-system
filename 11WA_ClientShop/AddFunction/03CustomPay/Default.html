@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <script src="/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="/Game/GameUserID.js?version=js201709121928"></script>
+    <script type="text/javascript">
+        var varServiceURL = localStorage.getItem('ServiceServicesURL201709121928_Open_0609');
+        var varUserID = localStorage.getItem('CurUserID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+        var varShopClientID = localStorage.getItem('GetShopClientID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+    </script>
+
+    <script src="/AddFunction/03CustomPay/JS/Pay.js?Version=89454688884321"></script>
+    <link rel="shortcut icon" href="/AddFunction/03CustomPay/Images/yz_fc.ico">
+    <script src="/Templet/01WYJS/js/layer.m.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/layer.css?version=css201709121928" rel="stylesheet" />
+    <title>正在向您收款</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+        !function (e) { e.onReady = function (o, t) { if (t) { var r = function () { e[o] ? t() : setTimeout(function () { r(o, t) }, 500) }; r(o, t) } }; var o = /complete|loaded/; e.afterLoad = function (t) { o.test(document.readyState) && document.body ? setTimeout(t) : e.addEventListener("load", t, !1) } }(window), function (e) { var o, t = { script: "src", link: "href" }, r = "b.yzcdn.cn", n = "su.yzcdn.cn"; e._cdnFallback = function (a) { var i, c, l, d, f, g, m, u; if (i = a.nodeName.toLowerCase(), c = t[i]) { l = d = a[c], l = l.replace(r, n), f = l == d, f || (g = document, m = g.head || g.getElementsByTagName("head")[0] || g.documentElement, u = g.createElement(i), "link" == i && (u.rel = "stylesheet"), u[c] = l, u.onerror = function () { _cdnFallback(u) }, m.appendChild(u)), (new Image).src = "/AddFunction/03CustomPay/Images/1.gif?net_error=1&fileurl=" + d; var s = l.indexOf(n) > -1 || l.indexOf(r) > -1, p = !o && f; p && s && (e.motify && e.motify.error && e.motify.error("啊哦，有东西加载失败了，刷新下试试~"), o = !0) } } }(window), function (e) { "use strict"; var o; e.localStorage; try { var t = new Date; try { localStorage.setItem(t, t) } catch (r) { if (22 === r.code) throw "localstorage define error" } var n = localStorage.getItem(t) == t; if (localStorage.removeItem(t), !n) throw "localstorage define error"; if ("FUNCTION" != (typeof localStorage.clear).toUpperCase()) throw "localstorage define error"; o = localStorage } catch (r) { var a = function () { return null }; o = { getItem: a, setItem: a, removeItem: a, clear: a } } "function" == typeof define && define.amd && define(function () { return o }), e.YZLocalStorage = o }(window), function (e) { e.motify = e.motify || { error: function (e) { setTimeout(function () { document.body.insertAdjacentHTML("afterbegin", '<div style="color:red;padding:5px;background:#fff;font-size:12px;border-bottom:1px solid #ddd;margin-bottom:5px;"><a style="border-radius:3px;line-height:18px;text-align:center;float:right;margin-left:5px;padding:4px 7px;color:#fff;background-color:#00BF05;" onclick="location.reload();">刷新</a> <p style="line-height:28px;padding-right:53px;word-break:break-all;margin:0;">' + e + "</p></div>") }, 500) } }, e.zenjs = e.zenjs || {}, e.__logs = [], e.Logger = { log: function (o) { e.__logs.push(o) } } }(window);	</script>
+
+    <link href="/AddFunction/03CustomPay/Css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/AddFunction/03CustomPay/Css/cashier_45e8bb19b449864c5b41ec2492de82e8.css" onerror="_cdnFallback(this)">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="/Templet/01WYJS/js/Base.js?version =js201709121928"></script>
+    <script>
+        //var _global = { "kdt_id": "17591941", "user_id": 0, "run_mode": "online", "debug": false, "project": "default", "online_debug": false, "js": { "js_compress": true, "css_compress": true, "use_js_cdn": true, "use_css_cdn": true, "message_report": true, "checkbrowser": true, "hide_wx_nav": true, "qn_public": "kdt_img", "qn_private": "kdt-private" }, "query_path": "\/trade\/cashier", "query_key": "qr_id=3371533&kdt_id=17591941", "real_query_path": "get:\/trade\/cashier\/index.html", "module": "trade", "controller": "Trade_Cashier_Controller", "action": "index", "full_action": "getIndexHtml", "method": "get", "format": "html", "platform": "weixin", "is_mobile": true, "authorize": "weixin", "platform_version": "6.5.2.501", "mobile_system": "unknown", "youzan_app_login": false, "isFromShare": false, "page_size": 320, "isShopDomain": false, "share": { "title": "\u5fae\u4e91\u57fa\u77f3\u6b63\u5728\u5411\u4f60\u6536\u6b3e", "desc": "\u4f60\u9700\u8981\u652f\u4ed80.00\u5143", "cover": "/AddFunction/03CustomPay/Images/8f9c442de8666f82abaf7dd71574e997.png?imageView2\/2\/w\/100\/h\/100\/q\/75\/format\/webp", "link": "https:\/\/trade.koudaitong.com\/wxpay\/confirmQr?kdt_id=17591941&qr_id=3371533" }, "jsBradgeSupport": true, "wuxi1_0_0": false, "source": "", "track": "", "nobody": "op85l1pieguk7d1rpb9lmqrn93", "kos_token_verify": false, "mp_changed": true, "team_certificate": false, "is_secured_transactions": 1, "hide_shopping_cart": 0, "mp_data": { "logo": "/AddFunction/03CustomPay/Images/8f9c442de8666f82abaf7dd71574e997.png", "team_name": "\u5fae\u4e91\u57fa\u77f3", "intro": "", "is_display_footbar": "1", "is_display_suffix_name": "1", "suffix_name": "\u5fae\u4e91\u57fa\u77f3", "shopping_cart_style": "1", "team_type": "youzan", "mobile": "", "team_physical": 0 }, "wxpay_big": true, "alipay_env": true, "wxpay_env": true, "wxaddress_env": false, "is_owner_team": false, "weixin_jssdk_use": 0, "fans_id": "376500973", "is_fans": 2, "fans_nickname": "", "fans_type": 9, "fans_token": "376500973", "mp_id": 0, "fans_picture": "", "youzan_fans_id": "376500973", "youzan_fans_nickname": "", "youzan_fans_picture": "", "youzan_user_id": 122011197, "no_user_login": false, "buyer_id": 0, "change_password_url": "", "buyer": { "id": 0, "phone": "" }, "open_token": [], "qr_id": "3371533", "order_no": 0, "payWays": [{ "key": 1, "code": "wxpay", "name": "\u5fae\u4fe1\u5b89\u5168\u652f\u4ed8" }, { "key": 24, "code": "yzpay", "name": "\u4fe1\u7528\u5361\u4ed8\u6b3e" }, { "key": 12, "code": "baiduwap", "name": "\u50a8\u84c4\u5361\u4ed8\u6b3e" }], "isTeamFollow": false, "fixedMoney": false, "url": { "base": "\/\/koudaitong.com", "bbs": "http:\/\/bbs.youzan.com", "cdn": "\/\/b.yzcdn.cn", "cdn_static": "https:\/\/b.yzcdn.cn\/v2", "cp": "http:\/\/cp.koudaitong.com", "daxue": "http:\/\/xuetang.youzan.com", "fenxiao": "\/\/fx.youzan.com", "fuwu": "\/\/fuwu.youzan.com", "img": "\/\/img.koudaitong.com", "imgqn": "https:\/\/img.yzcdn.cn", "login": "\/\/login.youzan.com", "open": "\/\/open.koudaitong.com", "static": "https:\/\/static.koudaitong.com\/v2", "trade": "https:\/\/trade.koudaitong.com", "v1": "http:\/\/koudaitong.com\/v1", "v1_static": "\/\/static.koudaitong.com\/v1", "v2": "\/\/koudaitong.com\/v2", "wap": "https:\/\/wap.koudaitong.com\/v2", "ws": "ws:\/\/s.im.youzan.com:83", "www": "\/\/koudaitong.com\/v2", "youzan": "\/\/youzan.com", "cloud": "http:\/\/dl.koudaitong.com", "pf": "https:\/\/pf.koudaitong.com", "materials": "\/\/materials.koudaitong.com" } };</script>
+</head>
+<body onload="load_Multi();">
+    <div class="container " style="min-height: 657px;">
+        <div class="content free-cash ">
+            <div class="cashier-info-container center">
+                <div class="avatar cashier-avatar">
+                    <a href="#">
+                        <img class="circular" style="display:none;" id="ShopclientICON" src="" alt="">
+                    </a>
+                </div>
+
+                <div class="js-cashier-form block cashier-form text-left">
+                    <label for="cashier-price" class="font-size-12 cashier-label">金额（元）</label>
+                    <p class="cashier-field">
+                        <i class="money-text">￥</i>
+                        <span type="text" id="cashier-price" class="cashier-text"></span>
+                        <i id="js-cashier-cursor" class="cursor"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="js-decrease-container cashier-decrease-container">
+            </div>
+            <div class="action-container" id="js-cashier-action">
+                <div style="margin-bottom: 10px;">
+                    <button type="button" data-pay-type="wxpay" class="btn-pay btn btn-block btn-large btn-wxpay  btn-green">
+                        微信安全支付
+                    </button>
+                </div>
+
+            </div>
+            <div class="center action-tip js-cashier-tip keyboard-on">支付完成后，如需退款请及时联系卖家</div>
+        </div>
+        <div>
+            <div class="ui-keyboard js-keyboard on">
+                <ul id="NumberInput" class="ui-keyboard-numbers js-num">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li class="zero">0</li>
+                    <li>.</li>
+                </ul>
+                <ul class="ui-keyboard-buttons">
+                    <li class="btn-del js-del">&lt;</li>
+                    <li class="btn-ok js-ok">完成</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" style="min-height: 86px;">
+        <div class="copyright">
+            <div class="ft-copyright">
+                <a href="https://www.eggsoft.cn" target="_blank">微云基石提供技术支持</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        "use strict"; !function (n, e) { function t(n) { return "complete" === n.readyState || "loaded" === n.readyState } function o(n, t, o) { var c = e.createElement("link"); c.rel = "stylesheet", a(c, o, "css"), c.async = !0, c.href = n, d.appendChild(c) } function c(n, t, o) { var c = e.createElement("script"); c.charset = "utf-8", a(c, o, "js"), c.async = !t.sync, c.src = n, d.appendChild(c) } function i(n, e) { var t; n.sheet && (t = !0), setTimeout(function () { t ? e() : i(n, e) }, 20) } function a(e, o, c) { function a() { e.onload = e.onreadystatechange = null, e = null, o() } var r = "onload" in e, u = "css" === c; return !u || !f && r ? void (r ? (e.onload = a, e.onerror = function () { e.onerror = null, n._cdnFallback(e) }) : e.onreadystatechange = function () { t(e) && a() }) : void setTimeout(function () { i(e, o) }, 1) } function r(n, e, t, i) { function a() { var t = e.indexOf(n); t > -1 && e.splice(t, 1), 0 === e.length && i() } l.test(n) ? o(n, t, a) : c(n, t, a) } function u(n, e, t) { var o = function () { t && t() }; if (n = Array.prototype.slice.call(n || []), 0 === n.length) return void o(); for (var c = 0, i = n.length; i > c; c++) r(n[c], n, e, o) } function s(e, o) { if (t(e)) o(); else { var c = 1500, i = !1; n.addEventListener("load", function () { i || (o(), i = !0) }), setTimeout(function () { i || (o(), i = !0) }, c) } } var l = new RegExp("\\.css"), d = e.head || e.getElementsByTagName("head")[0], f = +navigator.userAgent.replace(/.*(?:AppleWebKit|AndroidWebKit)\/?(\d+).*/i, "$1") < 536, v = { async: function (n, t) { s(e, function () { u(n, {}, t) }) }, sync: function (n, t) { s(e, function () { u(n, { sync: !0 }, t) }) } }; return n.Loader = v, v }(window, document);	</script>
+
+
+
+
+
+
+    <!--<script>window.Loader.sync(["https:\/\/b.yzcdn.cn\/v2\/build\/wap\/common_08b03c7826.js", "https:\/\/b.yzcdn.cn\/v2\/build\/wap\/base_dfda926fcb.js", "https:\/\/b.yzcdn.cn\/v2\/vendor\/u_b.js", "https:\/\/b.yzcdn.cn\/v2\/build\/wap\/trade\/cashier_8b69a7a3aa.js"]); window.Loader.async(["\/\/hm.baidu.com\/hm.js?58fe4cc4b4af82caeb8bc08af32dd62c"]);</script>-->
+
+</body>
+</html>

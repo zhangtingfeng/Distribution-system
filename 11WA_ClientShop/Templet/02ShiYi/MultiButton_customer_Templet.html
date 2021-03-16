@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+        host = window.location.host;
+
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+        path = 'https://' + host + '###SAgentPath###/multibutton_customer.aspx';
+
+        var WeiXin_imgAllPageUrl = 'https://' + host + '/Templet/02ShiYi/skin/images/brand_enter.png';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "我的分享-微店，分享将会让你在微店留下足迹，这里可查看您分享过的产品。";
+        var WeiXin_shareAppAllPageTitle = '我的分享-微店';
+        var WeiXin_appidAllPage = '';
+        var varUserID = "###UserID###";///传递给 product.js   传递变量
+        var varServiceURL = "###ServiceURL###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>直接代理收入</title>
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    ###WeiXin__o2o_FootMarker_Location_###
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    <style type="text/css">
+        #wrapper #thelist {
+            text-align: center;
+        }
+    </style>
+    ###_PulicChageWeiXin###
+</head>
+<body>
+    ###Header###
+
+    <div id="wrapper" ms-controller="Items">
+        <div id="scroller">
+            ###IFSubscribeHeader###
+            <div class="income_ff">
+                <div class="sum_title">
+                    合计收入(元)<span class="sum_money">&nbsp;###CountMoney###</span><br />(统计数据更新时间:###View_ShopClient_Agent_SalesOrderBy_StatusDateTime###)
+                </div>
+            </div>
+            <ul id="thelist" class="customer_list">
+                <!--<div id="pullDown">
+                    <span class="pullDownIcon"></span><span class="pullDownLabel">下拉加载数据。。。</span>
+                </div>-->
+                ###comment_list###
+                <!--<div id="pullUp">
+                    <span class="pullUpIcon"></span><span class="pullUpLabel">下拉加载数据。。。</span>
+                </div>-->
+            </ul>
+            <div style="clear: both;">
+            </div>
+        </div>
+    </div>
+</body>
+###Webuy8Footer###
+</html>

@@ -1,0 +1,2093 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--<Target Name="Compressor" BeforeTargets="Package" Condition="'$(ConfigurationName)'=='Release'">
+    <Message Text="Starting Compress Javascript Files and Css Files" />
+    <Exec Command="call F:\NetHttp_02\0042eggsoft.cnvs2015_GaoErFu\02ThreeLevel\13DLL\yuicompressor-2.4.7\Compressor.bat $(ProjectDir)obj\$(ConfigurationName)\Package\ $(ProjectName)" />
+  </Target>-->
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D605E8A-EE63-4B51-93AA-2377C5A46F60}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_11WA_ClientShop</RootNamespace>
+    <AssemblyName>11WA_ClientShop</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddFunction\01Shake_Parter\01Shake_Parter.aspx" />
+    <Content Include="AddFunction\01Shake_Parter\Css\shake.css" />
+    <Content Include="AddFunction\01Shake_Parter\data\WService---.asmx" />
+    <Content Include="AddFunction\01Shake_Parter\HtmlPage1.html" />
+    <Content Include="AddFunction\01Shake_Parter\Images\ding.jpg" />
+    <Content Include="AddFunction\01Shake_Parter\Images\ding2.jpg" />
+    <Content Include="AddFunction\01Shake_Parter\Images\shankImg.png" />
+    <Content Include="AddFunction\01Shake_Parter\JS\jquery.js" />
+    <Content Include="AddFunction\02PingTuan\01Help.html" />
+    <Content Include="AddFunction\02PingTuan\02PingTuan.html" />
+    <Content Include="AddFunction\02PingTuan\03Goods00.html" />
+    <Content Include="AddFunction\02PingTuan\03Goods.html" />
+    <Content Include="AddFunction\02PingTuan\02PingTuan00.html" />
+    <Content Include="AddFunction\02PingTuan\Css\01Help.css" />
+    <Content Include="AddFunction\02PingTuan\Css\font-awesome.min-4.3.0.css" />
+    <Content Include="AddFunction\02PingTuan\Css\index_v3.min.css" />
+    <Content Include="AddFunction\02PingTuan\Css\02PingTuanList.css" />
+    <Content Include="AddFunction\02PingTuan\Css\03Goods.css" />
+    <Content Include="AddFunction\02PingTuan\Images\bg_v6_5665897.png" />
+    <Content Include="AddFunction\02PingTuan\Images\gb_v3.png" />
+    <Content Include="AddFunction\02PingTuan\Images\gb_v4.png" />
+    <Content Include="AddFunction\02PingTuan\Images\img02.png" />
+    <Content Include="AddFunction\02PingTuan\Images\loading.gif" />
+    <Content Include="AddFunction\02PingTuan\Images\loading_eb0d435.gif" />
+    <Content Include="AddFunction\02PingTuan\Images\mod_aside.png" />
+    <Content Include="AddFunction\02PingTuan\Images\my_bg_v2.jpg" />
+    <Content Include="AddFunction\02PingTuan\Images\pay_icon.png" />
+    <Content Include="AddFunction\02PingTuan\Images\plus.png" />
+    <Content Include="AddFunction\02PingTuan\Images\sale_770ede5.png" />
+    <Content Include="AddFunction\02PingTuan\Images\sharetips.png" />
+    <Content Include="AddFunction\02PingTuan\Images\sprites_v3.png" />
+    <Content Include="AddFunction\02PingTuan\Images\state.png" />
+    <Content Include="AddFunction\02PingTuan\Images\sucess_red_bg.png" />
+    <Content Include="AddFunction\02PingTuan\Images\tb08.png" />
+    <Content Include="AddFunction\02PingTuan\Images\tb09.png" />
+    <Content Include="AddFunction\02PingTuan\Images\tb09c.png" />
+    <Content Include="AddFunction\02PingTuan\Images\weixin_ico.png" />
+    <Content Include="AddFunction\02PingTuan\JS\00TuanGou.js" />
+    <Content Include="AddFunction\02PingTuan\JS\01Help.js" />
+    <Content Include="AddFunction\02PingTuan\JS\03Goods.js" />
+    <Content Include="AddFunction\02PingTuan\JS\02PingTuan.js" />
+    <Content Include="AddFunction\03CustomPay\Css\cashier_45e8bb19b449864c5b41ec2492de82e8.css" />
+    <Content Include="AddFunction\03CustomPay\Css\main.css" />
+    <Content Include="AddFunction\03CustomPay\Default.html" />
+    <Content Include="AddFunction\03CustomPay\Images\1.gif" />
+    <Content Include="AddFunction\03CustomPay\Images\8f9c442de8666f82abaf7dd71574e997.png" />
+    <Content Include="AddFunction\03CustomPay\Images\border-line-2.png" />
+    <Content Include="AddFunction\03CustomPay\Images\border-line.png" />
+    <Content Include="AddFunction\03CustomPay\Images\bottom_line.png" />
+    <Content Include="AddFunction\03CustomPay\Images\copyright.png" />
+    <Content Include="AddFunction\03CustomPay\Images\f2c8678744680f71f1ba2f1e519d7032.png" />
+    <Content Include="AddFunction\03CustomPay\Images\fav_step_2%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\fav_step_2.png" />
+    <Content Include="AddFunction\03CustomPay\Images\ftand_step_2%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\ftand_step_2.png" />
+    <Content Include="AddFunction\03CustomPay\Images\ftios_step_2%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\ftios_step_2.png" />
+    <Content Include="AddFunction\03CustomPay\Images\guide_arrow%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\guide_arrow.png" />
+    <Content Include="AddFunction\03CustomPay\Images\icons_sprite%402x_29025c38a6.png" />
+    <Content Include="AddFunction\03CustomPay\Images\icons_sprite%402x_6b9819545.png" />
+    <Content Include="AddFunction\03CustomPay\Images\icons_sprite_29025c38a6.png" />
+    <Content Include="AddFunction\03CustomPay\Images\icons_sprite_e4444b6200.png" />
+    <Content Include="AddFunction\03CustomPay\Images\icon_clear%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\jiaobiao%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\loader%402x.gif" />
+    <Content Include="AddFunction\03CustomPay\Images\loader.gif" />
+    <Content Include="AddFunction\03CustomPay\Images\logo%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\paid_fx_icon%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\selffetch_voucher%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\share_step_2%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\star.png" />
+    <Content Include="AddFunction\03CustomPay\Images\step_1%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\step_1.png" />
+    <Content Include="AddFunction\03CustomPay\Images\step_2%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\step_2.png" />
+    <Content Include="AddFunction\03CustomPay\Images\step_3%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\step_3.png" />
+    <Content Include="AddFunction\03CustomPay\Images\success%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\success.png" />
+    <Content Include="AddFunction\03CustomPay\Images\timeout%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\timeout.png" />
+    <Content Include="AddFunction\03CustomPay\Images\warn%402x.png" />
+    <Content Include="AddFunction\03CustomPay\Images\warn.png" />
+    <Content Include="AddFunction\03CustomPay\Images\youzan_mall_logo.jpg" />
+    <Content Include="AddFunction\03CustomPay\Images\yz_fc.ico" />
+    <Content Include="AddFunction\03CustomPay\Index.html" />
+    <Content Include="AddFunction\03CustomPay\Index0.html" />
+    <Content Include="AddFunction\03CustomPay\JS\base_dfda926fcb.js" />
+    <Content Include="AddFunction\03CustomPay\JS\cashier_8b69a7a3aa.js" />
+    <Content Include="AddFunction\03CustomPay\JS\common_08b03c7826.js" />
+    <Content Include="AddFunction\03CustomPay\JS\Pay.js" />
+    <Content Include="AddFunction\03CustomPay\JS\u_b.js" />
+    <Content Include="AddFunction\04ZC_project\03ZC.html" />
+    <Content Include="AddFunction\04ZC_project\Css\SpeedBar_common - 复制.css" />
+    <Content Include="AddFunction\04ZC_project\Css\ZC.css" />
+    <Content Include="AddFunction\04ZC_project\Css\font-awesome.min-4.3.0.css" />
+    <Content Include="AddFunction\04ZC_project\Css\index_v3.min.css" />
+    <Content Include="AddFunction\04ZC_project\Images\bg_v6_5665897.png" />
+    <Content Include="AddFunction\04ZC_project\Images\gb_v3.png" />
+    <Content Include="AddFunction\04ZC_project\Images\gb_v4.png" />
+    <Content Include="AddFunction\04ZC_project\Images\img02.png" />
+    <Content Include="AddFunction\04ZC_project\Images\loading.gif" />
+    <Content Include="AddFunction\04ZC_project\Images\loading_eb0d435.gif" />
+    <Content Include="AddFunction\04ZC_project\Images\mod_aside.png" />
+    <Content Include="AddFunction\04ZC_project\Images\my_bg_v2.jpg" />
+    <Content Include="AddFunction\04ZC_project\Images\pay_icon.png" />
+    <Content Include="AddFunction\04ZC_project\Images\plus.png" />
+    <Content Include="AddFunction\04ZC_project\Images\sale_770ede5.png" />
+    <Content Include="AddFunction\04ZC_project\Images\sharetips.png" />
+    <Content Include="AddFunction\04ZC_project\Images\sprites_v3.png" />
+    <Content Include="AddFunction\04ZC_project\Images\state.png" />
+    <Content Include="AddFunction\04ZC_project\Images\sucess_red_bg.png" />
+    <Content Include="AddFunction\04ZC_project\Images\tb08.png" />
+    <Content Include="AddFunction\04ZC_project\Images\tb09.png" />
+    <Content Include="AddFunction\04ZC_project\Images\tb09c.png" />
+    <Content Include="AddFunction\04ZC_project\Images\weixin_ico.png" />
+    <Content Include="AddFunction\04ZC_project\JS\ZC.js" />
+    <Content Include="AddFunction\04ZC_project\京东众筹.html" />
+    <Content Include="AddFunction\04ZC_project\Css\SpeedBar_common.css" />
+    <Content Include="AddFunction\05Invitation\0001\css\animate.css" />
+    <Content Include="AddFunction\05Invitation\0001\css\style.css" />
+    <Content Include="AddFunction\05Invitation\0001\images\bubble1.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\bubble2.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\bubble3.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\bubble4.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\bubble5.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\bubble6.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\butterfly.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\butterflys.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\button.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\cat.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\deer.jpg" />
+    <Content Include="AddFunction\05Invitation\0001\images\flower.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\Goin.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\hand.jpg" />
+    <Content Include="AddFunction\05Invitation\0001\images\hand.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\in.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\location.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\man.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\mushroom.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\music.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\page-bg.jpg" />
+    <Content Include="AddFunction\05Invitation\0001\images\page-bg.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\page1.jpg" />
+    <Content Include="AddFunction\05Invitation\0001\images\page4.jpg" />
+    <Content Include="AddFunction\05Invitation\0001\images\page5.jpg" />
+    <Content Include="AddFunction\05Invitation\0001\images\share.jpg" />
+    <Content Include="AddFunction\05Invitation\0001\images\squirrel.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\star.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text11.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text12.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text13.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text14.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text21.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text22.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text23.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text24.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text31.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text32.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text33.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text34.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text41.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text42.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text43.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text44.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text45.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\text46.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\universe.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\user1.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\user2.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\user3.png" />
+    <Content Include="AddFunction\05Invitation\0001\images\user4.png" />
+    <Content Include="AddFunction\05Invitation\0001\index.html" />
+    <Content Include="AddFunction\05Invitation\0001\js\data-tracker.js" />
+    <Content Include="AddFunction\05Invitation\0001\js\jquery-2.1.4.min.js" />
+    <Content Include="AddFunction\05Invitation\0001\js\jquery.html5Loader.js" />
+    <Content Include="AddFunction\05Invitation\0001\js\main.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\css\animate.css" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\css\idangerous.swiper.min.css" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\css\style.min.css" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\ajax-loader.gif" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\bg.jpg" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\btn_share.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\btn_share_txt.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\btn_taking.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\camera.mp3" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\di.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\diantong.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\home_btn.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\i_btn1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\i_btn2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\i_btn3.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\i_btn4.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\jt_show.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\logo.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\mask.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\mask_loader.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\mask_loading.jpg" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\music1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\music2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\pixi_i.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\quan_1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\quan_2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\quan_3.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\quan_4.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\quan_5.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\quan_6.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\quan_7.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\record_txt.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_1.jpg" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_1_1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_2.jpg" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_2_1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_3.jpg" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_3_1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_4.jpg" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_4_1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_wz1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_wz2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_wz3.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\setp_wz4.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\set_pic.jpg" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\share_jt.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\show_i_1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\show_i_2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\show_i_3.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\show_i_4.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\sp1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\sp2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\sp3.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\sp4.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\sp5.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\sp6.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\txt_home1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\wht_img.gif" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\wht_pic.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\wz_flashing.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\wz_txt1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\wz_txt2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\wz_txt3.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\wz_txt4.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\wz_txt5.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\xian.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\xian1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\xian2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\xian3.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\yuan.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\yuan1.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\yuan2.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\images\yuan3.png" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\index.html" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\baseView.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\loader.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\p1.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\p2.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\p3.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\p4.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\Router.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\screen.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\share.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\app\shareContent.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\lib\foo.min.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\lib\jweixin-1.0.0.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\lib\pixi.min.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\js\lib\require.min.js" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\template\p1.html" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\template\p2.html" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\template\p3.html" />
+    <Content Include="AddFunction\05Invitation\honor i7 invitation\template\p4.html" />
+    <Content Include="AddFunction\06coupons\Css\style.css" />
+    <Content Include="AddFunction\06coupons\IndexList.aspx" />
+    <Content Include="AddFunction\06coupons\Index.aspx" />
+    <Content Include="AddFunction\06coupons\Images\couponed_n.png" />
+    <Content Include="AddFunction\06coupons\Images\coupon_n.png" />
+    <Content Include="AddFunction\06coupons\Images\coupon_null.png" />
+    <Content Include="AddFunction\06coupons\Images\fab_more.png" />
+    <Content Include="AddFunction\06coupons\JS\common.js" />
+    <Content Include="AddFunction\06coupons\Images\headerimg.png" />
+    <Content Include="AddFunction\06coupons\Images\icon-member_default.png" />
+    <Content Include="AddFunction\06coupons\Images\icon_cart_default.png" />
+    <Content Include="AddFunction\06coupons\Images\icon_home_default.png" />
+    <Content Include="AddFunction\06coupons\Images\icon_searchcate_default.png" />
+    <Content Include="AddFunction\06coupons\Css\index.css" />
+    <Content Include="AddFunction\06coupons\JS\jquery.slides.min.js" />
+    <Content Include="AddFunction\07OperationGoods\OperationProduct.aspx" />
+    <Content Include="AddFunction\07OperationGoods\OperationProduct-Goods_Templet.html" />
+    <Content Include="AddFunction\08Function\Html代码.html" />
+    <Content Include="AddFunction\08Function\WF_JsC.aspx" />
+    <Content Include="AddFunction\Css\SalesOrder.css" />
+    <Content Include="AddFunction\JS\SalesOrder.js" />
+    <Content Include="AddFunction\Sales123.jpg" />
+    <Content Include="AddFunction\SalesOrder.html" />
+    <Content Include="AppCanR\AppLogin_content\css\main.css" />
+    <Content Include="AppCanR\AppLogin_content\css\myImg\logo.png" />
+    <Content Include="AppCanR\AppLogin_content\css\myImg\pwd.png" />
+    <Content Include="AppCanR\AppLogin_content\css\myImg\user.png" />
+    <Content Include="AppCanR\AppLogin_content\Js\main.js" />
+    <Content Include="AppCanR\Css\appcan.control.css" />
+    <Content Include="AppCanR\Css\appcan.icon.css" />
+    <Content Include="AppCanR\Css\fonts\font-awesome.min.css" />
+    <Content Include="AppCanR\Css\icons\icon-add-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-add.png" />
+    <Content Include="AppCanR\Css\icons\icon-adduser-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-adduser.png" />
+    <Content Include="AppCanR\Css\icons\icon-back-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-back.png" />
+    <Content Include="AppCanR\Css\icons\icon-cal-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-cal.png" />
+    <Content Include="AppCanR\Css\icons\icon-call-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-call.png" />
+    <Content Include="AppCanR\Css\icons\icon-chart-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-chart.png" />
+    <Content Include="AppCanR\Css\icons\icon-chat-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-close-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-close.png" />
+    <Content Include="AppCanR\Css\icons\icon-disk-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-disk.png" />
+    <Content Include="AppCanR\Css\icons\icon-download-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-download.png" />
+    <Content Include="AppCanR\Css\icons\icon-edit-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-edit.png" />
+    <Content Include="AppCanR\Css\icons\icon-exit-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-exit.png" />
+    <Content Include="AppCanR\Css\icons\icon-filter-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-filter.png" />
+    <Content Include="AppCanR\Css\icons\icon-forward-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-forward.png" />
+    <Content Include="AppCanR\Css\icons\icon-home-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-home.png" />
+    <Content Include="AppCanR\Css\icons\icon-map-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-map.png" />
+    <Content Include="AppCanR\Css\icons\icon-menu-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-menu.png" />
+    <Content Include="AppCanR\Css\icons\icon-more-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-more.png" />
+    <Content Include="AppCanR\Css\icons\icon-ok-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-ok.png" />
+    <Content Include="AppCanR\Css\icons\icon-refresh-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-refresh.png" />
+    <Content Include="AppCanR\Css\icons\icon-search-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-search.png" />
+    <Content Include="AppCanR\Css\icons\icon-setting-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-setting.png" />
+    <Content Include="AppCanR\Css\icons\icon-share-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-share.png" />
+    <Content Include="AppCanR\Css\icons\icon-submenu-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-submenu.png" />
+    <Content Include="AppCanR\Css\icons\icon-user-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-user.png" />
+    <Content Include="AppCanR\Css\icons\icon-warn-act.png" />
+    <Content Include="AppCanR\Css\icons\icon-warn.png" />
+    <Content Include="AppCanR\Css\icons\map.png" />
+    <Content Include="AppCanR\Css\icons\out.txt" />
+    <Content Include="AppCanR\Css\index.css" />
+    <Content Include="AppCanR\Css\main.css" />
+    <Content Include="AppCanR\Css\res\appcan_s.png" />
+    <Content Include="AppCanR\Css\ui-base.css" />
+    <Content Include="AppCanR\Css\ui-box.css" />
+    <Content Include="AppCanR\Css\ui-color.css" />
+    <Content Include="AppCanR\Js\appcan.control.js" />
+    <Content Include="AppCanR\Js\appcan.js" />
+    <Content Include="AppCanR\Js\appcan.listview.js" />
+    <Content Include="AppCanR\Js\appcan.slider.js" />
+    <Content Include="AppCanR\Js\appcan.tab.js" />
+    <Content Include="AppCanR\Js\appcan.treeview.js" />
+    <Content Include="AppCanR\Js\Base.js" />
+    <Content Include="AppCanR\Js\jquery-1.11.3.min.js" />
+    <Content Include="AppCanR\Js\main.js" />
+    <Content Include="AppCanR\Js\md5.js" />
+    <Content Include="AppCanR\Js\zy_click.js" />
+    <Content Include="AppCanR\Js\zy_control.js" />
+    <Content Include="AppCanR\Register_content\js\main.js" />
+    <Content Include="Cart.aspx" />
+    <Content Include="Cart_Good.aspx" />
+    <Content Include="Cart_Good2.aspx" />
+    <Content Include="Cart_Good2_o2o_Book.aspx" />
+    <Content Include="Cart_Good3.aspx" />
+    <Content Include="Cart_SaySelf.aspx" />
+    <Content Include="Cart_Self.aspx" />
+    <Content Include="commentsMessageMe.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="EditYourShop.aspx" />
+    <Content Include="EditYourShopIni.aspx" />
+    <Content Include="EditYourShop_Ad.aspx" />
+    <Content Include="ErrorPages\FileNotFound.aspx" />
+    <Content Include="ErrorPages\GeneralError.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Game\001yuebing2\css\main.css" />
+    <Content Include="Game\001yuebing2\images\c1.jpg" />
+    <Content Include="Game\001yuebing2\images\c10.png" />
+    <Content Include="Game\001yuebing2\images\c11.png" />
+    <Content Include="Game\001yuebing2\images\c12.png" />
+    <Content Include="Game\001yuebing2\images\c13.png" />
+    <Content Include="Game\001yuebing2\images\c14.png" />
+    <Content Include="Game\001yuebing2\images\c16.png" />
+    <Content Include="Game\001yuebing2\images\c17.png" />
+    <Content Include="Game\001yuebing2\images\c18.png" />
+    <Content Include="Game\001yuebing2\images\c19.png" />
+    <Content Include="Game\001yuebing2\images\c2.png" />
+    <Content Include="Game\001yuebing2\images\c20.png" />
+    <Content Include="Game\001yuebing2\images\c21.png" />
+    <Content Include="Game\001yuebing2\images\c22.png" />
+    <Content Include="Game\001yuebing2\images\c23.png" />
+    <Content Include="Game\001yuebing2\images\c24.png" />
+    <Content Include="Game\001yuebing2\images\c25.png" />
+    <Content Include="Game\001yuebing2\images\c26.png" />
+    <Content Include="Game\001yuebing2\images\c27.png" />
+    <Content Include="Game\001yuebing2\images\c28.png" />
+    <Content Include="Game\001yuebing2\images\c29.png" />
+    <Content Include="Game\001yuebing2\images\c3.png" />
+    <Content Include="Game\001yuebing2\images\c30.png" />
+    <Content Include="Game\001yuebing2\images\c31.png" />
+    <Content Include="Game\001yuebing2\images\c32.png" />
+    <Content Include="Game\001yuebing2\images\c33.png" />
+    <Content Include="Game\001yuebing2\images\c34.png" />
+    <Content Include="Game\001yuebing2\images\c35.png" />
+    <Content Include="Game\001yuebing2\images\c36.png" />
+    <Content Include="Game\001yuebing2\images\c37.png" />
+    <Content Include="Game\001yuebing2\images\c4.png" />
+    <Content Include="Game\001yuebing2\images\C44.png" />
+    <Content Include="Game\001yuebing2\images\c5.png" />
+    <Content Include="Game\001yuebing2\images\c6.png" />
+    <Content Include="Game\001yuebing2\images\c7.png" />
+    <Content Include="Game\001yuebing2\images\c8.png" />
+    <Content Include="Game\001yuebing2\images\c9.png" />
+    <Content Include="Game\001yuebing2\index.html" />
+    <Content Include="Game\001yuebing2\js\jquery.js" />
+    <Content Include="Game\001yuebing2\js\jquery.preload.min.js" />
+    <Content Include="Game\001yuebing2\js\page.js" />
+    <Content Include="Game\001yuebing2\js\ping_tcss_ied.js" />
+    <Content Include="Game\001yuebing2\js\resize.js" />
+    <Content Include="Game\002qiangfeicui\.idea\compiler.xml" />
+    <Content Include="Game\002qiangfeicui\.idea\copyright\profiles_settings.xml" />
+    <Content Include="Game\002qiangfeicui\.idea\encodings.xml" />
+    <Content Include="Game\002qiangfeicui\.idea\misc.xml" />
+    <Content Include="Game\002qiangfeicui\.idea\modules.xml" />
+    <Content Include="Game\002qiangfeicui\.idea\scopes\scope_settings.xml" />
+    <Content Include="Game\002qiangfeicui\.idea\vcs.xml" />
+    <Content Include="Game\002qiangfeicui\.idea\workspace.xml" />
+    <Content Include="Game\002qiangfeicui\2000.png" />
+    <Content Include="Game\002qiangfeicui\b.jpg" />
+    <Content Include="Game\002qiangfeicui\bj.jpg" />
+    <Content Include="Game\002qiangfeicui\createjs.js" />
+    <Content Include="Game\002qiangfeicui\download.gif" />
+    <Content Include="Game\002qiangfeicui\f.jpg" />
+    <Content Include="Game\002qiangfeicui\g.jpg" />
+    <Content Include="Game\002qiangfeicui\index.html" />
+    <Content Include="Game\002qiangfeicui\j.jpg" />
+    <Content Include="Game\002qiangfeicui\t.jpg" />
+    <Content Include="Game\002qiangfeicui\t1.jpg" />
+    <Content Include="Game\002qiangfeicui\z.jpg" />
+    <Content Include="Game\003HowColor\assets\css\m.min.css" />
+    <Content Include="Game\003HowColor\assets\img\boyaa-logo.png" />
+    <Content Include="Game\003HowColor\assets\img\boyaa-logo11.png" />
+    <Content Include="Game\003HowColor\assets\img\favicon.ico" />
+    <Content Include="Game\003HowColor\assets\img\find.logo--.png" />
+    <Content Include="Game\003HowColor\assets\img\find.logo.png" />
+    <Content Include="Game\003HowColor\assets\img\share-tips.png" />
+    <Content Include="Game\003HowColor\assets\js\libs.min.js" />
+    <Content Include="Game\003HowColor\assets\js\main.min.js" />
+    <Content Include="Game\003HowColor\icon.ico" />
+    <Content Include="Game\003HowColor\icon.png" />
+    <Content Include="Game\003HowColor\index.html" />
+    <Content Include="Game\004zuiqiangyanli\1.png" />
+    <Content Include="Game\004zuiqiangyanli\2.png" />
+    <Content Include="Game\004zuiqiangyanli\2000.jpg" />
+    <Content Include="Game\004zuiqiangyanli\3.png" />
+    <Content Include="Game\004zuiqiangyanli\9.css" />
+    <Content Include="Game\004zuiqiangyanli\9.js" />
+    <Content Include="Game\004zuiqiangyanli\boyaa-logo11.png" />
+    <Content Include="Game\004zuiqiangyanli\index.html" />
+    <Content Include="Game\004zuiqiangyanli\zqyl.png" />
+    <Content Include="Game\005ZhongQiu\huer_files\1.mp3" />
+    <Content Include="Game\005ZhongQiu\huer_files\arrow.png" />
+    <Content Include="Game\005ZhongQiu\huer_files\cardcontent_topbg.png" />
+    <Content Include="Game\005ZhongQiu\huer_files\cloud_1.png" />
+    <Content Include="Game\005ZhongQiu\huer_files\cloud_2.png" />
+    <Content Include="Game\005ZhongQiu\huer_files\footer_banner.jpg" />
+    <Content Include="Game\005ZhongQiu\huer_files\jQuery.js" />
+    <Content Include="Game\005ZhongQiu\huer_files\moon.png" />
+    <Content Include="Game\005ZhongQiu\huer_files\player_min.js" />
+    <Content Include="Game\005ZhongQiu\huer_files\star_1.png" />
+    <Content Include="Game\005ZhongQiu\huer_files\star_2.png" />
+    <Content Include="Game\005ZhongQiu\huer_files\style.css" />
+    <Content Include="Game\005ZhongQiu\huer_files\walletWeBuy0.png" />
+    <Content Include="Game\005ZhongQiu\index.html" />
+    <Content Include="Game\DoGameUserID.aspx" />
+    <Content Include="Game\GameUserID.js" />
+    <Content Include="Game\HtmlPage.html" />
+    <Content Include="Game\QueryString.js" />
+    <Content Include="Game\test.html" />
+    <Content Include="Global.asax" />
+    <Content Include="GuidePage.aspx" />
+    <Content Include="Handler\cubiq-iscroll\default.aspx" />
+    <Content Include="Handler\cubiq-iscroll\index.html" />
+    <Content Include="Handler\cubiq-iscroll\iscroll.js" />
+    <Content Include="Handler\cubiq-iscroll\pull-icon%402x.png" />
+    <Content Include="Handler\cubiq-iscroll\scrollbar.css" />
+    <Content Include="Handler\cubiq-iscroll\scrollbar.png" />
+    <Content Include="Handler\Default.aspx" />
+    <Content Include="Handler\ProductSearchAgentGoods_Blank.txt" />
+    <Content Include="Handler\ProductSearchAgentGoods_SQL.txt" />
+    <Content Include="Handler\ProductSearchGoods_SQL.txt" />
+    <Content Include="HistoryGoodsList.aspx" />
+    <Content Include="HtmlPageModel52.html" />
+    <Content Include="HtmlPageModel42.html" />
+    <Content Include="Huodong\05OlineInfo.aspx" />
+    <Content Include="Huodong\05OnlineList\Css\base.css" />
+    <Content Include="Huodong\05OnlineList\Css\body.css" />
+    <Content Include="Huodong\05OnlineList\Images\bg.jpg" />
+    <Content Include="Huodong\05OnlineList\index.html" />
+    <Content Include="Huodong\05OnlineList\JavaScript\common.js" />
+    <Content Include="Huodong\05OnlineList\JavaScript\jquery-1.10.2.min.js" />
+    <Content Include="Huodong\05OnlineList\JavaScript\jquery.cookie.js" />
+    <Content Include="Huodong\05OnlineList\JavaScript\jquery.imgpreload.min.js" />
+    <Content Include="Huodong\05OnlineList\JavaScript\jquery.md5.js" />
+    <Content Include="Huodong\05OnlineList\JavaScript\moment.min.js" />
+    <Content Include="Huodong\05OnlineList\昆城广场.html" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\-1466592725701.jpg" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\-1467775210586.png" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\-1467775417433.png" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\-1468406622759.png" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\-1468987277290.png" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\base.css" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\common.js" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\jquery-1.10.2.min.js" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\jquery.cookie.js" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\jquery.imgpreload.min.js" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\jquery.md5.js" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\jweixin-1.0.0.js" />
+    <Content Include="Huodong\05OnlineList\昆城广场_files---\moment.min.js" />
+    <Content Include="Huodong\LightAppCN\0001.jpg" />
+    <Content Include="Huodong\LightAppCN\11.htm" />
+    <Content Include="Huodong\LightAppCN\533c2618b17b9.mp3" />
+    <Content Include="Huodong\LightAppCN\533c2eab421fb.jpg" />
+    <Content Include="Huodong\LightAppCN\533c2ebab8179.jpg" />
+    <Content Include="Huodong\LightAppCN\533c2f0f90cdf.jpg" />
+    <Content Include="Huodong\LightAppCN\533c2f755f8f4.jpg" />
+    <Content Include="Huodong\LightAppCN\533c2f8c8ccb8.jpg" />
+    <Content Include="Huodong\LightAppCN\533c2fc2f14ee.jpg" />
+    <Content Include="Huodong\LightAppCN\533c312b2b72e.jpg" />
+    <Content Include="Huodong\LightAppCN\533c31409bd1e.jpg" />
+    <Content Include="Huodong\LightAppCN\533c3524bafc2.jpg" />
+    <Content Include="Huodong\LightAppCN\533c3533b9914.jpg" />
+    <Content Include="Huodong\LightAppCN\533d30df2b527.jpg" />
+    <Content Include="Huodong\LightAppCN\533d31e72e94f.jpg" />
+    <Content Include="Huodong\LightAppCN\533d3860c5791.jpg" />
+    <Content Include="Huodong\LightAppCN\533d3de9c307a.jpg" />
+    <Content Include="Huodong\LightAppCN\533d3e0bd95a3.jpg" />
+    <Content Include="Huodong\LightAppCN\533d3f8d3d90a.jpg" />
+    <Content Include="Huodong\LightAppCN\533d4e204c8cc.jpg" />
+    <Content Include="Huodong\LightAppCN\62341.jpg" />
+    <Content Include="Huodong\LightAppCN\88.htm" />
+    <Content Include="Huodong\LightAppCN\99.htm" />
+    <Content Include="Huodong\LightAppCN\D.aspx" />
+    <Content Include="Huodong\LightAppCN\guide.png" />
+    <Content Include="Huodong\LightAppCN\HTMLPage.htm" />
+    <Content Include="Huodong\LightAppCN\Icon.png" />
+    <Content Include="Huodong\LightAppCN\JS_Css\1_picker.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\2_picker.date.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\3_picker.time.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\4_legacy.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\533c3524bafc2.jpg" />
+    <Content Include="Huodong\LightAppCN\JS_Css\534003d14bd45.png" />
+    <Content Include="Huodong\LightAppCN\JS_Css\99_main.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\9_slidepic.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\btn01_arrow.png" />
+    <Content Include="Huodong\LightAppCN\JS_Css\default.css" />
+    <Content Include="Huodong\LightAppCN\JS_Css\default.date.css" />
+    <Content Include="Huodong\LightAppCN\JS_Css\default.time.css" />
+    <Content Include="Huodong\LightAppCN\JS_Css\html5.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\jquery-1.8.2.min.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\jquery.easing.1.3.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\load.gif" />
+    <Content Include="Huodong\LightAppCN\JS_Css\main.css" />
+    <Content Include="Huodong\LightAppCN\JS_Css\offline.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\txt_scroll.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\wxm-core176ed4.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\wxshare.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\yl3d.js" />
+    <Content Include="Huodong\LightAppCN\JS_Css\ylMap.js" />
+    <Content Include="Huodong\LightAppCN\sprite01.png" />
+    <Content Include="Huodong\lottery\Scratchcard.aspx" />
+    <Content Include="Huodong\lottery\scratchcard.html" />
+    <Content Include="Huodong\lottery\Wheel.aspx" />
+    <Content Include="Huodong\lottery\wheel.html" />
+    <Content Include="Huodong\resources\jquery\jquery-2.0.3.min.js" />
+    <Content Include="Huodong\resources\lottery\css\activity-style.css" />
+    <Content Include="Huodong\resources\lottery\css\lanrenzhijia.css" />
+    <Content Include="Huodong\resources\lottery\css\main.css" />
+    <Content Include="Huodong\resources\lottery\images\000.png" />
+    <Content Include="Huodong\resources\lottery\images\100.png" />
+    <Content Include="Huodong\resources\lottery\images\200.png" />
+    <Content Include="Huodong\resources\lottery\images\300.png" />
+    <Content Include="Huodong\resources\lottery\images\400.png" />
+    <Content Include="Huodong\resources\lottery\images\activity-lottery-1_meitu_1.png" />
+    <Content Include="Huodong\resources\lottery\images\activity-lottery-2.png" />
+    <Content Include="Huodong\resources\lottery\images\activity-lottery-bg2.jpg" />
+    <Content Include="Huodong\resources\lottery\images\activity-scratch-card-bannerbg.png" />
+    <Content Include="Huodong\resources\lottery\images\activity-scratch-card-bg.jpg" />
+    <Content Include="Huodong\resources\lottery\images\cj.jpg" />
+    <Content Include="Huodong\resources\lottery\images\cj1.jpg" />
+    <Content Include="Huodong\resources\lottery\images\cjw.gif" />
+    <Content Include="Huodong\resources\lottery\images\cj_03.gif" />
+    <Content Include="Huodong\resources\lottery\images\cj_07.gif" />
+    <Content Include="Huodong\resources\lottery\images\disk.jpg" />
+    <Content Include="Huodong\resources\lottery\images\mario.png" />
+    <Content Include="Huodong\resources\lottery\images\scratchcard.jpg" />
+    <Content Include="Huodong\resources\lottery\images\slide0.png" />
+    <Content Include="Huodong\resources\lottery\images\slide1.png" />
+    <Content Include="Huodong\resources\lottery\images\slide2.png" />
+    <Content Include="Huodong\resources\lottery\images\slide3.png" />
+    <Content Include="Huodong\resources\lottery\images\slide4.png" />
+    <Content Include="Huodong\resources\lottery\images\slide5.png" />
+    <Content Include="Huodong\resources\lottery\images\slide6.png" />
+    <Content Include="Huodong\resources\lottery\images\slide7.png" />
+    <Content Include="Huodong\resources\lottery\images\start.png" />
+    <Content Include="Huodong\resources\lottery\images\title-bg-brown.png" />
+    <Content Include="Huodong\resources\lottery\images\title-bg-red.png" />
+    <Content Include="Huodong\resources\lottery\images\抽奖2.gif" />
+    <Content Include="Huodong\resources\lottery\js\alert.js" />
+    <Content Include="Huodong\resources\lottery\js\jquery.easing.min.js" />
+    <Content Include="Huodong\resources\lottery\js\jQueryRotate.js" />
+    <Content Include="Huodong\resources\lottery\js\wScratchPad.js" />
+    <Content Include="Huodong\WeiKanJia\02.html" />
+    <Content Include="Huodong\WeiKanJia\Css\style_WeiKanJia.css" />
+    <Content Include="Huodong\WeiKanJia\Css\WeiKanJia.css" />
+    <Content Include="Huodong\WeiKanJia\default.html" />
+    <Content Include="Huodong\WeiKanJia\js\WeiKanJia.js" />
+    <Content Include="Images\001.jpg" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\Bookmarker.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\Company01.png" />
+    <Content Include="Images\guide.png" />
+    <Content Include="Images\guide1.png" />
+    <Content Include="Images\guideShare.gif" />
+    <Content Include="Images\guideShare.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\horse1.gif" />
+    <Content Include="Images\horse2.gif" />
+    <Content Include="Images\icons-36-white.png" />
+    <Content Include="Images\icon_msg.png" />
+    <Content Include="Images\icon_timeline.png" />
+    <Content Include="Images\jjjj0.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\mam111a.gif" />
+    <Content Include="Images\mama---.gif" />
+    <Content Include="Images\mama.gif" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\pull-icon%402x.png" />
+    <Content Include="Images\TheCerBase_Out.jpg" />
+    <Content Include="Images\Wait.gif" />
+    <Content Include="MIDSM.aspx" />
+    <Content Include="MIDSMF.aspx" />
+    <Content Include="MultiButton_agent.aspx" />
+    <Content Include="multibutton_agentAd.aspx" />
+    <Content Include="Multibutton_OperateCenter_Order.aspx" />
+    <Content Include="Multibutton_Askmodify_Parent.aspx" />
+    <Content Include="MultiButton_comments.aspx" />
+    <Content Include="multibutton_coupons.aspx" />
+    <Content Include="MultiButton_customer.aspx" />
+    <Content Include="MultiButton_GouWuQuanChange.aspx" />
+    <Content Include="MultiButton_income_drawmoney.aspx" />
+    <Content Include="MultiButton_income_GiveMoney.aspx" />
+    <Content Include="MultiButton_AllMyMember.aspx" />
+    <Content Include="MultiButton_YunYinZhongXinAllMember.aspx" />
+    <Content Include="MultiButton_ShowYunYinZhongXinTotalCreditsData.aspx" />
+    <Content Include="MultiButton_ShowYunYinZhongXinOrderData.aspx" />
+    <Content Include="MultiButton_ShowTotalWealthData.aspx" />
+    <Content Include="MultiButton_ShowMoneyData.aspx" />
+    <Content Include="MultiButton_ShowMoney_Vouchers.aspx" />
+    <Content Include="MyWeBuy.aspx" />
+    <Content Include="OfflineShop.aspx" />
+    <Content Include="OnlyTest.aspx" />
+    <Content Include="OnlyWeiXin.htm" />
+    <Content Include="PayChoice.aspx" />
+    <Content Include="Product.aspx" />
+    <Content Include="ProductClass.aspx" />
+    <Content Include="ProductClassStyleModel0.aspx" />
+    <Content Include="ProductClassStyleModel1.aspx" />
+    <Content Include="ProductClassStyleModel3.aspx" />
+    <Content Include="ProductClassStyleModel2.aspx" />
+    <Content Include="ProductSearchGoods.aspx" />
+    <Content Include="QureyExp.aspx" />
+    <Content Include="Robots.txt" />
+    <Content Include="Scripts\Anounce_swipe.js" />
+    <Content Include="Scripts\cart.js" />
+    <Content Include="Scripts\cateList.js" />
+    <Content Include="Scripts\ClassWap_category.js" />
+    <Content Include="Scripts\ClassWap_Down.png" />
+    <Content Include="Scripts\ClassWap_UP.png" />
+    <Content Include="Scripts\ClassWap_zepto.min.js" />
+    <Content Include="Scripts\Default_iscroll.min.js" />
+    <Content Include="Scripts\Default_jquery.tmpl.js" />
+    <Content Include="Scripts\Default_swipe.js" />
+    <Content Include="Scripts\demo.js" />
+    <Content Include="Scripts\Each\MultiButton_agent.js" />
+    <Content Include="Scripts\Each\ProductSearchGoods.js" />
+    <Content Include="Scripts\FootMarker.js" />
+    <Content Include="Scripts\FootMarker_Location.js" />
+    <Content Include="Scripts\Goods_jQuery-shopping.js" />
+    <Content Include="Scripts\Goods_jquery.min.js" />
+    <Content Include="Scripts\iscroll.js" />
+    <Content Include="AddFunction\04ZC_project\Images\04ZC_project.rar" />
+    <Content Include="AppCanR\Css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AddFunction\06coupons\Css\icomoon.ttf" />
+    <Content Include="MultiButton_income_drawmoney.json" />
+    <Content Include="AddFunction\08Function\HandlerHttpCombiner.ashx" />
+    <Content Include="MultiButton_income_drawmoney_holidayConfig.json" />
+    <None Include="Properties\PublishProfiles\10ClientShop_Test.pubxml" />
+    <None Include="Properties\PublishProfiles\releaseLocalHostFolder.pubxml" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.2.min.js" />
+    <Content Include="Scripts\md5.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\OnlineBaomingpccs.js" />
+    <Content Include="Scripts\plugmenu.js" />
+    <Content Include="Scripts\Times.js" />
+    <Content Include="Scripts\widget.js" />
+    <Content Include="Scripts\WUC_Bottom_gitom.base.js" />
+    <Content Include="Scripts\WUC_Bottom_jquery.transit.min.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Poster.aspx" />
+    <Content Include="ShowAgentBookMark.aspx" />
+    <Content Include="Styles\Base.css" />
+    <Content Include="Styles\DemoStyle.css" />
+    <Content Include="Styles\Each\MultiButton_agent.css" />
+    <Content Include="Styles\Each\ProductSearchGoods.css" />
+    <Content Include="Styles\HelpClass_Buy_common.css" />
+    <Content Include="Styles\HelpClass_Buy_list-8.css" />
+    <Content Include="Styles\HelpClass_Buy_news.css" />
+    <Content Include="Styles\HelpClass_Buy_reset.css" />
+    <Content Include="Styles\jquery.mobile-1.3.2.min.css" />
+    <Content Include="Styles\OnlineBaomingindex.css" />
+    <Content Include="Styles\OnlineBaomingnews1_.css" />
+    <Content Include="Styles\plugmenu.css" />
+    <Content Include="Templet\01WYJS\Css\base.css" />
+    <Content Include="Templet\01WYJS\Css\Cart.css" />
+    <Content Include="Templet\01WYJS\Css\common-v4.css" />
+    <Content Include="Templet\01WYJS\Css\common.css" />
+    <Content Include="Templet\01WYJS\Css\font-awesome.css" />
+    <Content Include="Templet\01WYJS\Css\foundation.css" />
+    <Content Include="Templet\01WYJS\Css\GuidePage.css" />
+    <Content Include="Templet\01WYJS\Css\itemListTemplate.css" />
+    <Content Include="Templet\01WYJS\Css\layer.css" />
+    <Content Include="Templet\01WYJS\Css\mall.css" />
+    <Content Include="Templet\01WYJS\Css\mall_Templet1.css" />
+    <Content Include="Templet\01WYJS\Css\Multibutton_OperateCenter_Order.css" />
+    <Content Include="Templet\01WYJS\Css\MultiButton_GouWuQuanChange.css" />
+    <Content Include="Templet\01WYJS\Css\MultiButton_AskModify_Parent.css" />
+    <Content Include="Templet\01WYJS\Css\multibutton_income_drawmoney.css" />
+    <Content Include="Templet\01WYJS\Css\normalize.css" />
+    <Content Include="Templet\01WYJS\Css\o2o.css" />
+    <Content Include="Templet\01WYJS\Css\o2o_base_929451b805.css" />
+    <Content Include="Templet\01WYJS\Css\o2o_offline_shop_2f8ff40332.css" />
+    <Content Include="Templet\01WYJS\Css\PreFoot.css" />
+    <Content Include="Templet\01WYJS\Css\QueryExp.css" />
+    <Content Include="Templet\01WYJS\Css\scroll.css" />
+    <Content Include="Templet\01WYJS\Css\SearchBar-mobile-template.css" />
+    <Content Include="Templet\01WYJS\images\AgentLogo.png" />
+    <Content Include="Templet\01WYJS\images\AgentLogo1.png" />
+    <Content Include="Templet\01WYJS\images\body_bg.jpg" />
+    <Content Include="Templet\01WYJS\images\distribution2.png" />
+    <Content Include="Templet\01WYJS\images\gb.png" />
+    <Content Include="Templet\01WYJS\images\icon.png" />
+    <Content Include="Templet\01WYJS\images\Index002.png" />
+    <Content Include="Templet\01WYJS\images\Index003.png" />
+    <Content Include="Templet\01WYJS\images\Index004.png" />
+    <Content Include="Templet\01WYJS\images\Index005.png" />
+    <Content Include="Templet\01WYJS\images\loading.gif" />
+    <Content Include="Templet\01WYJS\images\o2o\arrow%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\arrow.png" />
+    <Content Include="Templet\01WYJS\images\o2o\download_wxd.png" />
+    <Content Include="Templet\01WYJS\images\o2o\fav_step_2%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\fav_step_2.png" />
+    <Content Include="Templet\01WYJS\images\o2o\fstobfap.png" />
+    <Content Include="Templet\01WYJS\images\o2o\ftand_step_2%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\ftand_step_2.png" />
+    <Content Include="Templet\01WYJS\images\o2o\ftios_step_2%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\ftios_step_2.png" />
+    <Content Include="Templet\01WYJS\images\o2o\guide_arrow%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\guide_arrow.png" />
+    <Content Include="Templet\01WYJS\images\o2o\likes2%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\likes2.png" />
+    <Content Include="Templet\01WYJS\images\o2o\loader.gif" />
+    <Content Include="Templet\01WYJS\images\o2o\mobile%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\mobile.png" />
+    <Content Include="Templet\01WYJS\images\o2o\point2%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\point2.png" />
+    <Content Include="Templet\01WYJS\images\o2o\right_icon3%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\right_icon3.png" />
+    <Content Include="Templet\01WYJS\images\o2o\sale%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\sale.png" />
+    <Content Include="Templet\01WYJS\images\o2o\share_step_2%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\step_1%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\step_1.png" />
+    <Content Include="Templet\01WYJS\images\o2o\step_2%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\step_2.png" />
+    <Content Include="Templet\01WYJS\images\o2o\step_3%402x.png" />
+    <Content Include="Templet\01WYJS\images\o2o\step_3.png" />
+    <Content Include="Templet\01WYJS\images\placeholder_list.png" />
+    <Content Include="Templet\01WYJS\js\Base.js" />
+    <Content Include="Templet\01WYJS\js\Cart.js" />
+    <Content Include="Templet\01WYJS\js\CartGood.js" />
+    <Content Include="Templet\01WYJS\js\Common.js" />
+    <Content Include="Templet\01WYJS\js\foundation.js" />
+    <Content Include="Templet\01WYJS\js\func.js" />
+    <Content Include="Templet\01WYJS\js\func_Image.js" />
+    <Content Include="Templet\01WYJS\js\func_Image_test.js" />
+    <Content Include="Templet\01WYJS\js\jquery-1.js" />
+    <Content Include="Templet\01WYJS\js\jquery.alert.v1.2\bg.png" />
+    <Content Include="Templet\01WYJS\js\jquery.alert.v1.2\bgx.png" />
+    <Content Include="Templet\01WYJS\js\jquery.alert.v1.2\index.html" />
+    <Content Include="Templet\01WYJS\js\jquery.alert.v1.2\jquery.alert.css" />
+    <Content Include="Templet\01WYJS\js\jquery.alert.v1.2\jquery.alert.js" />
+    <Content Include="Templet\01WYJS\js\jquery.alert.v1.2\jquery.easydrag.js" />
+    <Content Include="Templet\01WYJS\js\jquery.alert.v1.2\jquery.js" />
+    <Content Include="Templet\01WYJS\js\jquery.alert.v1.2\loading.gif" />
+    <Content Include="Templet\01WYJS\js\jquery.js" />
+    <Content Include="Templet\01WYJS\js\jquery_002.js" />
+    <Content Include="Templet\01WYJS\js\jscommon.js" />
+    <Content Include="Templet\01WYJS\js\layer2.0.js" />
+    <Content Include="Templet\01WYJS\js\layer.m.js" />
+    <Content Include="Templet\01WYJS\js\Multibutton_OperateCenter_Order.js" />
+    <Content Include="Templet\01WYJS\js\MultiButton_GouWuQuanChange.js" />
+    <Content Include="Templet\01WYJS\js\MultiButton_AskModify_Parent.js" />
+    <Content Include="Templet\01WYJS\js\MultiButton_income_drawmoney.js" />
+    <Content Include="Templet\01WYJS\Css\layer2.0.css" />
+    <Content Include="Templet\01WYJS\js\o2o.js" />
+    <Content Include="Templet\01WYJS\js\o2o_base_3e0bc67bba.js" />
+    <Content Include="Templet\01WYJS\js\o2o_common_452e0e827f.js" />
+    <Content Include="Templet\01WYJS\js\o2o_hm.js" />
+    <Content Include="Templet\01WYJS\js\o2o_offline_shop_85638ed91c.js" />
+    <Content Include="Templet\01WYJS\js\o2o_u_b.js" />
+    <Content Include="Templet\01WYJS\js\Product.js" />
+    <Content Include="Templet\01WYJS\js\scroll.js" />
+    <Content Include="Templet\01WYJS\js\StaticGtimgCom\lazyload.201403071104.js" />
+    <Content Include="Templet\01WYJS\js\StaticGtimgCom\loadscript.201306251923.js" />
+    <Content Include="Templet\01WYJS\js\StaticGtimgCom\url.201309101641.js" />
+    <Content Include="Templet\01WYJS\js\StaticGtimgCom\wd.scroll.201405261106.js" />
+    <Content Include="Templet\01WYJS\js\StaticGtimgCom\wd.shop.global.201405261106.js" />
+    <Content Include="Templet\01WYJS\js\StaticGtimgCom\zepto.201402121740.js" />
+    <Content Include="Templet\01WYJS\js\wd.js" />
+    <Content Include="Templet\01WYJS\js\WeiXinShare.js" />
+    <Content Include="Templet\01WYJS\js\zepto.js" />
+    <Content Include="Templet\02ShiYi\address_Templet.html" />
+    <Content Include="Templet\02ShiYi\Cart_SaySelf_jianyi_Templet.html" />
+    <Content Include="Templet\02ShiYi\commentsMessageMe_Templet.html" />
+    <Content Include="Templet\02ShiYi\HistoryGoodsList_history_Templet.html" />
+    <Content Include="Templet\02ShiYi\InfoAlert_PleaseSubscribeMe_Templet.html" />
+    <Content Include="Templet\02ShiYi\InfoAlert_TalkMe_Templet.html" />
+    <Content Include="Templet\02ShiYi\InfoAlert_TalkOther_Templet.html" />
+    <Content Include="Templet\02ShiYi\InfoAlert_Templet.html" />
+    <Content Include="Templet\02ShiYi\js\buttons.js" />
+    <Content Include="Templet\02ShiYi\js\comments.js" />
+    <Content Include="Templet\02ShiYi\js\common.js" />
+    <Content Include="Templet\02ShiYi\js\customer.js" />
+    <Content Include="Templet\02ShiYi\js\Footer_common.js" />
+    <Content Include="Templet\02ShiYi\js\Footer_common_OLD.js" />
+    <Content Include="Templet\02ShiYi\js\Goods_gsrs.js" />
+    <Content Include="Templet\02ShiYi\js\header.js" />
+    <Content Include="Templet\02ShiYi\js\hhSwipe.js" />
+    <Content Include="Templet\02ShiYi\js\hScrollPane.js" />
+    <Content Include="Templet\02ShiYi\js\iscroll.js" />
+    <Content Include="Templet\02ShiYi\js\jquery-1.8.3.js" />
+    <Content Include="Templet\02ShiYi\js\jquery-1.9.1.js" />
+    <Content Include="Templet\02ShiYi\js\jquery.slideBox.js" />
+    <Content Include="Templet\02ShiYi\js\jquery.slideBox.min.js" />
+    <Content Include="Templet\02ShiYi\js\myscoll.js" />
+    <Content Include="Templet\02ShiYi\js\my_WeBuy.js" />
+    <Content Include="Templet\02ShiYi\js\provinceArrayListcityArrayListAreaArrayList.js" />
+    <Content Include="Templet\02ShiYi\js\scroll_img.js" />
+    <Content Include="Templet\02ShiYi\js\ShopClient_tab.js" />
+    <Content Include="Templet\02ShiYi\js\Shopping_Vouchers.js" />
+    <Content Include="Templet\02ShiYi\js\swipe.js" />
+    <Content Include="Templet\02ShiYi\js\webuy8.js" />
+    <Content Include="Templet\02ShiYi\js\YJJScripy.js" />
+    <Content Include="Templet\02ShiYi\Jump_Page_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_AgentAD_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_Agent_Templet.html" />
+    <Content Include="Templet\02ShiYi\Multibutton_OperateCenter_Order.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_CartGood2_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_CartGood3_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_CartGood_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_Cart_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_comments_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_customer_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_experience_WaitPay_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_GouWuQuanChange_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_income_drawmoney_ShareRedMoney_ShareFriend_Temple.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_income_drawmoney_ShareRedMoney_Temple.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_AskModify_Parent.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_income_drawmoney_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_income_GiveMoney_Temple.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_income_mycard_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_income_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_shopkeeper_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_ShowBeansData_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_ShowBeansMoney_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_AllMyMember.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_YunYinZhongXinAllMember.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_ShowYunYinZhongXinTotalCreditsData.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_ShowYunYinZhongXinOrderData.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_ShowTotalWealthData_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_ShowMoneyData_Templet.html" />
+    <Content Include="Templet\02ShiYi\MultiButton_ShowMoney_Vouchers_Templet.html" />
+    <Content Include="Templet\02ShiYi\MyWeBuy_Templet.html" />
+    <Content Include="Templet\02ShiYi\PayChoice_Templet.html" />
+    <Content Include="Templet\02ShiYi\ProductSearchGoods_Model0_Templet.html" />
+    <Content Include="Templet\02ShiYi\ProductSearchGoods_Model1_Templet.html" />
+    <Content Include="Templet\02ShiYi\ProductSearchGoods_Model2_Templet.html" />
+    <Content Include="Templet\02ShiYi\skin\address.css" />
+    <Content Include="Templet\02ShiYi\skin\box_swipe.css" />
+    <Content Include="Templet\02ShiYi\skin\box_swipe_Liu_Templet2.css" />
+    <Content Include="Templet\02ShiYi\skin\buttons.css" />
+    <Content Include="Templet\02ShiYi\skin\customer.css" />
+    <Content Include="Templet\02ShiYi\skin\draw.css" />
+    <Content Include="Templet\02ShiYi\skin\foot.css" />
+    <Content Include="Templet\02ShiYi\skin\foot_Goods.css" />
+    <Content Include="Templet\02ShiYi\skin\header.css" />
+    <Content Include="Templet\02ShiYi\skin\images\001.png" />
+    <Content Include="Templet\02ShiYi\skin\images\002.png" />
+    <Content Include="Templet\02ShiYi\skin\images\003.png" />
+    <Content Include="Templet\02ShiYi\skin\images\01Share.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\01.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\01.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\02.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\02.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\03.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\03.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\04.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\04.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\05.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\05.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\06.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\06.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\07.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\08.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\09.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\09.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\10.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\10.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\11.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\11.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\12.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\12.png" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\13.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\02RedWallet.png" />
+    <Content Include="Templet\02ShiYi\skin\images\04New.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\20140430030438.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\aaaaa.png" />
+    <Content Include="Templet\02ShiYi\skin\images\adv04.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\adv06.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\adv07.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\all1.png" />
+    <Content Include="Templet\02ShiYi\skin\images\back.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\001.png" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\002.png" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\003.png" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\01.png" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\02.png" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\03.png" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\logo01 - 副本.png" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\logo01.png" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\Search.png" />
+    <Content Include="Templet\02ShiYi\skin\images\body_bg.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\brand.png" />
+    <Content Include="Templet\02ShiYi\skin\images\brand_enter.png" />
+    <Content Include="Templet\02ShiYi\skin\images\Cart.png" />
+    <Content Include="Templet\02ShiYi\skin\images\class.png" />
+    <Content Include="Templet\02ShiYi\skin\images\classify.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ClassMiddle.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ClassRight.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ClassTitle.png" />
+    <Content Include="Templet\02ShiYi\skin\images\Close.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\down.png" />
+    <Content Include="Templet\02ShiYi\skin\images\eee.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\g-class.png" />
+    <Content Include="Templet\02ShiYi\skin\images\g-mine.png" />
+    <Content Include="Templet\02ShiYi\skin\images\g-phone.png" />
+    <Content Include="Templet\02ShiYi\skin\images\g-shopcar.png" />
+    <Content Include="Templet\02ShiYi\skin\images\GetMoney.png" />
+    <Content Include="Templet\02ShiYi\skin\images\grey.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\h01.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\h02.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\h03.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\h04.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\home.png" />
+    <Content Include="Templet\02ShiYi\skin\images\HorseFenXiao.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\HorseFenXiao.png" />
+    <Content Include="Templet\02ShiYi\skin\images\Hot100.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\icenter_meitu_2.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\icon.png" />
+    <Content Include="Templet\02ShiYi\skin\images\iconSayOk.png" />
+    <Content Include="Templet\02ShiYi\skin\images\iconSayOk_Small.png" />
+    <Content Include="Templet\02ShiYi\skin\images\income.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\income.png" />
+    <Content Include="Templet\02ShiYi\skin\images\jan140328202201.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\jan140328202201.png" />
+    <Content Include="Templet\02ShiYi\skin\images\jiacolor.png" />
+    <Content Include="Templet\02ShiYi\skin\images\jrimg1.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\l01b.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\l02b.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\l03b.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\l04b.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\learn_through.png" />
+    <Content Include="Templet\02ShiYi\skin\images\left.png" />
+    <Content Include="Templet\02ShiYi\skin\images\li_bg.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\logo.png" />
+    <Content Include="Templet\02ShiYi\skin\images\logo01.png" />
+    <Content Include="Templet\02ShiYi\skin\images\logo1.png" />
+    <Content Include="Templet\02ShiYi\skin\images\lrbtn.png" />
+    <Content Include="Templet\02ShiYi\skin\images\magn.png" />
+    <Content Include="Templet\02ShiYi\skin\images\middle.png" />
+    <Content Include="Templet\02ShiYi\skin\images\mine.png" />
+    <Content Include="Templet\02ShiYi\skin\images\money.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\money.htm" />
+    <Content Include="Templet\02ShiYi\skin\images\money.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyCenter.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_a.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_b.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_c.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_d.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_e.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_f.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_g.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_h.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_i.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_j.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_k.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_l.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_m.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_n.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_q - 副本.png" />
+    <Content Include="Templet\02ShiYi\skin\images\MyWeBuy8Images_q.png" />
+    <Content Include="Templet\02ShiYi\skin\images\nopic.png" />
+    <Content Include="Templet\02ShiYi\skin\images\pay.png" />
+    <Content Include="Templet\02ShiYi\skin\images\pay_pro101.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\phone.png" />
+    <Content Include="Templet\02ShiYi\skin\images\product100001.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\product100002.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\product100003.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\product100004.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\product100005.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\product100006.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\product100007.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\pull-icon%402x.png" />
+    <Content Include="Templet\02ShiYi\skin\images\qwer.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\readWallet0.png" />
+    <Content Include="Templet\02ShiYi\skin\images\readWallet1.png" />
+    <Content Include="Templet\02ShiYi\skin\images\redWallet10.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\redWallet11.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\right.png" />
+    <Content Include="Templet\02ShiYi\skin\images\Scanning.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\Scanning.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ScanningGoods.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\SecondBuy.png" />
+    <Content Include="Templet\02ShiYi\skin\images\shaomiao1.png" />
+    <Content Include="Templet\02ShiYi\skin\images\shopcar.png" />
+    <Content Include="Templet\02ShiYi\skin\images\shopping.png" />
+    <Content Include="Templet\02ShiYi\skin\images\soushuo1.png" />
+    <Content Include="Templet\02ShiYi\skin\images\tbutton.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\tehui.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\tehui1.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\tobtn.png" />
+    <Content Include="Templet\02ShiYi\skin\images\today_green.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\today_login.png" />
+    <Content Include="Templet\02ShiYi\skin\images\today_preferential.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\today_preferential.png" />
+    <Content Include="Templet\02ShiYi\skin\images\today_red.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\transparent_img.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ01.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ02.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ03.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ04.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ05.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ06.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ07.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ08.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ09.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ10.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ_close.png" />
+    <Content Include="Templet\02ShiYi\skin\images\typ_open.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ul_bg.gif" />
+    <Content Include="Templet\02ShiYi\skin\images\up.jpg" />
+    <Content Include="Templet\02ShiYi\skin\images\visitor_Logs.png" />
+    <Content Include="Templet\02ShiYi\skin\images\walletWeBuy0.png" />
+    <Content Include="Templet\02ShiYi\skin\images\walletWeBuy1.png" />
+    <Content Include="Templet\02ShiYi\skin\images\webuy.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ZtfSubscript.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ZtfSubscriptMe.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ZtfSubscriptOther.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ZtfSubscript_Dot.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ZtfSubscript_Left_Down.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ZtfSubscript_Left_Up.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ZtfSubscript_Right_Down.png" />
+    <Content Include="Templet\02ShiYi\skin\images\ZtfSubscript_Right_Up.png" />
+    <Content Include="Templet\02ShiYi\skin\images\zuan.png" />
+    <Content Include="Templet\02ShiYi\skin\images\zuan1.png" />
+    <Content Include="Templet\02ShiYi\skin\InfoAlert.css" />
+    <Content Include="Templet\02ShiYi\skin\iscroll.css" />
+    <Content Include="Templet\02ShiYi\skin\jquery.slideBox.css" />
+    <Content Include="Templet\02ShiYi\skin\layout.css" />
+    <Content Include="Templet\02ShiYi\skin\lunbo.css" />
+    <Content Include="Templet\02ShiYi\skin\main.css" />
+    <Content Include="Templet\02ShiYi\skin\MultiButton_income_GiveMoney.css" />
+    <Content Include="Templet\02ShiYi\skin\my_WeBuy.css" />
+    <Content Include="Templet\02ShiYi\skin\Oliver.css" />
+    <Content Include="Templet\02ShiYi\skin\prettify.css" />
+    <Content Include="Templet\02ShiYi\skin\scrollbar.css" />
+    <Content Include="Templet\02ShiYi\skin\ShareRedMoney_.css" />
+    <Content Include="Templet\02ShiYi\skin\ShareRedMoney_ShareFriend.css" />
+    <Content Include="Templet\02ShiYi\skin\Shopping_Vouchers.css" />
+    <Content Include="Templet\02ShiYi\skin\style.css" />
+    <Content Include="Templet\02ShiYi\skin\wbincome.css" />
+    <Content Include="Templet\02ShiYi\skin\we.css" />
+    <Content Include="Templet\02ShiYi\skin\WUC_Bottom_nav.css" />
+    <Content Include="Templet\02ShiYi\skin\YJJ_styleCss.css" />
+    <Content Include="Templet\02ShiYi\skin\ys.css" />
+    <Content Include="Templet\02ShiYi\skin\ys425.css" />
+    <Content Include="Templet\02ShiYi\skin\ys_LiuGoods.css" />
+    <Content Include="Templet\02ShiYi\sun_content-Goods_Templet.html" />
+    <Content Include="Templet\02ShiYi\sun_content-Goods_Templet2_Liu.html" />
+    <Content Include="Templet\02ShiYi\sun_list_ShopClient_Templet.html" />
+    <Content Include="Templet\03LiuShenMa\Css\02Templet01.css" />
+    <Content Include="Templet\03LiuShenMa\Css\03LiuShenMa.css" />
+    <Content Include="Templet\03LiuShenMa\Images\FaveriMore.jpg" />
+    <Content Include="Templet\03LiuShenMa\Images\FaveriMore1.jpg" />
+    <Content Include="Templet\03LiuShenMa\Images\ok.png" />
+    <Content Include="Templet\04StyleModel\Css\StyleSheet4.css" />
+    <Content Include="Templet\04StyleModel\Images\001.jpg" />
+    <Content Include="Templet\04StyleModel\Images\002.jpg" />
+    <Content Include="Templet\04StyleModel\Images\01.png" />
+    <Content Include="Templet\04StyleModel\Images\02.png" />
+    <Content Include="Templet\04StyleModel\Images\03.png" />
+    <Content Include="Templet\04StyleModel\Images\04.png" />
+    <Content Include="Templet\04StyleModel\Images\nopic_loading.gif" />
+    <Content Include="Templet\04StyleModel\Js\StyleSheet4.js" />
+    <Content Include="Templet\05StyleModel\Css\StyleSheet5.css" />
+    <Content Include="Templet\05StyleModel\Js\StyleSheet5.js" />
+    <Content Include="TestHtml.html" />
+    <Content Include="Test\01WebSocket.html" />
+    <Content Include="User\AjaxUserInfoModify.aspx" />
+    <Content Include="User\AppExit.aspx" />
+    <Content Include="User\AppLogin.aspx" />
+    <Content Include="User\css\input\icons-18-white_37.png" />
+    <Content Include="User\css\input\icons-18-white_39.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img1-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img1.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img2-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img2.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img3-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img3.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img4.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img5-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img5.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img6.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img7-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img7.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img8-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img8.png" />
+    <Content Include="User\css\project\footer-btn\f-btn-img9.png" />
+    <Content Include="User\css\project\footer-btn\f-btn1-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn1.png" />
+    <Content Include="User\css\project\footer-btn\f-btn10-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn10.png" />
+    <Content Include="User\css\project\footer-btn\f-btn11.png" />
+    <Content Include="User\css\project\footer-btn\f-btn12-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn12.png" />
+    <Content Include="User\css\project\footer-btn\f-btn13.png" />
+    <Content Include="User\css\project\footer-btn\f-btn14.png" />
+    <Content Include="User\css\project\footer-btn\f-btn15.png" />
+    <Content Include="User\css\project\footer-btn\f-btn2-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn2.png" />
+    <Content Include="User\css\project\footer-btn\f-btn4-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn4.png" />
+    <Content Include="User\css\project\footer-btn\f-btn5-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn5.png" />
+    <Content Include="User\css\project\footer-btn\f-btn6-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn6.png" />
+    <Content Include="User\css\project\footer-btn\f-btn7-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn7.png" />
+    <Content Include="User\css\project\footer-btn\f-btn8-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn8.png" />
+    <Content Include="User\css\project\footer-btn\f-btn9-act.png" />
+    <Content Include="User\css\project\footer-btn\f-btn9.png" />
+    <Content Include="User\css\project\footer-btn\foot-p2-act.png" />
+    <Content Include="User\css\project\footer-btn\foot-p2.png" />
+    <Content Include="User\css\project\footer-btn\footerImg1-act.png" />
+    <Content Include="User\css\project\footer-btn\footerImg1.png" />
+    <Content Include="User\css\project\footer-btn\footerImg2-act.png" />
+    <Content Include="User\css\project\footer-btn\footerImg2.png" />
+    <Content Include="User\css\project\footer-btn\footerImg3-act.png" />
+    <Content Include="User\css\project\footer-btn\footerImg3.png" />
+    <Content Include="User\css\project\footer-btn\footerImg4-act.png" />
+    <Content Include="User\css\project\footer-btn\footerImg4.png" />
+    <Content Include="User\css\project\footer-btn\footerImg5-act.png" />
+    <Content Include="User\css\project\footer-btn\footerImg5-act2.png" />
+    <Content Include="User\css\project\footer-btn\footerImg5.png" />
+    <Content Include="User\css\project\footer-btn\footerImg6-act2.png" />
+    <Content Include="User\css\project\footer-btn\footerImg6.png" />
+    <Content Include="User\css\project\footer-btn\footerImg7-act.png" />
+    <Content Include="User\css\project\footer-btn\footerImg7-act2.png" />
+    <Content Include="User\css\project\footer-btn\footerImg7.png" />
+    <Content Include="User\css\project\footer-btn\footerImg8-act.png" />
+    <Content Include="User\css\project\footer-btn\footerImg8.png" />
+    <Content Include="User\css\project\footer-btn\footerImg9-act.png" />
+    <Content Include="User\css\project\footer-btn\footerImg9.png" />
+    <Content Include="User\css\project\footer-btn\footImg7-act.png" />
+    <Content Include="User\css\project\images\arrow.png" />
+    <Content Include="User\css\project\images\returnBtn.png" />
+    <Content Include="User\css\project\images\t-btn1.png" />
+    <Content Include="User\css\project\images\t_del.png" />
+    <Content Include="User\css\project\style.css" />
+    <Content Include="User\css\project\ui-list.css" />
+    <Content Include="User\css\project\ui-tab.css" />
+    <Content Include="User\css\ui-anim.css" />
+    <Content Include="User\css\ui-base.css" />
+    <Content Include="User\css\ui-box.css" />
+    <Content Include="User\css\ui-color-v3.css" />
+    <Content Include="User\css\ui-input.css" />
+    <Content Include="User\css\ui-on.css" />
+    <Content Include="User\Html5LocalStorge.aspx" />
+    <Content Include="User\HtmlLoginOnyForjump.aspx" />
+    <Content Include="User\Images\ChenWait.gif" />
+    <Content Include="User\index\css\index.css" />
+    <Content Include="User\index\css\main.css" />
+    <Content Include="User\index\css\myImg\001.png" />
+    <Content Include="User\index\css\myImg\002.png" />
+    <Content Include="User\index\css\myImg\003.png" />
+    <Content Include="User\index\css\myImg\icon.png" />
+    <Content Include="User\index\css\myImg\logo.png" />
+    <Content Include="User\index\css\myImg\t-btn-hf1.png" />
+    <Content Include="User\js\jquery.cookie.js" />
+    <Content Include="User\js\js\Footer_common.js" />
+    <Content Include="User\js\js\header.js" />
+    <Content Include="User\js\js\hhSwipe.js" />
+    <Content Include="User\js\js\jquery-1.8.3.js" />
+    <Content Include="User\js\js\scroll_img.js" />
+    <Content Include="User\js\main.js" />
+    <Content Include="User\js\skin\foot.css" />
+    <Content Include="User\js\skin\header.css" />
+    <Content Include="User\js\skin\images\201408010529579697.jpg" />
+    <Content Include="User\js\skin\images\Hot100.gif" />
+    <Content Include="User\js\skin\images\learn_through.png" />
+    <Content Include="User\js\skin\images\magn.png" />
+    <Content Include="User\js\skin\images\money.gif" />
+    <Content Include="User\js\skin\images\SecondBuy.png" />
+    <Content Include="User\js\skin\images\today_preferential.gif" />
+    <Content Include="User\js\skin\images\transparent_img.png" />
+    <Content Include="User\js\skin\images\up.jpg" />
+    <Content Include="User\js\skin\we.css" />
+    <Content Include="User\js\zy_anim.js" />
+    <Content Include="User\js\zy_click.js" />
+    <Content Include="User\js\zy_control.js" />
+    <Content Include="User\js\zy_encrypt.js" />
+    <Content Include="User\js\zy_event.js" />
+    <Content Include="User\js\zy_icache.js" />
+    <Content Include="User\js\zy_json.js" />
+    <Content Include="User\js\zy_slide.js" />
+    <Content Include="User\js\zy_tmpl.js" />
+    <Content Include="User\login.html" />
+    <Content Include="User\Register.aspx" />
+    <Content Include="User\Scripts\Html5LocalStorge.js" />
+    <Content Include="User\Scripts\jquery1.7.2.min.js" />
+    <Content Include="User\ShopLogin.aspx" />
+    <Content Include="User\ShopReg.aspx" />
+    <Content Include="User\Styles\btn2.jpg" />
+    <Content Include="User\Styles\btn_bg.jpg" />
+    <Content Include="User\Styles\style.css" />
+    <Content Include="User\Styles\top_bg.jpg" />
+    <Content Include="User\WeiXinOpenID.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WeiXinErweima_Tuiguang.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddFunction\01Shake_Parter\01Shake_Parter.aspx.cs">
+      <DependentUpon>01Shake_Parter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFunction\01Shake_Parter\01Shake_Parter.aspx.designer.cs">
+      <DependentUpon>01Shake_Parter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFunction\01Shake_Parter\data\WService---.asmx.cs">
+      <DependentUpon>WService---.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AddFunction\06coupons\IndexList.aspx.cs">
+      <DependentUpon>IndexList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFunction\06coupons\IndexList.aspx.designer.cs">
+      <DependentUpon>IndexList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFunction\06coupons\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFunction\06coupons\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFunction\07OperationGoods\OperationProduct.aspx.cs">
+      <DependentUpon>OperationProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFunction\07OperationGoods\OperationProduct.aspx.designer.cs">
+      <DependentUpon>OperationProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFunction\08Function\HandlerHttpCombiner.ashx.cs">
+      <DependentUpon>HandlerHttpCombiner.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFunction\08Function\WF_JsC.aspx.cs">
+      <DependentUpon>WF_JsC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFunction\08Function\WF_JsC.aspx.designer.cs">
+      <DependentUpon>WF_JsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_Good.aspx.cs">
+      <DependentUpon>Cart_Good.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart_Good.aspx.designer.cs">
+      <DependentUpon>Cart_Good.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_Good2.aspx.cs">
+      <DependentUpon>Cart_Good2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart_Good2.aspx.designer.cs">
+      <DependentUpon>Cart_Good2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_Good2_o2o_Book.aspx.cs">
+      <DependentUpon>Cart_Good2_o2o_Book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart_Good2_o2o_Book.aspx.designer.cs">
+      <DependentUpon>Cart_Good2_o2o_Book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_Good3.aspx.cs">
+      <DependentUpon>Cart_Good3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart_Good3.aspx.designer.cs">
+      <DependentUpon>Cart_Good3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_SaySelf.aspx.cs">
+      <DependentUpon>Cart_SaySelf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart_SaySelf.aspx.designer.cs">
+      <DependentUpon>Cart_SaySelf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_Self.aspx.cs">
+      <DependentUpon>Cart_Self.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart_Self.aspx.designer.cs">
+      <DependentUpon>Cart_Self.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="commentsMessageMe.aspx.cs">
+      <DependentUpon>commentsMessageMe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commentsMessageMe.aspx.designer.cs">
+      <DependentUpon>commentsMessageMe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditYourShop.aspx.cs">
+      <DependentUpon>EditYourShop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditYourShop.aspx.designer.cs">
+      <DependentUpon>EditYourShop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditYourShopIni.aspx.cs">
+      <DependentUpon>EditYourShopIni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditYourShopIni.aspx.designer.cs">
+      <DependentUpon>EditYourShopIni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditYourShop_Ad.aspx.cs">
+      <DependentUpon>EditYourShop_Ad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditYourShop_Ad.aspx.designer.cs">
+      <DependentUpon>EditYourShop_Ad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\FileNotFound.aspx.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\FileNotFound.aspx.designer.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\GeneralError.aspx.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\GeneralError.aspx.designer.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Game\DoGameUserID.aspx.cs">
+      <DependentUpon>DoGameUserID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Game\DoGameUserID.aspx.designer.cs">
+      <DependentUpon>DoGameUserID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GuidePage.aspx.cs">
+      <DependentUpon>GuidePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuidePage.aspx.designer.cs">
+      <DependentUpon>GuidePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Cart_Good2_o2o_Book.ashx.cs">
+      <DependentUpon>Cart_Good2_o2o_Book.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\cubiq-iscroll\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handler\cubiq-iscroll\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handler\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Default_Banner.ashx.cs">
+      <DependentUpon>Default_Banner.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Default_Get_NestShopName.ashx.cs">
+      <DependentUpon>Default_Get_NestShopName.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Default_Get_NestShopNameListByo2o.ashx.cs">
+      <DependentUpon>Default_Get_NestShopNameListByo2o.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Default_SAgent_ProductGoodClass.ashx.cs">
+      <DependentUpon>Default_SAgent_ProductGoodClass.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Default_SAgent_ProductNewGood.ashx.cs">
+      <DependentUpon>Default_SAgent_ProductNewGood.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\guidepage_Content.ashx.cs">
+      <DependentUpon>guidepage_Content.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Handler_CheckQuan.ashx.cs">
+      <DependentUpon>Handler_CheckQuan.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\MultiButton_agent.ashx.cs">
+      <DependentUpon>MultiButton_agent.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\MultiButton_Cart.ashx.cs">
+      <DependentUpon>MultiButton_Cart.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\MyWeBuy_AddAgentLevel.ashx.cs">
+      <DependentUpon>MyWeBuy_AddAgentLevel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\MyWeBuy_AddGouWUQuanDuiHuanEtc.ashx.cs">
+      <DependentUpon>MyWeBuy_AddGouWUQuanDuiHuanEtc.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Product.ashx.cs">
+      <DependentUpon>Product.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\ProductSearchGoods.ashx.cs">
+      <DependentUpon>ProductSearchGoods.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Product_Dao.ashx.cs">
+      <DependentUpon>Product_Dao.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Product_LongInfo.ashx.cs">
+      <DependentUpon>Product_LongInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Product_MultiMediaSay.ashx.cs">
+      <DependentUpon>Product_MultiMediaSay.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Product_newTmpletAnnouncePic_GoodList---.ashx.cs">
+      <DependentUpon>Product_newTmpletAnnouncePic_GoodList---.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\QueryExp.ashx.cs">
+      <DependentUpon>QueryExp.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\UserIDSelectProductList.ashx.cs">
+      <DependentUpon>UserIDSelectProductList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryGoodsList.aspx.cs">
+      <DependentUpon>HistoryGoodsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistoryGoodsList.aspx.designer.cs">
+      <DependentUpon>HistoryGoodsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Huodong\05OlineInfo.aspx.cs">
+      <DependentUpon>05OlineInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Huodong\05OlineInfo.aspx.designer.cs">
+      <DependentUpon>05OlineInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Huodong\LightAppCN\D.aspx.cs">
+      <DependentUpon>D.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Huodong\LightAppCN\D.aspx.designer.cs">
+      <DependentUpon>D.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Huodong\lottery\Scratchcard.aspx.cs">
+      <DependentUpon>Scratchcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Huodong\lottery\Scratchcard.aspx.designer.cs">
+      <DependentUpon>Scratchcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Huodong\lottery\Wheel.aspx.cs">
+      <DependentUpon>Wheel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Huodong\lottery\Wheel.aspx.designer.cs">
+      <DependentUpon>Wheel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MIDSM.aspx.cs">
+      <DependentUpon>MIDSM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MIDSM.aspx.designer.cs">
+      <DependentUpon>MIDSM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MIDSMF.aspx.cs">
+      <DependentUpon>MIDSMF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MIDSMF.aspx.designer.cs">
+      <DependentUpon>MIDSMF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_agent.aspx.cs">
+      <DependentUpon>MultiButton_agent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_agent.aspx.designer.cs">
+      <DependentUpon>MultiButton_agent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="multibutton_agentAd.aspx.cs">
+      <DependentUpon>multibutton_agentAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="multibutton_agentAd.aspx.designer.cs">
+      <DependentUpon>multibutton_agentAd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Multibutton_OperateCenter_Order.aspx.cs">
+      <DependentUpon>Multibutton_OperateCenter_Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Multibutton_OperateCenter_Order.aspx.designer.cs">
+      <DependentUpon>Multibutton_OperateCenter_Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Multibutton_Askmodify_Parent.aspx.cs">
+      <DependentUpon>Multibutton_Askmodify_Parent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Multibutton_Askmodify_Parent.aspx.designer.cs">
+      <DependentUpon>Multibutton_Askmodify_Parent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_comments.aspx.cs">
+      <DependentUpon>MultiButton_comments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_comments.aspx.designer.cs">
+      <DependentUpon>MultiButton_comments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="multibutton_coupons.aspx.cs">
+      <DependentUpon>multibutton_coupons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="multibutton_coupons.aspx.designer.cs">
+      <DependentUpon>multibutton_coupons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_customer.aspx.cs">
+      <DependentUpon>MultiButton_customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_customer.aspx.designer.cs">
+      <DependentUpon>MultiButton_customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_GouWuQuanChange.aspx.cs">
+      <DependentUpon>MultiButton_GouWuQuanChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_GouWuQuanChange.aspx.designer.cs">
+      <DependentUpon>MultiButton_GouWuQuanChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_income_drawmoney.aspx.cs">
+      <DependentUpon>MultiButton_income_drawmoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_income_drawmoney.aspx.designer.cs">
+      <DependentUpon>MultiButton_income_drawmoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_income_GiveMoney.aspx.cs">
+      <DependentUpon>MultiButton_income_GiveMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_income_GiveMoney.aspx.designer.cs">
+      <DependentUpon>MultiButton_income_GiveMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_AllMyMember.aspx.cs">
+      <DependentUpon>MultiButton_AllMyMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_AllMyMember.aspx.designer.cs">
+      <DependentUpon>MultiButton_AllMyMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_YunYinZhongXinAllMember.aspx.cs">
+      <DependentUpon>MultiButton_YunYinZhongXinAllMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_YunYinZhongXinAllMember.aspx.designer.cs">
+      <DependentUpon>MultiButton_YunYinZhongXinAllMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_ShowYunYinZhongXinTotalCreditsData.aspx.cs">
+      <DependentUpon>MultiButton_ShowYunYinZhongXinTotalCreditsData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_ShowYunYinZhongXinTotalCreditsData.aspx.designer.cs">
+      <DependentUpon>MultiButton_ShowYunYinZhongXinTotalCreditsData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_ShowYunYinZhongXinOrderData.aspx.cs">
+      <DependentUpon>MultiButton_ShowYunYinZhongXinOrderData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_ShowYunYinZhongXinOrderData.aspx.designer.cs">
+      <DependentUpon>MultiButton_ShowYunYinZhongXinOrderData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_ShowTotalWealthData.aspx.cs">
+      <DependentUpon>MultiButton_ShowTotalWealthData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_ShowTotalWealthData.aspx.designer.cs">
+      <DependentUpon>MultiButton_ShowTotalWealthData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_ShowMoneyData.aspx.cs">
+      <DependentUpon>MultiButton_ShowMoneyData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_ShowMoneyData.aspx.designer.cs">
+      <DependentUpon>MultiButton_ShowMoneyData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiButton_ShowMoney_Vouchers.aspx.cs">
+      <DependentUpon>MultiButton_ShowMoney_Vouchers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiButton_ShowMoney_Vouchers.aspx.designer.cs">
+      <DependentUpon>MultiButton_ShowMoney_Vouchers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyWeBuy.aspx.cs">
+      <DependentUpon>MyWeBuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyWeBuy.aspx.designer.cs">
+      <DependentUpon>MyWeBuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OfflineShop.aspx.cs">
+      <DependentUpon>OfflineShop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OfflineShop.aspx.designer.cs">
+      <DependentUpon>OfflineShop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyTest.aspx.cs">
+      <DependentUpon>OnlyTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyTest.aspx.designer.cs">
+      <DependentUpon>OnlyTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayChoice.aspx.cs">
+      <DependentUpon>PayChoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayChoice.aspx.designer.cs">
+      <DependentUpon>PayChoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductClass.aspx.cs">
+      <DependentUpon>ProductClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductClass.aspx.designer.cs">
+      <DependentUpon>ProductClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductClassStyleModel0.aspx.cs">
+      <DependentUpon>ProductClassStyleModel0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductClassStyleModel0.aspx.designer.cs">
+      <DependentUpon>ProductClassStyleModel0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductClassStyleModel1.aspx.cs">
+      <DependentUpon>ProductClassStyleModel1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductClassStyleModel1.aspx.designer.cs">
+      <DependentUpon>ProductClassStyleModel1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductClassStyleModel3.aspx.cs">
+      <DependentUpon>ProductClassStyleModel3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductClassStyleModel3.aspx.designer.cs">
+      <DependentUpon>ProductClassStyleModel3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductClassStyleModel2.aspx.cs">
+      <DependentUpon>ProductClassStyleModel2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductClassStyleModel2.aspx.designer.cs">
+      <DependentUpon>ProductClassStyleModel2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSearchGoods.aspx.cs">
+      <DependentUpon>ProductSearchGoods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductSearchGoods.aspx.designer.cs">
+      <DependentUpon>ProductSearchGoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QureyExp.aspx.cs">
+      <DependentUpon>QureyExp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QureyExp.aspx.designer.cs">
+      <DependentUpon>QureyExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poster.aspx.cs">
+      <DependentUpon>Poster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poster.aspx.designer.cs">
+      <DependentUpon>Poster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAgentBookMark.aspx.cs">
+      <DependentUpon>ShowAgentBookMark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAgentBookMark.aspx.designer.cs">
+      <DependentUpon>ShowAgentBookMark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\AjaxUserInfoModify.aspx.cs">
+      <DependentUpon>AjaxUserInfoModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AjaxUserInfoModify.aspx.designer.cs">
+      <DependentUpon>AjaxUserInfoModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\AppExit.aspx.cs">
+      <DependentUpon>AppExit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AppExit.aspx.designer.cs">
+      <DependentUpon>AppExit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\AppLogin.aspx.cs">
+      <DependentUpon>AppLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AppLogin.aspx.designer.cs">
+      <DependentUpon>AppLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Html5LocalStorge.aspx.cs">
+      <DependentUpon>Html5LocalStorge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Html5LocalStorge.aspx.designer.cs">
+      <DependentUpon>Html5LocalStorge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\HtmlLoginOnyForjump.aspx.cs">
+      <DependentUpon>HtmlLoginOnyForjump.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\HtmlLoginOnyForjump.aspx.designer.cs">
+      <DependentUpon>HtmlLoginOnyForjump.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ShopLogin.aspx.cs">
+      <DependentUpon>ShopLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ShopLogin.aspx.designer.cs">
+      <DependentUpon>ShopLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ShopReg.aspx.cs">
+      <DependentUpon>ShopReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ShopReg.aspx.designer.cs">
+      <DependentUpon>ShopReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\WeiXinOpenID.aspx.cs">
+      <DependentUpon>WeiXinOpenID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\WeiXinOpenID.aspx.designer.cs">
+      <DependentUpon>WeiXinOpenID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinErweima_Tuiguang.aspx.cs">
+      <DependentUpon>WeiXinErweima_Tuiguang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeiXinErweima_Tuiguang.aspx.designer.cs">
+      <DependentUpon>WeiXinErweima_Tuiguang.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="SiteUrls.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AddFunction\01Shake_Parter\摇一摇学习.txt--" />
+    <Content Include="Game\001yuebing2\images\c1.psd" />
+    <Content Include="Game\001yuebing2\images\Thumbs.db" />
+    <Content Include="Game\001yuebing2\index.html--" />
+    <Content Include="Game\002qiangfeicui\.idea\.name" />
+    <Content Include="Game\002qiangfeicui\.idea\jicilang.iml" />
+    <Content Include="Game\002qiangfeicui\window.HTMLAudioElement&amp;&amp;a.tag" />
+    <Content Include="Game\003HowColor\assets\img\Thumbs.db" />
+    <Content Include="Game\004zuiqiangyanli\Thumbs.db" />
+    <Content Include="Handler\Cart_Good2_o2o_Book.ashx" />
+    <Content Include="Handler\Default_Banner.ashx" />
+    <Content Include="Handler\Default_Get_NestShopName.ashx" />
+    <Content Include="Handler\Default_Get_NestShopNameListByo2o.ashx" />
+    <Content Include="Handler\Default_SAgent_ProductGoodClass.ashx" />
+    <Content Include="Handler\Default_SAgent_ProductNewGood.ashx" />
+    <Content Include="Handler\guidepage_Content.ashx" />
+    <Content Include="Handler\Handler_CheckQuan.ashx" />
+    <Content Include="Handler\MultiButton_agent.ashx" />
+    <Content Include="Handler\MultiButton_Cart.ashx" />
+    <Content Include="Handler\MyWeBuy_AddAgentLevel.ashx" />
+    <Content Include="Handler\MyWeBuy_AddGouWUQuanDuiHuanEtc.ashx" />
+    <Content Include="Handler\Product.ashx" />
+    <Content Include="Handler\ProductSearchGoods.ashx" />
+    <Content Include="Handler\Product_Dao.ashx" />
+    <Content Include="Handler\Product_LongInfo.ashx" />
+    <Content Include="Handler\Product_MultiMediaSay.ashx" />
+    <Content Include="Handler\Product_newTmpletAnnouncePic_GoodList---.ashx" />
+    <Content Include="Handler\QueryExp.ashx" />
+    <Content Include="Handler\UserIDSelectProductList.ashx" />
+    <Content Include="Templet\01WYJS\Css\fonts\font-mobile-template.eot" />
+    <Content Include="Templet\01WYJS\Css\fonts\font-mobile-template.ttf" />
+    <Content Include="Templet\01WYJS\Css\fonts\font-mobile-template.woff" />
+    <Content Include="Templet\01WYJS\Css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templet\01WYJS\Css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templet\02ShiYi\js\FadeInOut.js--" />
+    <Content Include="Templet\02ShiYi\skin\images\bgimg\logo01.psd" />
+    <Content Include="Templet\02ShiYi\skin\images\logo01.psd" />
+    <Content Include="Templet\02ShiYi\skin\images\nopic.psd" />
+    <Content Include="Templet\02ShiYi\skin\images\redWallet10.psd" />
+    <Content Include="Templet\02ShiYi\skin\images\redWallet11.psd" />
+    <Content Include="Templet\02ShiYi\skin\images\Thumbs.db" />
+    <Content Include="Templet\02ShiYi\skin\images\walletWeBuy0.psd" />
+    <Content Include="Templet\02ShiYi\skin\images\walletWeBuy1.psd" />
+    <Content Include="Templet\01WYJS\Css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templet\01WYJS\Css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templet\02ShiYi\skin\images\02Button\09.psd" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AddFunction\04ZC_project\京东众筹_files\" />
+    <Folder Include="Styles\01ShenMa\" />
+    <Folder Include="Templet\05StyleModel\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02ThreeLevel\01EggsoftShop_Public_CL\EggsoftShop_Public_CL.csproj">
+      <Project>{9f1e52f6-96a9-4432-85e8-e03a2c75103a}</Project>
+      <Name>EggsoftShop_Public_CL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\Eggsoft.Common\Eggsoft.Common.csproj">
+      <Project>{df6af6e5-1df5-48b2-b3af-fea8e72bcf63}</Project>
+      <Name>Eggsoft.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.BLL\EggsoftWX.BLL.csproj">
+      <Project>{38910fa2-2b1c-4e94-aee3-3eacab7147fb}</Project>
+      <Name>EggsoftWX.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.IDAL\EggsoftWX.IDAL.csproj">
+      <Project>{bb96243c-30b8-4073-b466-99c4f24ac74e}</Project>
+      <Name>EggsoftWX.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.Model\EggsoftWX.Model.csproj">
+      <Project>{3d3bd020-2be2-40ab-b53b-846a5b210f9d}</Project>
+      <Name>EggsoftWX.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.SQLServerDAL\EggsoftWX.SQLServerDAL.csproj">
+      <Project>{1252602b-8588-433e-b8c5-24667ece6bb5}</Project>
+      <Name>EggsoftWX.SQLServerDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\UrlRewriting\UrlRewriting.csproj">
+      <Project>{a2bd41af-3f83-4083-9c5d-04d46004565b}</Project>
+      <Name>UrlRewriting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>26498</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8011</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

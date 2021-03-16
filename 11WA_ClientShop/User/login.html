@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+   <link rel="stylesheet" href="css/ui-base.css?version=css201709121928">
+    <link rel="stylesheet" href="css/ui-box.css?version=css201709121928">
+    <script src="js/zy_control.js?version=js201709121928"></script>
+    <script src="js/zy_click.js?version=js201709121928"></script>
+	<script src="js/js/jquery-1.8.3.js?version=js201709121928"></script>
+	<script src="js/jquery.cookie.js?version=js201709121928"></script>
+</head>
+<body style="background:#5aa71b;"onload="useCookie()">
+	
+	
+	
+<div class="one" style="background:#015f15;height:100px;width:100%;top:0;">
+<table border="0" celllspace="0" cellpadding="0" style="width:100%;height:100px">
+	<tr>
+	<td align="center">
+	  <span  style="font-size:32px;text-align:left;color:#5aa71b;line-height:100px;font-family:微软雅黑;font-weight:bold;">会员登录</span>
+	  </td>
+	 </tr>
+</table>
+</div>
+
+  <div align="center"style="width:100%;height:240px;margin-top:60px;">
+	 <img src="index/css/myImg/001.png"style="width:240px;height:246px;">
+    </div>
+<div style="background:#ffffff;height:402px;width:auto;margin-top:60px;margin:80px;border-radius:20px;">
+<table border="0" cellspacing="0" cellpadding="0" style="height:420px;width:100%;border:0px solid #E3E3E3;border-left:none;border-right:none;border-collapse:collapse;">
+   
+ <tr style="border: 2px solid #E3E3E3;border-top:none;border-left:none;border-right:none">  
+         	   <td align="center"style="width:50%;">
+             <span style="font-size:28px;font-family:微软雅黑;"> 账&nbsp;&nbsp;号：</span>
+         	</td>
+			<td>
+			<input name="username" id="username"  type="text" value="chenpeng"style="height:60px;width:99%;border:none;font-size:27px;margin-left:-34px;"/>
+			</td>
+         </tr>   	
+	        
+	   <tr style="border: 2px solid #E3E3E3;border-top:none;border-left:none;border-right:none">  
+	    	   <td align="center"style="width:50%;">
+		 <span style="font-size:28px;font-family:微软雅黑;"> 密&nbsp;&nbsp;码：</span>
+			</td>
+         	<td>
+			  <input name="password" id="password" type="password" value=""style="height:60px;width:99%;border:none;font-size:27px;margin-left:-34px;"/>
+			</td>
+	  </tr>
+   <tr style="border: 2px solid #E3E3E3;border:none">  
+         <td align="center">
+			 <input type="checkbox" name="checkbox-1" id="checkbox1"  style="height:30px;width:30px;">
+			 <label onclick="zy_for(event)">
+	         <span style="font-size:28px;font-family:微软雅黑;">自动登录</span>
+	              </label>
+			</td>
+			<td align="center">
+			<input type="checkbox" name="checkbox-2" id="checkbox2"onclick="checksave()" style="height:25px;width:25px;">
+			 <label>
+	         <span style="font-size:28px;font-family:微软雅黑;">记住密码</span>
+	              </label>
+			</td>
+			
+    </tr>
+   </table>
+</div>
+<div style="height:100px;width:auto;margin-top:60px;margin:80px;border-radius:20px;">
+	    <table border="0" style="width:100%;height:100px;;">
+	     	<tr>
+			<td align="center">
+	     	<input type="button" value="注   册" style="background-image:url(index/css/myImg/003.png);width:219px;height:66px;border-radius: 10px;font-size:30px;font-family:微软雅黑;">
+	     </td>
+			<td align="center">
+					<input type="button" value="登   录" onclick="login()" style="background-image:url(index/css/myImg/002.png);width:219px;height:66px;border-radius: 10px;font-size:30px;font-family:微软雅黑;">
+				</td>
+	     	</tr>
+	    </table>
+	
+	
+</div>
+
+<div align="center" style="margin-bottom:9px;">
+<span style="font-size:24px;font-family:微软雅黑;color:#ffffff;">微云基石</span>
+</div>
+</body>
+<script>
+	
+
+
+	function useCookie()   
+	{   
+		var username=getCookie("username");
+		var password=getCookie("password"); 
+		//alert(password);
+		if(username!=null && password!=null){   
+			document.getElementById("username").value =username;
+			document.getElementById("password").value =password;
+			document.getElementById("checkbox-1").checked=true;	
+		}else{   
+			document.getElementById("username").value =null;
+			document.getElementById("password").value =null;
+			//alert("no data");
+		}   
+	} 
+	
+	function getCookie(NameOfCookie)   
+	{   
+		return $.cookie(NameOfCookie);
+
+	}
+	
+		//记住密码
+	function checksave()   
+	{   
+	 
+		var name=document.getElementById('username').value;   
+		var pass=document.getElementById('password').value;   
+		if(name && pass){   	
+			setCookie("password",pass);
+			setCookie("username",name);
+			
+			alert("账号:"+name+"密码:"+pass);
+		}   
+		else   
+		alert("别偷懒，请输入吧！");   
+	}   
+	function setCookie(NameOfCookie, value, expiredays)   
+	{  	
+		 $.cookie(NameOfCookie, value,{expires:7});
+	}  
+	
+		function login(){
+		var username=document.getElementById("username").value
+	    var password=document.getElementById("password").value
+   
+	   if (username =="chenpeng"&& password=="123456"){
+	        location.href="http://testcwb.eggsoft.cn/";
+	}
+	   else{
+	   	    alert("密码或账号不正确，自拍一个吧！")
+
+                         uexCamera.open(); 
+   }
+   
+   
+	}
+
+</script>
+
+</html>

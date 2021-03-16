@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="/Game/QueryString.js?version=js201709121928"></script>
+    <script type="text/javascript">
+
+        host = window.location.host;
+
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+        path = 'https://' + host + '###SAgentPath###/midsm.aspx?money_credits_vouchers=' + getQueryStringByName("Money_Credits_Vouchers");
+
+        var WeiXin_imgAllPageUrl = 'https://Test52Upload.eggsoft.cn/UpLoad/ShopClientIcon/walletWeBuy' + getQueryStringByName("Money_Credits_Vouchers") + '.jpg';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "###_PulicTitleStyle###红包设置界面-微店，###_PulicTitleStyle###红包设置界面能让你把自己的余额分享给好友。";
+        var WeiXin_shareAppAllPageTitle = '###_PulicTitleStyle###红包设置界面-微店';
+        var WeiXin_appidAllPage = '';
+
+        var varUserID = "###UserID###";///传递给 product.js   传递变量
+        var varServiceURL = "###ServiceURL###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+    </script>
+     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"  name="viewport" />
+    <title>###_PulicTitleStyle###红包设置界面</title>
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/we.css?version=css201709121928" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/ShareRedMoney_.css?version=css201709121928">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/iscroll.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    <script src="/Scripts/md5.js?version=js201709121928"></script>
+    <script type="text/javascript">
+       
+        //function returnSubmitData() {
+        //    var UserRealName = document.getElementById("UserRealName").value;
+        //    var UserMoney = document.getElementById("UserMoney").value;
+        //    var UserPhone = document.getElementById("UserPhone").value;
+        //    var UserExtraMemo = document.getElementById("UserExtraMemo").value;
+        //    var NetUserSafeCode = document.getElementById("NetUserSafeCode").value;
+
+        //    t2 = hex_md5_8(UserRealName + UserMoney + UserPhone + UserExtraMemo + NetUserSafeCode);
+        //    document.getElementById("JSUserSign").value = t2
+
+        //    return true;
+        //}
+
+        $(document).ready(function () {
+            $(".modBtnColor_Red_Money_Ok").click(function () {
+                var baoNUm = document.getElementById("baoNUm").value
+                var danZongMoney = document.getElementById("danZongMoney").value
+                if (baoNUm == "") {
+                    alert("请输入红包个数");
+                    return false;
+                }
+                if ((parseInt < 1) || (parseInt > 10000001)) {
+                    alert("红包个数不对吧，亲！");
+                    return false;
+                }
+
+
+                else if (danZongMoney == "") {
+                    alert("请输入红包金额");
+                    return false;
+
+                }
+
+                if (isNaN(danZongMoney)) {
+                    alert("请输入正确的金额！");
+                    return false;
+                }
+
+                if (parseFloat(danZongMoney) < 0.01) {
+                    alert("金额太小！");
+                    return false;
+                }
+
+                var varMaxMoney = document.getElementById("typemaxMoney").innerHTML;
+                if (parseFloat(danZongMoney) > parseFloat(varMaxMoney)) {
+                    if (confirm('超过可使用金额！')) {
+                        return false;
+                        //if (confirm('超过可使用金额,现在充值吗?\n微店充多少就送多少，加倍赠送！')) {
+                        //   window.location.href = "###SAgentPath###/MultiButton_income_GiveMoney.aspx";
+                    }
+                    else {
+                    }
+
+                    return false;
+                }
+                
+                var NetUserSafeCode = document.getElementById("NetUserSafeCode").value;
+                var TSign = hex_md5_8(String(danZongMoney) + String(baoNUm) + String(getQueryStringByName("Money_Credits_Vouchers")) + NetUserSafeCode);
+                var urluuuu = "###SAgentPath###/midsm.aspx?type=beginsend&howmuch=" + danZongMoney + "&howmany=" + baoNUm + "&money_credits_vouchers=" + getQueryStringByName("Money_Credits_Vouchers") + "&TSign=" + TSign;
+                //window.open(urluuuu);
+                window.location.href = urluuuu;
+
+            });
+        });
+
+        //根据QueryString参数名称获取值
+
+        function getQueryStringByName(name) {
+
+            var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+
+            if (result == null || result.length < 1) {
+
+                return "";
+
+            }
+
+            return result[1];
+
+        }
+
+    </script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    ###WeiXin__o2o_FootMarker_Location_###
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    ###_PulicChageWeiXin###
+</head>
+<body style="background-color: Red;">
+    ###Header###
+    <section style="background-color: Red; height: 960px;">
+        <div style=" background-color:Red;">
+            <form action="?type=iwantdrawmoney" method="post">
+                <div style=" display:none;" class="draw_card_MaxMoney">
+                    ###MaxMoneyInfo###
+                </div>
+
+
+                <section class="draw_input_ShareMoney">
+                    <table width="90%" align="center" class="idTable">
+                        <tr style="height:30px;">
+                            <td width="100" class="fontWhite">红包个数</td>
+                            <td>
+                                <input onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" name="baoNUm" type="number" class="Filee100" id="baoNUm" />
+                            </td>
+                            <td width="10" class="fontWhite"> &nbsp;&nbsp;个</td>
+                        </tr>
+                        <tr>
+                            <td width="100" height="60" class="fontWhite">总金额</td>
+                            <td height="60">
+                                <input type="number" class="Filee100" id="danZongMoney" placeholder="最多3000元" value="###Now_Draw_Money###" name="danZongMoney" />
+                                <input type="hidden" name="NetUserSafeCode" value="###NetUserSafeCode###" id="NetUserSafeCode" /> <br />
+                                <input type="hidden" name="JSUserSign" value="###JSUserSign###" id="JSUserSign" /> <br />
+                            </td>
+                            <td width="10" height="60" class="fontWhite"> &nbsp;&nbsp;元</td>
+                        </tr>
+                    </table>
+                    <div class="modBtnColor_Red_Money_Ok">
+                        ###Red_Text_Money_Credits_Vouchers###
+                    </div>
+                </section>
+                <section class="draw_input_ShareMoney_History">
+                    ###draw_input_ShareMoney_History_List###
+                </section>
+            </form>
+        </div>
+</body>
+###Webuy8Footer###
+</html>

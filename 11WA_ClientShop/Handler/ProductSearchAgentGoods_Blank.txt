@@ -1,0 +1,168 @@
+﻿SELECT Name , 
+       ShortInfo , 
+       LongInfo , 
+       IsDeleted , 
+       isSaled , 
+       Class1Name , 
+       Class2Name , 
+       Class3Name , 
+       GoodMultiName , 
+       ID , 
+       ShopClient_ID , 
+       Class1_ID , 
+       Class2_ID , 
+       icon , 
+       sort , 
+       Class3_ID , 
+       Good_ClassID , 
+       GoodName_Class , 
+       Price , UpdateTime,
+       PromotePrice
+  FROM( 
+        SELECT temp_Goods_Agent.Name , 
+               temp_Goods_Agent.ShortInfo , 
+               temp_Goods_Agent.LongInfo , 
+               temp_Goods_Agent.IsDeleted , 
+               temp_Goods_Agent.Price , 
+			    temp_Goods_Agent.UpdateTime , 
+               temp_Goods_Agent.PromotePrice , 
+               temp_Goods_Agent.isSaled , 
+               tab_Class1.ClassName AS Class1Name , 
+               tab_Class2.ClassName AS Class2Name , 
+               tab_Class3.ClassName AS Class3Name , 
+               View_GoodMultiName_ForXMLPath.GoodMultiName , 
+               temp_Goods_Agent.ID , 
+               temp_Goods_Agent.ShopClient_ID , 
+               temp_Goods_Agent.Class1_ID , 
+               temp_Goods_Agent.Class2_ID , 
+               temp_Goods_Agent.Class3_ID , 
+               temp_Goods_Agent.icon , 
+               temp_Goods_Agent.sort , 
+               temp_Goods_Agent.Good_Class AS Good_ClassID , 
+               tab_Goods_Class.ClassName AS GoodName_Class
+          FROM
+               ( 
+        SELECT tab_ShopClient_Agent__ProductClassID.UserID , 
+               tab_Goods.ShopClient_ID , 
+               tab_Goods.Class1_ID , 
+               tab_Goods.Class2_ID , 
+               tab_Goods.Class3_ID , 
+               tab_Goods.isSaled , 
+               tab_Goods.Name , 
+               tab_Goods.Icon , 
+               tab_Goods.ShortInfo , 
+               tab_Goods.LongInfo , 
+               tab_Goods.KuCunCount , 
+               tab_Goods.Unit , 
+               tab_Goods.Price , 
+		       tab_Goods.MemberPrice , 
+               tab_Goods.PromotePrice , 
+               tab_Goods.IsCommend , 
+               tab_Goods.HitCount , 
+               tab_Goods.PromoteCount , 
+               tab_Goods.UpTime , 
+               tab_Goods.UpdateTime , 
+               tab_Goods.ContactMan , 
+               tab_Goods.Sort , 
+               tab_Goods.IsDeleted , 
+               tab_Goods.Good_Class , 
+               tab_Goods.SalesCount , 
+               tab_Goods.LimitTimerBuy_StartTime , 
+               tab_Goods.LimitTimerBuy_EndTime , 
+               tab_Goods.LimitTimerBuy_TimePrice , 
+               tab_Goods.LimitTimerBuy_Bool , 
+               tab_Goods.MinOrderNum , 
+               tab_Goods.MaxOrderNum , 
+               tab_Goods.LimitTimerBuy_MaxSalesCount , 
+               tab_Goods.Shopping_Vouchers , 
+               tab_Goods.IS_Admin_check , 
+               tab_Goods.CheckBox_WeiBai_RedMoney , 
+               tab_Goods.Webuy8_DistributionMoney_Value , 
+               tab_Goods.FreightTemplate_ID , 
+               tab_Goods.XML , 
+               tab_Goods.ID , 
+               tab_ShopClient_Agent__ProductClassID.Empowered 
+          FROM
+               tab_Goods RIGHT OUTER JOIN tab_ShopClient_Agent__ProductClassID
+               ON tab_Goods.ID
+                  = 
+                  tab_ShopClient_Agent__ProductClassID.ProductID
+          WHERE tab_ShopClient_Agent__ProductClassID.UserID
+                = 
+                {1}
+            AND tab_Goods.ShopClient_ID
+                = 
+                {0}
+               )AS temp_Goods_Agent LEFT OUTER JOIN tab_Goods_Class
+               ON temp_Goods_Agent.ShopClient_ID
+                  = 
+                  tab_Goods_Class.UserID
+              AND temp_Goods_Agent.Good_Class
+                  = 
+                  tab_Goods_Class.ID
+                                    LEFT OUTER JOIN View_GoodMultiName_ForXMLPath
+               ON temp_Goods_Agent.ID
+                  = 
+                  View_GoodMultiName_ForXMLPath.GoodID
+                                    LEFT OUTER JOIN tab_Class3
+               ON temp_Goods_Agent.ShopClient_ID
+                  = 
+                  tab_Class3.ShopClientID
+              AND temp_Goods_Agent.Class3_ID
+                  = 
+                  tab_Class3.ID
+                                    LEFT OUTER JOIN tab_Class2
+               ON temp_Goods_Agent.ShopClient_ID
+                  = 
+                  tab_Class2.ShopClientID
+              AND temp_Goods_Agent.ID
+                  = 
+                  tab_Class2.ID
+                                    LEFT OUTER JOIN tab_Class1
+               ON temp_Goods_Agent.ShopClient_ID
+                  = 
+                  tab_Class1.ShopClientID
+              AND temp_Goods_Agent.Class1_ID
+                  = 
+                  tab_Class1.ID
+          WHERE temp_Goods_Agent.ShopClient_ID
+                = 
+                {0}
+            AND temp_Goods_Agent.UserID
+                = 
+                {1}
+            AND temp_Goods_Agent.IsDeleted
+                = 
+                0
+            AND temp_Goods_Agent.isSaled
+                = 
+                1
+      )AS V1_1
+  WHERE ShopClient_ID
+        = 
+        {0}
+    AND 1 = 1
+     OR ShopClient_ID
+        = 
+        {0} 
+    AND 1 = 1
+     OR ShopClient_ID
+        = 
+        {0} 
+    AND 1 = 1
+     OR ShopClient_ID
+        = 
+        {0} 
+    AND 1 = 1
+     OR ShopClient_ID
+        = 
+        {0} 
+    AND 1 = 1
+     OR ShopClient_ID
+        = 
+        {0} 
+    AND 1 = 1
+     OR ShopClient_ID
+        = 
+        {0} 
+    AND 1 = 1

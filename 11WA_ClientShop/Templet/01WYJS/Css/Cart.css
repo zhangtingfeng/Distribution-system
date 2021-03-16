@@ -1,0 +1,114 @@
+﻿#StaticCartselfFright {
+     float: left;    
+    font-family: "微软雅黑","Microsoft YaHei";
+    font-size: 14px;
+    display:block;
+    clear:both;
+    padding-left:4px;
+}
+#StaticCartselfNoFright {
+     float: left;    
+    font-family: "微软雅黑","Microsoft YaHei";
+    font-size: 14px;
+    display:none;
+    clear:both;
+    padding-left:4px;
+}
+.YJJ_inputs_Line_Left {
+    float: left;
+    padding-left:2%;
+}
+
+.YJJ_inputs_Line {
+    display: inline-block;
+    position: relative;
+    float: right;
+}
+
+    .YJJ_inputs_Line .YJJ_Left_number {
+        color: #000;
+        height: 26px;
+        line-height: 26px;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        vertical-align: top;
+        font-style: normal;
+        display: block;
+        float: left;
+    }
+
+    .YJJ_inputs_Line .YJJ_inputs_left {
+        background-color: #EDEDED;
+        color: #000;
+        border-right: 0 none !important;
+        border: 1px solid #CCC;
+        height: 26px;
+        line-height: 24px;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        vertical-align: top;
+        width: 24px;
+        font-family: FontAwesome;
+        font-size: 24px;
+        font-style: normal;
+        -webkit-appearance: none;
+        display: block;
+        float: left;
+        margin-top: 0px;
+    }
+
+
+
+    .YJJ_inputs_Line .YJJ_values_values {
+        background: none repeat scroll 0 0 #FFF;
+        border: 1px solid #CCC;
+        color: #000;
+        display: inline;
+        float: left;
+        font-size: 14px;
+        height: 24px;
+        ime-mode: disabled;
+        line-height: 24px;
+        margin: 0;
+        outline: 0 none;
+        padding: 0;
+        text-align: center;
+        width: 24px;
+        margin-top: 0px;
+    }
+
+    .YJJ_inputs_Line .YJJ_inputs_Right {
+        background-color: #EDEDED;
+        color: #000;
+        border-left: 0 none !important;
+        border: 1px solid #CCC;
+        height: 26px;
+        line-height: 24px;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        vertical-align: top;
+        width: 24px;
+        font-family: FontAwesome;
+        font-size: 24px;
+        font-style: normal;
+        -webkit-appearance: none;
+        display: block;
+        float: left;
+        margin-top: 0px;
+    }
+
+    .YJJ_inputs_Line .Get_UnitNameFromGoodID {
+        color: #000;
+        height: 26px;
+        line-height: 26px;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        vertical-align: top;
+        font-style: normal;
+        display: block;
+        float: left;
+    }

@@ -1,0 +1,177 @@
+﻿.YJJ_imgCss {
+    margin-right: 10px;
+}
+
+.YJJ_inp {
+    width: 1.7%;
+    height: 45px;
+    border: 0;
+}
+
+#YJJ_inputs_Line {
+    display: inline-block;
+    position: relative;
+    padding-top: 2px;
+}
+
+    #YJJ_inputs_Line .YJJ_Left_number {
+        color: #000;
+        height: 36px;
+        line-height: 36px;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        vertical-align: top;
+        font-style: normal;
+        display: block;
+        float: left;
+    }
+
+    #YJJ_inputs_Line .YJJ_inputs_left {
+        background-color: #EDEDED;
+        color: #000;
+        border-right: 0 none !important;
+        border: 1px solid #CCC;
+        height: 24px;
+        line-height: 14px;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        vertical-align: top;
+        width: 24px;
+        font-family: FontAwesome;
+        font-size: 24px;
+        font-style: normal;
+        -webkit-appearance: none;
+        display: block;
+        float: left;
+        margin-top: 8px;
+    }
+
+    #YJJ_inputs_Line .YJJ_inputs_Right {
+        background-color: #EDEDED;
+        color: #000;
+        border-left: 0 none !important;
+        border: 1px solid #CCC;
+        height: 24px;
+        line-height: 24px;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        vertical-align: top;
+        width: 24px;
+        font-family: FontAwesome;
+        font-size: 24px;
+        font-style: normal;
+        -webkit-appearance: none;
+        display: block;
+        float: left;
+        margin-top: 8px;
+    }
+
+.YJJ_values_values {
+    background: none repeat scroll 0 0 #FFF;
+    border: 1px solid #CCC;
+    color: #000;
+    display: inline;
+    float: left;
+    font-size: 14px;
+    height: 22px;
+    ime-mode: disabled;
+    line-height: 24px;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    text-align: center;
+    width: 24px;
+    margin-top: 8px;
+}
+
+#spans {
+    color: #F00;
+    font-size: 14px;
+}
+
+.YJJ_comments_top {
+    width: 100%px;
+    height: 48px;
+    background: #82c223;
+    padding-left: 13px;
+}
+
+    .YJJ_comments_top ul {
+        list-style: none;
+    }
+
+    .YJJ_comments_top li {
+        float: left;
+    }
+
+.leftli {
+    width: 16px;
+    height: 33px;
+    background-image: url(images/bgimg/001.png);
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+.cenli {
+    width: 67%;
+    height: 28px;
+    background: #FFF;
+    margin-top: 8px;
+}
+
+.rightli {
+    width: 21px;
+    height: 33px;
+    background-image: url(images/bgimg/002.png);
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+.fangDa {
+    float: right;
+    margin-top: 6px;
+    margin-right: 8px;
+}
+
+.indexIco {
+    color: red;
+}
+
+.buyInfo_WeBuy_Quan .buyInfo_Left .spro_C3_Vouchers {
+    line-height: 30px;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.buyInfo_WeBuy_Quan .buyInfo_Left .spro_C3_Bean {
+    line-height: 30px;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+}
+
+.buyInfo_WeBuy_Quan .buyInfo_Left .spro_C3_Money {
+    line-height: 30px;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.buyInfo_WeBuy_Quan .buyInfo_Left .spro_C3_Money_Vouchers {
+    line-height: 30px;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.buyInfo_WeBuy_Quan .buyInfo_Left .spro_C3_Money_Wealth {
+    line-height: 30px;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

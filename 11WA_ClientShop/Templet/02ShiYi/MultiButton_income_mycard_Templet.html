@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+        host = window.location.host;
+
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+        path = 'https://' + host + '###SAgentPath###/multibutton_income_drawmoney.aspx';
+
+        var WeiXin_imgAllPageUrl = 'https://' + host + '/Templet/02ShiYi/skin/images/logo01.png';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "我的银行卡-微店，我的银行卡。";
+        var WeiXin_shareAppAllPageTitle = '我的银行卡-微店';
+        var WeiXin_appidAllPage = '';
+
+        var varUserID = "###UserID###";///传递给 product.js   传递变量
+        var varServiceURL = "###ServiceURL###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>我的银行卡</title>
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/we.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/iscroll.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    ###WeiXin__o2o_FootMarker_Location_###
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    ###_PulicChageWeiXin###
+</head>
+<body>
+    ###Header###
+    <div id="wrapper">
+        <div id="scroller">
+            ###IFSubscribeHeader###
+            <ul id="thelist">
+                <form action="?type=savecard" method="post">
+                <div class="region mycard">
+                    <h1 class="mycard_span_title">
+                        请先绑定银行卡，用来收取货款</h1>
+                    <br>
+                    <select required="required" name="namebandcardsel56" class="bandcardsel" style="width: 90.6%;
+                        height: 35px;">
+                        <option value="">选择开户银行</option>
+                        ###BankNameList###
+                    </select>
+                    <br />
+                    <input name="name" required="required" placeholder="请输入开户人姓名"><br>
+                    <input name="nameCard" required="required" placeholder="请输入储蓄卡卡号"><br>
+                    <input name="nameCard1" required="required" placeholder="请再重复输入一遍卡号"><br>
+                    <div class="mycard_span">
+                        <span>注意：</span><br>
+                        <span>1、开户人姓名须与注册时一致，否则提现失败。</span><br>
+                        <span>2、银行卡仅支持储蓄卡，请不要填写信用卡。</span><br>
+                    </div>
+                    <button class="mycard_submit" type="submit" value="提交信息">
+                        提交信息</button>
+                </div>
+                </form>
+            </ul>
+        </div>
+    </div>
+</body>
+###Webuy8Footer###
+</html>

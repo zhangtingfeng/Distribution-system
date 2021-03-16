@@ -1,0 +1,59 @@
+body{
+
+background:rgb(64,64,64);
+}
+.shakebgimg{
+    width:100%;
+   text-align: center;
+    z-index:1;
+}
+.r1{
+	 -moz-transform:rotate(-3deg);
+    -webkit-transform:rotate(-3deg);
+	-o-transform:rotate(-3deg);
+}
+
+.r2{
+	 -moz-transform:rotate(2deg);
+    -webkit-transform:rotate(2deg);
+	-o-transform:rotate(2deg);
+}
+.sureVaule{
+ padding: 2 4 0 4;
+ font-size:12px;
+ height:23;
+ font-size:15px;
+ text-align:center;
+ background-color:none;
+ border-width:1;
+}
+.sureVaule input{
+ padding: 2 4 0 4;
+ font-size:12px;
+ height:23;
+ width:250px;
+ font-size:15px;
+ text-align:center;
+ background-color:none;
+ border-width:1;
+ background:url("/Wall/vote/css/button.png");
+ margin-top: -10px;
+}
+.cLineB{
+ color:black;
+}
+.content{
+ background:none;
+}
+.sureVaule a{
+ color:black;
+ font-size:15px;
+ text-align:center;
+}
+.userinfoArea{
+ color:black;
+}
+.red{
+ color:red;
+ font-size:10px;
+}

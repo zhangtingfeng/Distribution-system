@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlL6VPIbDDUKWVKiC0fTAJAAAAAACAAAAAAAQZgAAAAEAACAAAADfr4DhmeoBlTMA5gnjaop8yE/gZ5IXzecS6vfiK3LogwAAAAAOgAAAAAIAACAAAAC+f8MbvHlGzwZVKKCpFNFbHiAUz03qx042FRovjGbg7xAAAABw5gof+1/tAc9lmaFUVwp/QAAAAOxbVR7j2WCIy3/kJ3nWv6Sn5m2DmWXZ/E+vXE+H0JOBZyqUBNy5dros5uVgQ59n1yg6/ukbMagY/noDkZCK5O0=</EncryptedPassword>
+    <_PublishTargetUrl>C:\Download</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="01LogisticalPrice/01QueryForm.aspx">
+      <publishTime>04/25/2019 07:28:18</publishTime>
+    </File>
+    <File Include="01LogisticalPrice/02QueryList.aspx">
+      <publishTime>04/25/2019 07:19:37</publishTime>
+    </File>
+    <File Include="01LogisticalPrice/16sucai_p20161009105_0da.JPG">
+      <publishTime>04/21/2019 14:52:32</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Css/base.css">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Css/screen_lottery_free.css">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Css/screen_shake.css">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Css/zAlert.css">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/2.jpg">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/3c95a5df3dceb9334c4e522c483634de_640_1181.jpg">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/4.jpg">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/4d1de04c5b1c79ccd999891d1d761a11_350_175.gif">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/db7fb69362e09de1241f76ab24a0f734_258_258.jpg">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/ff07e678b4a02c5f5718d31fd7c687d9_260_151.png">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/join_bg.jpg">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/lot-happy.png">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/lot-title.png">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/lot_nouser.jpg">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/qrcode_wxsyb88_1.jpg">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/saved_resource.jpg">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/screen_icons.png">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/screen_icons11.png">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/screen_shake_track.jpg">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/screen_shake_track_line.png">
+      <publishTime>02/02/2018 14:57:23</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/shake_cup.png">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Images/system-loading-big.gif">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Js/base.js">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Js/baseWF_ChouJiang.js">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Js/modernizr.min.js">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Js/screen_lottery_free.js">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Js/screen_shake_free.js">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Js/zAlert.js">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Mp3/Blank_NoAnySound.mp3">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Mp3/lottery_getone.mp3">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Mp3/lottery_running.mp3">
+      <publishTime>02/02/2018 14:57:25</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Mp3/shake_cutdown.mp3">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Mp3/shake_gameover.mp3">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Mp3/shake_new.mp3">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/Mp3/shake_outride.mp3">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/result_list.aspx">
+      <publishTime>02/02/2018 14:57:22</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/result_list_ChouJiang.aspx">
+      <publishTime>02/02/2018 14:57:22</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/WF_ChouJiang.aspx">
+      <publishTime>02/02/2018 14:57:22</publishTime>
+    </File>
+    <File Include="05XianChangHuoDong/WF_YaoYiYao.aspx">
+      <publishTime>02/02/2018 14:57:22</publishTime>
+    </File>
+    <File Include="bin/01WA_WebDestop.dll">
+      <publishTime>04/29/2019 00:48:43</publishTime>
+    </File>
+    <File Include="bin/01WA_WebDestop.pdb">
+      <publishTime>04/29/2019 00:48:43</publishTime>
+    </File>
+    <File Include="bin/Eggsoft.Common.dll">
+      <publishTime>04/21/2019 14:24:15</publishTime>
+    </File>
+    <File Include="bin/Eggsoft.Common.dll.config">
+      <publishTime>02/02/2018 14:57:38</publishTime>
+    </File>
+    <File Include="bin/Eggsoft.Common.pdb">
+      <publishTime>04/21/2019 14:24:15</publishTime>
+    </File>
+    <File Include="bin/EggsoftShop_Public_CL.dll">
+      <publishTime>04/28/2019 23:12:50</publishTime>
+    </File>
+    <File Include="bin/EggsoftShop_Public_CL.dll.config">
+      <publishTime>12/03/2018 06:14:56</publishTime>
+    </File>
+    <File Include="bin/EggsoftShop_Public_CL.pdb">
+      <publishTime>04/28/2019 23:12:50</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.BLL.dll">
+      <publishTime>04/28/2019 23:12:46</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.BLL.pdb">
+      <publishTime>04/28/2019 23:12:46</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.DALFactory.dll">
+      <publishTime>04/28/2019 23:12:45</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.DALFactory.pdb">
+      <publishTime>04/28/2019 23:12:45</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.IDAL.dll">
+      <publishTime>04/28/2019 23:12:43</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.IDAL.pdb">
+      <publishTime>04/28/2019 23:12:43</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.Model.dll">
+      <publishTime>04/28/2019 23:12:41</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.Model.pdb">
+      <publishTime>04/28/2019 23:12:41</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.SQLServerDAL.dll">
+      <publishTime>04/28/2019 23:12:48</publishTime>
+    </File>
+    <File Include="bin/EggsoftWX.SQLServerDAL.pdb">
+      <publishTime>04/28/2019 23:12:48</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>03/08/2017 19:26:22</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/18/2017 13:57:10</publishTime>
+    </File>
+    <File Include="bin/Qiniu.dll">
+      <publishTime>04/21/2019 14:24:15</publishTime>
+    </File>
+    <File Include="bin/Qiniu.pdb">
+      <publishTime>04/21/2019 14:24:15</publishTime>
+    </File>
+    <File Include="bin/QiNiuUpload.dll">
+      <publishTime>04/21/2019 14:24:17</publishTime>
+    </File>
+    <File Include="bin/QiNiuUpload.dll.config">
+      <publishTime>12/03/2018 06:14:41</publishTime>
+    </File>
+    <File Include="bin/QiNiuUpload.pdb">
+      <publishTime>04/21/2019 14:24:17</publishTime>
+    </File>
+    <File Include="bin/UrlRewriting.dll">
+      <publishTime>04/21/2019 14:24:17</publishTime>
+    </File>
+    <File Include="bin/UrlRewriting.pdb">
+      <publishTime>04/21/2019 14:24:17</publishTime>
+    </File>
+    <File Include="ClientAdmin/default.aspx">
+      <publishTime>04/29/2019 00:42:30</publishTime>
+    </File>
+    <File Include="ClientAdmin/FunctionCanContinus.json">
+      <publishTime>04/29/2019 00:38:27</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/AdminLogin_wbsys.css">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/AdminLogin_webuysys_footer.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/AdminLogin_webuysys_footer.psd">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/AdminLogin_webuysys_middle_shadow.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/AdminLogin_webuysys_title.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/AdminLogin_webuysys_title.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/AdminLogin_webuysys_title.psd">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/background.css">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/background.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/bbs.css">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/bg1.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/bg2.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/bottombg.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/curve_b_l.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/curve_b_r.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/curve_b_r[1].gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/curve_center.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/curve_t_l[1].gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/curve_t_r.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/curve_t_r[1].gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/forumHeaderBackground.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/forumHeaderBackgroundAlternate.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/forum_footer.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/img.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/IMG_20131005_120%2810-05-12-1.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/jquery-calendar.css">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/jquery-calendar.js">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lan0.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lan1.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lan12.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lighthiliteleft.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lighthilitemid.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lighthiliteright.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lightnormleft.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lightnormmid.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lightnormright.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lightpressedleft.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lightpressedmid[1].gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/lightpressedright.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/login_01.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/login_01.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/login_02.psd">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/LOW_LEFT.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/LOW_MID.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/low_mid[1].gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/low_right.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/menudown.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/menuup.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/MID_LEFT.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/mid_right.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/navspacer.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/nofollow.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/o_addfile.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/plus.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/Product.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/RTE_TB.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/SBL_YLW.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/SBM_YLW.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/SBR_YLW.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/SPACER.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/spacer[1].gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/stats_bg.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/tabs_m_tile.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/title.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/title.psd">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/title1.psd">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/titlebg.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/title_bg_quit.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/topbg.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/tree_folder3.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/tree_folder4.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/UP_LEFT.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/UP_MID.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Image/UP_RIGHT.GIF">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/Login.aspx">
+      <publishTime>04/29/2019 00:27:05</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/default.css">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/default.js">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/Add.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/admin_logo.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/admin_logo.psd">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/bot_logo.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/bot_logo.psd">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/Delete.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/left_bg.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/left_meu.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/line.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/Login_botbg.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/Login_logo.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/main_t_bg.jpg">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/nothing.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/rig_mov.gif">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/save.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/SelectJPG.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/tj.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Images/Zhengwen.png">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="ClientAdmin/skin/Resource-0.css">
+      <publishTime>04/29/2019 00:28:55</publishTime>
+    </File>
+    <File Include="Control/CheckCode.aspx">
+      <publishTime>04/29/2019 00:30:02</publishTime>
+    </File>
+    <File Include="Control/ErrorPages/FileNotFound.aspx">
+      <publishTime>04/29/2019 00:30:02</publishTime>
+    </File>
+    <File Include="Control/ErrorPages/GeneralError.aspx">
+      <publishTime>04/29/2019 00:30:02</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>11/30/2018 11:45:25</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>02/02/2018 14:57:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>02/02/2018 14:57:24</publishTime>
+    </File>
+    <File Include="SiteUrls.config">
+      <publishTime>02/02/2018 14:57:22</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/25/2019 07:42:02</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

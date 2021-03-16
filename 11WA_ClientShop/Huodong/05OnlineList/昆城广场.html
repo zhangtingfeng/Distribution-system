@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>在线报名总览</title>
+    <link rel="stylesheet" href="./昆城广场_files/base.css">
+    <style>
+        body {
+            font-family: 微软雅黑;
+        }
+
+        ul, ol, ul li, ol li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a, a:hover, a:active {
+            outline: none;
+        }
+
+        a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+            a:link {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+            a:active {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+        .hd_nav {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+            .hd_nav a {
+                display: block;
+                float: left;
+                width: 50%;
+                height: 40px;
+                line-height: 40px;
+                font-size: 18px;
+                text-align: center;
+                color: #a1a1a1;
+                background-color: #bcbcbc;
+                border-bottom: 2px solid #bcbcbc;
+                position: relative;
+            }
+
+            .hd_nav .tab-sc.selected {
+                background-color: #7fcef4;
+                border-bottom: 2px solid #63b2d8;
+            }
+
+            .hd_nav .tab-sh.selected {
+                background-color: #85c023;
+                border-bottom: 2px solid #6a9b1a;
+            }
+
+            .hd_nav .selected {
+                color: #FFFFFF;
+            }
+
+            .hd_nav em {
+                display: none;
+                width: 25px;
+                height: 40px;
+                position: absolute;
+                z-index: 5;
+                top: 0;
+            }
+
+            .hd_nav .tab-sc em {
+                background: url(../static/img/icon-center-next-4.png) no-repeat center center;
+                background-size: 25px auto;
+                left: 10px;
+            }
+
+            .hd_nav .tab-sh em {
+                background: url(../static/img/icon-center-next-2.png) no-repeat center center;
+                background-size: 25px auto;
+                right: 10px;
+            }
+
+        .viewport-theme {
+            width: 100%;
+            padding-top: 40px;
+        }
+
+        .theme-boxs {
+            overflow: hidden;
+        }
+
+        .theme-entry {
+            float: right;
+            width: 93%;
+            height: 134px;
+            border-bottom: 1px solid #a3a3a3;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+            .theme-entry p {
+                display: block;
+                float: left;
+                width: 120px;
+                height: 120px;
+                overflow: hidden;
+            }
+
+                .theme-entry p.p {
+                    background: url(../static/img/loading.gif) no-repeat center center;
+                }
+
+                .theme-entry p img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .theme-entry p.p img {
+                    opacity: 0;
+                }
+
+            .theme-entry div {
+                float: right;
+                width: 55%;
+                padding: 5px 0 0 10px;
+            }
+
+                .theme-entry div p {
+                    display: block;
+                    width: 95%;
+                    height: auto;
+                    font-size: 16px;
+                    color: #595757; /* white-space: nowrap; text-overflow: ellipsis;*/
+                }
+
+                .theme-entry div em {
+                    display: block;
+                    width: 95%;
+                    font-size: 12px;
+                    color: #a3a3a3;
+                    padding-top: 5px;
+                }
+
+                .theme-entry div span {
+                    display: block;
+                    font-size: 12px;
+                    color: #45c5be;
+                    padding-top: 10px;
+                }
+
+        .patial-loading {
+            width: 100%;
+            height: 60px;
+            background: url(../static/img/loading.gif) no-repeat center center;
+            background-size: 20px auto;
+        }
+
+        .comingsoon {
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            left: 50%;
+            margin: -145px 0 0 -115px;
+        }
+
+            .comingsoon p {
+                display: block;
+                width: 120px;
+                height: 120px;
+                background: url(../static/img/comingsoon.png) no-repeat center center;
+                background-size: 100% 100%;
+                margin: 0 auto;
+            }
+
+            .comingsoon span {
+                display: block;
+                text-align: center;
+                font-size: 20px;
+                color: #45c5be;
+                padding-top: 10px;
+            }
+
+                .comingsoon span.title2 {
+                    font-size: 16px;
+                    color: #595757;
+                }
+    </style>
+</head>
+<body style="background: url(/Huodong/05OnlineList/Images/bg.jpg) 0px 0px / 100% repeat-y fixed;">
+    <!--<header id="header" class="hd_nav">
+        <a class="tab-sc" href="http://www.kunshankunshan.com/kunchensquare/website/second/vipEvent.html">专享活动<em></em></a>
+        <a class="tab-sh selected" href="javascript:;">活动回顾<em></em></a>
+    </header>-->
+    <div class="viewport-theme">
+        <div class="theme-boxs">
+            <!--<div class="comingsoon"><p></p><span>敬请期待</span><span class="title2">更多主题活动正在为大家准备中</span></div>-->
+            <!--<div class="theme-entry">
+                <p><img src="../static/img/temp-1.jpg"></p>
+                <div>
+                    <p>这里是主题活动名称</p>
+                    <em>2015/8/1 - 2015/8/31</em>
+                    <span>&lt;您已报名,未进行现场签到&gt;</span>
+                </div>
+            </div>-->
+            <div class="theme-entry" onclick="window.location.href=&#39;vipDetails.html?i=57861c4a731bd3dc582de9eb&amp;t=1&#39;"><p class="p"><img src="./昆城广场_files/-1468406622759.png" style="opacity: 1;"></p><div><p>昆城首届全民篮球挑战赛</p><em>2016/08/07</em><span>&lt;您未报名该活动&gt;</span></div></div><div class="theme-entry" onclick="window.location.href=&#39;vipDetails.html?i=578ef79a731bd3dc582e1d76&amp;t=1&#39;"><p class="p"><img src="./昆城广场_files/-1468987277290.png" style="opacity: 1;"></p><div><p> 亲子舞蹈课堂</p><em>2016/07/24</em><span>&lt;您未报名该活动&gt;</span></div></div><div class="theme-entry" onclick="window.location.href=&#39;vipDetails.html?i=577c79c2731bd3dc582db327&amp;t=1&#39;"><p class="p"><img src="./昆城广场_files/-1467775417433.png" style="opacity: 1;"></p><div><p>卡通棒棒糖</p><em>2016/07/17</em><span>&lt;您未报名该活动&gt;</span></div></div><div class="theme-entry" onclick="window.location.href=&#39;vipDetails.html?i=577c7924731bd3dc582db324&amp;t=1&#39;"><p class="p"><img src="./昆城广场_files/-1467775210586.png" style="opacity: 1;"></p><div><p>机器人比赛</p><em>2016/07/10</em><span>&lt;您未报名该活动&gt;</span></div></div><div class="theme-entry" onclick="window.location.href=&#39;vipDetails.html?i=576a2e92b360b0517d103a39&amp;t=1&#39;"><p class="p"><img src="./昆城广场_files/-1466592725701.jpg" style="opacity: 1;"></p><div><p>欧悦滑冰俱乐部-冰上体验</p><em>2016/07/03</em><span>&lt;您未报名该活动&gt;</span></div></div>
+        </div>
+        <div class="patial-loading"></div>
+    </div>
+
+    <script src="./昆城广场_files/jquery-1.10.2.min.js"></script>
+    <script src="./昆城广场_files/jquery.cookie.js"></script>
+    <script src="./昆城广场_files/jquery.md5.js"></script>
+    <script src="./昆城广场_files/jquery.imgpreload.min.js"></script>
+    <script src="./昆城广场_files/moment.min.js"></script>
+    <script src="./昆城广场_files/common.js"></script>
+  
+</body>
+</html>

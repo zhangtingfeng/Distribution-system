@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D3BD020-2BE2-40AB-B53B-846A5B210F9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EggsoftWX.Model</RootNamespace>
+    <AssemblyName>EggsoftWX.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'winxin|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\winxin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountsRelation.cs" />
+    <Compile Include="b001_Phone_Message__CheckCode.cs" />
+    <Compile Include="b002_OperationCenter.cs" />
+    <Compile Include="b003_TotalCredits_OperationCenter.cs" />
+    <Compile Include="b004_OperationGoods.cs" />
+    <Compile Include="b005_UserID_Operation_ID.cs" />
+    <Compile Include="b006_TotalWealth_OperationUser.cs" />
+    <Compile Include="b007_OperationReturnMoneyEveryDay.cs" />
+    <Compile Include="b008_OpterationUserActiveReturnMoneyOrderNum.cs" />
+    <Compile Include="b009_EveryGetOrderIDDetailIDWillActiveReturnMoney.cs" />
+    <Compile Include="b010_AskModifyParent.cs" />
+    <Compile Include="b011_InfoAlertMessage.cs" />
+    <Compile Include="b012_RefundMoney.cs" />
+    <Compile Include="b013_WriteOrderByOperation.cs" />
+    <Compile Include="b014_OrderDetailEveryReturnWealth.cs" />
+    <Compile Include="b015_OrderDetail_WealthBuy.cs" />
+    <Compile Include="b016_NoticeGuidePages.cs" />
+    <Compile Include="b017Help_01XianChangHuoDong_Main.cs" />
+    <Compile Include="b018Help_01XianChangHuoDong_UserShake.cs" />
+    <Compile Include="b019_tab_ShopClient_MultiFenXiaoLevel.cs" />
+    <Compile Include="b080_Shop_cardMemberPic.cs" />
+    <Compile Include="DBMenber.cs" />
+    <Compile Include="Help_Class1.cs" />
+    <Compile Include="Help_Content.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System_Info_BankNameList.cs" />
+    <Compile Include="tab_AdminFinance_User.cs" />
+    <Compile Include="tab_Admin_ShopClientPower.cs" />
+    <Compile Include="tab_Admin_User.cs" />
+    <Compile Include="tab_AnnouncePic.cs" />
+    <Compile Include="tab_Class1.cs" />
+    <Compile Include="tab_Class2.cs" />
+    <Compile Include="tab_Class3.cs" />
+    <Compile Include="tab_DistributionMoney.cs" />
+    <Compile Include="tab_DoTask_Services.cs" />
+    <Compile Include="tab_FreightTemplate.cs" />
+    <Compile Include="tab_FreightTemplate_Area.cs" />
+    <Compile Include="tab_Games_LightApp.cs" />
+    <Compile Include="tab_Games_LightApp_EachPage.cs" />
+    <Compile Include="tab_Goods.cs" />
+    <Compile Include="tab_Goods_MultiSelectTypePrice.cs" />
+    <Compile Include="tab_Goods_Unit.cs" />
+    <Compile Include="tab_Goods_XML.cs" />
+    <Compile Include="tab_Goods_XML_Goods_ID.cs" />
+    <Compile Include="tab_GouWuQuan2XianJInEtc.cs" />
+    <Compile Include="tab_GouWuQuan2XianJInEtc_User.cs" />
+    <Compile Include="tab_HelpSSQ_3D.cs" />
+    <Compile Include="tab_KuaiDiCompany.cs" />
+    <Compile Include="tab_Order.cs" />
+    <Compile Include="tab_Orderdetails.cs" />
+    <Compile Include="tab_Order_ShopingCart.cs" />
+    <Compile Include="tab_PE_Region.cs" />
+    <Compile Include="tab_RedWallet_Money_Credits_Vouchers.cs" />
+    <Compile Include="tab_ReturnMoney.cs" />
+    <Compile Include="tab_ShopClient.cs" />
+    <Compile Include="tab_ShopClient_AdminUser.cs" />
+    <Compile Include="tab_ShopClient_Agent_.cs" />
+    <Compile Include="tab_ShopClient_Agent_Level.cs" />
+    <Compile Include="tab_ShopClient_Agent_Level_ProductInfo.cs" />
+    <Compile Include="tab_ShopClient_Agent__ProductClassID.cs" />
+    <Compile Include="tab_ShopClient_ASK.cs" />
+    <Compile Include="tab_ShopClient_CustomMultiPhoto.cs" />
+    <Compile Include="tab_ShopClient_DistributionMoney.cs" />
+    <Compile Include="tab_ShopClient_EngineerMode.cs" />
+    <Compile Include="tab_ShopClient_EngineerMode_KeyAnswer.cs" />
+    <Compile Include="tab_ShopClient_EnterpriseOrganization.cs" />
+    <Compile Include="tab_ShopClient_Game.cs" />
+    <Compile Include="tab_ShopClient_GuidePages.cs" />
+    <Compile Include="tab_ShopClient_HuoDong.cs" />
+    <Compile Include="tab_ShopClient_InviteRegCode.cs" />
+    <Compile Include="tab_ShopClient_LightApp.cs" />
+    <Compile Include="tab_ShopClient_LightApp_EachPage.cs" />
+    <Compile Include="tab_ShopClient_MemberCard.cs" />
+    <Compile Include="tab_ShopClient_MemberCardBonus.cs" />
+    <Compile Include="tab_ShopClient_Model.cs" />
+    <Compile Include="tab_ShopClient_Net_3D.cs" />
+    <Compile Include="tab_ShopClient_NET_ROOT_Menu.cs" />
+    <Compile Include="tab_ShopClient_O2O_ShopInfo.cs" />
+    <Compile Include="tab_ShopClient_O2O_TakeGoods.cs" />
+    <Compile Include="tab_ShopClient_OlineContent.cs" />
+    <Compile Include="tab_ShopClient_OnlineRegistration.cs" />
+    <Compile Include="tab_ShopClient_Order_KuaiDiQuery.cs" />
+    <Compile Include="tab_ShopClient_Role_Power.cs" />
+    <Compile Include="tab_ShopClient_SearchKeyWordList.cs" />
+    <Compile Include="tab_ShopClient_SendMoneyByRedBag.cs" />
+    <Compile Include="tab_ShopClient_ShopPar.cs" />
+    <Compile Include="tab_ShopClient_Shopping_VouchersScheme.cs" />
+    <Compile Include="tab_ShopClient_Shopping_VouchersScheme_Detail.cs" />
+    <Compile Include="tab_ShopClient_SignWorkingEveryDay.cs" />
+    <Compile Include="tab_ShopClient_System_Menu_WeiXin.cs" />
+    <Compile Include="tab_ShopClient_System_XML_Resource.cs" />
+    <Compile Include="tab_ShopClient_User_Lng_Lat.cs" />
+    <Compile Include="tab_ShopClient_WeiXin_Stateurl.cs" />
+    <Compile Include="tab_ShopClient_XianChangHuoDong.cs" />
+    <Compile Include="tab_ShopClient_XianChangHuoDong_Bonus.cs" />
+    <Compile Include="tab_ShopClient_XianChangHuoDong_Bonus_User.cs" />
+    <Compile Include="tab_ShopClient_XianChangHuoDong_Number.cs" />
+    <Compile Include="tab_ShopClient_XianChangHuoDong_Number_UserShakeNum.cs" />
+    <Compile Include="tab_Suggestion_By_Qiu.cs" />
+    <Compile Include="tab_System.cs" />
+    <Compile Include="tab_System_AnnouncePic.cs" />
+    <Compile Include="tab_System_Menu_WeiXin.cs" />
+    <Compile Include="tab_System_WeiXin.cs" />
+    <Compile Include="tab_System_XML_Message.cs" />
+    <Compile Include="tab_System_XML_Resource.cs" />
+    <Compile Include="tab_tab_ShopClient_myGetFenXiaoMoneyHistory.cs" />
+    <Compile Include="tab_tab_ShopClient_mySonSalesByOrder.cs" />
+    <Compile Include="tab_TotalBeans_Consume_Or_Recharge.cs" />
+    <Compile Include="tab_TotalCredits_Consume_Or_Recharge.cs" />
+    <Compile Include="tab_Total_Vouchers_Consume_Or_Recharge.cs" />
+    <Compile Include="tab_TransMessage_In_WeinXinPlatform.cs" />
+    <Compile Include="tab_TuanGou.cs" />
+    <Compile Include="tab_TuanGou_Number.cs" />
+    <Compile Include="tab_TuanGou_Partner.cs" />
+    <Compile Include="tab_User.cs" />
+    <Compile Include="tab_User_Address.cs" />
+    <Compile Include="tab_User_AskGetMoney.cs" />
+    <Compile Include="tab_User_BankCard.cs" />
+    <Compile Include="tab_User_Good_History.cs" />
+    <Compile Include="tab_User_GuidePages_History.cs" />
+    <Compile Include="tab_User_Message_NeedShow.cs" />
+    <Compile Include="tab_User_Question.cs" />
+    <Compile Include="tab_User_ShopClient_History.cs" />
+    <Compile Include="tab_WeiKanJia.cs" />
+    <Compile Include="tab_WeiKanJia_Master.cs" />
+    <Compile Include="tab_WeiKanJia_Master_Helper.cs" />
+    <Compile Include="tab_WeiXin_Right_URL.cs" />
+    <Compile Include="tab_WeiXin_Scene_ID.cs" />
+    <Compile Include="tab_WeiXin_ShareHistory.cs" />
+    <Compile Include="tab_WeiXin_Warning_url.cs" />
+    <Compile Include="tab_ZC_01Product.cs" />
+    <Compile Include="tab_ZC_01Product_PartnerList.cs" />
+    <Compile Include="tab_ZC_01Product_Support.cs" />
+    <Compile Include="tab_ZC_01Product_Support_GetBonus.cs" />
+    <Compile Include="View_Amin_ShopClient_Order.cs" />
+    <Compile Include="View_ASK_Question_User_And_Shopclient_All_List.cs" />
+    <Compile Include="View_ASK_Question_User_And_Shopclient_All_Not_Read.cs" />
+    <Compile Include="View_Cheapst_SalesCount.cs" />
+    <Compile Include="View_FenxiaoTeQu.cs" />
+    <Compile Include="View_Goods_Class_Agent.cs" />
+    <Compile Include="View_Goods_Sales_Count.cs" />
+    <Compile Include="View_Goods_ShowClientName.cs" />
+    <Compile Include="View_GouWuQuan2XianJInEtc.cs" />
+    <Compile Include="View_GouWuQuan2XianJInEtcUser.cs" />
+    <Compile Include="View_MaxFenXiangWatch.cs" />
+    <Compile Include="View_Max_SalesGoods.cs" />
+    <Compile Include="View_Max_SalesGoods_Wacthed_GoodsList.cs" />
+    <Compile Include="View_NoMoreThen100.cs" />
+    <Compile Include="View_Order_AllGoods.cs" />
+    <Compile Include="View_RedWallet.cs" />
+    <Compile Include="View_SalesCount03_All_SalesCount.cs" />
+    <Compile Include="View_SalesCount03_All_SalesCount_Agent.cs" />
+    <Compile Include="View_SalesGoods.cs" />
+    <Compile Include="View_SecondSalesGoodList.cs" />
+    <Compile Include="View_ShenMaShopIng.cs" />
+    <Compile Include="View_ShopClient_Agent.cs" />
+    <Compile Include="View_ShopClient_Agent_SalesOrderBy.cs" />
+    <Compile Include="View_tab_ShopClient_XianChangHuoDong_Bonus_User.cs" />
+    <Compile Include="View_tab_ShopClient_XianChangHuoDong_Number_UserShakeNum.cs" />
+    <Compile Include="View_ThisWeekSalesMaxGoods.cs" />
+    <Compile Include="View_Today_Cheapest.cs" />
+    <Compile Include="View_Today_Cheapest_Agent.cs" />
+    <Compile Include="View_UserRegOrSubscribe.cs" />
+    <Compile Include="View_User_AskGetMoney.cs" />
+    <Compile Include="View_WatchGoods.cs" />
+    <Compile Include="View_WatchGuidePages.cs" />
+    <Compile Include="View_WeiKanJia.cs" />
+    <Compile Include="_031_Channel.cs" />
+    <Compile Include="_031_Price.cs" />
+    <Compile Include="_031_ZONE.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

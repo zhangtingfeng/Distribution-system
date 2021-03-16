@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="/Scripts/jquery-1.8.3.js?version=js201709121928"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            var Request = new Object();
+            Request = GetRequest();
+            var id = Request['id'];
+            if (typeof (id) != "undefined" && id != "") {
+                parent.parent.Opering(id);
+            }
+        })
+
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

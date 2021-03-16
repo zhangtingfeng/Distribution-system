@@ -1,0 +1,234 @@
+﻿.btnSearch {
+    background-color: rgb(40, 40, 40) !important;
+    border-radius: 12px !important;
+    font-size: 22px !important;
+}
+
+
+#ShopNavIcon {
+    display: block;
+    width: 100%;
+    background-color: white;
+}
+
+
+    #ShopNavIcon ul {
+        /*background-color: gray;*/
+        list-style-type: disc;
+        list-style-position: inside;
+        width: 100%;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        display: inline-block;
+        /*text-align:center;
+        margin:0px auto;*/
+    }
+
+        #ShopNavIcon ul li {
+            list-style: none;
+            width: 3%;
+            display: inline-block;
+            /*background-color: aqua;*/
+            text-align: center;
+            margin-left: 0px;
+            float: left;
+            line-height: 53px;
+            margin-bottom: 4px;
+            margin-top: 4px;
+        }
+
+            #ShopNavIcon ul li .ShowNav {
+                width: 100%;
+                height: 47px;
+                display: block;
+                clear: both;
+            }
+
+                #ShopNavIcon ul li .ShowNav .ShowNavIconClass {
+                    width: 38%;
+                    text-align: center;
+                    float: left;
+                    line-height: 47px;
+                }
+
+                    #ShopNavIcon ul li .ShowNav .ShowNavIconClass .ShowNavIcon {
+                        height: 47px;
+                    }
+
+                #ShopNavIcon ul li .ShowNav .ShowNavText {
+                    width: 58%;
+                    text-align: center;
+                    float: left;
+                    line-height: 47px;
+                    word-break: keep-all; /* 不换行 */
+                    white-space: nowrap; /* 不换行 */
+                    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+                    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+                }
+
+                #ShopNavIcon ul li .ShowNav .ShowNavLine {
+                    width: 1px;
+                    display: block;
+                    background-color: black;
+                    min-width: 1px;
+                    height: 47px;
+                    float: left;
+                }
+
+#GoodClassStyle4 {
+    width: 100%;
+    background-color: white;
+}
+
+    #GoodClassStyle4 .GoodClassStyle4_OneClass {
+        margin-top: 1px;
+        margin-bottom: 1px;
+        display: block;
+        background-color: white;
+        clear: both;
+    }
+
+        #GoodClassStyle4 .GoodClassStyle4_OneClass .GoodClassStyle4Nav {
+            border-top: 1px double #D3D3D3;
+            border-bottom: 1px double #D3D3D3;
+            height: 48px;
+            line-height: 48px;
+            display: block;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+            #GoodClassStyle4 .GoodClassStyle4_OneClass .GoodClassStyle4Nav .spanIcon {
+                width: 10%;
+                height: 48px;
+                display: inline-block;
+                text-align: center;
+                vertical-align: central;
+            }
+
+                #GoodClassStyle4 .GoodClassStyle4_OneClass .GoodClassStyle4Nav .spanIcon img {
+                    max-height: 48px;
+                    max-width: 100%;
+                    margin: 0px auto;
+                    vertical-align: central;
+                }
+
+            #GoodClassStyle4 .GoodClassStyle4_OneClass .GoodClassStyle4Nav .spanTitleClassName {
+                height: 46px;
+            }
+
+
+        #GoodClassStyle4 .GoodClassStyle4_OneClass .GoodClassStyle4NavBigIcon {
+            width: 100%;
+            max-height: 360px;
+            margin-bottom: 9px;
+            background-color: white;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+            #GoodClassStyle4 .GoodClassStyle4_OneClass .GoodClassStyle4NavBigIcon img {
+                max-height: 360px;
+                width: 100%;
+                margin: 0px auto;
+                vertical-align: central;
+                margin-bottom: 10px;
+            }
+
+.GoodClassStyle4NavTwoGood {
+    display: block;
+    width: 640px;   
+    margin-bottom: 10px;
+    text-align: center;
+    margin: 0px auto;
+    background-color: white;
+}
+
+    .GoodClassStyle4NavTwoGood ul li {
+        display: block;
+        margin-bottom: 10px;
+        width: 50%;
+        height: 396px;
+        float: left;
+        background-color: white;
+    }
+
+        .GoodClassStyle4NavTwoGood ul li .goodHotClass {
+            padding-left: 10px;
+            width: 300px;
+            height: 309px;
+            display: block;
+        }
+
+            .GoodClassStyle4NavTwoGood ul li .goodHotClass .ImgParent {
+                width: 300px;
+                height: 291px;
+                display: block;
+            }
+
+                .GoodClassStyle4NavTwoGood ul li .goodHotClass .ImgParent Img {
+                    width: 306px;
+                    height: 291px;
+                }
+
+            .GoodClassStyle4NavTwoGood ul li .goodHotClass .goodHotGoodName {
+                text-align: left;
+                line-height: 29px;
+                font-size: 22px;
+                height: 29px;
+                display: block;
+                word-break: keep-all; /* 不换行 */
+                white-space: nowrap; /* 不换行 */
+                overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+                text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+            }
+
+            .GoodClassStyle4NavTwoGood ul li .goodHotClass .goodHotGoodPriceAndBuy {
+                text-align: left;
+                line-height: 50px;
+                font-size: 18px;
+                height: 50px;
+                display: block;
+            }
+
+                .GoodClassStyle4NavTwoGood ul li .goodHotClass .goodHotGoodPriceAndBuy .leftPrice {
+                    font-size: 18px;
+                    width: 180px;
+                    float: left;
+                    line-height: 25px;
+                    text-align: left;
+                    display: block;
+                    word-break: keep-all; /* 不换行 */
+                    white-space: nowrap; /* 不换行 */
+                    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+                    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+                }
+
+                    .GoodClassStyle4NavTwoGood ul li .goodHotClass .goodHotGoodPriceAndBuy .leftPrice .Moneypay {
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: red;
+                    }
+
+                    .GoodClassStyle4NavTwoGood ul li .goodHotClass .goodHotGoodPriceAndBuy .leftPrice .MarketMoney {
+                        font-size: 18px;
+                        text-decoration: line-through;
+                        color: dimgrey;
+                    }
+
+                .GoodClassStyle4NavTwoGood ul li .goodHotClass .goodHotGoodPriceAndBuy .rightButton {
+                    font-size: 20px !important;
+                    width: 114px;
+                    text-align: center;
+                    margin: 0px auto;
+                    float: right;
+                    display: block;
+                    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+                    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+                    border: 2px solid red;
+                    -moz-border-radius: 15px; /* Gecko browsers */
+                    -webkit-border-radius: 15px; /* Webkit browsers */
+                    border-radius: 15px; /* W3C syntax */
+                    background-color: gainsboro;
+                    color: red;
+                }

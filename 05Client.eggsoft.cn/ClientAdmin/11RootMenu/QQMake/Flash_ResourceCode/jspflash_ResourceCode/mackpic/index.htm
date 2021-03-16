@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=gb2312" />
+<title>makepic</title>
+<script language="JavaScript">
+<!--
+var flashID; 
+	
+	function getID(swfID) {
+		if (navigator.appName.indexOf("Microsoft") > -1) {
+			flashID = window[swfID];
+		} else {
+			flashID = document[swfID];
+		}
+	}
+
+	function loadFrontImg(str){
+		flashID.changeFrontImg(str);
+	}
+
+//-->
+</script>
+</head>
+<body bgcolor="#ffffff" onLoad="getID('makepic');">
+<!-- 影片中使用的 URL-->
+<!-- 影片中使用的文本-->
+<!-- saved from url=(0013)about:internet -->
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="250" height="180" id="makepic" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="makepic.swf" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="makepic.swf" quality="high" bgcolor="#ffffff" width="250" height="180" name="makepic" align="middle" swLiveConnect="true"
+ allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<table>
+<tr>
+	<td><img src="images/bg01.png" border="0" onclick="javascript:loadFrontImg('images/bg01.png')"></td>
+	<td><img src="images/bg02.png" border="0" onclick="javascript:loadFrontImg('images/bg02.png')"></td>
+</tr>
+</table>
+</body>
+</html>

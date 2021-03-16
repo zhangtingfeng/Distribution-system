@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+        host = window.location.host;
+
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+
+        var WeiXin_imgAllPageUrl = 'https://' + host + '/Templet/02ShiYi/skin/images/logo01.png';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "我的收益-微店，这里面是我分享商品所获得的代理收入。";
+        var WeiXin_shareAppAllPageTitle = '我的收益-微店';
+        var WeiXin_appidAllPage = '';
+
+        var varUserID = "###UserID###";///传递给 product.js   传递变量
+        var varServiceURL = "###ServiceURL###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta charset="UTF-8">
+    <title>我的收益</title>
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/we.css?version=css201709121928" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+
+    <script type="text/javascript">
+        $(function () {
+            $(".income_card").click(function () {
+                location.href = "###SAgentPath###/MultiButton_income_mycard.aspx";
+            });
+            $(".income_income").click(function () {
+                location.href = "###SAgentPath###/multibutton_income_drawmoney.aspx?maxmoney=###CountT7Money###";
+            });
+        });
+
+    </script>
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    ###WeiXin__o2o_FootMarker_Location_###
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    ###_PulicChageWeiXin###
+</head>
+<body>
+    ###Header###
+    ###InitAllBody###
+</body>
+###Webuy8Footer###
+</html>

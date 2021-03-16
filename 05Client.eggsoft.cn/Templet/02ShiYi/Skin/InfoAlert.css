@@ -1,0 +1,212 @@
+﻿.InfoAlert {
+    width: 95%;
+    margin: 0 auto;
+    clear: both;
+    margin-top: 5px;
+}
+
+    .InfoAlert .InfoAlert_Top {
+        width: 100%;
+        height: 5px;
+        position: relative;
+    }
+
+        .InfoAlert .InfoAlert_Top .InfoAlert_Top_left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 5px;
+            background-image: url(images/ZtfSubscript_Left_Up.png);
+        }
+
+        .InfoAlert .InfoAlert_Top .InfoAlert_Top_Center {
+            margin-left: 4px;
+            margin-right: 4px;
+            height: 1px;
+            background-image: url(images/ZtfSubscript_Dot.png);
+        }
+
+        .InfoAlert .InfoAlert_Top .InfoAlert_Top_Right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 5px;
+            background-image: url(images/ZtfSubscript_Right_Up.png);
+        }
+
+    .InfoAlert .InfoAlert_Middle {
+        width: 100%;
+        margin: 0 auto;
+        min-height: 70px;
+        position: relative;
+    }
+
+        .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Left {
+            background-image: url(images/ZtfSubscript_Dot.png);
+            background-repeat: repeat-y;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+
+        .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center {
+            word-break: break-all;
+            word-wrap: break-word;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-top: 10px;
+        }
+
+            .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center .InfoAlert_Middle_Center_Block {
+                width: 100%;
+                margin: 0 auto;
+                position: relative;
+            }
+
+                .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center .InfoAlert_Middle_Center_Block .InfoAlert_Middle_Center_Block_left_Img {
+                    /*position: absolute;
+                    top: 0;
+                    left: 0;*/
+                    display:block;
+                    clear:both;
+                    margin:0px auto;
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center .InfoAlert_Middle_Center_Block .InfoAlert_Middle_Center_Block_Right_Img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 50px;
+                    text-align: right;
+                }
+
+                .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center .InfoAlert_Middle_Center_Block .InfoAlert_Middle_Center_Block_Right_Other_Center {
+                    margin-left: 40px;
+                }
+
+                .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center .InfoAlert_Middle_Center_Block .InfoAlert_Middle_Center_Block_Right_Other_Center_JumpURl {
+                    
+                    text-align: center;
+                }
+
+                    .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center .InfoAlert_Middle_Center_Block .InfoAlert_Middle_Center_Block_Right_Other_Center_JumpURl .btn {
+                        color: #F63;
+                        display: block;
+                        line-height: 1.4;
+                        text-align: center;
+                        font-weight: bold;
+                    }
+
+                .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center .InfoAlert_Middle_Center_Block .InfoAlert_Middle_Center_Block_Left_Me_Center {
+                    margin-right: 50px;
+                }
+
+        .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Right {
+            background-image: url(images/ZtfSubscript_Dot.png);
+            background-repeat: repeat-y;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+        }
+
+    .InfoAlert .InfoAlert_Bottom {
+        width: 100%;
+        height: 16px;
+        position: relative;
+    }
+
+        .InfoAlert .InfoAlert_Bottom .InfoAlert_Bottom_left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 5px;
+            background-image: url(images/ZtfSubscript_Left_Down.png);
+        }
+
+        .InfoAlert .InfoAlert_Bottom .InfoAlert_PleaseSubscribeMe {
+            height: 5px;
+            padding-top: 4px;
+            margin-left: 4px;
+            margin-right: 4px;
+            background-image: url(images/ZtfSubscript_Dot.png);
+            background-repeat: repeat-x;
+            background-position: 5px 4px;
+        }
+
+        .InfoAlert .InfoAlert_Bottom .InfoAlert_Bottom_Left_Other {
+            position: absolute;
+            top: 1px;
+            left: 4px;
+            width: 24px;
+            height: 16px;
+            background-image: url(images/ZtfSubscriptOther.png);
+        }
+
+        .InfoAlert .InfoAlert_Bottom .InfoAlert_Bottom_Center_Other {
+            height: 5px;
+            padding-top: 4px;
+            margin-left: 28px;
+            margin-right: 4px;
+            background-image: url(images/ZtfSubscript_Dot.png);
+            background-repeat: repeat-x;
+            background-position: 5px 4px;
+        }
+
+        .InfoAlert .InfoAlert_Bottom .InfoAlert_Bottom_Center_Me {
+            height: 5px;
+            padding-top: 4px;
+            margin-left: 4px;
+            margin-right: 28px;
+            background-image: url(images/ZtfSubscript_Dot.png);
+            background-repeat: repeat-x;
+            background-position: 5px 4px;
+        }
+
+        .InfoAlert .InfoAlert_Bottom .InfoAlert_Bottom_Right_Me {
+            position: absolute;
+            top: 1px;
+            right: 4px;
+            width: 24px;
+            height: 16px;
+            background-image: url(images/ZtfSubscriptMe.png);
+        }
+
+        .InfoAlert .InfoAlert_Bottom .InfoAlert_Bottom_Right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 5px;
+            background-image: url(images/ZtfSubscript_Right_Down.png);
+        }
+
+    .InfoAlert .commentsMessage {
+        width: 100%;
+        overflow: auto;
+        word-break: break-all;
+    }
+
+    .InfoAlert .InfoAlert_Middle .InfoAlert_Middle_Center #SaveMessage {
+        background: none repeat scroll 0 0 #82c422;
+        border: 1px solid #dbdbdb;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 6%;
+        text-align: center;
+        width: 60%;
+        border-radius: 5px;
+        margin: 0 auto;
+    }

@@ -1,0 +1,136 @@
+.picker__list
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0.75em 0px 4.2em;
+}
+.picker__list-item
+{
+    background: rgb(255, 255, 255);
+    padding: 0.75em 1.25em;
+    font-size: 40px;
+    margin-bottom: -1px;
+    border-top-color: rgb(221, 221, 221);
+    border-bottom-color: rgb(221, 221, 221);
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    position: relative;
+}
+.picker__list-item
+{
+    padding: 0.5em 1em;
+}
+.picker__list-item:hover
+{
+    background: rgb(177, 220, 251);
+    border-color: rgb(0, 137, 236);
+    color: rgb(0, 0, 0);
+    z-index: 10;
+    cursor: pointer;
+}
+.picker__list-item--selected
+{
+    border-color: rgb(0, 137, 236);
+    z-index: 10;
+}
+.picker__list-item--selected:hover
+{
+    border-color: rgb(0, 137, 236);
+    z-index: 10;
+}
+.picker__list-item--highlighted
+{
+    background: rgb(177, 220, 251);
+}
+.picker__list-item--highlighted:hover
+{
+    background: rgb(0, 137, 236);
+    color: rgb(255, 255, 255);
+}
+.picker--focused .picker__list-item--highlighted
+{
+    background: rgb(0, 137, 236);
+    color: rgb(255, 255, 255);
+}
+.picker__list-item--disabled
+{
+    background: rgb(245, 245, 245);
+    border-color: rgb(221, 221, 221);
+    color: rgb(221, 221, 221);
+    z-index: auto;
+    cursor: default;
+}
+.picker__list-item--disabled:hover
+{
+    background: rgb(245, 245, 245);
+    border-color: rgb(221, 221, 221);
+    color: rgb(221, 221, 221);
+    z-index: auto;
+    cursor: default;
+}
+.picker--focused .picker__list-item--disabled
+{
+    background: rgb(245, 245, 245);
+    border-color: rgb(221, 221, 221);
+    color: rgb(221, 221, 221);
+    z-index: auto;
+    cursor: default;
+}
+.picker--time .picker__button--clear
+{
+    margin: 1em auto 0px;
+    border: 0px currentColor;
+    width: 80%;
+    text-align: center;
+    color: rgb(102, 102, 102);
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 500;
+    display: block;
+}
+.picker--time .picker__button--clear:hover
+{
+    background: rgb(238, 34, 0);
+    border-color: rgb(238, 34, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.picker--time .picker__button--clear:focus
+{
+    background: rgb(238, 34, 0);
+    border-color: rgb(238, 34, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.picker--time .picker__button--clear::before
+{
+    top: -0.25em;
+    color: rgb(102, 102, 102);
+    font-size: 60px;
+    font-weight: bold;
+}
+.picker--time .picker__button--clear:hover::before
+{
+    color: rgb(255, 255, 255);
+}
+.picker--time .picker__button--clear:focus::before
+{
+    color: rgb(255, 255, 255);
+}
+.picker--time .picker__frame
+{
+    min-width: 256px;
+    max-width: 320px;
+}
+.picker--time .picker__box
+{
+    background: rgb(242, 242, 242);
+    padding: 0px;
+    font-size: 1em;
+}
+.picker--time .picker__box
+{
+    margin-bottom: 5em;
+}

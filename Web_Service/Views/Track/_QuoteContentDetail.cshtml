@@ -1,0 +1,75 @@
+﻿@model Web_Service.ViewModels.Common.PagePartialViewModel
+@{
+    var prefix = "";
+    if (!string.IsNullOrWhiteSpace(Model.PageLayoutID))
+    {
+        prefix = Model.PageLayoutID + ".";
+    }
+}
+@Html.Partial("Javascript/_JavascriptQuotePlanData")
+<h3 class="page-header">投保报价详情&nbsp;(<span ng-bind="@(prefix)formData.data.CityName"></span>)</h3>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="col-md-5 control-label text-right">投保时间</label>
+            <span class="text-left" ng-bind="@(prefix)formData.data.InsureQueryHistoryInfo.CreateTime | date:'yyyy-MM-dd HH:mm:ss'"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="col-md-5 control-label text-right">投保起期</label>
+            <span class="text-left" ng-bind="@(prefix)formData.data.InsureQueryHistoryInfo.StartDate | date:'yyyy-MM-dd'"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-condensed">
+        <thead>
+            <tr>
+                <th>投保内容</th>
+                <th class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-style="data.ReturnErrorCode != '' ? {color:'#d9534f'} : ''" ng-bind="data.CompanyName"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>报价于</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList"><span ng-show="data.ReturnErrorCode == ''" ng-bind="data.QuoteDateTime | date:'yyyy/MM/dd HH:mm:ss'"></span></td></tr>
+            <tr><td>商业险状态</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList"><span ng-hide="data.ReturnErrorCode.length > 10" ng-bind="data.ReturnErrorCode"></span><a ng-hide="data.ReturnErrorCode.length <= 10" ng-bind="data.ReturnErrorCode.substring(0,7) + '...'" data-toggle="tooltip" data-placement="bottom" title="{{data.ReturnErrorCode}}"></a></td></tr>
+            <tr><td>交强险状态</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList"><span ng-hide="data.ReturnErrorCodeJQX.length > 10" ng-bind="data.ReturnErrorCodeJQX"></span><a ng-hide="data.ReturnErrorCodeJQX.length <= 10" ng-bind="data.ReturnErrorCodeJQX.substring(0,7) + '...'" data-toggle="tooltip" data-placement="bottom" title="{{data.ReturnErrorCodeJQX}}"></a></td></tr>
+            <tr><td>日志</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList"><a href="~/Track/Log/{{data.QueryTaskID}}" target="_blank">接口日志</a></td></tr>
+
+            <tr style="background-color: #f5f5f5;"><td style="font-weight:bold;">主险</td><td class="text-right" ng-repeat="data in @(prefix)formData.data.InsureList"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.CarDamageInsurance == '0'"><td>车辆损失险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarDamageInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.ThirdPartyInsurance == '0'"><td>第三者责任险(<span ng-bind="_QuoteCommonGetPlanText(@(prefix)formData.data.InsureQueryHistoryInfo.ThirdPartyInsurance)"></span>)</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.ThirdPartyInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.CarRobberyInsurance == '0'"><td>全车盗抢险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarRobberyInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.CarDriverInsurance == '0'"><td>司机座位险(<span ng-bind="_QuoteCommonGetPlanText(@(prefix)formData.data.InsureQueryHistoryInfo.CarDriverInsurance)"></span>)</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarDriverInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.CarPassengerInsurance == '0'"><td>乘客座位险(<span ng-bind="_QuoteCommonGetPlanText(@(prefix)formData.data.InsureQueryHistoryInfo.CarPassengerInsurance)"></span>)</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarPassengerInsurance | currency:'￥'"></td></tr>
+
+            <tr style="background-color: #f5f5f5;"><td style="font-weight:bold;">不计免赔</td><td class="text-right" ng-repeat="data in @(prefix)formData.data.InsureList"></td></tr>
+            <tr ng-hide="!@(prefix)formData.data.InsureQueryHistoryInfo.CarDamageInsuranceDeductable"><td>车辆损失险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarDamageInsuranceDeductable | currency:'￥'"></td></tr>
+            <tr ng-hide="!@(prefix)formData.data.InsureQueryHistoryInfo.ThirdPartyInsuranceDeductable"><td>第三者责任险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.ThirdPartyInsuranceDeductable | currency:'￥'"></td></tr>
+            <tr ng-hide="!@(prefix)formData.data.InsureQueryHistoryInfo.CarRobberyInsuranceDeductable"><td>全车盗抢险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarRobberyInsuranceDeductable | currency:'￥'"></td></tr>
+            <tr ng-hide="!@(prefix)formData.data.InsureQueryHistoryInfo.CarDriverInsuranceDeductable"><td>司机座位险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarDriverInsuranceDeductable | currency:'￥'"></td></tr>
+            <tr ng-hide="!@(prefix)formData.data.InsureQueryHistoryInfo.CarPassengerInsuranceDeductable"><td>乘客座位险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarPassengerInsuranceDeductable | currency:'￥'"></td></tr>
+            <tr ng-hide="!@(prefix)formData.data.InsureQueryHistoryInfo.CarDriverInsuranceDeductable && !@(prefix)formData.data.InsureQueryHistoryInfo.CarPassengerInsuranceDeductable"><td>座位险（司机+乘客）</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarPersonnelInsuranceDeductable | currency:'￥'"></td></tr>
+
+            <tr style="background-color: #f5f5f5;"><td style="font-weight:bold;">附加险</td><td class="text-right" ng-repeat="data in @(prefix)formData.data.InsureList"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.CarGlassInsurance == '0'"><td>玻璃破碎险(<span ng-bind="_QuoteCommonGetPlanText(@(prefix)formData.data.InsureQueryHistoryInfo.CarGlassInsurance, 'CarGlassInsurances')"></span>)</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarGlassInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.CarScratchInsurance == '0'"><td>车身划痕险(<span ng-bind="_QuoteCommonGetPlanText(@(prefix)formData.data.InsureQueryHistoryInfo.CarScratchInsurance)"></span>)</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarScratchInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.CarEngineInsurance == '0'"><td>发动机涉水险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarEngineInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.CarFireInsurance == '0'"><td>自燃险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarFireInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="@(prefix)formData.data.InsureQueryHistoryInfo.IsSupportFactory == '0'"><td>专修厂维修特约险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.ServiceFactoryInsurance | currency:'￥'"></td></tr>
+
+            <tr style="border-top: 2px solid #808080;"><td style="font-weight:bold;">商业险合计</td><td class="text-center" style="font-weight:bold;" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.BusinessTotal | currency:'￥'"></td></tr>
+
+            <tr style="background-color: #f5f5f5;"><td style="font-weight:bold;">交强险与车船税</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList"></td></tr>
+            <tr ng-hide="!@(prefix)formData.data.InsureQueryHistoryInfo.StrongInsurance"><td>交强险</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.StrongInsurance | currency:'￥'"></td></tr>
+            <tr ng-hide="!@(prefix)formData.data.InsureQueryHistoryInfo.StrongInsurance"><td>车船税</td><td class="text-center" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.CarShipTax | currency:'￥'"></td></tr>
+
+            <tr style="border-top: 2px solid #808080;"><td style="font-weight:bold;">总计</td><td class="text-center" style="font-weight:bold;" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.Total | currency:'￥'"></td></tr>
+            <tr><td style="font-weight:bold;">积分</td><td class="text-center" style="font-weight:bold;" ng-repeat="data in @(prefix)formData.data.InsureList" ng-bind="data.Point | number"></td></tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,71 @@
+﻿.guanli-car {
+    width: 95%;
+    padding-bottom: 80px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px !important;
+}
+
+    .guanli-car .ui-tabs {
+        position: relative;
+    }
+
+        .guanli-car .ui-tabs .ui-tabs-nav {
+            background-color: #EEE;
+            display: -webkit-box;
+            width: 100%;
+            border-bottom: solid 1px #ccc;
+            list-style: none;
+            padding: 0;
+            margin: 0px !important;
+            z-index: 11;
+            position: relative;
+        }
+
+            .guanli-car .ui-tabs .ui-tabs-nav li {
+                background-color: #EEE;
+                width: 20% !important;
+                min-width: 20% !important;
+                margin-right: 1px;
+                position: relative;
+                color: #666;
+                overflow: hidden;
+                border-bottom: solid 1px #ccc;
+                padding: 10px 0;
+                border: solid #d4d4d4;
+                border-width: 1px 0 1px 1px;
+                border-bottom: 0;
+                -webkit-box-flex: 1;
+                text-align: center;
+                color: #4a4a4a;
+                white-space: nowrap;
+                cursor: pointer;
+            }
+
+            .guanli-car .ui-tabs .ui-tabs-nav .weactive {
+                border-bottom-width: 0px;
+                border-bottom-style: solid;
+                background-color: #fff;
+            }
+
+            .guanli-car .ui-tabs .ui-tabs-nav li a {
+                text-decoration: none;
+                color: #4a4a4a;
+                padding: 10px 0;
+                font-size: 10px !important;
+                font-weight: bold;
+            }
+
+
+
+.ShowSalesMoneythelist_ul_li {
+    display: block;
+    clear: both;
+    width: 100%;
+}
+
+    .ShowSalesMoneythelist_ul_li .ul_li_Classs_30_Percent {
+        float: left;
+        padding-top: 4px;
+        width: 30%;
+    }

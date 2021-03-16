@@ -1,0 +1,339 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi" />
+
+    <script type="text/javascript">
+        host = window.location.host;
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+        path = 'https://' + host + '###SAgentPath###/mywebuy.aspx';
+        var WeiXin_imgAllPageUrl = 'https://' + host + '/Templet/02ShiYi/skin/images/income.jpg';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "充值界面 -微客-微商城，充值界面给您提供现金充值的服务，如果您的余额不够可以通过此页面充值。###GetstringShowPower_ShopName###。";
+        var WeiXin_shareAppAllPageTitle = '充值界面 -微客-微商城-微店';
+        var WeiXin_appidAllPage = '';
+
+    </script>
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport" />
+    <title>充值界面 充多少送多少</title>
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/we.css?version=css201709121928" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/iscroll.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <script src="/Templet/01WYJS/js/layer.m.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/layer.css?version=css201709121928" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //立即购买
+            $(".modRed_Money_Ok").click(function () {
+                var varMoney = document.getElementById("Money").value;
+
+                if (varMoney != "") {
+                    if (isNaN(varMoney)) {
+                        alert("请输入正确的金额！");
+                        return false;
+                    }
+
+                    var ivarMoney = parseInt(varMoney);
+                    if (ivarMoney < 1) {
+                        alert("充值数额太低");
+                        return false;
+                    }
+                    if (ivarMoney > 99999) {
+                        alert("充值数额太高");
+                        return false;
+                    }
+
+                    ASKPayAsync_InputMoney(varMoney);
+                    //直接跳到支付界面
+                    return true;
+                }
+                else {
+                    alert("请输入金额！");
+                    return false;
+                }
+            });
+
+
+        });
+
+
+        /* 自助支付 特殊商品 1533编号吧 */
+        function ASKPayAsync_InputMoney(GoodPrice) {
+            var varGetUseid = '###pub_Int_Session_CurUserID###';
+            //var varQueryStringList = new QueryString();
+            var str_PayGoodID = '1X5X3X3X';
+            var ShopClientID = "###pub_Int_ShopClientID###";///运行DoGameUserID.aspx得到的
+
+            varURL = "###ServiceURL###" + "/Order/DoInputMoney.asmx/_Service_AddToCart_InPutMoneySelf?str_PayGoodID=" + str_PayGoodID + "&strUserID=" + varGetUseid + "&ShopClientID=" + ShopClientID + "&GoodPrice=" + GoodPrice;
+
+            //alert(varURL);
+            var result = -1;
+            $.ajax({
+                type: "get",
+                url: varURL,
+                dataType: "jsonp",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                jsonpCallback: "jsonp201612311126Callback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                contentType: "application/json; charset=utf-8",
+                beforeSend: function () { //加载条
+                    layer.open({ type: 2, time: 2 });
+                },
+                success: function (data) {
+
+                    if (data.ErrorCode == 82) {///
+                        layer.open({
+                            type: 2,
+                            content: "会员充值商品编号不能为0" + decodeURIComponent(data.ErrorDescription),
+                            time: 4
+                        });
+                    }
+                    else if (data.ErrorCode == 81) {///都准备好了，可以开始支付
+                        layer.open({
+                            type: 2,
+                            content: "正在申请微信支付,支付成功后请展示您的支付凭证给相关工作人员" + decodeURIComponent(data.ErrorDescription),
+                            time: 1
+                        });
+                        payActionCartGood(data.OrderINT, ShopClientID);
+                    }
+                   
+                    return;
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                }
+            });
+
+
+            return result;
+        }
+
+
+        function payActionCartGood(data_OrderINT, ShopClientID) {
+
+            var url = "###ServiceURL###" + "/Pub/doWS_GetWeiXinSign.asmx/_GetWeiXinPay?OrderINT=" + data_OrderINT + "&ShopClientID=" + ShopClientID;
+            //alert("payActionCartGood=" + url);
+            $.ajax({
+                url: url,
+                dataType: "jsonp",
+                jsonpCallback: "person201612311123",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                beforeSend: function () {//加载层    // Handle the beforeSend event
+                    layer.open({
+                        type: 2,
+                        content: '正在为你做支付准备',
+                        time: 4///不知道 是否能加2秒
+                    });
+                },
+                success: function (data) {
+                    ///v3  pay
+
+
+
+                    wx.ready(function () {
+                        //alert("data.timestamp" + data.timestamp);
+                        wx.chooseWXPay({
+                            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                            timestamp: data.timestamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+                            nonceStr: data.nonceStr, // 支付签名随机串，不长于 32 位
+                            package: data.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+                            signType: 'MD5', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+                            paySign: data.paySign, // 支付签名
+                            cancel: function (res) {
+                                layer.open({
+                                    content: "取消支付",
+                                    type: 4,
+                                    time: 1
+                                });
+                                //self.location = '/cart_good.aspx';////   到待付款去 用户可以继续支付
+
+                            },
+                            fail: function (res) {
+                                alert(res.errMsg);
+                                alert(res.err_msg);
+
+                                for (i in res) {
+                                    alert(i);           //获得属性
+                                    alert(test[i]);  //获得属性值
+                                }
+                                layer.open({
+                                    content: "支付失败",
+                                    type: 4,
+                                    time: 1
+                                });
+                                //self.location = '/cart_good.aspx';////   到待付款去 用户可以继续支付
+                            },
+                            success: function (res) {
+                                // 支付成功后的回调函数
+                                layer.open({
+                                    content: "支付成功,请展示您的支付凭证给相关工作人员",
+                                    type: 2,
+                                    time: 5
+                                });
+                                //alert("data_OrderINT  ShopClientID=" + data_OrderINT + "   " + ShopClientID);
+                                doCheckPayAcyion_InputMoney(data_OrderINT, ShopClientID);
+                                //self.location = '/v3pay_weixin/CheckIfGetWinXinMoney.aspx?OrderNum=' + out_trade_no;////   到这里去检测 微信支付发送给我们的数据。。更新数据库的状态
+                            }
+                        });
+
+                    });
+
+                    wx.error(function (res) {
+                        alert(res.errMsg);
+                    });
+                },
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                }
+            });
+        }
+
+
+        /*自助得到money  自助发货处理*/
+        function doCheckPayAcyion_InputMoney(data_OrderINT, varThispub_Int_ShopClientID) {
+            var url_SelfGetMoney = "###ServiceURL###" + "/Order/DoOrder.asmx/CheckPayAcyion?OrderINT=" + data_OrderINT + "&ShopClientID=" + varThispub_Int_ShopClientID;
+            //alert("url_SelfGetMoney=" + url_SelfGetMoney);
+            $.ajax({
+                url: url_SelfGetMoney,
+                async: false,
+                dataType: "jsonp",
+                jsonpCallback: "pe2101612311124rson",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                beforeSend: function () {//加载层    // Handle the beforeSend event
+                    layer.open({
+                        type: 2,
+                        content: '正在处理充值订单',
+                        time: 1///不知道 是否能加2秒
+                    });
+                },
+                error: function (e) {
+                    alert(e);
+                },
+                success: function (data) {
+                    //alert("data.ErrorCode == \"0\"");
+                    if (data.ErrorCode == "0") {///请先输入收货地址
+                        doCheckPayAcyion_InputMoney_AutoFaHuo(data_OrderINT, varThispub_Int_ShopClientID)
+                    }
+                }
+            });
+
+        }
+
+
+
+        /*自助得到money  自助发货处理*/
+        function doCheckPayAcyion_InputMoney_AutoFaHuo(data_OrderINT, varThispub_Int_ShopClientID) {
+            varURL = "###ServiceURL###" + "/Order/DoInputMoney.asmx/_Service_AddToCart_InPutMoneySelf_AutoFaHuo?OrderINT=" + data_OrderINT + "&ShopClientID=" + varThispub_Int_ShopClientID;
+            //alert("varURL == \"" + varURL + "\"");
+            //var url = varServicesURL + "/Order/DoOrder.asmx/CheckPayAcyion?OrderINT=" + data_OrderINT + "&ShopClientID=" + varThispub_Int_ShopClientID;
+            $.ajax({
+                url: varURL,
+                async: false,
+                dataType: "jsonp",
+                jsonpCallback: "pe201612311125rson",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                beforeSend: function () {//加载层    // Handle the beforeSend event
+                    layer.open({
+                        type: 2,
+                        content: '正在处理充值订单',
+                        time: 1///不知道 是否能加2秒
+                    });
+                },
+                error: function (e) {
+                    alert(e);
+                },
+                success: function (data) {
+
+                    if (data.ErrorCode == 0) {///
+                        layer.open({
+                            type: 2,
+                            content: "充值处理成功,请进入会员中心查看",//+ decodeURIComponent(data.ErrorDescription),
+                            time: 2,
+                            end: function () { //此处用于演示
+                                self.location = "###SAgentPath###" + "/MyWeBuy.aspx";
+                            }
+                        });
+                    }
+                   
+                }
+            });
+
+        }
+
+
+    </script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/MultiButton_income_GiveMoney.css?version=css201709121928" rel="stylesheet" />
+    ###_PulicChageWeiXin###
+</head>
+<body>
+    ###Header###
+    <!--<section class="top_menu page">-->
+    <section class="showMoneyInfo">
+        <div class="leftTile">当前余额：</div>
+        <div class="Money">323.3元</div>
+    </section>
+    <section class="showInputMoneyInfoList">
+        <ul>
+            <li>
+                充1000送100
+            </li>
+
+            <li>
+                充1000送100
+            </li>
+
+            <li>
+                充1000送200
+            </li>
+            <li>
+                充1000送100
+            </li>
+            <li>
+                充1000送100
+            </li>
+            <li>
+                充1000送300
+            </li>
+        </ul>
+        <div style="clear:both;"></div>
+    </section>
+
+    <section class="inputMoneyInfo">
+        <div class="PhoneNum">充值号码：</div>
+        <div class="PhoneNumInput">18917905147</div>
+        <div class="PhoneNum">请输入充值金额：</div>
+        <div class="MoneyNumInput">
+            <input class="inputClass" required="required" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="Money" name="Money" placeholder="请输入充值额度" value="" type="number" />
+        </div>
+        <div class="modRed_Money_Ok">
+            现在充值
+        </div>
+    </section>
+
+</body>
+###Webuy8Footer###
+</html>

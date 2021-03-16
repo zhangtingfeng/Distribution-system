@@ -1,0 +1,189 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>微云基石精品众筹</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <link rel="stylesheet" href="/AddFunction/04ZC_project/css/font-awesome.min-4.3.0.css?version=css201709121928">
+    <link rel="stylesheet" href="/AddFunction/04ZC_project/css/ZC.css?version=css201709121928">
+    <script src="/Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        var varServiceURL = localStorage.getItem('ServiceServicesURL201709121928_Open_0609');
+        var varUserID = localStorage.getItem('CurUserID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+        var varShopClientID = localStorage.getItem('GetShopClientID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+        var varSourceGoodID = 0;///ajax 会读出该变量。购买时使用
+    </script>
+    <script src="/Game/GameUserID.js?version=js201709121928"></script>
+    <script src="/AddFunction/04ZC_project/JS/ZC.js?version=js201709121928"></script>
+    <link rel="stylesheet" type="text/css" href="/Templet/02ShiYi/skin/box_swipe.css?version=css201709121928" media="all">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/swipe.js?version=js201709121928"></script>
+    <script src="/Game/GameUserID.js?version=js201709121928"></script>
+    <link href="Css/SpeedBar_common.css" rel="stylesheet" />
+    <script src="/Templet/01WYJS/js/layer.m.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/layer.css?version=css201709121928" rel="stylesheet" />
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="/Templet/01WYJS/js/Base.js?version =js201709121928"></script>
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/mall.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/common-v4.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+</head>
+
+
+<body onload="doLoadMultiDocumnet()">
+    <section style="padding-bottom: 50px;" class="main-view">
+        <div class="spro_con">
+            <div id="Anounce">
+                <div style="-webkit-transform: translate3d(0,0,0);">
+                    <div style="visibility: visible;" id="banner_box" class="box_swipe">
+                        <ul style="list-style: none; width: 1280px; transition: 500ms; -webkit-transition: 500ms; -webkit-transform: translate3d(0px, 0, 0);"></ul>
+                        <ol>
+                            <li class="on"></li>
+                            <li class=""></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="Countdown">
+            <div class="time-item">
+                <span>倒计时</span>
+                <strong id="day_show"></strong>天
+                <strong id="hour_show"><s id="h"></s></strong>时
+                <strong id="minute_show"><s></s></strong>分
+                <strong id="second_show"><s></s></strong>秒
+            </div>
+        </div>
+
+        <div class="xm-intro">
+            <div class="mobile">
+                <div class="mainwxBox" id="wxBoxSpeedBar" style="display: none;">
+                    <div class="productBox" style="display: block;">
+                        <div class="progressBox">
+                            <p class="progressBj">
+                                <span class="progressBar" style="width: 1%;">
+                                    <span class="num border-1px border-all-50" id="progressNum" style="color: rgb(255, 255, 255); right: 0px; background: rgb(53, 157, 245);">1%</span>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="percent33Box smallTxt cl">
+                            <ul>
+                                <li>支持人数</li>
+                                <li>已筹金额</li>
+                                <li id="remainTime">剩余时间</li>
+                            </ul>
+                        </div>
+                        <div class="percent33Box bigTxt cl">
+                            <ul>
+                                <li id="supportsNum">0人</li>
+                                <li id="moneyAmount">0元</li>
+                                <li id="remainDays">0天</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="td2_content_title">众筹进度<i class="fr" style="padding-right:10px;padding-top:8px;"><img src="/AddFunction/04ZC_project/Images/plus.png"></i></div>
+                <div class="td2_content" id="content_TimerRun">
+                </div>-->
+            </div>
+            <div class="mobile">
+                <!--<div class="td2_content_title">商品说明<i class="fr" style="padding-right:10px;padding-top:8px;"><img src="/AddFunction/04ZC_project/Images/plus.png"></i></div>-->
+                <div class="td2_content" id="content_LongInfo">
+                </div>
+            </div>
+        </div>
+        <div class="xm-intro">
+            <div class="mobile">
+                <!--<h3 class="team_title" id="TuanGoodName"></h3>-->
+                <p class="xmxq" style="font-size:12px;" id="TuanShortInfo"></p>
+                <div class="tg-list">
+                    <ul>
+
+                        <li style="margin-left:1%;" id="buyZuTuan" onclick="window.location.href = '#content_BuyList'">
+                            <a id="more_btn_content_BuyList"
+                               href="#content_BuyList">
+                                <span id="TuanEachPeoplePrice">我要支持</span>
+                            </a>
+                        </li>
+                        <li id="buySingle" class="ts" onclick="window.location.href = '#_one_btn_content_ZCPromiseAndReturn'">
+                            <a id="_one_btn_content_ZCPromiseAndReturn" href="#content_ZCPromiseAndReturn">
+                                <span class="team_price" id="TuanPromotePrice">承诺与回报</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="pt-intro">
+            <div class="mobile">
+                <div class="td2_content_title">众筹原因<i class="fr" style="padding-right:10px;padding-top:8px;"><img src="/AddFunction/04ZC_project/Images/plus.png"></i></div>
+                <div class="td2_content" id="content_ZCReason">
+                </div>
+            </div>
+            <div class="mobile">
+                <div class="td2_content_title">众筹详情<i class="fr" style="padding-right:10px;padding-top:8px;"><img src="/AddFunction/04ZC_project/Images/plus.png"></i></div>
+                <div class="td2_content" id="content_ZCDescribe">
+                </div>
+            </div>
+            <div class="mobile">
+                <div class="td2_content_title">承诺与回报<i class="fr" style="padding-right:10px;padding-top:8px;"><img src="/AddFunction/04ZC_project/Images/plus.png"></i></div>
+                <div class="td2_content" id="content_ZCPromiseAndReturn">
+                </div>
+            </div>
+            <div class="mobile">
+                <div class="td2_content_title">我要支持<i class="fr" style="padding-right:10px;padding-top:8px;"><img src="/AddFunction/04ZC_project/Images/plus.png"></i></div>
+                <div class="td2_content" id="content_BuyList">
+                </div>
+            </div>
+        </div>
+        <!--<div class="pt-intro">
+            <div class="mobile">
+                <a href="/AddFunction/04ZC_project/01Help.html?version=201709121928" class="fr">查看详情 ></a>
+                <h3>拼团玩法</h3>
+                <a href="/AddFunction/04ZC_project/01Help.html?version=201709121928" style="float:none;" class="fr">
+                    <div id="footItem" class="step_list">
+                        <div class="step_item step_item_on">
+                            <div class="step_num">1</div>
+                            <div class="step_detail">
+                                <p class="step_tit">
+                                    选择 <br> 心仪商品
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step_item ">
+                            <div class="step_num">2</div>
+                            <div class="step_detail">
+                                <p class="step_tit">
+                                    支付 <br> 参团/建团
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step_item ">
+                            <div class="step_num">3</div>
+                            <div class="step_detail">
+                                <p class="step_tit">
+                                    邀请好友 <br> 参团支付
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step_item">
+                            <div class="step_num">4</div>
+                            <div class="step_detail">
+                                <p class="step_tit">
+                                    达到人数 <br> 参团支付
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>-->
+    </section>
+    <div id="idPub_03Footer_html_lsTuanGou">
+    </div>
+</body>
+</html>

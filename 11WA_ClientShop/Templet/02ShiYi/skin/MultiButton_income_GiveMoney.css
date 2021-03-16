@@ -1,0 +1,103 @@
+﻿.showMoneyInfo {
+    display: block;
+    margin: 0px auto;
+    width: 94%;
+    height: 60px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+    .showMoneyInfo .leftTile {
+        padding-top: 14px;
+        margin-left: 24px;
+        font-weight: bold;
+    }
+
+    .showMoneyInfo .Money {
+        text-align: center;
+        font-size: x-large;
+        color: tomato;
+    }
+
+.showInputMoneyInfoList {
+    padding-top: 10px;
+    display: block;
+    margin: 0px auto;
+    width: 94%;
+    background-color: white;
+    height: auto;
+    min-height: 140px;
+    float: none;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+    .showInputMoneyInfoList ul {
+        background-color: white;
+    }
+
+        .showInputMoneyInfoList ul li {
+            width: 50%;
+            display: block;
+            float: left;
+            text-align: center;
+            font-size: x-large;
+            height: 30px;
+            line-height: 30px;
+        }
+
+
+.inputMoneyInfo {
+    display: block;
+    margin: 0px auto;
+    width: 94%;
+    height: 200px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+    .inputMoneyInfo .PhoneNum {
+        margin-left: 57px;
+        font-size: large;
+        padding-top: 10px;
+    }
+
+    .inputMoneyInfo .PhoneNumInput {
+        margin-left: 57px;
+        margin-right: 57px;
+        font-size: x-large;
+        background-color: #F8F7FC;
+    }
+
+    .inputMoneyInfo .MoneyNumInput {
+        margin-left: 57px;
+        margin-right: 57px;
+        background-color: #F8F7FC;
+    }
+
+        .inputMoneyInfo .MoneyNumInput .inputClass {
+            font-size: x-large;
+            background-color: #F8F7FC;
+            border: none;
+            width: 100%;
+        }
+
+    .inputMoneyInfo .modRed_Money_Ok {
+        margin:0px auto;
+        margin-top: 20px;
+        display: inline-block;
+        font-size: 14px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 3px;
+        display: block;
+        width: 50%;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border: 2px solid #c0c0c0;
+        font-size: x-large;
+        background-color:#FF194A;
+        border-radius: 25px;
+        color:white;
+    }

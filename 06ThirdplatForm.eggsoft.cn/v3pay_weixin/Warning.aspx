@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Warning.aspx.cs" Inherits="_06ThirdplatForm.eggsoft.cn.v3pay_weixin.Warning" %>

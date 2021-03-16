@@ -1,0 +1,1339 @@
+﻿a {
+    text-decoration: none;
+}
+
+.PleaseSubscribeMe {
+    min-height: 50px;
+    color: Red;
+    font-size: x-large;
+    text-align: center;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: White;
+}
+
+.li_left {
+    width: 95%;
+}
+
+.li_right {
+    width: 20%;
+    line-height: 50px;
+    height: 65px;
+}
+
+.order_num {
+    margin: 3px 0;
+    width: 100%;
+}
+
+    .order_num .num, .order_num .name, .order_num .money {
+        width: 100%;
+        line-height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+
+.ul_li .order_pro_list {
+    width: 100%;
+    min-width: 275px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    margin: 5px 0;
+    background-color: #dee8d0;
+}
+
+.pro_list_count, .pro_list_sum, .pro_list_price, .pro_list_name {
+    width: 24.5%;
+    height: 25px;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+}
+
+.FenXiaoOrderMarker {
+    background-image: url("images/HorseFenXiao.png");
+    width: 30px;
+    height: 26px;
+    background-repeat: no-repeat;
+    float: right;
+}
+
+.pro_list_name {
+    padding-left: 2%;
+}
+
+.OrdertitleBig a div {
+    background: #ebf3de;
+}
+
+.OrdertitleBig .pro_list_name_EachGoods a div {
+    background: #ebf3de;
+}
+
+.OrdertitleBig .pro_list_name_EachGoods {
+    margin-left: 12px;
+    margin-right: 12px;
+    border-radius: 5px;
+    background: none repeat scroll 0 0 #ebf3de;
+    display: block;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.OrderGoodDetail {
+    clear: both;
+    background: #F4F9EC;
+    line-height: 25px;
+    width: 100%;
+}
+
+.eachItemShort, .eachItemName, .eachItem {
+    float: left;
+    width: 24%;
+    height: 25px;
+    background: #F4F9EC;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+}
+
+.eachItemName {
+    width: 27%;
+}
+
+.ul_li_comments {
+    float: left;
+    width: 60%;
+    border-left: 1px solid #ccc;
+    height: 100%;
+}
+
+.ul_li_content, .ul_li_title {
+    padding: 0 5px;
+    overflow: hidden;
+    line-height: 20px;
+}
+
+.ul_li_title {
+    margin: 0 5px;
+    padding: 8px 0;
+    line-height: 21px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.ul_li_content {
+    height: 100px;
+}
+
+.item_info {
+    padding: 2%;
+    float: left;
+    width: 96%;
+    height: 40px;
+}
+
+.item_price, .item_good {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+    .item_good .vol, .item_good .vgood {
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+        .item_good .vgood .vg {
+            width: 20px;
+            float: right;
+            cursor: pointer;
+            height: 20px;
+            background: url(images/zuan1.png);
+            background-repeat: no-repeat;
+        }
+
+    .item_price .price_, .item_good .vol, .item_price .price, .item_good .vgood {
+        float: left;
+        font-size: 10px;
+        height: 50%;
+        width: 100%;
+    }
+
+.ShowQuanBeanMoneythelist_ul_li {
+    position: relative;
+    width: 100%;
+}
+
+.ul_li {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+#scroller .experience_items {
+    margin-top: 10px;
+}
+
+.ul_li .address {
+    float: left;
+    width: 100%;
+    height: 28px;
+}
+
+.ul_li_div_img {
+    margin-top: 30px;
+    padding-top: 1px;
+    width: 38%;
+    float: left;
+    position: relative;
+}
+
+.ul_li_user_name {
+    line-height: 145px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    height: 100%;
+    float: left;
+    text-align: center;
+    width: 19%;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.ul_li_trade {
+    border-left: 1px solid #ccc;
+    height: 100%;
+    float: left;
+    font-size: 10px;
+    width: 60%;
+    overflow: hidden;
+}
+
+OliverModi {
+    border-right: 1px solid #ccc;
+    height: 100%;
+    float: left;
+    font-size: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.OliverModi li {
+    height: 20px !important;
+    line-height: 20px !important;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap !important;
+    border: none !important;
+    min-width: 100px !important;
+    color: #000 !important;
+}
+
+    .OliverModi li a {
+        clear: none !important;
+        display: inline !important;
+        margin-top: 10px;
+    }
+
+#ShowQuanBeanMoney {
+    width: 100%;
+    top: 0;
+    min-width: 275px;
+    margin: 0;
+    padding: 0 0 70px;
+    background-image: url("images/back.jpg");
+    padding-bottom: 50px;
+}
+
+    #ShowQuanBeanMoney ul {
+        list-style: none;
+        padding: 0;
+        margin: 8px;
+        text-align: left;
+    }
+
+    #ShowQuanBeanMoney li {
+        min-width: 275px;
+        font-size: 14px;
+        text-align: center;
+    }
+.ul_li_Beans_16_Percent {
+    float: left;
+    padding-top: 12px;
+    width: 16%;
+}
+
+.ul_li_Beans_18_Percent {
+    float: left;
+    padding-top: 12px;
+    width: 18%;
+}
+
+.ul_li_Beans_20_Percent {
+    float: left;
+    padding-top: 4px;
+    width: 20%;
+}
+
+.ul_li_Beans_25_Percent {
+    float: left;
+    padding-top: 12px;
+    width: 25%;
+}
+
+.ul_li_Classs_10_Percent {
+    float: left;
+    padding-top: 4px;
+    width: 10%;
+}
+
+.ul_li_Classs_15_Percent {
+    float: left;
+    padding-top: 4px;
+    width: 15%;
+}
+
+.ul_li_Classs_75_Percent {
+    float: left;
+    padding-top: 4px;
+    width: 73%;
+}
+
+
+.ul_li_Classs_40_Percent {
+    float: left;
+    padding-top: 4px;
+    width: 40%;
+}
+
+.ul_li_Classs_15_Percent {
+    float: left;
+    padding-top: 4px;
+    width: 15%;
+}
+
+.ul_li_trade_item_ShowQuanBeanMoney {
+    font-size: 10px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.region a {
+    color: #fff;
+}
+
+.region .Left_Show .sum_income_title a {
+    color: #82c422;
+    text-decoration: underline;
+}
+
+.region .Left_Show .sum_income_money a {
+    color: #f63;
+}
+
+.ul_li_money_Percent {
+    float: left;
+    padding-top: 12px;
+    width: 30%;
+    height: 100%;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.ul_li_money {
+    float: left;
+    padding-top: 12px;
+    width: 19%;
+}
+
+    .ul_li_money .OliverModi {
+        border-right: 1px solid #ccc;
+        height: 100%;
+        float: left;
+        font-size: 10px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+        .ul_li_money .OliverModi li {
+            height: 20px !important;
+            font-size: 14px;
+            border: none !important;
+        }
+
+.ul_li_trade_item {
+    margin: 0;
+    padding-left: 5px;
+    font-size: 10px;
+    line-height: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 60px;
+}
+
+.ul_li_div_name {
+    margin: 0 auto;
+    position: absolute;
+    top: 104px;
+    width: 100%;
+    font-size: 12px;
+    filter: alpha(Opacity = 90);
+    opacity: .7;
+    z-index: 100;
+    background-color: #6d6d6d;
+    color: white;
+    text-align: center;
+    line-height: 15px;
+}
+
+.button {
+    width: 100%;
+    padding: 0;
+    background: #fff;
+}
+
+.backcolor_red {
+    background: #fff;
+}
+
+.button-flat-highlight {
+    background: #ec9b42;
+}
+
+.page {
+    width: 100%;
+}
+
+    .page .showcase .gallery {
+        padding: 10px;
+        margin: 0 auto;
+        min-width: 275px;
+        min-height: 275px;
+    }
+
+    .page .showcase .gallery11 {
+        padding: 10px;
+        margin: 0 auto;
+        min-width: 275px;
+        min-height: 275px;
+    }
+
+.top_menu {
+    min-width: 275px;
+    position: absolute;
+    width: 100%;
+    top: 46px;
+}
+
+.bottom_menu {
+    min-width: 275px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 45px;
+}
+
+.page .showcase .gallery ul {
+    width: 100%;
+    min-width: 275px;
+}
+
+    .page .showcase .gallery ul li {
+        width: 22%;
+        margin: 0 3px;
+        text-align: center;
+    }
+
+.page .showcase .gallery1 ul {
+    width: 100%;
+    min-width: 275px;
+}
+
+    .page .showcase .gallery1 ul li {
+        width: 22%;
+        margin: 0 3px;
+        text-align: center;
+    }
+
+.page .showcase {
+    min-width: 275px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    margin: 5px auto;
+    background-color: #dee8d0;
+}
+
+body, ul, li {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.his_pro_img_search del {
+    color: #999;
+    float: none;
+    text-decoration: line-through;
+    font-size: 14px;
+    font-weight: lighter;
+    margin-left: 6px;
+}
+
+.his_pro_img_search .sales {
+    color: #8e8e8e;
+}
+
+.his_pro_img_search .ys_zanmy {
+    padding-left: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 24px;
+    background: url(images/iconSayOk.png) no-repeat;
+    width: 40px;
+    display: inline-block;
+}
+
+.his_pro_img_search .PromotePrice {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
+del {
+    color: #999;
+}
+
+.SalseMoney {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.SalseMoney_YDJ {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.delMoney {
+    color: #8E8E8E;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+body {
+    font-size: 14px;
+    font-family: helvetica;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.red {
+    color: red;
+}
+
+:-webkit-full-screen {
+    background: pink;
+}
+
+:-moz-full-screen {
+    background: pink;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    display: inline-block;
+    height: 100%;
+}
+
+    #wrapper #thelist {
+        width: 97%;
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+        #wrapper #thelist a {
+            margin-top: 10px;
+            display: block;
+            clear: both;
+            height: auto;
+        }
+
+        #wrapper #thelist .pro_wBuy_Button_ {
+            padding-right: 2px;
+        }
+
+            #wrapper #thelist .pro_wBuy_Button_ a {
+                clear: none !important;
+            }
+
+.history_wrapper {
+    top: 50px;
+    bottom: 50px;
+}
+
+.content_form_search {
+    width: 100%;
+    margin: 6px 0;
+    overflow: auto;
+}
+
+.content_Only_One_Row_form {
+    width: 100%;
+    margin: 6px 0;
+    overflow: auto;
+}
+
+    .content_Only_One_Row_form .history {
+        margin-left: 8px;
+        margin-right: 0;
+    }
+
+    .content_Only_One_Row_form .his_pro_name {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .content_Only_One_Row_form .history {
+        margin-left: 8px;
+        margin-right: 0;
+    }
+
+        .content_Only_One_Row_form .history .his_pro_img {
+            width: 98%;
+        }
+
+            .content_Only_One_Row_form .history .his_pro_img img {
+                border: 1px solid #dbdbdb;
+                float: left;
+                margin-left: 4px;
+                margin-right: 10px;
+                max-height: 100px;
+                max-width: 100px;
+                padding: 5px;
+            }
+
+            .content_Only_One_Row_form .history .his_pro_img .PromotePrice {
+                color: red;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .content_Only_One_Row_form .history .his_pro_img .delMoney {
+                color: #8E8E8E;
+                text-decoration: line-through;
+                font-size: 14px;
+            }
+
+            .content_Only_One_Row_form .history .his_pro_img .sales {
+                color: #8e8e8e;
+            }
+
+            .content_Only_One_Row_form .history .his_pro_img .ys_zanmy {
+                background: url("images/iconSayOk_Small.png") no-repeat scroll 0 0 rgba(0,0,0,0);
+                cursor: pointer;
+                display: inline-block;
+                height: 17px;
+                overflow: hidden;
+                padding-left: 16px;
+                width: 30px;
+                font-size: 14px;
+                vertical-align: middle;
+            }
+
+#content_form {
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    bottom: 50px;
+    width: 100%;
+    background-image: url("images/back.jpg");
+}
+
+.YJJ_content_form {
+    width: 45%;
+    overflow: hidden;
+    float: left;
+    margin-top: 1px;
+    height: 159px;
+    padding-top: 2px;
+    height: 96%;
+    border: 1px solid #CCC;
+}
+
+.YJJ_content_Tow_Row_form {
+    width: 47%;
+    overflow: hidden;
+    float: left;
+    margin-top: 1px;
+    height: 170px;
+    padding-top: 2px;
+    height: 96%;
+    border: 1px solid #CCC;
+}
+
+    .YJJ_content_Tow_Row_form .his_pro_name_YDJ {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 4px;
+        clear: both;
+        text-align: left;
+        padding-bottom: 3px;
+        padding-left: 0;
+    }
+
+    .YJJ_content_Tow_Row_form .his_pro_img_YDJ {
+        height: 100px;
+        text-align: center;
+    }
+
+        .YJJ_content_Tow_Row_form .his_pro_img_YDJ img {
+            margin: 0 auto;
+            height: 100px;
+        }
+
+    .YJJ_content_Tow_Row_form .PriceList_Text {
+        width: 100%;
+        line-height: 12px;
+        font-size: 10px;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+        .YJJ_content_Tow_Row_form .PriceList_Text .SalseMoney_YDJ {
+            color: red;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        .YJJ_content_Tow_Row_form .PriceList_Text .delMoney {
+            color: #8E8E8E;
+            text-decoration: line-through;
+            font-size: 8px;
+        }
+
+        .YJJ_content_Tow_Row_form .PriceList_Text .his_pro_content_YDJ {
+            padding-top: 5px;
+            line-height: 10px;
+            font-size: 10px;
+            color: #797979;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+#content_form form {
+    width: 95%;
+    margin: 10px auto;
+}
+
+    #content_form form input {
+        font-size: 14px;
+        margin: 5px 0;
+        width: 100%;
+        height: 30px;
+    }
+
+    #content_form form textarea {
+        margin: 10px 0;
+        font-size: 14px;
+        width: 100%;
+        height: 100px;
+    }
+
+#content_form .history {
+    background-color: white;
+    margin: 4px;
+    height: 100%;
+    padding: 4px;
+    float: left;
+}
+
+.his_pro_img_search .his_num, .his_date, .his_pro_img, .his_pro_content {
+    float: left;
+    line-height: 25px;
+    width: 100%;
+}
+
+.his_pro_name_YDJ, .his_num_YDJ, .his_date, .his_pro_img, .his_pro_content_YDJ {
+    line-height: 15px;
+    width: 90%;
+    padding-left: 10px;
+}
+
+.his_date {
+    font-size: 11px;
+    color: #797979;
+}
+
+.his_num {
+    font-size: 16px;
+}
+
+.his_num_YDJ {
+    font-size: 14px;
+    line-height: 25px;
+    height: 25px;
+}
+
+.his_pro_name_YDJ {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+    clear: both;
+    text-align: left;
+    padding-bottom: 3px;
+    padding-left: 0;
+}
+
+.his_pro_img_History {
+    width: 100px;
+    float: left;
+}
+
+.his_pro_img {
+    width: 90%;
+}
+
+.his_pro_content_History {
+    float: left;
+    margin: 4px;
+    color: #797979;
+}
+
+.his_pro_content {
+    padding-left: 10px;
+    margin: 4px;
+    color: #797979;
+    width: 90%;
+}
+
+.his_pro_content_search {
+    padding-left: 2px;
+    margin: 1px;
+    color: #797979;
+    float: left;
+}
+
+.his_pro_content_YDJ {
+    padding-top: 5px;
+    line-height: 16px;
+    font-size: 14px;
+    color: #797979;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#scroller {
+    width: 100%;
+    top: 0;
+    min-width: 275px;
+    margin: 0;
+    padding: 0 0 70px;
+    background-image: url("images/back.jpg");
+    display: inline-block;
+}
+
+.pro_w_GetMoney {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 1px;
+    padding-bottom: 5px;
+    font-size:small;
+}
+
+.pro_w {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 1px;
+    padding-bottom: 5px;
+    background-color: white;
+    margin: 8px 2px;
+    padding: 6px 2px;
+}
+
+.OrderGoodDetail {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 98%;
+    border-radius: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+    .OrderGoodDetail a {
+        margin: 0;
+        width: 98%;
+    }
+
+.UserShouHuoDiZhi {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+
+.OrderGoodFahuoInfo {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    padding-left: 5px;
+}
+
+.eachLine {
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+    margin: 0;
+}
+
+#scroller ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px;
+    text-align: left;
+}
+
+#scroller li {
+    height: 130px;
+    min-width: 275px;
+    line-height: 25px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.my_address {
+    width: 96%;
+    margin: auto;
+    border: none;
+    line-height: 30px;
+}
+
+#scroller .getShouHuoDiZhi {
+    list-style: none outside none;
+    margin: 8px;
+    padding: 0;
+    text-align: center;
+}
+
+.comment_list li {
+    background-color: white;
+    margin: 6px 0;
+}
+
+.customer_list li {
+    background-color: white;
+}
+
+#thelist li {
+    height: 180px;
+}
+
+.customer_list td {
+    border: 1px solid #dedede;
+    border-collapse: collapse;
+}
+
+#scroller .experience_list li {
+    min-height: 80px;
+    height: auto;
+    border: none;
+    background-color: white;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: left;
+    display: block;
+    clear: both;
+}
+
+#scroller .history_list li {
+    background-color: white;
+    border: none;
+    margin: 5px 0;
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 3px;
+    display: block;
+    line-height: 14px;
+    height: auto;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    float: left;
+}
+
+    #scroller .history_list li .content_form {
+        display: block;
+        clear: both;
+        height: 100%;
+    }
+
+        #scroller .history_list li .content_form td {
+            text-align: center;
+        }
+
+        #scroller .history_list li .content_form img {
+            padding-top: 8px;
+        }
+
+        #scroller .history_list li .content_form .ulKonl {
+            display: inline-block;
+            width: 100%;
+            max-width: 480px;
+            padding-right: 3px;
+        }
+
+            #scroller .history_list li .content_form .ulKonl li {
+                line-height: 14px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+#myFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#pullUp {
+    border-bottom: none;
+}
+
+#pullDown, #pullUp {
+    height: 40px;
+    line-height: 40px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #888;
+}
+
+#pullDown {
+    filter: alpha(Opacity = 100);
+    -moz-opacity: .3;
+    opacity: .3;
+    z-index: 100;
+    border-bottom: 1px solid #ccc;
+}
+
+    #pullDown .pullDownIcon, #pullUp .pullUpIcon {
+        display: block;
+        float: left;
+        width: 40px;
+        height: 40px;
+        background: url(images/pull-icon@2x.png) 0 0 no-repeat;
+        -webkit-background-size: 40px 80px;
+        background-size: 40px 80px;
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 250ms;
+    }
+
+    #pullDown .pullDownIcon {
+        -webkit-transform: rotate(0deg) translateZ(0);
+    }
+
+#pullUp .pullUpIcon {
+    -webkit-transform: rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+    -webkit-transform: rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+    -webkit-transform: rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+    background-position: 0 100%;
+    -webkit-transform: rotate(0deg) translateZ(0);
+    -webkit-transition-duration: 0ms;
+    -webkit-animation-name: loading;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+#scroller .experience_list {
+    margin-top: 0;
+}
+
+.OrdertitleBig {
+    clear: both;
+    height: auto;
+}
+
+.Ordertitle {
+    padding-left: 1px;
+    float: left;
+    -moz-box-flex: 1;
+    overflow: hidden;
+    width: 70%;
+}
+
+.OrderGoodFahuoInfo .tit {
+    font-size: 14px;
+}
+
+.Ordertitle .tit {
+    font-size: 14px;
+}
+
+.Ordertitle .price {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.addrtit_CancelOrder {
+    clear: both;
+    display: block;
+}
+
+.addrtit {
+    display: block;
+    height: 25px;
+    float: left;
+    width: 62%;
+}
+
+.Talk_Order2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    display: block;
+    float: right;
+    width: 60px;
+    margin-left: 2px;
+    margin-top: 2px;
+    background: -moz-linear-gradient(center top,#82C422,#82C422) repeat scroll 0 0 rgba(0,0,0,0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#82C422',endColorStr='#82C422',gradientType='0');
+    background: -o-linear-gradient(top,#82C422,#82C422);
+    background: -webkit-gradient(linear,0% 0,0% 100%,from(#82C422),to(#82C422));
+    text-align: center;
+}
+
+.Talk_Order {
+    margin-top: 6px;
+    right: 0;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 3px;
+}
+
+    .Talk_Order a {
+        display: inline-block;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 3px;
+        display: block;
+        float: right;
+        width: 70px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        width: 60px;
+        border: 2px solid #c0c0c0;
+    }
+
+.CancelOrder {
+    margin-top: 6px;
+    right: 50px;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 3px;
+    clear: both;
+    display: block;
+}
+
+    .CancelOrder a {
+        display: inline-block;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 3px;
+        display: block;
+        float: right;
+        width: 70px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        width: 60px;
+        border: 2px solid #c0c0c0;
+    }
+
+.Talk_Order {
+    margin-top: 6px;
+}
+
+.addrtit a {
+    color: #000;
+}
+
+.pro_wBuy_Button_mmm .pro_wBuy_Button_now_ {
+    margin-top: 6px;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 3px;
+}
+
+.pro_wBuy_Button_mmm .Talk_Order2 {
+    margin-top: 6px;
+    margin-right: 3px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.modBtnColor {
+    color: #000;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    display: block;
+    float: right;
+    width: 70px;
+}
+
+.modBtnCancelColor {
+    background: -moz-linear-gradient(center top,#F50,#F40) repeat scroll 0 0 rgba(0,0,0,0);
+    border-radius: 3px;
+    color: #82C422;
+    display: block;
+    float: right;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    width: 60px;
+}
+
+.modBtnColor_Red_Money {
+    color: #000;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    display: block;
+    float: right;
+    width: 70px;
+    margin-top: 5px;
+    margin-right: 3px;
+    border: 2px solid #c0c0c0;
+}
+
+.modBtnColor_Red_Money_Ok {
+    color: #000;
+    display: inline-block;
+    font-size: 14px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 3px;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    cursor: pointer;
+    border: 2px solid #c0c0c0;
+}
+
+.income_ff {
+    margin: 0 auto;
+    padding: 10px 0 0 10px;
+    border: 1px solid #DEDEDE;
+    background-color: white;
+    height: 30%;
+    min-height: 50px;
+    width: 92%;
+    vertical-align: middle;
+}
+
+.sum_title {
+    color: #979797;
+    margin-bottom: 5px;
+}
+
+.sum_money {
+    font-size: 14px;
+}
+
+.div_img_center {
+    margin: 0 auto;
+    width: 100px;
+    min-height: 90px;
+    text-align: center;
+}
+
+.modBtnColor_Green {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    width: 60px;
+    border: 2px solid #c0c0c0;
+}
+
+.modBtnColor_Red {
+    border: 2px solid #c0c0c0;
+}
+
+@ -webkit-keyframes loading {
+    from {
+        -webkit-transform: rotate(0deg)translateZ(0);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateZ(0);
+    }

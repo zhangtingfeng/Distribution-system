@@ -1,0 +1,129 @@
+﻿@{
+    ViewBag.Title = "投保管理";
+}
+<div ng-controller="detailController">
+    <h3 class="page-header"><a href="@Url.Action("Index")">投保管理</a> / <span>详情</span></h3>
+
+    <h3 class="page-header">车辆信息</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-md-5 control-label text-right">车主姓名</label>
+                <span class="text-left" ng-bind="formData.data.CarInfo.CarMasterName"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-md-5 control-label text-right">车牌号</label>
+                <span class="text-left" ng-bind="formData.data.CarInfo.CarNumber"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-md-5 control-label text-right">品牌型号</label>
+                <span class="text-left" ng-bind="formData.data.CarInfo.CarBrand"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-md-5 control-label text-right">车辆识别码</label>
+                <span class="text-left" ng-bind="formData.data.CarInfo.CarIdentifiedCode"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-md-5 control-label text-right">发动机号</label>
+                <span class="text-left" ng-bind="formData.data.CarInfo.EngineNumber"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-md-5 control-label text-right">购车价</label>
+                <span class="text-left" ng-bind="formData.data.CarInfo.CarPurchasePrice"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-md-5 control-label text-right">注册日期</label>
+                <span class="text-left" ng-bind="formData.data.CarInfo.CarRegisteredDate | date:'yyyy-MM-dd'"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-md-5 control-label text-right">保险到期日</label>
+                <span class="text-left" ng-bind="formData.data.CarInfo.InsureEndDate | date:'yyyy-MM-dd'"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div ng-show="formData.data.CarInfo.DrivingCertificate">
+        <h3>行驶证</h3>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">行驶证照片</label>
+                    <div class="col-sm-8">
+                        <a class="thumbnail" href="{{webAPIFileUrlBig+formData.data.CarInfo.DrivingCertificate}}" target="_blank">
+                            <img ng-src="{{webAPIFileUrl+formData.data.CarInfo.DrivingCertificate}}" alt="" style="width:100%" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_QuoteContentDetail", new Web_Service.ViewModels.Common.PagePartialViewModel(""))
+</div>
+@section scripts{
+    <script type="text/javascript">
+        function searchForm($scope, restangular) {
+            restangular.one('Order/UserInsureHistory/' + '@ViewBag.CarInsureQueryHistoryID').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                $scope.formData.data = result.data;
+                console.log($scope.formData.data);
+                setTimeout(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                }, 1000);
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+                $scope.isLoading = false;
+            });
+        };
+
+        function resetForm($scope) {
+            $scope.formData.data = {};
+            $scope.webAPIFileUrl = _appSettingWebApiUrl + '/user/userfile/Thumbnail_';
+            $scope.webAPIFileUrlBig = _appSettingWebApiUrl + '/user/userfile/';
+        }
+
+        _app.controller('detailController', [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope.formData = new ResultAPIModel();
+
+                resetForm($scope);
+                searchForm($scope, Restangular);
+
+                //根据ID获取Text  报价方案获取Text内容
+                $scope._QuoteCommonGetPlanText = function (id, type) {
+                    return _JavascriptQuotePlanDataGetText(id, type);
+                }
+            }
+        ]);
+
+    </script>
+}

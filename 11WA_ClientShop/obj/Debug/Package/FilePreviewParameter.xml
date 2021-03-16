@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="01Clienteggsoft.cn" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Works_Dream\\0055eggsoft\.cnvs2015_GaoErFu\\11WA_ClientShop\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Works_Dream\\0055eggsoft\.cnvs2015_GaoErFu\\11WA_ClientShop\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Shop.Earth17.Com_ConnectionString-Web.config Connection String" description="Shop.Earth17.Com_ConnectionString 由应用程序在 web.config 中用来访问数据库的连接字符串。" value="Data Source=219.235.0.112,1433;Initial Catalog=Shop.Earh17.comProduct;Persist Security Info=True;User ID=ShopEarh17;Password=ShopEarh17com2wsx;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Works_Dream\\0055eggsoft\.cnvs2015_GaoErFu\\11WA_ClientShop\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Shop.Earth17.Com_ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

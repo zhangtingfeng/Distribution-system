@@ -1,0 +1,40 @@
+﻿
+.NewStyle3jx_map_bd {
+    height: auto;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+
+    .NewStyle3jx_map_bd  .ClassClickStyle {
+        padding-top: 10px;padding-bottom: 10px;
+        height: 20px;
+        line-height: 20px;
+        display: block;
+		cursor:pointer;
+    }
+
+
+        .NewStyle3jx_map_bd .ClassClickStyle .Classname {
+            border-left-width: 5px;
+            border-left-style: solid;
+            border-left-color: red;
+            margin-left: 8px;
+            padding-left: 5px;
+        }
+
+
+        .NewStyle3jx_map_bd .ClassClickStyle .More {
+            float: right;
+            padding-right: 8px;
+        }
+
+
+.SAgent_ChoiceGood {
+    display: block;
+    clear: both;
+    height: 50px;
+    background: white url("/Templet/03LiuShenMa/Images/FaveriMore1.jpg") no-repeat;
+    background-size: 100% 50px;
+    width: 100%;
+}

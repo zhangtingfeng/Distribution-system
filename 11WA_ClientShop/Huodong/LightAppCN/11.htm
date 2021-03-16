@@ -1,0 +1,163 @@
+﻿
+<!doctype html>
+<html lang="ch">
+<head>	<script>					
+	var	imgUrl = 'http://net.webuy8.com/upload/000015_sm/images/20140320080437.jpg';										
+	var	lineLink = 'http://net.webuy8.com/LightAppCN/D-15-1.aspx';										
+	var	descContent = "轻应用名称轻应用名称轻应用名称轻应用名称轻应用描述轻应用描述轻应用描述";
+	var	shareTitle = '轻应用名称轻应用名称轻应用名称';										
+	var	appid = '';										
+												
+	function shareFriend() {										
+		WeixinJSBridge.invoke('sendAppMessage',{
+		"appid": appid,										
+		"img_url": imgUrl,										
+		"img_width": "640",										
+		"img_height": "640",										
+		"link": lineLink,										
+		"desc": descContent,										
+		"title": shareTitle										
+		}, function(res) {										
+		_report('send_msg', res.err_msg);										
+		})										
+	}											
+												
+	function shareWeibo() {										
+		WeixinJSBridge.invoke('shareWeibo',{										
+		"content": descContent,										
+		"url": lineLink,										
+		}, function(res) {										
+		_report('weibo', res.err_msg);										
+		});										
+	}											
+	//	当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。										
+	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {										
+												
+		// 发送给好友										
+		WeixinJSBridge.on('menu:share:appmessage', function(argv){										
+		shareFriend();										
+		});										
+												
+												
+		}, false);										
+	</script>										
+<meta charset="utf-8" /><meta name="format-detection" content="telephone=no" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="black" /><link rel="apple-touch-icon" sizes="57x57" href="Icon.png" /><link rel="apple-touch-icon" sizes="72x72" href="Icon.png" /><link data-logo="" rel="apple-touch-icon" sizes="114x114" href="Icon.png" /><meta HTTP-EQUIV="Pragma" content="no-cache" /><meta HTTP-EQUIV="Expires" content="-1" /><title>
+	轻应用名称轻应用名称轻应用名称
+</title>
+ <script type="text/javascript" src="JS_Css/offline.js"></script>
+        <link rel="stylesheet" type="text/css" href="JS_Css/default.css" /><link rel="stylesheet" type="text/css" href="JS_Css/default.date.css" /><link rel="stylesheet" type="text/css" href="JS_Css/default.time.css" /><link rel="stylesheet" type="text/css" href="JS_Css/main.css" />
+	<!--浏览器兼容HTML5标签-->
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="/js/admin/common/html5.js"></script>
+	<![endif]-->
+	<!--移动端版本兼容 -->
+	<script type="text/javascript">
+	    var phoneWidth = parseInt(window.screen.width);
+	    var phoneScale = phoneWidth / 640;
+	    var ua = navigator.userAgent;
+	    if (/Android (\d+\.\d+)/.test(ua)) {
+	        var version = parseFloat(RegExp.$1);
+	        if (version > 2.3) {
+	            document.write('<meta name="viewport" content="width=640, minimum-scale = &#39; + phoneScale + &#39;, maximum-scale = &#39; + phoneScale + &#39;, target-densitydpi=device-dpi" />');
+	        } else {
+	            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi" />');
+	        }
+	    } else {
+	        document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi" />');
+	    }
+	</script>
+	<!--移动端版本兼容 end -->
+</head>
+
+<body>
+<input type="hidden" value='776' id='activeId'><!-- 活动id -->
+<section class="p-index">
+		<!--fn-声音提示 -->
+				<div class="audio_txt">
+					<p class="txt">点击开启/关闭音效</p>
+					<p></p>
+				</div>
+				<!--fn-声音提示 end-->
+		
+				<!--fn-声音显示 -->
+				<section class="fn-audio">
+					<div class="btn">
+						<p class="btn_audio"><span class='css_sprite01 audio_open'></span><span class='css_sprite01 audio_close'></span></p>
+						<audio id="car_audio" controls preload="preload">
+							<source src="/Upload/000015_sm/images/20140709072902.mp3" type="audio/mpeg">
+							您的浏览器不支持HTML5音频格式
+						</audio>
+					</div>
+				</section>
+				<!--fn-声音显示 end-->
+	 <!--全屏大图-->
+<section data-page="1" class="m-page m-page2 hide" data-id='12001' data-type='info_nomore'>
+<div class="m-img m-img01 lazy-bk" data-bk= '/upload/000015_sm/images/20140320080437.jpg' 
+	style="background:#ddd center no-repeat; background-size:cover;">
+</div>
+		</section>
+<!--全屏大图end-->
+
+ <!--全屏大图-->
+<section data-page="2" class="m-page m-page2 hide" data-id='12002' data-type='info_nomore'>
+<div class="m-img m-img01 lazy-bk" data-bk= '/upload/000015_sm/images/20140320080437.jpg' 
+	style="background:#ddd center no-repeat; background-size:cover;">
+</div>
+		</section>
+<!--全屏大图end-->
+
+ <!--全屏大图-->
+<section data-page="3" class="m-page m-page2 hide" data-id='12003' data-type='info_nomore'>
+<div class="m-img m-img01 lazy-bk" data-bk= '/upload/000015_sm/images/20140709192739.jpg' 
+	style="background:#ddd center no-repeat; background-size:cover;">
+</div>
+		</section>
+<!--全屏大图end-->
+
+ <!--全屏大图-->
+<section data-page="4" class="m-page m-page2 hide" data-id='12004' data-type='info_nomore'>
+<div class="m-img m-img01 lazy-bk" data-bk= '/upload/000015_sm/images/20140709192755.jpg' 
+	style="background:#ddd center no-repeat; background-size:cover;">
+</div>
+		</section>
+<!--全屏大图end-->
+
+
+										
+	<!--pageLoading-->
+	<section class="pageLoading">
+		<img src="JS_Css/load.gif" alt="loading" />
+	</section>
+	<!--pageLoading end-->
+	<!--微信分享 -->
+	<section class='weixin-share' onclick='cancle_share_weixin(this);'>
+		<img class='lazy-bk' data-bk='JS_Css/guide.png'/>
+	</section>
+	<!--微信分享 end  -->
+
+	<!-- 箭头指示引导 -->
+	<section class='u-arrow'><img src="JS_Css/btn01_arrow.png" /></section>
+	<!-- 箭头指示引导 end-->
+</section>
+
+<!--脚本加载-->
+<script type="text/javascript" src="JS_Css/html5.js?1383635738"></script>
+<script type="text/javascript" src="JS_Css/jquery-1.8.2.min.js?1383635738"></script>
+<script type="text/javascript" src="JS_Css/jquery.easing.1.3.js?1383810748"></script>
+<script type="text/javascript" src="JS_Css/txt_scroll.js?1392192018"></script>
+<script type="text/javascript" src="JS_Css/yl3d.js?1392964130"></script>
+<script type="text/javascript" src="JS_Css/ylMap.js?1392961386"></script>
+<script type="text/javascript" src="JS_Css/1_picker.js?1386650008"></script>
+<script type="text/javascript" src="JS_Css/2_picker.date.js?1383816872"></script>
+<script type="text/javascript" src="JS_Css/3_picker.time.js?1383816872"></script>
+<script type="text/javascript" src="JS_Css/4_legacy.js?1383637492"></script>
+<script type="text/javascript" src="JS_Css/9_slidepic.js?1393912181"></script>
+<script type="text/javascript" src="JS_Css/99_main.js?1403249155"></script>
+<script type="text/javascript" src="JS_Css/wxm-core176ed4.js?1397525361"></script>
+<script type="text/javascript" src="JS_Css/wxshare.js?1402492708"></script>
+<!--脚本加载 end-->
+<!--
+<script type="text/javascript">    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F883e5df898da36becbc7278612991839' type='text/javascript'%3E%3C/script%3E"));</script>
+-->
+</body>
+</html>

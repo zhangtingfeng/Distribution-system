@@ -1,0 +1,8 @@
+﻿<Project ToolsVersion="4.0"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ExcludeFromPackageFiles Include="web.config;web_weixin.config;">
+      <FromTarget>Web_Service.wpp.targets</FromTarget>
+    </ExcludeFromPackageFiles>
+  </ItemGroup>
+</Project>

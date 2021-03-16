@@ -1,0 +1,358 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>张廷锋</title>
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+    <!-- Mobile Devices Support @begin -->
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control" />
+    <meta content="no-cache" http-equiv="pragma" />
+    <meta content="0" http-equiv="expires" />
+    <meta content="telephone=no, address=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Mobile Devices Support @end -->
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <link href="/Templet/02ShiYi/skin/ys.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" type="text/css" href="/Templet/02ShiYi/skin/box_swipe.css?version=css201709121928" media="all">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/swipe.js?version=js201709121928"></script>
+    <script type="text/javascript" src="/Templet/01WYJS/js/func_Image.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/mall_Templet1.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link href="/Templet/01WYJS/Css/base.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link href="/Templet/01WYJS/Css/font-awesome.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link href="/Templet/01WYJS/Css/itemListTemplate.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link href="/Templet/03LiuShenMa/Css/02Templet01.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/SearchBar-mobile-template.css?version=css201709121928">
+
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    <script type="text/javascript">
+        var varUserID = "41192";///传递给 product.js   传递变量
+        var varServiceURL = "http://localhost:8014";///传递给 product.js   传递变量
+        var varShopClientID = "21";///传递给 product.js   传递变量
+        function load_Multi() {
+            doVisitThisPage(); doDefault_Banner(); doDefault_SAgent_ProductGoodClass(); doDefault_SAgent_ProductNewGood(); doInfoAlert_Msg(41192);
+        }
+        function btnSearch() {
+            var varSearchKey = document.getElementById("oliversearch-input_s_1447079356776").value;
+            var varSearchURL = encodeURI('/sagent.41192/productsearchgoods.aspx?searchkey=' + varSearchKey.toLowerCase());
+            window.location.href = varSearchURL;
+        }
+        function doVisitThisPage() {
+            var url = "http://localhost:8014/Pub/doVisiDefault.asmx/doVisitDefaultAction?strpInt_QueryString_ParentID=41230&strpub_Int_Session_CurUserID=41192&strpub_Int_ShopClientID=21";
+
+            var result = -1;
+            $.ajax({
+                type: "POST",
+                url: url,
+                dataType: "jsonp",
+                jsonp: "jsonp", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                jsonpCallback: "jsonp1Callback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                contentType: "application/json; charset=utf-8",
+                success: function (json) {
+                    result = parseInt(json.ErrorCode);
+                    return;
+                },
+                error: function () {
+                }
+            });
+            return result;
+        }
+        function doDefault_Banner() {
+            $.ajax({
+                type: 'GET',
+                url: '/Handler/Default_Banner.ashx',
+                dataType: 'text',
+                data: 'strpub_Int_ShopClientID=21',
+                beforeSend: function () {
+                    $("#Anounce_spro_con").append('<img style="margin: 0px auto;display:block;" src="/images/loading.gif"/>');
+                },
+                success: function (msg) {
+                    //alert(msg);
+                    $("#Anounce_spro_con").html(msg);
+                },
+                error: function (data) {
+                }
+            })
+        }
+        function doDefault_SAgent_ProductGoodClass() {
+            $.ajax({
+                type: 'GET',
+                url: '/Handler/Default_SAgent_ProductGoodClass.ashx',
+                dataType: 'text',
+                data: 'pClassGoodType=0&strpub_Int_ShopClientID=21&strpub_Int_Session_CurUserID=41192',
+                beforeSend: function () {
+                    $("#GoodAgentClass").append('<img style="margin: 0px auto;display:block;" src="/images/loading.gif"/>');
+                },
+                success: function (msg) {
+                    $("#GoodAgentClass").html(msg);
+                },
+                error: function (data) {
+                }
+            })
+        }
+        function doDefault_SAgent_ProductNewGood() {
+            $.ajax({
+                type: 'GET',
+                url: '/Handler/Default_SAgent_ProductNewGood.ashx',
+                dataType: 'text',
+                data: 'strpub_Int_ShopClientID=' + '21' + '&strpub_Int_Session_CurUserID=41192' + '&strpInt_QueryString_ParentID=41192',
+                beforeSend: function () {
+                    $("#SAgent_ProductNewGoodClass").append('<img style="margin: 0px auto;display:block;" src="/images/loading.gif"/>');
+                },
+                success: function (msg) {
+                    $("#SAgent_ProductNewGoodClass").html(msg);
+                },
+                error: function (data) {
+                }
+            })
+        }
+    </script>
+    <script type="text/javascript">
+        var WeiXin_imgAllPageUrl = 'http://qiniu.eggsoft.cn/upload/000021_la/HeadImage/User041192.jpg';
+        var WeiXin_lineAllPageLink = 'http://localhost:8011/sagent-41192/default.aspx';
+        var WeiXin_descAppPageContent = '张廷锋 沁加(上海)生物科技有限公司,微店推荐 ';
+        var WeiXin_shareAppAllPageTitle = '张廷锋 沁加(上海)生物科技有限公司';
+        var WeiXin_appidAllPage = '';
+        var path = WeiXin_lineAllPageLink;
+    </script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: 'wxcc080a898e8a6e70',
+                timestamp: 1508051274,
+                nonceStr: '9B8619251A19057CFF70779273E95AA6',
+                signature: 'c0d4d93b4af2af107020f27616987c55aac32c44',
+                jsApiList: [
+                    // 所有要调用url=http://localhost:8011/default.aspx的 API 都要加到这个列表中
+                    'onMenuShareTimeline', 'getLatestAddress', 'editAddress',
+                    'onMenuShareAppMessage'
+                ]
+            });
+            wx.ready(function () {
+                wx.onMenuShareAppMessage({
+                    title: WeiXin_shareAppAllPageTitle, // 分享标题
+                    desc: WeiXin_descAppPageContent, // 分享描述
+                    link: path, // 分享链接
+                    imgUrl: WeiXin_imgAllPageUrl, // 分享图标
+                    type: '', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        //	alert("arg1");
+                        ShareShopFunction();
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        //  alert("用户取消分享朋友后执行的回调函数");
+                        // 用户取消分享后执行的回调函数
+                    },
+
+                });
+
+                wx.onMenuShareTimeline({
+                    title: WeiXin_shareAppAllPageTitle, // 分享标题
+                    link: path, // 分享链接
+                    imgUrl: WeiXin_imgAllPageUrl, // 分享图标
+                    success: function () {
+                        ///alert("arg2");
+                        ShareShopFunction();
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        //  alert("用户取消分享朋友圈后执行的回调函数");
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+
+
+
+            });
+            wx.error(function (res) {
+                //alert(res.errMsg);
+            });
+        });</script>
+
+
+</head>
+<body onload="load_Multi();" onresize="AutoResizeThisImage()">
+    <div id="Anounce_spro_con" class="spro_con" style="background-color:black;">
+    </div>
+    
+    <style type="text/css">
+        .qimo8MoblieRoll {
+            overflow: hidden;
+            width: 98%;
+            margin: 0px auto;
+        }
+
+            .qimo8MoblieRoll .qimo_MoblieRoll { /*width:99999999px;*/
+                width: 8000%;
+                height: 30px;
+            }
+
+                .qimo8MoblieRoll .qimo_MoblieRoll div {
+                    float: left;
+                }
+
+                .qimo8MoblieRoll .qimo_MoblieRoll ul {
+                    float: left;
+                    height: 30px;
+                    overflow: hidden;
+                    zoom: 1;
+                }
+
+                    .qimo8MoblieRoll .qimo_MoblieRoll ul li {
+                        float: left;
+                        line-height: 30px;
+                        list-style: none;
+                    }
+
+            .qimo8MoblieRoll li a {
+                margin-right: 10px;
+                color:green;
+                text-decoration:underline;
+
+            }
+    </style>
+    <div id="demo_MoblieRoll" class="qimo8MoblieRoll">
+        <div class="qimo_MoblieRoll">
+            <div id="demo1_MoblieRoll">
+                <ul>
+                    <li><a href='/office/194/46163.htm'>1回收站里的文件删除了怎么恢复</a></li>
+                    <li><a href='/office/193/46162.htm'>2c盘哪些文件可以删除 系统就越来越慢怎么办</a></li>
+                    <li><a href='/office/194/46161.htm'>3电脑输入法切换不了怎么办</a></li>
+                    <li><a href='/office/193/46160.htm'>4PC是什么意思 </a></li>
+                    <li><a href='/office/193/46159.htm'>5注册表怎么打开 电脑注册表在哪里打开</a></li>
+                    <li><a href='/office/193/46158.htm'>6什么浏览器速度最快 什么浏览器最安全</a></li>
+                    <li><a href='/office/193/46157.htm'>71m等于多少kb 1MB等于多少KB</a></li>
+                    <li><a href='/office/193/46156.htm'>8ppap.exe是什么进程</a></li>
+                </ul>
+            </div>
+            <div id="demo2_MoblieRoll"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var demo_MoblieRoll = document.getElementById("demo_MoblieRoll");
+        var demo1_MoblieRoll = document.getElementById("demo1_MoblieRoll");
+        var demo2_MoblieRoll = document.getElementById("demo2_MoblieRoll");
+        demo2_MoblieRoll.innerHTML = document.getElementById("demo1_MoblieRoll").innerHTML;
+        function Marquee() {
+            if (demo_MoblieRoll.scrollLeft - demo2_MoblieRoll.offsetWidth >= 0) {
+                demo_MoblieRoll.scrollLeft -= demo1_MoblieRoll.offsetWidth;
+            }
+            else {
+                demo_MoblieRoll.scrollLeft++;
+            }
+        }
+        var myvar = setInterval(Marquee, 30);
+        demo_MoblieRoll.onmouseout = function () { myvar = setInterval(Marquee, 30); }
+        demo_MoblieRoll.onmouseover = function () { clearInterval(myvar); }
+    </script>
+    <div style="clear: both;"></div>
+
+    <div class="oliversearch-bar" style="background: #ffffff;display:block;">
+        <div class="oliversearch-inner">
+            <i class="font-icon font-icon-oliversearch"></i>
+            <input class="oliversearch-input" style="background-color: rgb(255, 255, 255); border-color: rgb(175, 175, 175); color: rgb(127, 127, 127); width: 80%; background-position: initial initial; background-repeat: initial initial;"
+                   id="oliversearch-input_s_1447079356776" type="text"
+                   placeholder="搜索商品名/分类/种类/描述/全部" onfocus="if((this.value == '搜索商品名/分类/种类/描述/全部' ) || this.value == '') {this.value = '';this.style.width='80%';document.getElementById('oliversearch-btn_s_1447079356706').style.display='inline-block'}" onblur="if(this.value =='') {this.value = '搜索商品名/分类/种类/描述/全部';this.style.width='100%';document.getElementById('oliversearch-btn_s_1447079356706').style.display='none'}">
+            <button class="oliversearch-btn" style="background-color: rgb(255, 0, 6); border: rgb(189, 0, 4); color: rgb(255, 255, 255); display:inline-block; background-position: initial initial; background-repeat: initial initial;"
+                    onclick="btnSearch();" id="oliversearch-btn_s_1447079356706">
+                搜索
+            </button>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="GoodAgentClass" class="jx_map"></div>
+    <div class="SAgent_ChoiceGood"></div>
+    <div id="SAgent_ProductNewGoodClass" style="display:inline-block;width:100%;"></div>
+    <a href="javascript:void(0);" class="WX_backtop J_backTop J_ytag" id="gotopbtn">返回顶部</a>
+    <script type="text/javascript">
+        //注册当点击返回顶部的时候，回到网页顶部
+        $('#gotopbtn').click(function () {
+            $('body').scrollTop(0);
+            test();
+        });
+        //注册当页面发生滚动事件的时候，判断他有没有滚动条，如果有滚动条就显示“返回”，如果没有就不返回
+        window.onscroll = test;
+        function test() {
+            if ($('body').scrollTop() == 0) {
+                $('#gotopbtn').removeClass("WX_backtop_active");
+            } else {
+                $('#gotopbtn').addClass("WX_backtop_active");
+            }
+        }
+        $('#menu').click(function () {
+            $('#menulist').toggle();
+        });
+    </script>
+    <div id="foot777er">
+        <!-- 底部 -->
+        <div id="WUC_Bottom">
+            <style type="text/css">
+                body:after {
+                    content: '';
+                    display: block;
+                    height: 50px;
+                    width: 100%;
+                    border-bottom: 10px;
+                }
+            </style>
+            <div class="bottom_navs">
+                <ul>
+                    <a id="icontact0" href="javascript:;">
+                        <li id="line_Right0" style="width:33%;">
+                            <span class="FootMenu">关于沁加</span>
+                        </li>
+                    </a>
+                    <a id="icontact1" href="javascript:;">
+                        <li id="line_Right1" style="width:33%;border-left:1px solid #ccc;">
+                            <span class="FootMenu">沁加生活</span>
+                        </li>
+                    </a>
+                    <a id="icontact2" href="javascript:;">
+                        <li id="line_Right2" style="width:33%;border-left:1px solid #ccc;">
+                            <span class="FootMenu">个人中心</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="open_nav" id="divContact0" style="display: none">
+                <script type="text/javascript">var varButton0 = 1</script>
+                <div class="open_nav_conter">
+                    <ul>
+                        <li><a href="https://mp.weixin.qq.com/s/QsU5dz8ZGTBVvQr2jM8Asg">核心技术</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="open_nav" id="divContact1" style="display: none">
+                <script type="text/javascript">var varButton1 = 3</script>
+                <div class="open_nav_conter">
+                    <ul>
+                        <li><a href="https://000021qinjia.eggsoft.cn/default.aspx">沁加商城</a></li>
+                        <li><a href="https://v.qq.com/x/page/e03778p3v1e.html">影音见证</a></li>
+                        <li><a href="https://000021qinjia.eggsoft.cn/huodong/05onlinelist/index.html">活动报名</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="open_nav" id="divContact2" style="display: none">
+                <script type="text/javascript">var varButton2 = 2</script>
+                <div class="open_nav_conter">
+                    <ul>
+                        <li><a href="https://000021qinjia.eggsoft.cn/edityourshopini.aspx">申请代理</a></li>
+                        <li><a href="https://000021qinjia.eggsoft.cn/mywebuy.aspx">我的账户</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

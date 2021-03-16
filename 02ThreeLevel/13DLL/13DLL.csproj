@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02347F72-DCBB-4987-9CAE-49E11F10CE15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_13DLL</RootNamespace>
+    <AssemblyName>13DLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="AjaxControlToolkit.Binary.NET40\AjaxControlToolkitSampleSite.zip" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ThoughtWorks.QRCode.dll.refresh" />
+    <None Include="yuicompressor-2.4.7\11WA_ClientShop.deploy.cmd" />
+    <None Include="yuicompressor-2.4.7\11WA_ClientShop.zip" />
+    <None Include="yuicompressor-2.4.7\ant.properties" />
+    <None Include="yuicompressor-2.4.7\Compressor.bat" />
+    <None Include="yuicompressor-2.4.7\doc\CHANGELOG" />
+    <None Include="yuicompressor-2.4.7\doc\README" />
+    <None Include="yuicompressor-2.4.7\src\org\mozilla\javascript\Decompiler.java.orig" />
+    <None Include="yuicompressor-2.4.7\src\org\mozilla\javascript\Parser.java.orig" />
+    <None Include="yuicompressor-2.4.7\src\org\mozilla\javascript\Token.java.orig" />
+    <None Include="yuicompressor-2.4.7\src\org\mozilla\javascript\TokenStream.java.orig" />
+    <None Include="yuicompressor-2.4.7\tests\background-position.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\border-none.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\box-model-hack.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\bug2527974.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\bug2527991.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\bug2527998.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\bug2528034.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\charset-media.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\color-simple.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\color.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\comment.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\concat-charset.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-base64-doublequotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-base64-eof.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-base64-linebreakindata.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-base64-noquotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-base64-singlequotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-base64-twourls.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-dbquote-font.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-nonbase64-doublequotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-nonbase64-noquotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-nonbase64-singlequotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-noquote-multiline-font.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-realdata-doublequotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-realdata-noquotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-realdata-singlequotes.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-realdata-yuiapp.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dataurl-singlequote-font.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\decimals.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\dollar-header.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\float.js.min" />
+    <None Include="yuicompressor-2.4.7\tests\font-face.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\ie5mac.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\media-empty-class.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\media-multi.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\media-test.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\opacity-filter.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\preserve-case.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\preserve-new-line.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\preserve-strings.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\pseudo-first.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\pseudo.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\README" />
+    <None Include="yuicompressor-2.4.7\tests\special-comments.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\star-underscore-hacks.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\string-in-comment.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\suite.rhino" />
+    <None Include="yuicompressor-2.4.7\tests\suite.sh" />
+    <None Include="yuicompressor-2.4.7\tests\webkit-transform.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\zeros.css.min" />
+    <None Include="yuicompressor-2.4.7\tests\_munge.js.min" />
+    <None Include="yuicompressor-2.4.7\tests\_string_combo.js.min" />
+    <None Include="yuicompressor-2.4.7\tests\_syntax_error.js.min" />
+    <None Include="yuicompressor-2.4.7\Visual Studio 编译任务压缩js和css文件 - 推酷.mhtml" />
+    <None Include="zxing.dll.refresh" />
+    <None Include="zxing.presentation.dll.refresh" />
+    <None Include="_7he7.ColorPicker.DLL.refresh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AjaxControlToolkit.Binary.NET40\AjaxControlToolkit.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\AjaxControlToolkit.pdb" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\AjaxMin.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ar\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\cs\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\de\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\de\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\de\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\de\System.Spatial.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\es\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\es\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\es\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\es\System.Spatial.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\fr\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\fr\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\fr\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\fr\System.Spatial.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\he\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\hi\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\HtmlAgilityPack.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\it\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\it\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\it\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\it\System.Spatial.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ja\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ja\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ja\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ja\System.Spatial.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ko\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ko\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ko\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ko\System.Spatial.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\LICENSE.txt" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\Microsoft.Data.Edm.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\Microsoft.Data.Edm.xml" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\Microsoft.Data.OData.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\Microsoft.Data.OData.xml" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\Microsoft.WindowsAzure.Configuration.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\Microsoft.WindowsAzure.Storage.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\Microsoft.WindowsAzure.Storage.xml" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\nl\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\pl\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\pt\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ReadMe.html" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ru\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ru\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ru\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\ru\System.Spatial.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\System.Spatial.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\System.Spatial.xml" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\tr-TR\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\zh-CHS\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\zh-CHT\AjaxControlToolkit.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\zh-Hans\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\zh-Hans\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\zh-Hans\System.Spatial.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\zh-Hant\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\zh-Hant\Microsoft.Data.OData.resources.dll" />
+    <Content Include="AjaxControlToolkit.Binary.NET40\zh-Hant\System.Spatial.resources.dll" />
+    <Content Include="AjaxMin.dll" />
+    <Content Include="CKEditor.NET.dll" />
+    <Content Include="CKFinder.dll" />
+    <Content Include="JsonObject.dll" />
+    <Content Include="ThoughtWorks.QRCode.dll" />
+    <Content Include="yuicompressor-2.4.7\11WA_ClientShop.deploy-readme.txt" />
+    <Content Include="yuicompressor-2.4.7\11WA_ClientShop.SetParameters.xml" />
+    <Content Include="yuicompressor-2.4.7\11WA_ClientShop.SourceManifest.xml" />
+    <Content Include="yuicompressor-2.4.7\build.xml" />
+    <Content Include="yuicompressor-2.4.7\build\yuicompressor-2.4.7.jar" />
+    <Content Include="yuicompressor-2.4.7\lib\jargs-1.0.jar" />
+    <Content Include="yuicompressor-2.4.7\lib\rhino-1.6R7.jar" />
+    <Content Include="yuicompressor-2.4.7\LICENSE.TXT" />
+    <Content Include="yuicompressor-2.4.7\ports\js\cssmin.js" />
+    <Content Include="yuicompressor-2.4.7\src\com\yahoo\platform\yui\compressor\Bootstrap.java" />
+    <Content Include="yuicompressor-2.4.7\src\com\yahoo\platform\yui\compressor\CssCompressor.java" />
+    <Content Include="yuicompressor-2.4.7\src\com\yahoo\platform\yui\compressor\JarClassLoader.java" />
+    <Content Include="yuicompressor-2.4.7\src\com\yahoo\platform\yui\compressor\JavaScriptCompressor.java" />
+    <Content Include="yuicompressor-2.4.7\src\com\yahoo\platform\yui\compressor\JavaScriptIdentifier.java" />
+    <Content Include="yuicompressor-2.4.7\src\com\yahoo\platform\yui\compressor\JavaScriptToken.java" />
+    <Content Include="yuicompressor-2.4.7\src\com\yahoo\platform\yui\compressor\ScriptOrFnScope.java" />
+    <Content Include="yuicompressor-2.4.7\src\com\yahoo\platform\yui\compressor\YUICompressor.java" />
+    <Content Include="yuicompressor-2.4.7\src\org\mozilla\javascript\Decompiler.java" />
+    <Content Include="yuicompressor-2.4.7\src\org\mozilla\javascript\Parser.java" />
+    <Content Include="yuicompressor-2.4.7\src\org\mozilla\javascript\Token.java" />
+    <Content Include="yuicompressor-2.4.7\src\org\mozilla\javascript\TokenStream.java" />
+    <Content Include="yuicompressor-2.4.7\tests\background-position.css" />
+    <Content Include="yuicompressor-2.4.7\tests\border-none.css" />
+    <Content Include="yuicompressor-2.4.7\tests\box-model-hack.css" />
+    <Content Include="yuicompressor-2.4.7\tests\bug2527974.css" />
+    <Content Include="yuicompressor-2.4.7\tests\bug2527991.css" />
+    <Content Include="yuicompressor-2.4.7\tests\bug2527998.css" />
+    <Content Include="yuicompressor-2.4.7\tests\bug2528034.css" />
+    <Content Include="yuicompressor-2.4.7\tests\charset-media.css" />
+    <Content Include="yuicompressor-2.4.7\tests\color-simple.css" />
+    <Content Include="yuicompressor-2.4.7\tests\color.css" />
+    <Content Include="yuicompressor-2.4.7\tests\comment.css" />
+    <Content Include="yuicompressor-2.4.7\tests\concat-charset.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-base64-doublequotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-base64-eof.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-base64-linebreakindata.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-base64-noquotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-base64-singlequotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-base64-twourls.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-dbquote-font.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-nonbase64-doublequotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-nonbase64-noquotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-nonbase64-singlequotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-noquote-multiline-font.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-realdata-doublequotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-realdata-noquotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-realdata-singlequotes.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-realdata-yuiapp.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-singlequote-font.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dataurl-validity.html" />
+    <Content Include="yuicompressor-2.4.7\tests\decimals.css" />
+    <Content Include="yuicompressor-2.4.7\tests\dollar-header.css" />
+    <Content Include="yuicompressor-2.4.7\tests\float.js" />
+    <Content Include="yuicompressor-2.4.7\tests\font-face.css" />
+    <Content Include="yuicompressor-2.4.7\tests\ie5mac.css" />
+    <Content Include="yuicompressor-2.4.7\tests\media-empty-class.css" />
+    <Content Include="yuicompressor-2.4.7\tests\media-multi.css" />
+    <Content Include="yuicompressor-2.4.7\tests\media-test.css" />
+    <Content Include="yuicompressor-2.4.7\tests\opacity-filter.css" />
+    <Content Include="yuicompressor-2.4.7\tests\preserve-case.css" />
+    <Content Include="yuicompressor-2.4.7\tests\preserve-new-line.css" />
+    <Content Include="yuicompressor-2.4.7\tests\preserve-strings.css" />
+    <Content Include="yuicompressor-2.4.7\tests\pseudo-first.css" />
+    <Content Include="yuicompressor-2.4.7\tests\pseudo.css" />
+    <Content Include="yuicompressor-2.4.7\tests\special-comments.css" />
+    <Content Include="yuicompressor-2.4.7\tests\star-underscore-hacks.css" />
+    <Content Include="yuicompressor-2.4.7\tests\string-in-comment.css" />
+    <Content Include="yuicompressor-2.4.7\tests\webkit-transform.css" />
+    <Content Include="yuicompressor-2.4.7\tests\zeros.css" />
+    <Content Include="yuicompressor-2.4.7\tests\_munge.js" />
+    <Content Include="yuicompressor-2.4.7\tests\_string_combo.js" />
+    <Content Include="yuicompressor-2.4.7\tests\_syntax_error.js" />
+    <Content Include="yuicompressor-2.4.7\tools\cssmin-debugger.html" />
+    <Content Include="zxing.dll" />
+    <Content Include="zxing.pdb" />
+    <Content Include="zxing.presentation.dll" />
+    <Content Include="zxing.presentation.pdb" />
+    <Content Include="zxing.presentation.xml" />
+    <Content Include="zxing.xml" />
+    <Content Include="_7he7.ColorPicker.DLL" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

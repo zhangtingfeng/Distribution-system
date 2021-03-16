@@ -1,0 +1,140 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>业绩排行榜</title>
+    <script src="/Scripts/jquery-1.8.2.min.js?version=js201709121928" type="text/javascript"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    <script src='https://api.map.baidu.com/api?v=1.3'></script>
+    <script src="/Game/GameUserID.js?version=js201709121928"></script>
+    <script type="text/javascript">
+        var varServiceURL = localStorage.getItem('ServiceServicesURL201709121928_Open_0609');
+        var varUserID = localStorage.getItem('CurUserID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+        var varShopClientID = localStorage.getItem('GetShopClientID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+    </script>
+    <script src='/Scripts/FootMarker_Location.js'></script>
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    <script src="/AddFunction/JS/SalesOrder.js?version=js201709121928"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <link href="/AddFunction/Css/SalesOrder.css?version=css201709121928" rel="stylesheet" />
+</head>
+<body onload="loadBuySelectType_Multi();">
+    <div id="wrapper" ms-controller="Items">
+        <div id="ShowQuanBeanMoney">
+
+            <div class="income_ff">
+                <div class="sum_title">
+                    你的总销售额<span id="UserAllSales" class="sum_money">¥</span><br />
+                    你的上月销售额<span id="UserLastMonthSales" class="sum_money">¥</span><br />
+                    你的本月销售额<span id="UserThisMonthSales" class="sum_money">¥</span><br />
+                    (统计数据更新时间:<span id="StatisUpdateTime"></span>)<!--6日2时-->
+                </div>
+            </div>
+
+            <div class="guanli-car" style="padding-bottom: 0; background-color: #fff; margin-top: -1px;">
+                <div class="section dingdan-mst">
+                    <div class="container-car">
+                        <div id="tabs1" class="ui-tabs">
+                            <ul class="ui-tabs-nav">
+                                <li id="liAllSales1" class="weactive" onclick="AllSales('1')"><a href="javascript:void(0)">总销售额排行</a></li>
+                                <li id="liAllSales2" onclick="AllSales('2')"><a href="javascript:void(0)">上月销售额排行</a></li>
+                                <li id="liAllSales3" onclick="AllSales('3')"><a href="javascript:void(0)">本月销售额排行</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="ShowQuanBeanMoneythelist_customer_list">
+
+                <li>
+                    <div class="ShowSalesMoneythelist_ul_li">
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney"><strong>排名</strong></div>
+                        </div>
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney"><strong>店铺名称</strong></div>
+                        </div>
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney"><strong>销量</strong>¥</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul id="ul_UserAllSales" class="ShowQuanBeanMoneythelist_customer_list" style="display:block">
+
+                <!--<li>
+                    <div class="ShowSalesMoneythelist_ul_li">
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">排名ul_UserAllSales</div>
+                        </div>
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">昵称1</div>
+                        </div>
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">销量2¥</div>
+                        </div>
+                    </div>
+                </li>-->
+            </ul>
+            <ul id="ul_UserLastMonthSales" class="ShowQuanBeanMoneythelist_customer_list" style="display:none">
+
+                <!--<li>
+                    <div class="ShowSalesMoneythelist_ul_li">
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">排名1</div>
+                        </div>
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">昵称1</div>
+                        </div>
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">销量2¥</div>
+                        </div>
+                    </div>
+                </li>-->
+            </ul>
+            <ul id="ul_UserThisMonthSales" class="ShowQuanBeanMoneythelist_customer_list" style="display:none">
+                <!--<li>
+                    <div class="ShowSalesMoneythelist_ul_li">
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">排名534543</div>
+                        </div>
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">昵称1</div>
+                        </div>
+                        <div class="ul_li_Classs_30_Percent">
+                            <div class="ul_li_trade_item_ShowQuanBeanMoney">销量2¥</div>
+                        </div>
+                    </div>
+                </li>-->
+            </ul>
+            <div style="clear: both;">
+            </div>
+
+        </div>
+    </div>
+
+    <div id="idPub_03Footer_html_lsSalesOrder">
+    </div>
+
+</body>
+
+
+
+</html>

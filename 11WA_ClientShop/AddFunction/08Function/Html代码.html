@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>.net合并多个css或js每种只输出一个文件</title>
+    <link type="text/css" rel="stylesheet" href="HttpCombiner.ashx?file=css/Css1.css,css/Css2.css&t=css" />
+</head>
+<body>
+    <h1>ashx合并多个css和js实例</h1>
+    <p>如果你看到这个字体的颜色变成红色说明加载了css2.css样式</p>
+    <script type="text/javascript" src="/AddFunction/08Function/HandlerHttpCombiner.ashx?file=/Templet/01WYJS/js/StaticGtimgCom/lazyload.201403071104.js,/Templet/01WYJS/js/StaticGtimgCom/loadscript.201306251923.js"></script>
+    <script type="text/javascript">
+
+            $(function () {
+                $("#jquery").html("jQuery.js加载完毕,酷!");
+            });
+    </script>
+    <div id="jquery"></div>
+</body>
+</html>  

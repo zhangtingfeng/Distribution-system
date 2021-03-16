@@ -1,0 +1,1 @@
+﻿Data Source=127.0.0.1;Initial Catalog=Shop.Earh17.com;User ID=sa;Password=000257;Persist Security Info=True;

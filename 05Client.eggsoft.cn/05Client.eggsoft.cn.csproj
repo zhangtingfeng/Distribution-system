@@ -1,0 +1,2067 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73E700F5-F936-4854-B122-17AB55F3DC3E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_05Client.eggsoft.cn</RootNamespace>
+    <AssemblyName>05Client.eggsoft.cn</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\02ThreeLevel\13DLL\AjaxControlToolkit.Binary.NET40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="zxing">
+      <HintPath>..\02ThreeLevel\13DLL\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\02ThreeLevel\13DLL\zxing.presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="_7he7.ColorPicker">
+      <HintPath>..\02ThreeLevel\13DLL\_7he7.ColorPicker.DLL</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_BoardDetail.aspx" />
+    <Content Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_Board.aspx" />
+    <Content Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_Manage.aspx" />
+    <Content Include="ClientAdmin\02GuWuQuanChange\Board02GuWuQuanChange.aspx" />
+    <Content Include="ClientAdmin\02GuWuQuanChange\Board02GuWuQuanChange_Manage.aspx" />
+    <Content Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney.aspx" />
+    <Content Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney_Asnc.aspx" />
+    <Content Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney_Manage.aspx" />
+    <Content Include="ClientAdmin\34WuLiu\Board34PriceChange.aspx" />
+    <Content Include="ClientAdmin\34WuLiu\Board34ZoneChange.aspx" />
+    <Content Include="ClientAdmin\34WuLiu\Board34ChannelChange.aspx" />
+    <Content Include="ClientAdmin\34WuLiu\Board34Price_Manage.aspx" />
+    <Content Include="ClientAdmin\34WuLiu\Board34ZoneChange_Manage.aspx" />
+    <Content Include="ClientAdmin\34WuLiu\Board34Channel_Manage.aspx" />
+    <Content Include="ClientAdmin\80o2oShop_cardMember\o2oShop_cardMember_Manage.aspx" />
+    <Content Include="ClientAdmin\80o2oShop_cardMember\Board80o2oShop_cardMember.aspx" />
+    <Content Include="ClientAdmin\03AnnouncePic\AnnouncePic_Manage.aspx" />
+    <Content Include="ClientAdmin\03AnnouncePic\BoardAnnouncePic.aspx" />
+    <Content Include="ClientAdmin\04GuidePages\GuidePages_Board.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\BasicInfo.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\BoardJPG.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\BoardJPG_Manage.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\Control\WUC_btnIntroduction.ascx" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\Add.png" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\Delete.png" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\nothing.png" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\save.jpg" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\save.png" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\SelectJPG.png" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\Tab_Option_bg.gif" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\Tab_Option_bg_OFF.gif" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\Tab_Option_bg_ON.gif" />
+    <Content Include="ClientAdmin\05EngineerMode\Images\Zhengwen.png" />
+    <Content Include="ClientAdmin\05EngineerMode\KeyAnswer_Board.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\KeyAnswer_Default.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\KeyAnswer_Manage.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\Long2ShortUrl.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\Resource-0.css" />
+    <Content Include="ClientAdmin\05EngineerMode\Resource-0.js" />
+    <Content Include="ClientAdmin\05EngineerMode\Resource-1.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\Resource-2.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\Resource-3.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\ResourceSave.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\ResourceSavePost.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\Subscribe.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\WeiXinMenu.aspx" />
+    <Content Include="ClientAdmin\05EngineerMode\WeiXinMenu_Set.aspx" />
+    <Content Include="ClientAdmin\06DistributionMoney\Board_DistributionMoney.aspx" />
+    <Content Include="ClientAdmin\06DistributionMoney\DistributionMoney_Manage.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\AgentLevel_Select_Manage.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\Agent_Level_Manage.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\Agent_Manage.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\Agent_ModifyParent.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\Agent_Product_Manage.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\Agent__AddExpListTextShow_Manage.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\Board_AgentChecked.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\Board_Agent_Level.aspx" />
+    <Content Include="ClientAdmin\08Style_Model\images\01.jpg" />
+    <Content Include="ClientAdmin\08Style_Model\images\02.jpg" />
+    <Content Include="ClientAdmin\08Style_Model\images\03.jpg" />
+    <Content Include="ClientAdmin\08Style_Model\images\04.jpg" />
+    <Content Include="ClientAdmin\08Style_Model\Style_Model.aspx" />
+    <Content Include="ClientAdmin\09System_Status\01OrderDetailEveryDay.aspx" />
+    <Content Include="ClientAdmin\09System_Status\User_ModifyTeamID.aspx" />
+    <Content Include="ClientAdmin\09System_Status\User_ModifyParent.aspx" />
+    <Content Include="ClientAdmin\09System_Status\GuidePagesVisit.aspx" />
+    <Content Include="ClientAdmin\09System_Status\GoodsVisit.aspx" />
+    <Content Include="ClientAdmin\09System_Status\UserSignWorkingEveryDay.aspx" />
+    <Content Include="ClientAdmin\09System_Status\UserStatus.aspx" />
+    <Content Include="ClientAdmin\09System_Status\UserStatus_AllSales.aspx" />
+    <Content Include="ClientAdmin\09System_Status\UserStatus_FenXiao.aspx" />
+    <Content Include="ClientAdmin\09System_Status\UserStatus_Money.aspx" />
+    <Content Include="ClientAdmin\09System_Status\UserStatus_Quan.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\BoardINC_Manage.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\01BoardINC_Manage_ShopClient_ShopPar.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\CheckUserInfo.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\ContactUs.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\Default.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\FreightTemplate.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\FreightTemplateOperating.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\FreightTemplateOperatingArea.aspx" />
+    <Content Include="ClientAdmin\10tab_ShopClient\IContactUs.html" />
+    <Content Include="ClientAdmin\10tab_ShopClient\IwantRetunMoney.aspx" />
+    <Content Include="ClientAdmin\11RootMenu\NetRootMenu.aspx" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\1.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\10.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\11.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\12.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\13.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\14.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\15.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\2.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\3.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\4.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\5.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\6.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\7.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\8.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\9.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\bg01.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Border\bg02.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\index.html" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\images\bg01.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\images\bg02.png" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\index.htm" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\makepic.swf" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\WEB-INF\web.xml" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\makepic.swf" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\GetPic.aspx" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\GetPic.html" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\GetPic_FlashBack.aspx" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\makepic.as3333px123.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\MakePic.aspx" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\makepic.aspxmakepic.aspx123%281%29.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\makepic.swf" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521687922728756.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521696076861912.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521696283967322.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521696911837435.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521697342983562.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521697431306866.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521699195388102.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521699738799522.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521700738207827.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521700818851433.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521819061669943.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635521819898568137.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635646759366215405.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635646762590868743.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635646763170050064.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635646763912507731.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635646764916480894.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\635646772723745598.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\QQ_Image\Camera51.jpg" />
+    <Content Include="ClientAdmin\11RootMenu\URLShow.aspx" />
+    <Content Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney.aspx" />
+    <Content Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_Asnc.aspx" />
+    <Content Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_AsncDoWeiXinHoneBao.aspx" />
+    <Content Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_Manage.aspx" />
+    <Content Include="ClientAdmin\13Order_Cancel\IS_FinanceAdmin_check_ReturnMoney.aspx" />
+    <Content Include="ClientAdmin\13Order_Cancel\IS_FinanceAdmin_check_ReturnMoney_Asnc.aspx" />
+    <Content Include="ClientAdmin\13Order_Cancel\IS_Finance_check_DrawMoney.aspx" />
+    <Content Include="ClientAdmin\13Order_Cancel\IS_Finance_check_DrawMoney_Asnc.aspx" />
+    <Content Include="ClientAdmin\14System_WeiXin\RegisterOpenID.aspx" />
+    <Content Include="ClientAdmin\14System_WeiXin\ShowGoodID_ErWieMa.aspx" />
+    <Content Include="ClientAdmin\15Advance\BoardGood_XML.aspx" />
+    <Content Include="ClientAdmin\15Advance\MultiFenXiaoLevel_Manage.aspx" />
+    <Content Include="ClientAdmin\15Advance\MultiFenXiaoLevel_Board.aspx" />
+    <Content Include="ClientAdmin\15Advance\FenXiaoLevel_Board.aspx" />
+    <Content Include="ClientAdmin\15Advance\FenXiaoLevel_Manage.aspx" />
+    <Content Include="ClientAdmin\15Advance\Good_XML_Manage.aspx" />
+    <Content Include="ClientAdmin\15Advance\ResetAllGoodOneKey.aspx" />
+    <Content Include="ClientAdmin\15Advance\Suggestion.aspx" />
+    <Content Include="ClientAdmin\15Advance\Suggestion_List.aspx" />
+    <Content Include="ClientAdmin\16SendMoney\16SendMoney_Board.aspx" />
+    <Content Include="ClientAdmin\16SendMoney\16SendMoney_BoardABC.aspx" />
+    <Content Include="ClientAdmin\16SendMoney\Net16SendMoney.aspx" />
+    <Content Include="ClientAdmin\17O2O_Shop\Board_O2O_Shop.aspx" />
+    <Content Include="ClientAdmin\17O2O_Shop\Board_O2O_ShopNav.html" />
+    <Content Include="ClientAdmin\17O2O_Shop\Board_O2O_ShopOperating.aspx" />
+    <Content Include="ClientAdmin\17O2O_Shop\CheckUserEmailInfo.aspx" />
+    <Content Include="ClientAdmin\17O2O_Shop\RegisterOpenID.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\Board_Good.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\IGoodClass_Manage.html" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class1_Add.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class1_Delete.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class1_Modify.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class2_Add.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class2_Delete.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class2_Modify.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class3_Add.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class3_Delete.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class3_Modify.aspx" />
+    <Content Include="ClientAdmin\18tab_GoodClass\tab_Class_BoardSet.aspx" />
+    <Content Include="ClientAdmin\19tab_Order\KuaiDiQuery.aspx" />
+    <Content Include="ClientAdmin\19tab_Order\tab_Fund_Order_Board.aspx" />
+    <Content Include="ClientAdmin\19tab_Order\tab_Order_Board_NeedMoney.aspx" />
+    <Content Include="ClientAdmin\19tab_Order\tab_Order_Board_WaitGiveGoods.aspx" />
+    <Content Include="ClientAdmin\19tab_Order\tab_Order_Board_Wait_Finished.aspx" />
+    <Content Include="ClientAdmin\19tab_Order\tab_Order_Board_Wait_UserGetGoods.aspx" />
+    <Content Include="ClientAdmin\19tab_Order\tab_Order_Manage.aspx" />
+    <Content Include="ClientAdmin\19tab_Order\sp_V_OrderSearchView_OrderSearch_New00.txt" />
+    <Content Include="ClientAdmin\19tab_Order\View_OrderSearch_SQL.txt" />
+    <Content Include="ClientAdmin\19tab_Order\View_OrderSearch_SQL_Lastest.txt" />
+    <Content Include="ClientAdmin\20Agent_Status\AgentStatus.aspx" />
+    <Content Include="ClientAdmin\20Agent_Status\ExcelDocument\DownLoadDocument\HtmlPage2.html" />
+    <Content Include="ClientAdmin\21GuWuQuanAndMoneyControl\UserMoneyControl.aspx" />
+    <Content Include="ClientAdmin\22GameSendJiFen\GameSendJiFenBoard.aspx" />
+    <Content Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_001yuebing2.aspx" />
+    <Content Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_002qiangfeicui.aspx" />
+    <Content Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_003HowColor.aspx" />
+    <Content Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_004zuiqiangyanli.aspx" />
+    <Content Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_005ZhongQiu.aspx" />
+    <Content Include="ClientAdmin\23WeiHuoDong\Board3D_Manage.aspx" />
+    <Content Include="ClientAdmin\23WeiHuoDong\GuaGuaKa_ZhuanZhuanChe.aspx" />
+    <Content Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_Boad.aspx" />
+    <Content Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_EachPage_Boad.aspx" />
+    <Content Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_Manage.aspx" />
+    <Content Include="ClientAdmin\23WeiHuoDong\MultiPhoto\MultiPhotoSet_Board.aspx" />
+    <Content Include="ClientAdmin\23WeiHuoDong\MultiPhoto\MultiPhotoSet_Manage.aspx" />
+    <Content Include="ClientAdmin\23WeiHuoDong\OnlineBaoMing\OnlineBaoMing.aspx" />
+    <Content Include="ClientAdmin\24WeiKanJian\Board_WeiKanJian.aspx" />
+    <Content Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus.aspx" />
+    <Content Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Number_Manage.aspx" />
+    <Content Include="ClientAdmin\25WeiXianChang\25WeiXianChang_BoardSet.aspx" />
+    <Content Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus_Manage.aspx" />
+    <Content Include="ClientAdmin\25WeiXianChang\25WeiXianChang_Manage.aspx" />
+    <Content Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Number.aspx" />
+    <Content Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus_User.aspx" />
+    <Content Include="ClientAdmin\25WeiXianChang\25XianChangHuoDong_Number_UserShakeNum.aspx" />
+    <Content Include="ClientAdmin\26WeiTuanGou\Board_TuanGouParterList_Bypeople.aspx" />
+    <Content Include="ClientAdmin\26WeiTuanGou\Board_TuanGouParterList.aspx" />
+    <Content Include="ClientAdmin\26WeiTuanGou\Board_WeiTuanGou.aspx" />
+    <Content Include="ClientAdmin\27ZC_Project\Board_01ZC_ProjectSupport.aspx" />
+    <Content Include="ClientAdmin\27ZC_Project\Board_01ZC_ProjectParterList.aspx" />
+    <Content Include="ClientAdmin\27ZC_Project\Board_01ZC_Project.aspx" />
+    <Content Include="ClientAdmin\28Member\Board_28Member.aspx" />
+    <Content Include="ClientAdmin\28Member\Board_28MemberBonus.aspx" />
+    <Content Include="ClientAdmin\28Member\EnterpriseOrganization.aspx" />
+    <Content Include="ClientAdmin\28Member\Manage_28Member.aspx" />
+    <Content Include="ClientAdmin\28Member\Manage_28MemberBonus.aspx" />
+    <Content Include="ClientAdmin\29ShopClientPower\Board_29AdminPower.aspx" />
+    <Content Include="ClientAdmin\29ShopClientPower\Board_29RolePower.aspx" />
+    <Content Include="ClientAdmin\29ShopClientPower\Manage_29AdminPower.aspx" />
+    <Content Include="ClientAdmin\29ShopClientPower\Manage_29RolePower.aspx" />
+    <Content Include="ClientAdmin\30SMSWatch\Board_30SMSWatch.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\21ActiveUser_ModifyState.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\20Order_FromWealthToMoney.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\19OperationWtiteOrder_Manage.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\18OperationWtiteOrder.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\17CheckModifyParent_Manage.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\16CheckModifyParent.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\13OperationCenter_OrderManage.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\12OrderDetailEveryDay.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\11CenterUser_MoneyStatus.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\08FullEveryDay.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\04OperationGoods.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\02OperationCenter.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\01Board.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\05OperationGoods_Manage.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\03OperationCenter_Manage.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\06ThisDayReturnActualUser.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\07User_WealthStatus.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\10BalanceofPaymentStatistics.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\09OperationUserStatus.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\14WealthMoneyControlOperationCenter.aspx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\15User_ModifyYunYingZhongXin.aspx" />
+    <Content Include="ClientAdmin\32NoticeGuidePages\01NoticeGuidePagesBoard.aspx" />
+    <Content Include="ClientAdmin\32NoticeGuidePages\01NoticeGuidePages_Manage.aspx" />
+    <Content Include="ClientAdmin\50PC_ShopClient\BoardINC_Manage.aspx" />
+    <Content Include="ClientAdmin\51SearchkeywordList\BoardSearchkeywordList.aspx" />
+    <Content Include="ClientAdmin\51SearchkeywordList\BoardSearchkeywordList_Manage.aspx" />
+    <Content Include="ClientAdmin\Default.aspx" />
+    <Content Include="ClientAdmin\Help_Sales_Show\Board_HelpContent.aspx" />
+    <Content Include="ClientAdmin\Image\AdminLogin_wbsys.css" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_footer.jpg" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_middle_shadow.jpg" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_title.jpg" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_title.png" />
+    <Content Include="ClientAdmin\Image\background.css" />
+    <Content Include="ClientAdmin\Image\background.gif" />
+    <Content Include="ClientAdmin\Image\bbs.css" />
+    <Content Include="ClientAdmin\Image\bg1.gif" />
+    <Content Include="ClientAdmin\Image\bg2.gif" />
+    <Content Include="ClientAdmin\Image\bottombg.gif" />
+    <Content Include="ClientAdmin\Image\curve_b_l.gif" />
+    <Content Include="ClientAdmin\Image\curve_b_r.gif" />
+    <Content Include="ClientAdmin\Image\curve_b_r[1].gif" />
+    <Content Include="ClientAdmin\Image\curve_center.gif" />
+    <Content Include="ClientAdmin\Image\curve_t_l[1].gif" />
+    <Content Include="ClientAdmin\Image\curve_t_r.gif" />
+    <Content Include="ClientAdmin\Image\curve_t_r[1].gif" />
+    <Content Include="ClientAdmin\Image\forumHeaderBackground.gif" />
+    <Content Include="ClientAdmin\Image\forumHeaderBackgroundAlternate.gif" />
+    <Content Include="ClientAdmin\Image\forum_footer.gif" />
+    <Content Include="ClientAdmin\Image\img.gif" />
+    <Content Include="ClientAdmin\Image\IMG_20131005_120%2810-05-12-1.gif" />
+    <Content Include="ClientAdmin\Image\jquery-calendar.css" />
+    <Content Include="ClientAdmin\Image\jquery-calendar.js" />
+    <Content Include="ClientAdmin\Image\lan0.gif" />
+    <Content Include="ClientAdmin\Image\lan1.gif" />
+    <Content Include="ClientAdmin\Image\lan12.gif" />
+    <Content Include="ClientAdmin\Image\lighthiliteleft.gif" />
+    <Content Include="ClientAdmin\Image\lighthilitemid.gif" />
+    <Content Include="ClientAdmin\Image\lighthiliteright.gif" />
+    <Content Include="ClientAdmin\Image\lightnormleft.gif" />
+    <Content Include="ClientAdmin\Image\lightnormmid.gif" />
+    <Content Include="ClientAdmin\Image\lightnormright.gif" />
+    <Content Include="ClientAdmin\Image\lightpressedleft.gif" />
+    <Content Include="ClientAdmin\Image\lightpressedmid[1].gif" />
+    <Content Include="ClientAdmin\Image\lightpressedright.gif" />
+    <Content Include="ClientAdmin\Image\login_01.gif" />
+    <Content Include="ClientAdmin\Image\login_01.png" />
+    <Content Include="ClientAdmin\Image\LOW_LEFT.GIF" />
+    <Content Include="ClientAdmin\Image\LOW_MID.GIF" />
+    <Content Include="ClientAdmin\Image\low_mid[1].gif" />
+    <Content Include="ClientAdmin\Image\low_right.gif" />
+    <Content Include="ClientAdmin\Image\menudown.gif" />
+    <Content Include="ClientAdmin\Image\menuup.gif" />
+    <Content Include="ClientAdmin\Image\MID_LEFT.GIF" />
+    <Content Include="ClientAdmin\Image\mid_right.gif" />
+    <Content Include="ClientAdmin\Image\navspacer.gif" />
+    <Content Include="ClientAdmin\Image\nofollow.gif" />
+    <Content Include="ClientAdmin\Image\o_addfile.jpg" />
+    <Content Include="ClientAdmin\Image\plus.gif" />
+    <Content Include="ClientAdmin\Image\Product.gif" />
+    <Content Include="ClientAdmin\Image\RTE_TB.GIF" />
+    <Content Include="ClientAdmin\Image\SBL_YLW.GIF" />
+    <Content Include="ClientAdmin\Image\SBM_YLW.GIF" />
+    <Content Include="ClientAdmin\Image\SBR_YLW.GIF" />
+    <Content Include="ClientAdmin\Image\SPACER.GIF" />
+    <Content Include="ClientAdmin\Image\spacer[1].gif" />
+    <Content Include="ClientAdmin\Image\stats_bg.gif" />
+    <Content Include="ClientAdmin\Image\tabs_m_tile.gif" />
+    <Content Include="ClientAdmin\Image\title.gif" />
+    <Content Include="ClientAdmin\Image\titlebg.gif" />
+    <Content Include="ClientAdmin\Image\title_bg_quit.gif" />
+    <Content Include="ClientAdmin\Image\topbg.gif" />
+    <Content Include="ClientAdmin\Image\tree_folder3.gif" />
+    <Content Include="ClientAdmin\Image\tree_folder4.gif" />
+    <Content Include="ClientAdmin\Image\UP_LEFT.GIF" />
+    <Content Include="ClientAdmin\Image\UP_MID.GIF" />
+    <Content Include="ClientAdmin\Image\UP_RIGHT.GIF" />
+    <Content Include="ClientAdmin\Left.aspx" />
+    <Content Include="ClientAdmin\Login.aspx" />
+    <Content Include="ClientAdmin\Logout.aspx" />
+    <Content Include="ClientAdmin\Right.aspx" />
+    <Content Include="ClientAdmin\SendMessage.aspx" />
+    <Content Include="ClientAdmin\skin\default.css" />
+    <Content Include="ClientAdmin\skin\default.js" />
+    <Content Include="ClientAdmin\skin\Images\Add.png" />
+    <Content Include="ClientAdmin\skin\Images\admin_logo.jpg" />
+    <Content Include="ClientAdmin\skin\Images\bot_logo.jpg" />
+    <Content Include="ClientAdmin\skin\Images\Delete.png" />
+    <Content Include="ClientAdmin\skin\Images\left_bg.jpg" />
+    <Content Include="ClientAdmin\skin\Images\left_meu.jpg" />
+    <Content Include="ClientAdmin\skin\Images\line.jpg" />
+    <Content Include="ClientAdmin\skin\Images\Login_botbg.jpg" />
+    <Content Include="ClientAdmin\skin\Images\Login_logo.jpg" />
+    <Content Include="ClientAdmin\skin\Images\main_t_bg.jpg" />
+    <Content Include="ClientAdmin\skin\Images\nothing.png" />
+    <Content Include="ClientAdmin\skin\Images\rig_mov.gif" />
+    <Content Include="ClientAdmin\skin\Images\save.png" />
+    <Content Include="ClientAdmin\skin\Images\SelectJPG.png" />
+    <Content Include="ClientAdmin\skin\Images\tj.png" />
+    <Content Include="ClientAdmin\skin\Images\Zhengwen.png" />
+    <Content Include="ClientAdmin\skin\Resource-0.css" />
+    <Content Include="ClientAdmin\WebForm1.aspx" />
+    <None Include="ClientAdmin\17O2O_Shop\Handler_SaoYiSao.ashx" />
+    <Content Include="ClientAdmin\17O2O_Shop\Handler_SaoYiSaoo2oashx.ashx" />
+    <None Include="Connected Services\SR_Upload\WebService_Upload.disco" />
+    <None Include="Connected Services\SR_Upload\configuration91.svcinfo" />
+    <None Include="Connected Services\SR_Upload\configuration.svcinfo" />
+    <None Include="Connected Services\SR_Upload\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Control\CheckCode.aspx" />
+    <Content Include="Control\ErrorPages\FileNotFound.aspx" />
+    <Content Include="Control\ErrorPages\GeneralError.aspx" />
+    <Content Include="Control\WebUC_DateTime.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\md5.js" />
+    <Content Include="Scripts\showModalDialog.js" />
+    <Content Include="Templet\02ShiYi\Jump_Page_Templet.html" />
+    <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.map" />
+    <Content Include="ClientAdmin\20Agent_Status\ExcelDocument\BaseDocument\AgentStatusDownload.xls" />
+    <Content Include="Scripts\layer-v3.0.3\layer.js" />
+    <Content Include="Styles\layer-v3.0.3skin\icon-ext.png" />
+    <Content Include="Styles\layer-v3.0.3skin\icon.png" />
+    <Content Include="Styles\layer-v3.0.3skin\layer.css" />
+    <Content Include="Styles\layer-v3.0.3skin\loading-0.gif" />
+    <Content Include="Styles\layer-v3.0.3skin\loading-1.gif" />
+    <Content Include="Styles\layer-v3.0.3skin\loading-2.gif" />
+    <Content Include="Templet\02ShiYi\Skin\InfoAlert.css" />
+    <Content Include="Templet\02ShiYi\Skin\Oliver.css" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="ClientAdmin\07AgentChecked\ExcelDocument\BaseDocument\AgentDownload.xlsx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\ExcelDocument\DownLoadDocument\---------ownload.xlsx" />
+    <Content Include="ClientAdmin\07AgentChecked\ExcelDocument\DownLoadDocument\---------ownload.xlsx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\ExcelDocument\BaseDocument\12OrderDetailEveryDayDownload.xlsx" />
+    <Content Include="ClientAdmin\31ConsumptionCapital\ExcelDocument\BaseDocument\12OrderDetailEveryDayDownload_Insert.xlsx" />
+    <Content Include="ClientAdmin\FunctionCanContinus.json" />
+    <None Include="Connected Services\SR_Upload\WebService_Upload.wsdl" />
+    <Content Include="Connected Services\SR_Upload\_05Client.eggsoft.cn.SR_Upload.UploadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\50_Test06ClientEggsoftCN.pubxml" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\Company01.png" />
+    <Content Include="Images\guide.png" />
+    <Content Include="Images\guideShare.gif" />
+    <Content Include="Images\guideShare.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\horse1.gif" />
+    <Content Include="Images\horse2.gif" />
+    <Content Include="Images\jjjj0.png" />
+    <Content Include="Images\mam111a.gif" />
+    <Content Include="Images\mama---.gif" />
+    <Content Include="Images\mama.gif" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\Scanning.jpg" />
+    <Content Include="Robots.txt" />
+    <Content Include="Scripts\Anounce_swipe.js" />
+    <Content Include="Scripts\cart.js" />
+    <Content Include="Scripts\cateList.js" />
+    <Content Include="Scripts\ClassWap_category.js" />
+    <Content Include="Scripts\ClassWap_Down.png" />
+    <Content Include="Scripts\ClassWap_UP.png" />
+    <Content Include="Scripts\ClassWap_zepto.min.js" />
+    <Content Include="Scripts\Default_iscroll.min.js" />
+    <Content Include="Scripts\Default_jquery.tmpl.js" />
+    <Content Include="Scripts\Default_swipe.js" />
+    <Content Include="Scripts\Goods_jQuery-shopping.js" />
+    <Content Include="Scripts\Goods_jquery.min.js" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.3.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.2.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Scripts\layer.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\skin\default\icon-ext.png" />
+    <Content Include="Scripts\skin\default\icon.png" />
+    <Content Include="Scripts\skin\default\layer.css" />
+    <Content Include="Scripts\skin\default\loading-0.gif" />
+    <Content Include="Scripts\skin\default\loading-1.gif" />
+    <Content Include="Scripts\skin\default\loading-2.gif" />
+    <Content Include="Scripts\Times.js" />
+    <Content Include="Scripts\widget.js" />
+    <Content Include="Scripts\WUC_Bottom_gitom.base.js" />
+    <Content Include="Scripts\WUC_Bottom_jquery.transit.min.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Styles\HelpClass_Buy_common.css" />
+    <Content Include="Styles\HelpClass_Buy_list-8.css" />
+    <Content Include="Styles\HelpClass_Buy_news.css" />
+    <Content Include="Styles\HelpClass_Buy_reset.css" />
+    <Content Include="Styles\jquery.mobile-1.3.2.min.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_BoardDetail.aspx.cs">
+      <DependentUpon>Shopping_Vouchers_BoardDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_BoardDetail.aspx.designer.cs">
+      <DependentUpon>Shopping_Vouchers_BoardDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_Board.aspx.cs">
+      <DependentUpon>Shopping_Vouchers_Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_Board.aspx.designer.cs">
+      <DependentUpon>Shopping_Vouchers_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_Manage.aspx.cs">
+      <DependentUpon>Shopping_Vouchers_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\01Shopping_Vouchers\Shopping_Vouchers_Manage.aspx.designer.cs">
+      <DependentUpon>Shopping_Vouchers_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\Board02GuWuQuanChange.aspx.cs">
+      <DependentUpon>Board02GuWuQuanChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\Board02GuWuQuanChange.aspx.designer.cs">
+      <DependentUpon>Board02GuWuQuanChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\Board02GuWuQuanChange_Manage.aspx.cs">
+      <DependentUpon>Board02GuWuQuanChange_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\Board02GuWuQuanChange_Manage.aspx.designer.cs">
+      <DependentUpon>Board02GuWuQuanChange_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney.aspx.cs">
+      <DependentUpon>IS_UserChangeMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney.aspx.designer.cs">
+      <DependentUpon>IS_UserChangeMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney_Asnc.aspx.cs">
+      <DependentUpon>IS_UserChangeMoney_Asnc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney_Asnc.aspx.designer.cs">
+      <DependentUpon>IS_UserChangeMoney_Asnc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney_Manage.aspx.cs">
+      <DependentUpon>IS_UserChangeMoney_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\02GuWuQuanChange\IS_UserChangeMoney_Manage.aspx.designer.cs">
+      <DependentUpon>IS_UserChangeMoney_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\BaseBoard.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34PriceChange.aspx.cs">
+      <DependentUpon>Board34PriceChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34PriceChange.aspx.designer.cs">
+      <DependentUpon>Board34PriceChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34ZoneChange.aspx.cs">
+      <DependentUpon>Board34ZoneChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34ZoneChange.aspx.designer.cs">
+      <DependentUpon>Board34ZoneChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34ChannelChange.aspx.cs">
+      <DependentUpon>Board34ChannelChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34ChannelChange.aspx.designer.cs">
+      <DependentUpon>Board34ChannelChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34Price_Manage.aspx.cs">
+      <DependentUpon>Board34Price_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34Price_Manage.aspx.designer.cs">
+      <DependentUpon>Board34Price_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34ZoneChange_Manage.aspx.cs">
+      <DependentUpon>Board34ZoneChange_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34ZoneChange_Manage.aspx.designer.cs">
+      <DependentUpon>Board34ZoneChange_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34Channel_Manage.aspx.cs">
+      <DependentUpon>Board34Channel_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\34WuLiu\Board34Channel_Manage.aspx.designer.cs">
+      <DependentUpon>Board34Channel_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\80o2oShop_cardMember\o2oShop_cardMember_Manage.aspx.cs">
+      <DependentUpon>o2oShop_cardMember_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\80o2oShop_cardMember\o2oShop_cardMember_Manage.aspx.designer.cs">
+      <DependentUpon>o2oShop_cardMember_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\80o2oShop_cardMember\Board80o2oShop_cardMember.aspx.cs">
+      <DependentUpon>Board80o2oShop_cardMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\80o2oShop_cardMember\Board80o2oShop_cardMember.aspx.designer.cs">
+      <DependentUpon>Board80o2oShop_cardMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\03AnnouncePic\AnnouncePic_Manage.aspx.cs">
+      <DependentUpon>AnnouncePic_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\03AnnouncePic\AnnouncePic_Manage.aspx.designer.cs">
+      <DependentUpon>AnnouncePic_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\03AnnouncePic\BoardAnnouncePic.aspx.cs">
+      <DependentUpon>BoardAnnouncePic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\03AnnouncePic\BoardAnnouncePic.aspx.designer.cs">
+      <DependentUpon>BoardAnnouncePic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\04GuidePages\GuidePages_Board.aspx.cs">
+      <DependentUpon>GuidePages_Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\04GuidePages\GuidePages_Board.aspx.designer.cs">
+      <DependentUpon>GuidePages_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\BasicInfo.aspx.cs">
+      <DependentUpon>BasicInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\BasicInfo.aspx.designer.cs">
+      <DependentUpon>BasicInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\BoardJPG.aspx.cs">
+      <DependentUpon>BoardJPG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\BoardJPG.aspx.designer.cs">
+      <DependentUpon>BoardJPG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\BoardJPG_Manage.aspx.cs">
+      <DependentUpon>BoardJPG_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\BoardJPG_Manage.aspx.designer.cs">
+      <DependentUpon>BoardJPG_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Control\WUC_btnIntroduction.ascx.cs">
+      <DependentUpon>WUC_btnIntroduction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Control\WUC_btnIntroduction.ascx.designer.cs">
+      <DependentUpon>WUC_btnIntroduction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\KeyAnswer_Board.aspx.cs">
+      <DependentUpon>KeyAnswer_Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\KeyAnswer_Board.aspx.designer.cs">
+      <DependentUpon>KeyAnswer_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\KeyAnswer_Default.aspx.cs">
+      <DependentUpon>KeyAnswer_Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\KeyAnswer_Default.aspx.designer.cs">
+      <DependentUpon>KeyAnswer_Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\KeyAnswer_Manage.aspx.cs">
+      <DependentUpon>KeyAnswer_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\KeyAnswer_Manage.aspx.designer.cs">
+      <DependentUpon>KeyAnswer_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Long2ShortUrl.aspx.cs">
+      <DependentUpon>Long2ShortUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Long2ShortUrl.aspx.designer.cs">
+      <DependentUpon>Long2ShortUrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Resource-1.aspx.cs">
+      <DependentUpon>Resource-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Resource-1.aspx.designer.cs">
+      <DependentUpon>Resource-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Resource-2.aspx.cs">
+      <DependentUpon>Resource-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Resource-2.aspx.designer.cs">
+      <DependentUpon>Resource-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Resource-3.aspx.cs">
+      <DependentUpon>Resource-3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Resource-3.aspx.designer.cs">
+      <DependentUpon>Resource-3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\ResourceSave.aspx.cs">
+      <DependentUpon>ResourceSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\ResourceSave.aspx.designer.cs">
+      <DependentUpon>ResourceSave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\ResourceSavePost.aspx.cs">
+      <DependentUpon>ResourceSavePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\ResourceSavePost.aspx.designer.cs">
+      <DependentUpon>ResourceSavePost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Subscribe.aspx.cs">
+      <DependentUpon>Subscribe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\Subscribe.aspx.designer.cs">
+      <DependentUpon>Subscribe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\WeiXinMenu.aspx.cs">
+      <DependentUpon>WeiXinMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\WeiXinMenu.aspx.designer.cs">
+      <DependentUpon>WeiXinMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\WeiXinMenu_Set.aspx.cs">
+      <DependentUpon>WeiXinMenu_Set.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\05EngineerMode\WeiXinMenu_Set.aspx.designer.cs">
+      <DependentUpon>WeiXinMenu_Set.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\06DistributionMoney\Board_DistributionMoney.aspx.cs">
+      <DependentUpon>Board_DistributionMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\06DistributionMoney\Board_DistributionMoney.aspx.designer.cs">
+      <DependentUpon>Board_DistributionMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\06DistributionMoney\DistributionMoney_Manage.aspx.cs">
+      <DependentUpon>DistributionMoney_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\06DistributionMoney\DistributionMoney_Manage.aspx.designer.cs">
+      <DependentUpon>DistributionMoney_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\AgentLevel_Select_Manage.aspx.cs">
+      <DependentUpon>AgentLevel_Select_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\AgentLevel_Select_Manage.aspx.designer.cs">
+      <DependentUpon>AgentLevel_Select_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent_Level_Manage.aspx.cs">
+      <DependentUpon>Agent_Level_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent_Level_Manage.aspx.designer.cs">
+      <DependentUpon>Agent_Level_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent_Manage.aspx.cs">
+      <DependentUpon>Agent_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent_Manage.aspx.designer.cs">
+      <DependentUpon>Agent_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent_ModifyParent.aspx.cs">
+      <DependentUpon>Agent_ModifyParent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent_ModifyParent.aspx.designer.cs">
+      <DependentUpon>Agent_ModifyParent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent_Product_Manage.aspx.cs">
+      <DependentUpon>Agent_Product_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent_Product_Manage.aspx.designer.cs">
+      <DependentUpon>Agent_Product_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent__AddExpListTextShow_Manage.aspx.cs">
+      <DependentUpon>Agent__AddExpListTextShow_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Agent__AddExpListTextShow_Manage.aspx.designer.cs">
+      <DependentUpon>Agent__AddExpListTextShow_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Board_AgentChecked.aspx.cs">
+      <DependentUpon>Board_AgentChecked.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Board_AgentChecked.aspx.designer.cs">
+      <DependentUpon>Board_AgentChecked.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Board_Agent_Level.aspx.cs">
+      <DependentUpon>Board_Agent_Level.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\07AgentChecked\Board_Agent_Level.aspx.designer.cs">
+      <DependentUpon>Board_Agent_Level.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\08Style_Model\Style_Model.aspx.cs">
+      <DependentUpon>Style_Model.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\08Style_Model\Style_Model.aspx.designer.cs">
+      <DependentUpon>Style_Model.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\01OrderDetailEveryDay.aspx.cs">
+      <DependentUpon>01OrderDetailEveryDay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\01OrderDetailEveryDay.aspx.designer.cs">
+      <DependentUpon>01OrderDetailEveryDay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\User_ModifyTeamID.aspx.cs">
+      <DependentUpon>User_ModifyTeamID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\User_ModifyTeamID.aspx.designer.cs">
+      <DependentUpon>User_ModifyTeamID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\User_ModifyParent.aspx.cs">
+      <DependentUpon>User_ModifyParent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\User_ModifyParent.aspx.designer.cs">
+      <DependentUpon>User_ModifyParent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\GuidePagesVisit.aspx.cs">
+      <DependentUpon>GuidePagesVisit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\GuidePagesVisit.aspx.designer.cs">
+      <DependentUpon>GuidePagesVisit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\GoodsVisit.aspx.cs">
+      <DependentUpon>GoodsVisit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\GoodsVisit.aspx.designer.cs">
+      <DependentUpon>GoodsVisit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserSignWorkingEveryDay.aspx.cs">
+      <DependentUpon>UserSignWorkingEveryDay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserSignWorkingEveryDay.aspx.designer.cs">
+      <DependentUpon>UserSignWorkingEveryDay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus.aspx.cs">
+      <DependentUpon>UserStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus.aspx.designer.cs">
+      <DependentUpon>UserStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus_AllSales.aspx.cs">
+      <DependentUpon>UserStatus_AllSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus_AllSales.aspx.designer.cs">
+      <DependentUpon>UserStatus_AllSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus_FenXiao.aspx.cs">
+      <DependentUpon>UserStatus_FenXiao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus_FenXiao.aspx.designer.cs">
+      <DependentUpon>UserStatus_FenXiao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus_Money.aspx.cs">
+      <DependentUpon>UserStatus_Money.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus_Money.aspx.designer.cs">
+      <DependentUpon>UserStatus_Money.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus_Quan.aspx.cs">
+      <DependentUpon>UserStatus_Quan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\09System_Status\UserStatus_Quan.aspx.designer.cs">
+      <DependentUpon>UserStatus_Quan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\BoardINC_Manage.aspx.cs">
+      <DependentUpon>BoardINC_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\BoardINC_Manage.aspx.designer.cs">
+      <DependentUpon>BoardINC_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\01BoardINC_Manage_ShopClient_ShopPar.aspx.cs">
+      <DependentUpon>01BoardINC_Manage_ShopClient_ShopPar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\01BoardINC_Manage_ShopClient_ShopPar.aspx.designer.cs">
+      <DependentUpon>01BoardINC_Manage_ShopClient_ShopPar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\CheckUserInfo.aspx.cs">
+      <DependentUpon>CheckUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\CheckUserInfo.aspx.designer.cs">
+      <DependentUpon>CheckUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\ContactUsHandler.ashx.cs">
+      <DependentUpon>ContactUsHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\FreightTemplate.aspx.cs">
+      <DependentUpon>FreightTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\FreightTemplate.aspx.designer.cs">
+      <DependentUpon>FreightTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\FreightTemplateOperating.aspx.cs">
+      <DependentUpon>FreightTemplateOperating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\FreightTemplateOperating.aspx.designer.cs">
+      <DependentUpon>FreightTemplateOperating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\FreightTemplateOperatingArea.aspx.cs">
+      <DependentUpon>FreightTemplateOperatingArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\FreightTemplateOperatingArea.aspx.designer.cs">
+      <DependentUpon>FreightTemplateOperatingArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\IwantRetunMoney.aspx.cs">
+      <DependentUpon>IwantRetunMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\10tab_ShopClient\IwantRetunMoney.aspx.designer.cs">
+      <DependentUpon>IwantRetunMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\NetRootMenu.aspx.cs">
+      <DependentUpon>NetRootMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\NetRootMenu.aspx.designer.cs">
+      <DependentUpon>NetRootMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\QQMake\GetPic.aspx.cs">
+      <DependentUpon>GetPic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\QQMake\GetPic.aspx.designer.cs">
+      <DependentUpon>GetPic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\QQMake\GetPic_FlashBack.aspx.cs">
+      <DependentUpon>GetPic_FlashBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\QQMake\GetPic_FlashBack.aspx.designer.cs">
+      <DependentUpon>GetPic_FlashBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\QQMake\MakePic.aspx.cs">
+      <DependentUpon>MakePic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\QQMake\MakePic.aspx.designer.cs">
+      <DependentUpon>MakePic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\URLShow.aspx.cs">
+      <DependentUpon>URLShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\11RootMenu\URLShow.aspx.designer.cs">
+      <DependentUpon>URLShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney.aspx.cs">
+      <DependentUpon>IS_UserFinance_check_DrawMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney.aspx.designer.cs">
+      <DependentUpon>IS_UserFinance_check_DrawMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_Asnc.aspx.cs">
+      <DependentUpon>IS_UserFinance_check_DrawMoney_Asnc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_Asnc.aspx.designer.cs">
+      <DependentUpon>IS_UserFinance_check_DrawMoney_Asnc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_AsncDoWeiXinHoneBao.aspx.cs">
+      <DependentUpon>IS_UserFinance_check_DrawMoney_AsncDoWeiXinHoneBao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_AsncDoWeiXinHoneBao.aspx.designer.cs">
+      <DependentUpon>IS_UserFinance_check_DrawMoney_AsncDoWeiXinHoneBao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_Manage.aspx.cs">
+      <DependentUpon>IS_UserFinance_check_DrawMoney_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\12UserAskMoney\IS_UserFinance_check_DrawMoney_Manage.aspx.designer.cs">
+      <DependentUpon>IS_UserFinance_check_DrawMoney_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\13Order_Cancel\IS_FinanceAdmin_check_ReturnMoney.aspx.cs">
+      <DependentUpon>IS_FinanceAdmin_check_ReturnMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\13Order_Cancel\IS_FinanceAdmin_check_ReturnMoney.aspx.designer.cs">
+      <DependentUpon>IS_FinanceAdmin_check_ReturnMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\13Order_Cancel\IS_FinanceAdmin_check_ReturnMoney_Asnc.aspx.cs">
+      <DependentUpon>IS_FinanceAdmin_check_ReturnMoney_Asnc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\13Order_Cancel\IS_FinanceAdmin_check_ReturnMoney_Asnc.aspx.designer.cs">
+      <DependentUpon>IS_FinanceAdmin_check_ReturnMoney_Asnc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\13Order_Cancel\IS_Finance_check_DrawMoney.aspx.cs">
+      <DependentUpon>IS_Finance_check_DrawMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\13Order_Cancel\IS_Finance_check_DrawMoney.aspx.designer.cs">
+      <DependentUpon>IS_Finance_check_DrawMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\13Order_Cancel\IS_Finance_check_DrawMoney_Asnc.aspx.cs">
+      <DependentUpon>IS_Finance_check_DrawMoney_Asnc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\13Order_Cancel\IS_Finance_check_DrawMoney_Asnc.aspx.designer.cs">
+      <DependentUpon>IS_Finance_check_DrawMoney_Asnc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\14System_WeiXin\Handler_SaoYiSao.ashx.cs">
+      <DependentUpon>Handler_SaoYiSao.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\14System_WeiXin\RegisterOpenID.aspx.cs">
+      <DependentUpon>RegisterOpenID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\14System_WeiXin\RegisterOpenID.aspx.designer.cs">
+      <DependentUpon>RegisterOpenID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\14System_WeiXin\ShowGoodID_ErWieMa.aspx.cs">
+      <DependentUpon>ShowGoodID_ErWieMa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\14System_WeiXin\ShowGoodID_ErWieMa.aspx.designer.cs">
+      <DependentUpon>ShowGoodID_ErWieMa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\BoardGood_XML.aspx.cs">
+      <DependentUpon>BoardGood_XML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\BoardGood_XML.aspx.designer.cs">
+      <DependentUpon>BoardGood_XML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\MultiFenXiaoLevel_Manage.aspx.cs">
+      <DependentUpon>MultiFenXiaoLevel_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\MultiFenXiaoLevel_Manage.aspx.designer.cs">
+      <DependentUpon>MultiFenXiaoLevel_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\MultiFenXiaoLevel_Board.aspx.cs">
+      <DependentUpon>MultiFenXiaoLevel_Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\MultiFenXiaoLevel_Board.aspx.designer.cs">
+      <DependentUpon>MultiFenXiaoLevel_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\FenXiaoLevel_Board.aspx.cs">
+      <DependentUpon>FenXiaoLevel_Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\FenXiaoLevel_Board.aspx.designer.cs">
+      <DependentUpon>FenXiaoLevel_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\FenXiaoLevel_Manage.aspx.cs">
+      <DependentUpon>FenXiaoLevel_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\FenXiaoLevel_Manage.aspx.designer.cs">
+      <DependentUpon>FenXiaoLevel_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\Good_XML_Manage.aspx.cs">
+      <DependentUpon>Good_XML_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\Good_XML_Manage.aspx.designer.cs">
+      <DependentUpon>Good_XML_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\ResetAllGoodOneKey.aspx.cs">
+      <DependentUpon>ResetAllGoodOneKey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\ResetAllGoodOneKey.aspx.designer.cs">
+      <DependentUpon>ResetAllGoodOneKey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\Suggestion.aspx.cs">
+      <DependentUpon>Suggestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\Suggestion.aspx.designer.cs">
+      <DependentUpon>Suggestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\Suggestion_List.aspx.cs">
+      <DependentUpon>Suggestion_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\15Advance\Suggestion_List.aspx.designer.cs">
+      <DependentUpon>Suggestion_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\16SendMoney\16SendMoney_Board.aspx.cs">
+      <DependentUpon>16SendMoney_Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\16SendMoney\16SendMoney_Board.aspx.designer.cs">
+      <DependentUpon>16SendMoney_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\16SendMoney\16SendMoney_BoardABC.aspx.cs">
+      <DependentUpon>16SendMoney_BoardABC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\16SendMoney\16SendMoney_BoardABC.aspx.designer.cs">
+      <DependentUpon>16SendMoney_BoardABC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\16SendMoney\Net16SendMoney.aspx.cs">
+      <DependentUpon>Net16SendMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\16SendMoney\Net16SendMoney.aspx.designer.cs">
+      <DependentUpon>Net16SendMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\Board_O2O_Shop.aspx.cs">
+      <DependentUpon>Board_O2O_Shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\Board_O2O_Shop.aspx.designer.cs">
+      <DependentUpon>Board_O2O_Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\Board_O2O_ShopOperating.aspx.cs">
+      <DependentUpon>Board_O2O_ShopOperating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\Board_O2O_ShopOperating.aspx.designer.cs">
+      <DependentUpon>Board_O2O_ShopOperating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\CheckUserEmailInfo.aspx.cs">
+      <DependentUpon>CheckUserEmailInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\CheckUserEmailInfo.aspx.designer.cs">
+      <DependentUpon>CheckUserEmailInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\Handler_SaoYiSao.ashx.cs">
+      <DependentUpon>Handler_SaoYiSao.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\Handler_SaoYiSaoo2oashx.ashx.cs">
+      <DependentUpon>Handler_SaoYiSaoo2oashx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\RegisterOpenID.aspx.cs">
+      <DependentUpon>RegisterOpenID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\17O2O_Shop\RegisterOpenID.aspx.designer.cs">
+      <DependentUpon>RegisterOpenID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\Board_Good.aspx.cs">
+      <DependentUpon>Board_Good.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\Board_Good.aspx.designer.cs">
+      <DependentUpon>Board_Good.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class1_Add.aspx.cs">
+      <DependentUpon>tab_Class1_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class1_Add.aspx.designer.cs">
+      <DependentUpon>tab_Class1_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class1_Delete.aspx.cs">
+      <DependentUpon>tab_Class1_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class1_Delete.aspx.designer.cs">
+      <DependentUpon>tab_Class1_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class1_Modify.aspx.cs">
+      <DependentUpon>tab_Class1_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class1_Modify.aspx.designer.cs">
+      <DependentUpon>tab_Class1_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class2_Add.aspx.cs">
+      <DependentUpon>tab_Class2_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class2_Add.aspx.designer.cs">
+      <DependentUpon>tab_Class2_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class2_Delete.aspx.cs">
+      <DependentUpon>tab_Class2_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class2_Delete.aspx.designer.cs">
+      <DependentUpon>tab_Class2_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class2_Modify.aspx.cs">
+      <DependentUpon>tab_Class2_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class2_Modify.aspx.designer.cs">
+      <DependentUpon>tab_Class2_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class3_Add.aspx.cs">
+      <DependentUpon>tab_Class3_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class3_Add.aspx.designer.cs">
+      <DependentUpon>tab_Class3_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class3_Delete.aspx.cs">
+      <DependentUpon>tab_Class3_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class3_Delete.aspx.designer.cs">
+      <DependentUpon>tab_Class3_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class3_Modify.aspx.cs">
+      <DependentUpon>tab_Class3_Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class3_Modify.aspx.designer.cs">
+      <DependentUpon>tab_Class3_Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class_BoardSet.aspx.cs">
+      <DependentUpon>tab_Class_BoardSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\18tab_GoodClass\tab_Class_BoardSet.aspx.designer.cs">
+      <DependentUpon>tab_Class_BoardSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\KuaiDiQuery.aspx.cs">
+      <DependentUpon>KuaiDiQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\KuaiDiQuery.aspx.designer.cs">
+      <DependentUpon>KuaiDiQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Fund_Order_Board.aspx.cs">
+      <DependentUpon>tab_Fund_Order_Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Fund_Order_Board.aspx.designer.cs">
+      <DependentUpon>tab_Fund_Order_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Board_NeedMoney.aspx.cs">
+      <DependentUpon>tab_Order_Board_NeedMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Board_NeedMoney.aspx.designer.cs">
+      <DependentUpon>tab_Order_Board_NeedMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Board_WaitGiveGoods.aspx.cs">
+      <DependentUpon>tab_Order_Board_WaitGiveGoods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Board_WaitGiveGoods.aspx.designer.cs">
+      <DependentUpon>tab_Order_Board_WaitGiveGoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Board_Wait_Finished.aspx.cs">
+      <DependentUpon>tab_Order_Board_Wait_Finished.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Board_Wait_Finished.aspx.designer.cs">
+      <DependentUpon>tab_Order_Board_Wait_Finished.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Board_Wait_UserGetGoods.aspx.cs">
+      <DependentUpon>tab_Order_Board_Wait_UserGetGoods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Board_Wait_UserGetGoods.aspx.designer.cs">
+      <DependentUpon>tab_Order_Board_Wait_UserGetGoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Manage.aspx.cs">
+      <DependentUpon>tab_Order_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\19tab_Order\tab_Order_Manage.aspx.designer.cs">
+      <DependentUpon>tab_Order_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\20Agent_Status\AgentStatus.aspx.cs">
+      <DependentUpon>AgentStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\20Agent_Status\AgentStatus.aspx.designer.cs">
+      <DependentUpon>AgentStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\21GuWuQuanAndMoneyControl\UserMoneyControl.aspx.cs">
+      <DependentUpon>UserMoneyControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\21GuWuQuanAndMoneyControl\UserMoneyControl.aspx.designer.cs">
+      <DependentUpon>UserMoneyControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenBoard.aspx.cs">
+      <DependentUpon>GameSendJiFenBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenBoard.aspx.designer.cs">
+      <DependentUpon>GameSendJiFenBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_001yuebing2.aspx.cs">
+      <DependentUpon>GameSendJiFenOperating_001yuebing2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_001yuebing2.aspx.designer.cs">
+      <DependentUpon>GameSendJiFenOperating_001yuebing2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_002qiangfeicui.aspx.cs">
+      <DependentUpon>GameSendJiFenOperating_002qiangfeicui.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_002qiangfeicui.aspx.designer.cs">
+      <DependentUpon>GameSendJiFenOperating_002qiangfeicui.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_003HowColor.aspx.cs">
+      <DependentUpon>GameSendJiFenOperating_003HowColor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_003HowColor.aspx.designer.cs">
+      <DependentUpon>GameSendJiFenOperating_003HowColor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_004zuiqiangyanli.aspx.cs">
+      <DependentUpon>GameSendJiFenOperating_004zuiqiangyanli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_004zuiqiangyanli.aspx.designer.cs">
+      <DependentUpon>GameSendJiFenOperating_004zuiqiangyanli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_005ZhongQiu.aspx.cs">
+      <DependentUpon>GameSendJiFenOperating_005ZhongQiu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\22GameSendJiFen\GameSendJiFenOperating_005ZhongQiu.aspx.designer.cs">
+      <DependentUpon>GameSendJiFenOperating_005ZhongQiu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\Board3D_Manage.aspx.cs">
+      <DependentUpon>Board3D_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\Board3D_Manage.aspx.designer.cs">
+      <DependentUpon>Board3D_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\GuaGuaKa_ZhuanZhuanChe.aspx.cs">
+      <DependentUpon>GuaGuaKa_ZhuanZhuanChe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\GuaGuaKa_ZhuanZhuanChe.aspx.designer.cs">
+      <DependentUpon>GuaGuaKa_ZhuanZhuanChe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_Boad.aspx.cs">
+      <DependentUpon>LightApp_Boad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_Boad.aspx.designer.cs">
+      <DependentUpon>LightApp_Boad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_EachPage_Boad.aspx.cs">
+      <DependentUpon>LightApp_EachPage_Boad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_EachPage_Boad.aspx.designer.cs">
+      <DependentUpon>LightApp_EachPage_Boad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_Manage.aspx.cs">
+      <DependentUpon>LightApp_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\LightApp\LightApp_Manage.aspx.designer.cs">
+      <DependentUpon>LightApp_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\MultiPhoto\MultiPhotoSet_Board.aspx.cs">
+      <DependentUpon>MultiPhotoSet_Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\MultiPhoto\MultiPhotoSet_Board.aspx.designer.cs">
+      <DependentUpon>MultiPhotoSet_Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\MultiPhoto\MultiPhotoSet_Manage.aspx.cs">
+      <DependentUpon>MultiPhotoSet_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\MultiPhoto\MultiPhotoSet_Manage.aspx.designer.cs">
+      <DependentUpon>MultiPhotoSet_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\OnlineBaoMing\OnlineBaoMing.aspx.cs">
+      <DependentUpon>OnlineBaoMing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\23WeiHuoDong\OnlineBaoMing\OnlineBaoMing.aspx.designer.cs">
+      <DependentUpon>OnlineBaoMing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\24WeiKanJian\Board_WeiKanJian.aspx.cs">
+      <DependentUpon>Board_WeiKanJian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\24WeiKanJian\Board_WeiKanJian.aspx.designer.cs">
+      <DependentUpon>Board_WeiKanJian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus.aspx.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Bonus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus.aspx.designer.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Bonus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Number_Manage.aspx.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Number_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Number_Manage.aspx.designer.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Number_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25WeiXianChang_BoardSet.aspx.cs">
+      <DependentUpon>25WeiXianChang_BoardSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25WeiXianChang_BoardSet.aspx.designer.cs">
+      <DependentUpon>25WeiXianChang_BoardSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus_Manage.aspx.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Bonus_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus_Manage.aspx.designer.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Bonus_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25WeiXianChang_Manage.aspx.cs">
+      <DependentUpon>25WeiXianChang_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25WeiXianChang_Manage.aspx.designer.cs">
+      <DependentUpon>25WeiXianChang_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Number.aspx.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Number.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Number.aspx.designer.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Number.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus_User.aspx.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Bonus_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25tab_ShopClient_XianChangHuoDong_Bonus_User.aspx.designer.cs">
+      <DependentUpon>25tab_ShopClient_XianChangHuoDong_Bonus_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25XianChangHuoDong_Number_UserShakeNum.aspx.cs">
+      <DependentUpon>25XianChangHuoDong_Number_UserShakeNum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\25WeiXianChang\25XianChangHuoDong_Number_UserShakeNum.aspx.designer.cs">
+      <DependentUpon>25XianChangHuoDong_Number_UserShakeNum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\26WeiTuanGou\Board_TuanGouParterList_Bypeople.aspx.cs">
+      <DependentUpon>Board_TuanGouParterList_Bypeople.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\26WeiTuanGou\Board_TuanGouParterList_Bypeople.aspx.designer.cs">
+      <DependentUpon>Board_TuanGouParterList_Bypeople.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\26WeiTuanGou\Board_TuanGouParterList.aspx.cs">
+      <DependentUpon>Board_TuanGouParterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\26WeiTuanGou\Board_TuanGouParterList.aspx.designer.cs">
+      <DependentUpon>Board_TuanGouParterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\26WeiTuanGou\Board_WeiTuanGou.aspx.cs">
+      <DependentUpon>Board_WeiTuanGou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\26WeiTuanGou\Board_WeiTuanGou.aspx.designer.cs">
+      <DependentUpon>Board_WeiTuanGou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\27ZC_Project\Board_01ZC_ProjectSupport.aspx.cs">
+      <DependentUpon>Board_01ZC_ProjectSupport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\27ZC_Project\Board_01ZC_ProjectSupport.aspx.designer.cs">
+      <DependentUpon>Board_01ZC_ProjectSupport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\27ZC_Project\Board_01ZC_ProjectParterList.aspx.cs">
+      <DependentUpon>Board_01ZC_ProjectParterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\27ZC_Project\Board_01ZC_ProjectParterList.aspx.designer.cs">
+      <DependentUpon>Board_01ZC_ProjectParterList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\27ZC_Project\Board_01ZC_Project.aspx.cs">
+      <DependentUpon>Board_01ZC_Project.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\27ZC_Project\Board_01ZC_Project.aspx.designer.cs">
+      <DependentUpon>Board_01ZC_Project.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\Board_28Member.aspx.cs">
+      <DependentUpon>Board_28Member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\Board_28Member.aspx.designer.cs">
+      <DependentUpon>Board_28Member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\Board_28MemberBonus.aspx.cs">
+      <DependentUpon>Board_28MemberBonus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\Board_28MemberBonus.aspx.designer.cs">
+      <DependentUpon>Board_28MemberBonus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\EnterpriseOrganization.aspx.cs">
+      <DependentUpon>EnterpriseOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\EnterpriseOrganization.aspx.designer.cs">
+      <DependentUpon>EnterpriseOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\Manage_28Member.aspx.cs">
+      <DependentUpon>Manage_28Member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\Manage_28Member.aspx.designer.cs">
+      <DependentUpon>Manage_28Member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\Manage_28MemberBonus.aspx.cs">
+      <DependentUpon>Manage_28MemberBonus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\28Member\Manage_28MemberBonus.aspx.designer.cs">
+      <DependentUpon>Manage_28MemberBonus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\29ShopClientPower\Board_29AdminPower.aspx.cs">
+      <DependentUpon>Board_29AdminPower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\29ShopClientPower\Board_29AdminPower.aspx.designer.cs">
+      <DependentUpon>Board_29AdminPower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\29ShopClientPower\Board_29RolePower.aspx.cs">
+      <DependentUpon>Board_29RolePower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\29ShopClientPower\Board_29RolePower.aspx.designer.cs">
+      <DependentUpon>Board_29RolePower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\29ShopClientPower\Manage_29AdminPower.aspx.cs">
+      <DependentUpon>Manage_29AdminPower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\29ShopClientPower\Manage_29AdminPower.aspx.designer.cs">
+      <DependentUpon>Manage_29AdminPower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\29ShopClientPower\Manage_29RolePower.aspx.cs">
+      <DependentUpon>Manage_29RolePower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\29ShopClientPower\Manage_29RolePower.aspx.designer.cs">
+      <DependentUpon>Manage_29RolePower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\30SMSWatch\Board_30SMSWatch.aspx.cs">
+      <DependentUpon>Board_30SMSWatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\30SMSWatch\Board_30SMSWatch.aspx.designer.cs">
+      <DependentUpon>Board_30SMSWatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\21ActiveUser_ModifyState.aspx.cs">
+      <DependentUpon>21ActiveUser_ModifyState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\21ActiveUser_ModifyState.aspx.designer.cs">
+      <DependentUpon>21ActiveUser_ModifyState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\20Order_FromWealthToMoney.aspx.cs">
+      <DependentUpon>20Order_FromWealthToMoney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\20Order_FromWealthToMoney.aspx.designer.cs">
+      <DependentUpon>20Order_FromWealthToMoney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\19OperationWtiteOrder_Manage.aspx.cs">
+      <DependentUpon>19OperationWtiteOrder_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\19OperationWtiteOrder_Manage.aspx.designer.cs">
+      <DependentUpon>19OperationWtiteOrder_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\18OperationWtiteOrder.aspx.cs">
+      <DependentUpon>18OperationWtiteOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\18OperationWtiteOrder.aspx.designer.cs">
+      <DependentUpon>18OperationWtiteOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\17CheckModifyParent_Manage.aspx.cs">
+      <DependentUpon>17CheckModifyParent_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\17CheckModifyParent_Manage.aspx.designer.cs">
+      <DependentUpon>17CheckModifyParent_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\16CheckModifyParent.aspx.cs">
+      <DependentUpon>16CheckModifyParent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\16CheckModifyParent.aspx.designer.cs">
+      <DependentUpon>16CheckModifyParent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\13OperationCenter_OrderManage.aspx.cs">
+      <DependentUpon>13OperationCenter_OrderManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\13OperationCenter_OrderManage.aspx.designer.cs">
+      <DependentUpon>13OperationCenter_OrderManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\12OrderDetailEveryDay.aspx.cs">
+      <DependentUpon>12OrderDetailEveryDay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\12OrderDetailEveryDay.aspx.designer.cs">
+      <DependentUpon>12OrderDetailEveryDay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\11CenterUser_MoneyStatus.aspx.cs">
+      <DependentUpon>11CenterUser_MoneyStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\11CenterUser_MoneyStatus.aspx.designer.cs">
+      <DependentUpon>11CenterUser_MoneyStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\08FullEveryDay.aspx.cs">
+      <DependentUpon>08FullEveryDay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\08FullEveryDay.aspx.designer.cs">
+      <DependentUpon>08FullEveryDay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\04OperationGoods.aspx.cs">
+      <DependentUpon>04OperationGoods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\04OperationGoods.aspx.designer.cs">
+      <DependentUpon>04OperationGoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\02OperationCenter.aspx.cs">
+      <DependentUpon>02OperationCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\02OperationCenter.aspx.designer.cs">
+      <DependentUpon>02OperationCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\01Board.aspx.cs">
+      <DependentUpon>01Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\01Board.aspx.designer.cs">
+      <DependentUpon>01Board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\05OperationGoods_Manage.aspx.cs">
+      <DependentUpon>05OperationGoods_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\05OperationGoods_Manage.aspx.designer.cs">
+      <DependentUpon>05OperationGoods_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\03OperationCenter_Manage.aspx.cs">
+      <DependentUpon>03OperationCenter_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\03OperationCenter_Manage.aspx.designer.cs">
+      <DependentUpon>03OperationCenter_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\06ThisDayReturnActualUser.aspx.cs">
+      <DependentUpon>06ThisDayReturnActualUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\06ThisDayReturnActualUser.aspx.designer.cs">
+      <DependentUpon>06ThisDayReturnActualUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\07User_WealthStatus.aspx.cs">
+      <DependentUpon>07User_WealthStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\07User_WealthStatus.aspx.designer.cs">
+      <DependentUpon>07User_WealthStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\10BalanceofPaymentStatistics.aspx.cs">
+      <DependentUpon>10BalanceofPaymentStatistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\10BalanceofPaymentStatistics.aspx.designer.cs">
+      <DependentUpon>10BalanceofPaymentStatistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\09OperationUserStatus.aspx.cs">
+      <DependentUpon>09OperationUserStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\09OperationUserStatus.aspx.designer.cs">
+      <DependentUpon>09OperationUserStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\14WealthMoneyControlOperationCenter.aspx.cs">
+      <DependentUpon>14WealthMoneyControlOperationCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\14WealthMoneyControlOperationCenter.aspx.designer.cs">
+      <DependentUpon>14WealthMoneyControlOperationCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\15User_ModifyYunYingZhongXin.aspx.cs">
+      <DependentUpon>15User_ModifyYunYingZhongXin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\31ConsumptionCapital\15User_ModifyYunYingZhongXin.aspx.designer.cs">
+      <DependentUpon>15User_ModifyYunYingZhongXin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\32NoticeGuidePages\01NoticeGuidePagesBoard.aspx.cs">
+      <DependentUpon>01NoticeGuidePagesBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\32NoticeGuidePages\01NoticeGuidePagesBoard.aspx.designer.cs">
+      <DependentUpon>01NoticeGuidePagesBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\32NoticeGuidePages\01NoticeGuidePages_Manage.aspx.cs">
+      <DependentUpon>01NoticeGuidePages_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\32NoticeGuidePages\01NoticeGuidePages_Manage.aspx.designer.cs">
+      <DependentUpon>01NoticeGuidePages_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\50PC_ShopClient\BoardINC_Manage.aspx.cs">
+      <DependentUpon>BoardINC_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\50PC_ShopClient\BoardINC_Manage.aspx.designer.cs">
+      <DependentUpon>BoardINC_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\51SearchkeywordList\BoardSearchkeywordList.aspx.cs">
+      <DependentUpon>BoardSearchkeywordList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\51SearchkeywordList\BoardSearchkeywordList.aspx.designer.cs">
+      <DependentUpon>BoardSearchkeywordList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\51SearchkeywordList\BoardSearchkeywordList_Manage.aspx.cs">
+      <DependentUpon>BoardSearchkeywordList_Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\51SearchkeywordList\BoardSearchkeywordList_Manage.aspx.designer.cs">
+      <DependentUpon>BoardSearchkeywordList_Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\Help_Sales_Show\Board_HelpContent.aspx.cs">
+      <DependentUpon>Board_HelpContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\Help_Sales_Show\Board_HelpContent.aspx.designer.cs">
+      <DependentUpon>Board_HelpContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\Left.aspx.cs">
+      <DependentUpon>Left.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\Left.aspx.designer.cs">
+      <DependentUpon>Left.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\Right.aspx.cs">
+      <DependentUpon>Right.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\Right.aspx.designer.cs">
+      <DependentUpon>Right.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\SendMessage.aspx.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\SendMessage.aspx.designer.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAdmin\sp_V_OrderSearchView_OrderSearch_New00.cs" />
+    <Compile Include="ClientAdmin\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientAdmin\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SR_Upload\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CheckCode.aspx.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Control\CheckCode.aspx.designer.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ErrorPages\FileNotFound.aspx.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Control\ErrorPages\FileNotFound.aspx.designer.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ErrorPages\GeneralError.aspx.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Control\ErrorPages\GeneralError.aspx.designer.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\WebUC_DateTime.ascx.cs">
+      <DependentUpon>WebUC_DateTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Control\WebUC_DateTime.ascx.designer.cs">
+      <DependentUpon>WebUC_DateTime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientAdmin\10tab_ShopClient\ContactUsHandler.ashx" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\classes\it\sephiroth\mloaderWindow.as" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\classes\it\sephiroth\PrintScreen.as" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode.rar" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\classes\it\sephiroth\mloaderWindow.as" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\classes\it\sephiroth\PrintScreen.as" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\createpic.jsp" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\images\Thumbs.db" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\META-INF\MANIFEST.MF" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\jspflash_ResourceCode\mackpic\WEB-INF\classes\com\zhaosoft\servlet\MackPic.class" />
+    <Content Include="ClientAdmin\11RootMenu\QQMake\Flash_ResourceCode\makepic.fla" />
+    <Content Include="ClientAdmin\14System_WeiXin\Handler_SaoYiSao.ashx" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_footer.psd" />
+    <Content Include="ClientAdmin\Image\AdminLogin_webuysys_title.psd" />
+    <Content Include="ClientAdmin\Image\login_02.psd" />
+    <Content Include="ClientAdmin\Image\title.psd" />
+    <Content Include="ClientAdmin\Image\title1.psd" />
+    <Content Include="ClientAdmin\skin\Images\admin_logo.psd" />
+    <Content Include="ClientAdmin\skin\Images\bot_logo.psd" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02ThreeLevel\01EggsoftShop_Public_CL\EggsoftShop_Public_CL.csproj">
+      <Project>{9f1e52f6-96a9-4432-85e8-e03a2c75103a}</Project>
+      <Name>EggsoftShop_Public_CL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\AspNetPager\AspNetPager.csproj">
+      <Project>{0fac7937-3cdd-41f6-9dc8-c743c9f727f1}</Project>
+      <Name>AspNetPager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\Eggsoft.Common\Eggsoft.Common.csproj">
+      <Project>{df6af6e5-1df5-48b2-b3af-fea8e72bcf63}</Project>
+      <Name>Eggsoft.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.BLL\EggsoftWX.BLL.csproj">
+      <Project>{38910fa2-2b1c-4e94-aee3-3eacab7147fb}</Project>
+      <Name>EggsoftWX.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.IDAL\EggsoftWX.IDAL.csproj">
+      <Project>{bb96243c-30b8-4073-b466-99c4f24ac74e}</Project>
+      <Name>EggsoftWX.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.Model\EggsoftWX.Model.csproj">
+      <Project>{3d3bd020-2be2-40ab-b53b-846a5b210f9d}</Project>
+      <Name>EggsoftWX.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\EggsoftWX.SQLServerDAL\EggsoftWX.SQLServerDAL.csproj">
+      <Project>{1252602b-8588-433e-b8c5-24667ece6bb5}</Project>
+      <Name>EggsoftWX.SQLServerDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\02ThreeLevel\UrlRewriting\UrlRewriting.csproj">
+      <Project>{a2bd41af-3f83-4083-9c5d-04d46004565b}</Project>
+      <Name>UrlRewriting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SR_Upload\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'X86|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4467</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8005</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

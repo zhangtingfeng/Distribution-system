@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+        host = window.location.host;
+
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+
+        var WeiXin_imgAllPageUrl = 'https://' + host + '/Templet/02ShiYi/skin/images/MyWeBuy8Images_pus.jpg';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "商家入驻-微店，入驻微店直达路径，为广大中小企业提供细致服务。";
+        var WeiXin_shareAppAllPageTitle = '商家入驻-微店';
+        var WeiXin_appidAllPage = '';
+
+        var varUserID = "###UserID###";///传递给 product.js   传递变量
+        var varServiceURL = "###ServiceURL###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>商家入驻</title>
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/iscroll.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    ###WeiXin__o2o_FootMarker_Location_###
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    ###_PulicChageWeiXin###
+</head>
+<body>
+    ###Header###
+    <div id="content_form">
+        ###IFSubscribeHeader###
+        <form action="?type=iwillcome" method="post">
+        <select name="Webuy8CityClass" required="required" style="width: 100%; height: 35px;">
+            <option value="">选择微店入驻分类</option>
+            ###Webuy8CityClass###
+        </select>
+        <input type="text" name="name" required="required" placeholder="输入联系人">
+        <input type="text" name="phone" required="required" placeholder="请输入手机号">
+        <textarea rows="" cols="" name="Extraname" placeholder="请输入附加说明"></textarea>
+        <button class="button glow button-rounded button-flat-action" type="submit" value="提交">
+            提交</button>
+        </form>
+    </div>
+</body>
+###Webuy8Footer###
+</html>

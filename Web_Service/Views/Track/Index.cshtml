@@ -1,0 +1,339 @@
+﻿@using Web_Service.ViewModels.Common
+@{
+    ViewBag.Title = "报价管理";
+    Layout = "~/Views/Shared/_HeadFootLayout.cshtml";
+    var userSession = new InsureApi.Mvc.XUserSession(this.Context);
+    var appSet = new Web_Service.Common.Config.AppSettings();
+}
+
+<div class="main ng-scope" ng-controller="listController">
+    <h3 class="page-header">报价管理</h3>
+
+    <div ng-show="CarNumber">
+        <b>车牌号：</b> <label ng-bind="CarNumber"></label>
+    </div>
+    <div ng-show="!CarNumber">
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                        <input class="form-control" size="16" type="text" value="" placeholder="提交开始时间" readonly="readonly" ng-model="formData.data.CreateStartTime">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                        <input class="form-control" size="16" type="text" value="" placeholder="提交结束时间" readonly="readonly" ng-model="formData.data.CreateEndTime">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode(" &#xf007; 车主姓名")" ng-model="formData.data.CarMasterName">
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode(" &#xf1b9; 车牌")" ng-model="formData.data.LicenseNo">
+                </div>
+            </div>
+        </div>
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="formData.data.InsuranceProvince" ng-change="_SelectedProvinceEvent()">
+                        <option value="" selected="selected">@HttpUtility.HtmlDecode("&#xf00b; 省份")</option>
+                        <option ng-repeat="data in InsuranceProvinceList" value="{{data.ProvinceCode}}">{{data.ProvinceName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="formData.data.InsuranceCity">
+                        <option value="" selected="selected">@HttpUtility.HtmlDecode("&#xf00b; 城市")</option>
+                        <option ng-repeat="CityList in InsuranceCityList" value="{{CityList.CityCode}}">{{CityList.CityName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="formData.data.InsuranceCompany">
+                        <option value="0">@HttpUtility.HtmlDecode("&#xf19c; 保险公司")</option>
+                        <option ng-repeat="insuranceCompany in InsuranceCompanyLists" value="{{insuranceCompany.CompanyID}}">{{insuranceCompany.CompanyName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder" style="margin-bottom: 15px;">
+                <div class=" col-md-6" style="padding: 0px 7px 0px 0px;">
+                    <button type="button" ng-click="SearchFormEvent()" class="btn btn-default btn-block">
+                        @HttpUtility.HtmlDecode("&#xf002; 检索")
+                    </button>
+                </div>
+                <div class="col-md-6" style="padding: 0px 0px 0px 7px;">
+                    <button type="button" ng-click="resetFormEvent()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("&#xf0e2; 重置")</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>提交时间</th>
+                    <th>车主</th>
+                    <th>车牌</th>
+                    <th>城市</th>
+                    <th>保险公司</th>
+                    <th>合作渠道</th>
+                    <th>报价状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in dataList">
+                    <td style="vertical-align:middle" ng-bind="data.CreateTime | date:'yyyy/MM/dd HH:mm'"></td>
+                    <td style="vertical-align:middle" ng-bind="data.CarMasterName"></td>
+                    <td style="vertical-align:middle" ng-bind="data.LicenseNo"></td>
+                    <td style="vertical-align:middle">
+                        <em style="font-style: initial" ng-bind="data.ProvinceName"></em>
+                        <em style="font-style: initial" ng-bind="data.CityName"></em>
+                    </td>
+                    <td style="vertical-align:middle">
+                        <img ng-src="@Href("~/Source/images/CompanyIconType2/"){{data.CompanyCode}}.png" style=" width: 40%;" />
+                    </td>
+                    <td style="vertical-align:middle" ng-bind="data.ChannelName"></td>
+                    <td style="vertical-align:middle" ng-style="data.ReturnErrorCode==''?'':data.ReturnErrorCode=='线下报价中，请等待短信通知'?'':{color:'#d9534f'}"
+                        ng-bind="data.ReturnErrorCode==''?'已报价':data.ReturnErrorCode=='线下报价中，请等待短信通知'?'待报价':'报价失败'"></td>
+                    <td style="vertical-align:middle">
+                        <a ng-href="~/Track/Detail/{{data.CarInsureQueryHistoryID}}" href="javascript:void(0)" target="_blank">详情</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    @Html.Partial("UI/_PagingViewPartial", new PagingViewPartialViewModel(""))
+</div>
+
+@section scripts{
+    <script>
+        //日期控件
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            weekStart: 7,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            format: "yyyy-mm-dd",
+            pickerPosition: "bottom-left"
+        });
+
+        //保险公司
+        function GetInsuranceCompany($scope, Restangular) {
+            Restangular.one('CarOfferPriority/CarOfferPriority').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                var InsuranceCompanyList = [];
+                for (var i = 0; i < result.data.length; i++) {
+                    InsuranceCompanyList.push(result.data[i]);
+                }
+                $scope.InsuranceCompanyLists = InsuranceCompanyList;
+
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+                $scope.isLoading = false;
+            });
+        }
+
+        function initSearchForm($scope) {
+            resetForm($scope);
+        };
+
+        function searchForm($scope, restangular) {
+
+            if ($scope.CarNumber) {
+                $scope.formData.data.IsIncludeTest = true;
+            }
+            restangular.one('Insurance/SelAllWaitQuoteList').post('post', $scope.formData).then(function (result) {
+                if (result.resultMessage.errorMessage !== "") {
+                    //$scope.message = result.resultmessage.errormessage;
+                    return;
+                }
+                //console.log(result.data);
+                $scope.dataList = result.data;
+                $scope.formData.paging.dataCount = result.paging.dataCount;
+                $scope.formData.paging.pageSize = result.paging.pageSize;
+                $scope.formData.paging.calPages();
+            }, function error(reason) {
+                // An error has occurred
+                $scope.message = '查询失败';
+            });
+        };
+
+        function resetForm($scope) {
+            var sDate = new Date();
+            var eDate = new Date();
+            //sDate.setMonth(sDate.getMonth() - 3);
+            sDate.setDate(sDate.getDate() - 3);
+            $scope.formData.data = {
+                CreateStartTime: sDate.getFullYear() + '-' + (sDate.getMonth() + 1) + '-' + sDate.getDate(),
+                CreateEndTime: eDate.getFullYear() + '-' + (eDate.getMonth() + 1) + '-' + eDate.getDate(),
+                CarInsureQueryCarID: '@ViewBag.VipCarID',
+                CarMasterName: '',
+                LicenseNo: '',
+                InsuranceProvince: '',
+                InsuranceCity: '',
+                InsuranceCompany: '0'
+            };
+        }
+
+
+        //省信息
+        var _ProvinceInfo = function () {
+            this.ProvinceCode = '';
+            this.ProvinceName = '';
+            this.CityList = [];
+        }
+
+        //城市信息
+        var _CityInfo = function () {
+            this.CityCode = '';
+            this.CityName = '';
+        }
+
+        //设置下拉框的省市（行驶城市）
+        function IsContions($scope, pobj, cobj) {
+            if (pobj && cobj && $scope.InsuranceProvinceList) {
+                var pflag = false;
+                for (var i = 0; i < $scope.InsuranceProvinceList.length; i++) {
+                    if ($scope.InsuranceProvinceList[i].ProvinceCode == pobj.ProvinceCode) {
+                        var cflag = false;
+                        for (var j = 0; j < $scope.InsuranceProvinceList[i].CityList; j++) {
+                            if ($scope.InsuranceProvinceList[i].CityList[j].CityCode == cobj.CityCode) {
+                                cflag = true;
+                                break;
+                            }
+                        }
+
+                        if (!cflag) {
+                            $scope.InsuranceProvinceList[i].CityList.push(cobj);
+                        }
+
+                        pflag = true;
+                        break;
+                    }
+                }
+                if (!pflag) {
+                    pobj.CityList.push(cobj);
+                    $scope.InsuranceProvinceList.push(pobj);
+                }
+            }
+        }
+
+        //选择省（行驶城市的省）
+        function _SelectedProvince($scope) {
+            $scope.formData.data.InsuranceCity = '';
+            $scope.InsuranceCityList = [];
+            if ($scope.InsuranceProvinceList) {
+                for (var i = 0; i < $scope.InsuranceProvinceList.length; i++) {
+                    if ($scope.InsuranceProvinceList[i].ProvinceCode == $scope.formData.data.InsuranceProvince) {
+                        $scope.InsuranceCityList = $scope.InsuranceProvinceList[i].CityList;
+                        break;
+                    }
+                }
+            }
+        }
+
+        //可选城市
+        function GetInsuranceCity($scope, restangular) {
+            restangular.one('Insurance/InsuranceCity/d').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                if (result.data) {
+                    for (var i = 0; i < result.data.length; i++) {
+                        var pInfo = new _ProvinceInfo();
+                        pInfo.ProvinceCode = result.data[i].ProvinceCode;
+                        pInfo.ProvinceName = result.data[i].ProvinceName;
+                        var cInfo = new _CityInfo();
+                        cInfo.CityCode = result.data[i].CityCode;
+                        cInfo.CityName = result.data[i].CityName;
+                        IsContions($scope, pInfo, cInfo);
+                    }
+                }
+            }, function error(reason) {
+                alertError('网络通讯异常');
+            });
+        }
+
+        _app.controller('listController', [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope.formData = new ResultAPIModel();
+                $scope.CarNumber = '@ViewBag.CarNumber';
+
+                $scope.InsuranceProvinceList = [];
+                $scope.InsuranceCityList = [];
+
+                initSearchForm($scope);
+                GetInsuranceCity($scope, Restangular);
+                GetInsuranceCompany($scope, Restangular);
+                searchForm($scope, Restangular);
+                $scope.SearchFormEvent = function () {
+                    $scope.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                };
+
+                $scope.resetFormEvent = function () {
+                    $scope.formData.paging.pageNumber = 1;
+                    resetForm($scope);
+                    searchForm($scope, Restangular);
+                };
+
+                //选择省份
+                $scope._SelectedProvinceEvent = function () {
+                    _SelectedProvince($scope);
+                }
+
+                $scope.GoPrevPageEvent = function () {
+                    $scope.formData.paging.pageNumber = $scope.formData.paging.getPrevPageNumber();
+                    searchForm($scope, Restangular);
+                };
+
+                $scope.GoNextPageEvent = function () {
+                    $scope.formData.paging.pageNumber = $scope.formData.paging.getNextPageNumber();
+                    searchForm($scope, Restangular);
+                };
+
+                $scope.GoPageEvent = function () {
+                    $scope.formData.paging.pageNumber = this.page.pageNumber;
+                    searchForm($scope, Restangular);
+                }
+                $scope.GoFirstPageEvent = function () {
+                    $scope.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope.GoEndPageEvent = function () {
+                    $scope.formData.paging.pageNumber = $scope.formData.paging.maxPageNumber();
+                    searchForm($scope, Restangular);
+                }
+            }
+        ]);
+    </script>
+}

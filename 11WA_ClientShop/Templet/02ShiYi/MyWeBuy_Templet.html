@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>我的账户</title>
+    <script type="text/javascript">
+        host = window.location.host;
+
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+        path = 'https://' + host + '###SAgentPath###/mywebuy.aspx';
+
+        var WeiXin_imgAllPageUrl = 'https://' + host + '/Templet/02ShiYi/skin/images/walletWeBuy0.png';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "我的账户-微店，我的账户包括余额、代理分销收入、###ShowPower_ShopName###红包等。";
+        var WeiXin_shareAppAllPageTitle = '我的账户-微店';
+        var WeiXin_appidAllPage = '';
+
+        var varUserID = "###UserID###";///传递给 product.js   传递变量
+        var varServiceURL = "###ServiceURL###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+        var varNetUserSafeCode = "###NetUserSafeCode###";///传递给 product.js   传递变量
+
+    </script>
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+    <!-- Mobile Devices Support @begin -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control" />
+    <meta content="no-cache" http-equiv="pragma" />
+    <meta content="0" http-equiv="expires" />
+    <meta content="telephone=no, address=no" name="format-detection" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Mobile Devices Support @end -->
+    <script src="/Templet/02ShiYi/js/jquery-1.9.1.js?version=js201709121928" language="javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/ys.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link href="/Templet/02ShiYi/skin/my_WeBuy.css?version=css201709121928" rel="stylesheet" />
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    ###WeiXin__o2o_FootMarker_Location_###
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    ###_PulicChageWeiXin###
+</head>
+<body onload="load_Multi();" style="background: #F9FAF5;max-width:640px;margin:0px auto;">
+
+    <div class="Divtwo">
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+            <tr>
+                <td align="center" style="width: 40%;height:40px; cursor: pointer;" onclick="window.open('###HeadImageURL###', '_self');">
+                    <!--<img src="###userIDHeadImageURL###" class="touxiang" />-->
+                    <div class="touxiangPx" style="background:url(###userIDHeadImageURL###) no-repeat center center; background-size:40px;"></div>
+                </td>
+                <td align="left" style="width: 40%; cursor: pointer;" onclick="window.open('###SAgentPath###/cart_self.aspx', '_self');">
+                    <span class="nichengPX">###NickName###</span><br>
+                </td>
+                <td align="center" style="width: 20%; cursor: pointer;" onclick="window.open('###SAgentPath###/cart_self.aspx', '_self');">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png">
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" style="width: 100%; margin-top:5px;table-layout:fixed;">
+            <tr>
+                <td align="center" style="###DisPlayZongFenXiaoShorRu###border-right: #000 solid 1px; margin: 0px; cursor: pointer;" onclick="window.open('###SAgentPath###/multibutton_customer.aspx', '_self');">
+
+                    <span class="fenxiaoPX">代理总收入</span>
+                    <div class="ShowFloatText">
+                        <div class="ShowFloatTextChild" style="left:16px;">
+                            <span id="Info_ZongFenXiaoShorRu" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                        </div>
+                    </div>
+                </td>
+                <td align="center" style="margin: 0px; cursor: pointer; " onclick="window.open('###SAgentPath###/multibutton_showmoneydata.aspx', '_self');">
+                    <span class="fenxiaoPX">账户余额</span>
+                    <div class="ShowFloatText">
+                        <div class="ShowFloatTextChild" style="left:16px;">
+                            <span id="Info_ZhangHuYuE" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                        </div>
+                    </div>
+                </td>
+                <td align="center" style="###DisPlayRedShoppingMoney###border-left: #000 solid 1px; margin: 0px; cursor: pointer;" onclick="window.open('###SAgentPath###/multibutton_showmoney_vouchers.aspx', '_self');">
+                    <span class="fenxiaoPX">###ShowPower_ShopName###</span>
+                    <div class="ShowFloatText">
+                        <div class="ShowFloatTextChild" style="left:16px;">
+                            <span id="Info_GouWuHongBao" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                        </div>
+                    </div>
+                </td>
+                <td align="center" style="###DisPlayTotalWealth_OperationUser###border-left: #000 solid 1px; margin: 0px; cursor: pointer;" onclick="window.open('###SAgentPath###/multibutton_showtotalwealthdata.aspx', '_self');">
+                    <span class="fenxiaoPX">财富积分</span>
+                    <div class="ShowFloatText">
+                        <div class="ShowFloatTextChild" style="left:16px;">
+                            <span id="Info_TotalWealth" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="###DisPlayZongFenXiaoShorRu###border-right: #000 solid 1px; margin: 0px; cursor: pointer;" onclick="window.open('###SAgentPath###/multibutton_customer.aspx', '_self');">
+                    <span class="jiagePX">￥###ZongFenXiaoShorRu###</span>
+                </td>
+                <td align="center" style="margin: 0px; cursor: pointer;" onclick="window.open('###SAgentPath###/multibutton_showmoneydata.aspx', '_self');">
+                    <span class="jiagePX">￥###ZhangHuYuE###</span>
+                </td>
+                <td align="center" style="###DisPlayRedShoppingMoney###border-left: #000 solid 1px; margin: 0px; cursor: pointer; " onclick="window.open('###SAgentPath###/multibutton_showmoney_vouchers.aspx', '_self');">
+                    <span class="jiagePX">￥###GouWuHongBao###</span>
+                </td>
+                <td align="center" style="###DisPlayTotalWealth_OperationUser###border-left: #000 solid 1px; margin: 0px; cursor: pointer; " onclick="window.open('###SAgentPath###/multibutton_showtotalwealthdata.aspx', '_self');">
+                    <span class="jiagePX">￥###TotalWealth###</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="background: #ffffff; width: 100%; margin-top: 2px; border: 1px solid #E3E3E3; border-top: none;">
+        <table border="0" class="dingdan">
+            <tr style="height: 40px; cursor: pointer;" onclick="window.open('###SAgentPath###/cart_good3.aspx', '_self');">
+                <!--//覆盖当前页面打开-->
+                <td align="center">
+                    <span class="dd-zt">我的订单###InfoCount_MySuccessOrder###</span>
+                    <div class="ShowFloatText">
+                        <div class="ShowFloatTextChild">
+                            <span id="Info_cart_good3" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                        </div>
+                    </div>
+                </td>
+                <td align="right">
+                    <span class="ckztPX">查看全部已购宝贝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </td>
+                <td align="left">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" style="padding-top: 2px"
+                         width="8" height="14" />
+                </td>
+            </tr>
+        </table>
+        <div style="background: #ffffff; width: 100%; border: 1px solid #E3E3E3; margin-top: 0px; border-top: none; border-bottom: none; ">
+            <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; padding: 0px;
+                border: 1px solid #E3E3E3; border-left: none; border-right: none; border-bottom: none;">
+
+                <tr style="height:40px;">
+                    <td class="tdAligin20Percent" onclick="window.open('/cart_good.aspx', '_self');">
+                        <span class="fuk">待付款###InfoCount_WaitGiveMoney###</span>
+                        <div class="ShowFloatText">
+                            <div class="ShowFloatTextChild">
+                                <span id="Info_cart_good" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="tdAligin20Percent" onclick="window.open('###SAgentPath###/cart_good2.aspx', '_self');">
+                        <span class="fuk">待收货###InfoCount_WaitRicieveMoney###</span>
+                        <div class="ShowFloatText">
+                            <div class="ShowFloatTextChild">
+                                <span id="Info_cart_good2" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="tdAligin20Percent" onclick="window.open('###SAgentPath###/multibutton_comments.aspx', '_self');">
+                        <span class="fuk">评论###InfoCount_comments###</span>
+                        <div class="ShowFloatText">
+                            <div class="ShowFloatTextChild">
+                                <span id="Info_multibutton_comments" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!--<td class="tdAligin20Percent" onclick="window.open('###SAgentPath###/multibutton_customer.aspx', '_self');">
+                        <span class="fuk">我的分享</span>
+                    </td>-->
+                    <td class="tdAligin20Percent" onclick="window.open('###SAgentPath###/historygoodslist.aspx', '_self');">
+                        <span class="fuk">浏览###InfoCount_historygoodslist###</span>
+                        <div class="ShowFloatText">
+                            <div class="ShowFloatTextChild">
+                                <span id="Info_historygoodslist" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="background: #ffffff; width: 100%; border: 1px solid #E3E3E3; border-top: none; margin-bottom: 2%">
+        <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; border: 1px solid #E3E3E3;
+            border-left: none; border-right: none; border-collapse: collapse;">
+            <tr style="border: 1px solid #E3E3E3; height: 40px; cursor: pointer;" onclick="window.open('###SAgentPath###/cart_self.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/02Button/02.jpg">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">个人信息 </span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+            <tr class="DivLineTR" onclick="window.open('/cart.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/02Button/03.jpg">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">购物车###InfoCount_Cart###</span>
+                    <div class="ShowFloatText">
+                        <div class="ShowFloatTextChild" style="left:-12px;">
+                            <span id="Info_cart" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                        </div>
+                    </div>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+            <tr class="DivLineTR" style="display: none; " onclick="window.open('###SAgentPath###/multibutton_customer.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/SecondBuy.png">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">我的分享 </span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+            <tr class="DivLineTR" onclick="window.open('###SAgentPath###/multibutton_income_drawmoney.aspx?maxmoney=###ZhangHuYuE###', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/02Button/04.jpg">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">申请提现 </span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+            <tr class="DivLineTR" onclick="window.open('###SAgentPath###/multibutton_allmymember.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/02Button/04.jpg">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">我的所有会员(直推+间推) </span>
+                    <div class="ShowFloatText" style="display: none;">
+                        <div class="ShowFloatTextChild" style="left:-12px;">
+                            <span id="Info_MySonmember" class="ShowFloatTextChildGouWuCheNumShow">0</span>
+                        </div>
+                    </div>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+
+        </table>
+
+        <div id="addAnimation">
+
+
+        </div>
+
+        <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; border: 1px solid #E3E3E3; border-left: none;
+            border-right: none;
+            border-collapse: collapse;">
+            <tr class=" divlinetr" style="display: none; " onclick="window.open('###SAgentPath###/multibutton_showmoney_vouchers.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_k.png">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">###ShowPower_ShopName###红包 </span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+            <tr class="DivLineTR" style="display: none; " onclick="window.open('###SAgentPath###/multibutton_showmoneydata.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_l.png">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">余额详情 </span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+            <tr class="DivLineTR" style="display: none; " onclick="window.open('###SAgentPath###/MultiButton_shopkeeper.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_m.png">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">商家入驻 </span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+            <tr class="DivLineTR" style="###DisPlayInputMoney###" onclick="window.open('###SAgentPath###/MultiButton_income_GiveMoney.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/02Button/08.jpg">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">会员充值</span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+
+            <tr class="DivLineTR" style="###DisPlayShareRedShoppingMoney###" onclick="window.open('###SAgentPath###/midsm.aspx?money_credits_vouchers=2', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/02Button/01.jpg">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">分享###ShowPower_ShopName###红包 </span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+
+            <tr class="DivLineTR" style="###DisPlayMemberCouponsShopping###" onclick="window.open('/addfunction/06coupons/index.aspx', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/02Button/10.jpg">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">我的优惠券</span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                    <span class="shouyi" style="float:right;padding-right:10px;">
+                        ###DisPlayMemberCouponsShoppingText###
+                    </span>
+                </td>
+            </tr>
+
+
+            <tr style="###DisPlayShareRedMoney###" class="DivLineTR" onclick="window.open('###SAgentPath###/midsm.aspx?money_credits_vouchers=1', '_self');">
+                <td align="center" width="18%">
+                    <img class="logo" src="/Templet/02ShiYi/skin/images/02Button/01.jpg">
+                </td>
+                <td align="left" width="33%">
+                    <span class="shouyi">分享现金红包 </span>
+                </td>
+                <td align="left" width="35%">
+                    <img src="/Templet/02ShiYi/skin/images/MyWeBuy8Images_q.png" class="DivLineTR_Arrow" />
+                </td>
+            </tr>
+            ###SAgent_AD_PathList###
+        </table>
+
+        <div id="addAnimationGouWUQuanDuiHuanEtc">
+
+
+        </div>
+
+        <style type="text/css">
+            #SaveMessage {
+                background: none repeat scroll 0 0 #82c422;
+                border: 1px solid #dbdbdb;
+                color: #fff;
+                cursor: pointer;
+                font-size: 20px;
+                height: 40px;
+                line-height: 40px;
+                margin-left: 6%;
+                text-align: center;
+                width: 60%;
+                border-radius: 5px;
+                margin: 0 auto;
+            }
+        </style>
+        <a href="/User/AppExit.aspx?type=LoginOut" style="display:none">
+            <div id="SaveMessage" style="display: ###displaynone####">
+                注销
+
+            </div>
+        </a>
+    </div>
+
+
+    <script type="text/javascript">
+        function load_Multi() {
+            doMakeHtml_AddAgentLevel();
+            doMakeHtml_AddGouWUQuanDuiHuanEtc();
+
+            setTimeout("doSeriesShowMyInfoNum();",2000)////执行 消息提醒
+            
+            doInfoAlert_Msg(###UserID###);
+        }
+
+        function doMakeHtml_AddAgentLevel() {
+            $.ajax({
+                type: 'GET',
+                url: '/Handler/MyWeBuy_AddAgentLevel.ashx',
+                dataType: 'text',
+                data: 'strUserID=' + '###pub_Int_Session_CurUserID###',
+                beforeSend: function () {
+                    $("#addAnimation").append('<img style=\"margin: 0px auto;display:block;\" src="/images/loading.gif" />');
+                },
+                success: function (msg) {
+                    //alert(msg);
+                    $("#addAnimation").html(msg);
+                },
+                error: function (data) {
+                    //alert(data);
+                }
+            })
+        }
+
+        function doMakeHtml_AddGouWUQuanDuiHuanEtc() {
+            $.ajax({
+                type: 'GET',
+                url: '/Handler/MyWeBuy_AddGouWUQuanDuiHuanEtc.ashx',
+                dataType: 'text',
+                data: 'strUserID=' + '###pub_Int_Session_CurUserID###',
+                beforeSend: function () {
+                    $("#addAnimationGouWUQuanDuiHuanEtc").append('<img style=\"margin: 0px auto;display:block;\" src="/images/loading.gif" />');
+                },
+                success: function (msg) {
+                    //alert(msg);
+                    $("#addAnimationGouWUQuanDuiHuanEtc").html(msg);
+                },
+                error: function (data) {
+                    //alert(data);
+                }
+            })
+        }
+
+
+
+        function doSeriesShowMyInfoNum() {
+
+
+
+            showMyInfoNum("Info_ZongFenXiaoShorRu", "Info_ZhangHuYuEInfo_ZongFenXiaoShorRu", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);///代理总收入
+            showMyInfoNum("Info_ZhangHuYuE", "Info_ZhangHuYuE", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//账户余额
+            showMyInfoNum("Info_GouWuHongBao", "Info_GouWuHongBao", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//购物券
+            showMyInfoNum("Info_TotalWealth", "Info_TotalWealth", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);///财富积分
+            showMyInfoNum("Info_cart_good3", "Info_cart_good3", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);///我的订单  查看全部已购宝贝
+            showMyInfoNum("Info_cart_good", "Info_cart_good", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//待付款
+            showMyInfoNum("Info_cart_good2", "Info_cart_good2", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//待收货
+            //showMyInfoNum("Info_ZhangHuYuE", "Info_ZhangHuYuE", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);///待收货
+            //  showMyInfoNum("Info_multibutton_comments", "Info_multibutton_comments", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);///我的评论
+          //  showMyInfoNum("Info_historygoodslist", "Info_historygoodslist", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);///浏览历史
+            showMyInfoNum("Info_cart", "Info_cart", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//购物车
+            showMyInfoNum("Info_MySonmember", "Info_MySonmember", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//购物车  我的直推 与间推
+            showMyInfoNum("Info_myYunYingAllMember", "Info_myYunYingAllMember", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//运营中心所有会员
+    
+
+            
+            showMyInfoNum("Info_myYunYingOrder", "Info_myYunYingOrder", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//Info_myYunYingOrder
+            showMyInfoNum("Info_myYunYingMoney", "Info_myYunYingMoney", varUserID, varShopClientID, varNetUserSafeCode, varServiceURL);//我的运营中心余额
+
+        }
+    </script>
+
+
+    <!-- 底部-->
+    <script type="text/javascript"  src="/Scripts/md5.js?version=js201709121928"></script>
+    <!--<script type="text/javascript"  src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>-->
+    <script type="text/javascript" src="/Templet/02ShiYi/js/my_WeBuy.js?version=js201709121928"></script>
+</body>
+###Webuy8Footer###
+
+
+</html>

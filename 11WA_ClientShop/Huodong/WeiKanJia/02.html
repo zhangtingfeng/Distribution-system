@@ -1,0 +1,183 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>0.1元购ipone</title>
+
+
+    <link href="Css/style_WeiKanJia.css" rel="stylesheet" />
+     <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script> 
+    <script type="text/javascript">
+
+        var intDiff = parseInt(24552228);//倒计时总秒数量
+
+        function timer(intDiff) {
+            window.setInterval(function () {
+                var day = 0,
+                    hour = 0,
+                    minute = 0,
+                    second = 0;//时间默认值
+                if (intDiff > 0) {
+                    day = Math.floor(intDiff / (60 * 60 * 24));
+                    hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+                    minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+                    second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+                }
+                if (minute <= 9) minute = '0' + minute;
+                if (second <= 9) second = '0' + second;
+                $('#day_show').html(day);
+                $('#hour_show').html('<s id="h"></s>' + hour);
+                $('#minute_show').html('<s></s>' + minute);
+                $('#second_show').html('<s></s>' + second);
+                intDiff--;
+            }, 1000);
+        }
+
+        $(function () {
+            timer(intDiff);
+        });
+    </script>
+    <script src="http://192.168.20.100:9974/target/target-script-min.js#anonymous"></script>
+</head>
+<body>
+    <div class="index_bg"></div>
+    <style>
+    </style>
+    <div id="mzj" class="pop" style="display:none;">
+        <div class="box">
+            <h1></h1>
+            <div class="inputqy">
+                <div class="jptext"><span id="ncz" class="ncz">很遗憾，已被砍到最低价了！</span></div>
+            </div>
+            <div class="but_con">
+                <button class="button_yes" onclick="document.getElementById('mzj').style.display='none';">知道啦</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="zjl" class="popwin" style="display:none;">
+        <div class="box">
+            <b class="closeb" onclick="document.getElementById('zjl').style.display='none';"></b>
+
+            <div class="inputqy">
+                <div class="jpimg">
+                    0
+                </div>
+                <div class="jptext">
+                    <h1 id="hd1"></h1>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="banner">
+        <img src="http://wxkanjia.duapp.com/images/banner.jpg" width="100%">
+        <div class="Countdown">
+            <div class="time-item">
+                <span>倒计时</span>
+                <strong id="day_show">0</strong>天
+                <strong id="hour_show">0</strong>时
+                <strong id="minute_show">0</strong>分
+                <strong id="second_show">0</strong>秒
+            </div>
+        </div>
+    </div>
+    <div class="contianer">
+        <div class="text">
+            <h1>亲爱的：</h1>
+            已有<span>0</span>位亲友，帮助<span>张廷锋 保险</span>砍价了，共砍掉金额<span>0.00</span>元，当前价格为<span>4999.00</span>元，你也来帮他再砍一刀吧！
+            <h2>底价：<b>￥1000.00</b>&nbsp;&nbsp;&nbsp;&nbsp;现价：<b><span>￥4999.00</span></b></h2>
+        </div>
+        <div class="button">
+            <ul>
+                <li><button value="mzj" id="kjb" onclick="kanjia()">帮砍一刀</button></li>
+                <li><button onclick="alert('将本页面分享给你的好友，让好友帮你砍价!');">发送好友</button></li>
+            </ul>
+        </div>
+        <table border="2" cellpadding="0" cellspacing="0" class="table">
+            <tr class="th">
+                <th colspan="2" class="leftborder">亲友团</th>
+                <th width="107">砍掉金额</th>
+                <th width="111" class="rightborder">砍后金额</th>
+
+            </tr>
+        </table>
+        <div class="details">
+            <div class="title">活动规则</div>
+            <div class="text">
+                <li>商品名称：ipone6</li>
+                <li>商品总量：99 </li><li>剩余库存：9968 </li><img src="http://wxkanjia.duapp.com/images/banner.jpg" /><br />
+            </div>
+        </div>
+
+        <div class="details">
+            <div class="title">商品详情</div>
+            <div class="text"><span style="white-space:normal;">本活动纯属测试，非真实活动！</span></div>
+        </div>
+
+    </div>
+    <footer>XX商家版权所以，拥有活动最终解释权!</footer>
+    <input type="hidden" value="http://wkj.vqitong.com/index.php?tid=20&wxid=926fe795f5afb8d610c8e241b3a7e672&mbid=172569" id='wx-share-link'>
+    <input type="hidden" value='http://wxkanjia.duapp.com/images/banner.jpg' id='wx-share-img'>
+    <input type="hidden" value='考虑考虑邀请你0.1元购ipone' id='wx-share-title'>
+    <input type="hidden" value='请帮忙转发本链接，助力我拿ipone6 点击的人越多，助力数越大！每人头算一个助力!' id='wx-share-desc'>
+    <input id="sharebackurl" type="hidden" value="s.php?wxid=926fe795f5afb8d610c8e241b3a7e672&zlid=&mbid=172569" />
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        var appIdstr = 'wx580750905525f3a9';
+        var timestampstr = 1453345032;
+        var nonceStrstr = '72hZrwKyqO8MGagv';
+        var signaturestr = 'b1b8a38554f2172a1e9c1b55e4487c9dc5c1a9db';
+    </script>
+    <script src="js/newfxjs.js?789321155"></script>
+    <script type="text/javascript">
+
+
+
+
+        var ykj = 0;
+        function kanjia() {
+
+            if (window.ykj == 1) {
+                reflas();
+            }
+            var submitData = {
+                action: "setTel"
+            };
+            $.post('kj.php?wxid=926fe795f5afb8d610c8e241b3a7e672&tid=20&openid=oyV8_t1Bv45q4x2mh6KQcfvzDz9U&mbid=172569', submitData,
+            function (data) {
+                if (data.success == true) {
+                    document.getElementById('zjl').style.display = '';
+                    $('.jpimg').html(data.price);
+                    $('#hd1').html(data.msg);
+                    $('#kjb').val("已砍");
+                    $('#kjb').attr("disabled", false);
+                    window.ykj = 1;
+                    setTimeout("reflas()", 1500);
+                }
+            },
+            "json")
+
+        }
+
+        function reflas() {
+
+            window.location.href = window.location.href;
+        }
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="buybutton">
+
+        <button onclick="window.location.href='ljgm.php?wxid=926fe795f5afb8d610c8e241b3a7e672&tid=20&mbid=172569'">立即购买(库存9968件)</button>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿SELECT   Name, ISNULL(LEN(Name) - LEN(REPLACE(Name, '{0}', '')), 0) * 100000 AS Expr1, ISNULL(LEN(Class1Name) 
+                - LEN(REPLACE(Class1Name, '{0}', '')), 0) * 10000 AS Expr2, ISNULL(LEN(Class2Name) - LEN(REPLACE(Class2Name, 
+                '{0}', '')), 0) * 1000 AS Expr3, ISNULL(LEN(Class3Name) - LEN(REPLACE(Class3Name, '{0}', '')), 0) * 100 AS Expr4, 
+                ISNULL(LEN(ShortInfo) - LEN(REPLACE(ShortInfo, '{0}', '')), 0) * 10 AS Expr5, ISNULL(LEN(GoodName_Class) 
+                - LEN(REPLACE(GoodName_Class, '{0}', '')), 0) * 5 AS Expr6, ISNULL(LEN(LongInfo) - LEN(REPLACE(LongInfo, '{0}', '')), 0) 
+                * 1 AS Expr7, (((((ISNULL(LEN(Name) - LEN(REPLACE(Name, '{0}', '')), 0) * 100000 + ISNULL(LEN(Class1Name) 
+                - LEN(REPLACE(Class1Name, '{0}', '')), 0) * 10000) + ISNULL(LEN(Class2Name) - LEN(REPLACE(Class2Name, '{0}', '')), 0) 
+                * 1000) + ISNULL(LEN(Class3Name) - LEN(REPLACE(Class3Name, '{0}', '')), 0) * 100) + ISNULL(LEN(ShortInfo) 
+                - LEN(REPLACE(ShortInfo, '{0}', '')), 0) * 10) + ISNULL(LEN(GoodName_Class) - LEN(REPLACE(GoodName_Class, '{0}', '')), 
+                0) * 5) + ISNULL(LEN(LongInfo) - LEN(REPLACE(LongInfo, '{0}', '')), 0) * 1 AS MutltiOrder, ShortInfo, LongInfo, IsDeleted, 
+                isSaled, Class1Name, Class2Name, Class3Name, GoodMultiName, ID, ShopClient_ID, Class1_ID, Class2_ID,  icon,sort,
+                Class3_ID, Good_ClassID, GoodName_Class,Price,PromotePrice 
+FROM      (SELECT   tab_Goods.Name, tab_Goods.ShortInfo, tab_Goods.LongInfo, tab_Goods.IsDeleted,tab_Goods.Price, tab_Goods.PromotePrice, 
+                                 tab_Goods.isSaled, tab_Class1.ClassName AS Class1Name, 
+                                 tab_Class2.ClassName AS Class2Name, tab_Class3.ClassName AS Class3Name, 
+                                 View_GoodMultiName_ForXMLPath.GoodMultiName, tab_Goods.ID, tab_Goods.ShopClient_ID, 
+                                 tab_Goods.Class1_ID, tab_Goods.Class2_ID, tab_Goods.Class3_ID,  tab_Goods.icon,tab_Goods.sort,
+                                 tab_Goods.Good_Class AS Good_ClassID, tab_Goods_Class.ClassName AS GoodName_Class
+                 FROM      tab_Goods LEFT OUTER JOIN
+                                 tab_Goods_Class ON tab_Goods.ShopClient_ID = tab_Goods_Class.UserID AND 
+                                 tab_Goods.Good_Class = tab_Goods_Class.ID LEFT OUTER JOIN
+                                View_GoodMultiName_ForXMLPath ON 
+                                 tab_Goods.ID = View_GoodMultiName_ForXMLPath.GoodID LEFT OUTER JOIN
+                                 tab_Class3 ON tab_Goods.ShopClient_ID = tab_Class3.ShopClientID AND 
+                                 tab_Goods.Class3_ID = tab_Class3.ID LEFT OUTER JOIN
+                                 tab_Class2 ON tab_Goods.ShopClient_ID = tab_Class2.ShopClientID AND 
+                                 tab_Goods.ID = tab_Class2.ID LEFT OUTER JOIN
+                                 tab_Class1 ON tab_Goods.ShopClient_ID = tab_Class1.ShopClientID AND 
+                                 tab_Goods.Class1_ID = tab_Class1.ID
+                 WHERE   (tab_Goods.ShopClient_ID = {1}  and tab_Goods.IsDeleted=0 and tab_Goods.isSaled=1)) AS V1_1
+WHERE   (ShopClient_ID = {1}) AND (Name LIKE '%{0}%') OR
+                (ShopClient_ID = {1}) AND (Class1Name LIKE '%{0}%') OR
+                (ShopClient_ID = {1}) AND (Class2Name LIKE '%{0}%') OR
+                (ShopClient_ID = {1}) AND (Class3Name LIKE '%{0}%') OR
+                (ShopClient_ID = {1}) AND (ShortInfo LIKE '%{0}%') OR
+                (ShopClient_ID = {1}) AND (LongInfo LIKE '%{0}%') OR
+                (ShopClient_ID = {1}) AND (GoodName_Class LIKE '%{0}%')

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IS_UserChangeMoney_Asnc.aspx.cs" Inherits="_05Client.eggsoft.cn.ClientAdmin._02GuWuQuanChange.IS_UserChangeMoney_Asnc" %>

@@ -1,0 +1,113 @@
+﻿#Getmyself {
+    line-height: 35px;
+    float: left;
+    height: 30px;
+    font-family: "微软雅黑","Microsoft YaHei";
+    font-size: 12px;
+}
+
+#HowToGetProduct {
+    font-size: 16px;
+}
+
+
+    #HowToGetProduct a.current {
+        border: 1px solid red;
+        margin-right: 4px;
+    }
+
+
+    #HowToGetProduct a {
+        border: 1px solid #CCC;
+        margin: 2px;
+        display: inline-block;
+        float: left;
+        height: 25px;
+        text-align: center;
+        line-height: 26px;
+        margin-top: 5px;
+    }
+
+
+    #HowToGetProduct .style_select {
+        background: url("/Templet/02ShiYi/skin/images/qwer.jpg")no-repeat right bottom;
+        border: 1px solid red;
+        margin: 2px;
+        display: block;
+        float: left;
+        height: 30px;
+        line-height: 35px;
+        display: block;
+    }
+
+#idGeto2oShop_Address {
+    height: auto;
+}
+
+    #idGeto2oShop_Address #add_form li {
+        clear: both;
+        display: list-item;
+        text-align: -webkit-match-parent;
+        margin: 0;
+        padding: 0;
+        height: auto !important;
+        border: 0px solid #ccc !important;
+    }
+
+        #idGeto2oShop_Address #add_form li span {
+            line-height: 35px;
+            float: left;
+            width: 25%;
+            height: 30px;
+            margin-top: 19px;
+            font-family: "微软雅黑","Microsoft YaHei";
+            font-size: 14px;
+        }
+
+        #idGeto2oShop_Address #add_form li [type=text] {
+            font-size: 14px;
+            margin-top: 17px;
+            float: right;
+            width: 65%;
+            height: 30px;
+        }
+
+        #idGeto2oShop_Address #add_form li [type=date] {
+            font-size: 14px;
+            margin-top: 17px;
+            float: right;
+            width: 65%;
+            height: 30px;
+        }
+
+        #idGeto2oShop_Address #add_form li [type=time] {
+            font-size: 14px;
+            margin-top: 17px;
+            float: right;
+            width: 65%;
+            height: 30px;
+        }
+
+
+        #idGeto2oShop_Address #add_form li [type=datetime] {
+            font-size: 14px;
+            margin-top: 17px;
+            float: right;
+            width: 65%;
+            height: 30px;
+        }
+
+#idGeto2oShop_AddressNeedHandleList {
+    clear: both;
+    width: 100%;
+    /*padding-top: 30px;*/
+    display: block;
+}
+
+    #idGeto2oShop_AddressNeedHandleList #RadioButtonList_idGeto2oShop_Address {
+        text-align: left;
+    }
+
+        #idGeto2oShop_AddressNeedHandleList #RadioButtonList_idGeto2oShop_Address td {
+            line-height: 16px;
+        }

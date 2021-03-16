@@ -1,0 +1,96 @@
+using System;
+namespace EggsoftWX.Model
+{
+    /// <summary>
+    /// 实体类tab_GouWuQuan2XianJInEtc 。(属性说明自动提取数据库字段的描述信息)
+    /// </summary>
+    public class tab_GouWuQuan2XianJInEtc
+    {
+        public tab_GouWuQuan2XianJInEtc()
+        {}
+        #region Model
+        //ID,ShopClientID,UpdateTime,CreatTime,ChangeDestination,ChangeAuto,XianJinMoney,ShortDesc,UserGouWuQuan,
+        private Int32 _ID;
+        private Int32? _ShopClientID;
+        private DateTime? _UpdateTime;
+        private DateTime? _CreatTime;
+        private Int32? _ChangeDestination;
+        private string _ChangeAuto;
+        private decimal? _XianJinMoney;
+        private string _ShortDesc;
+        private decimal? _UserGouWuQuan;
+        /// <summary>
+        /// 
+        /// </summary>
+        public Int32 ID
+        {
+            set{ _ID=value;}
+            get{return _ID;}
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Int32? ShopClientID
+        {
+            set{ _ShopClientID=value;}
+            get{return _ShopClientID;}
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime? UpdateTime
+        {
+            set{ _UpdateTime=value;}
+            get{return _UpdateTime;}
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime? CreatTime
+        {
+            set{ _CreatTime=value;}
+            get{return _CreatTime;}
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Int32? ChangeDestination
+        {
+            set{ _ChangeDestination=value;}
+            get{return _ChangeDestination;}
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string ChangeAuto
+        {
+            set{ _ChangeAuto=value;}
+            get{return _ChangeAuto;}
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal? XianJinMoney
+        {
+            set{ _XianJinMoney=value;}
+            get{return _XianJinMoney;}
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string ShortDesc
+        {
+            set{ _ShortDesc=value;}
+            get{return _ShortDesc;}
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal? UserGouWuQuan
+        {
+            set{ _UserGouWuQuan=value;}
+            get{return _UserGouWuQuan;}
+        }
+        #endregion Model
+    }
+}

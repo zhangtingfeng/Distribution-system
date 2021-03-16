@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        host = window.location.host;
+
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+        path = 'https://' + host + '/cart.aspx';
+
+        var WeiXin_imgAllPageUrl = 'https://' + host + '/Templet/02ShiYi/skin/images/shopping.png';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "购物车-微店，购物车里面是您放入的商品，完成订单需要经过这里。";
+        var WeiXin_shareAppAllPageTitle = '购物车-微店';
+        var WeiXin_appidAllPage = '';
+        var varUserID = "###UserID###";///传递给 product.js   传递变量
+        var varServiceURL = "###ServiceURL###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+    </script>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>购物车</title>
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Templet/02ShiYi/js/iscroll.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928" />
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928" />
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928" />
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css" />
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928" />
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928" />
+    <link href="/Templet/01WYJS/Css/o2o.css?version=css201709121928" rel="stylesheet" />
+    <script src="/Templet/01WYJS/js/o2o.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/Cart.css?version=css201709121928" rel="stylesheet" />
+    <script src="/Templet/01WYJS/js/Cart.js?version=js201709121928_001"></script>
+    <script src="/Templet/01WYJS/js/layer.m.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/layer.css?version=css201709121928" rel="stylesheet" />
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    <script src="/Scripts/md5.js?version=js201709121928"></script>
+  ###_PulicChageWeiXin###
+</head>
+<body onload="loadBuySelectType_Multi();">
+    <script type="text/javascript">
+        var varUserID=###str_pub_Int_Session_CurUserID###;
+        var varpub_Int_ShopClientID=###pub_Int_ShopClientID###;
+        var varServicesURL = "###ServicesURL###";
+        var varglobalcheckPayWay="###varglobalcheckPayWay###";
+
+
+        function autoClickOneKeyQuickPay(){
+            if ("###str_pub_OneKeyQuickPay###"=="True"){
+                //alert(window.location.href+"006");
+                //alert(window.location.pathname);
+                //$("#LijiZhiFuButton").click();
+                layer.open({
+                    type: 2,
+                    content: '正在准备订单',
+                    time: 1///不知道 是否能加2秒
+                });
+                var iID=setTimeout(function(){
+                    var btnPayActionButton = document.getElementById("LijiZhiFuButton");
+                    btnPayActionButton.click();
+                },800);
+
+            }
+        }
+
+
+
+    </script>
+    ###HowToGetProduct###
+    ###Header###
+    <div id="wrapper">
+        <div id="scroller">
+            ###IFSubscribeHeader###
+            <ul id="thelist" style="display: block; padding-left: 5px;" class="experience_list">
+                <li style="display: block; height: auto !important;">
+                    <div style="display: block; background-color: white;" class="ul_li experience_items">
+                        <div style="display:block;padding-bottom:10px;" class="li_left left">
+                            <div style="display:block; clear:both;">
+                                <div class="pro_list_name left">
+                                    商品名称
+                                </div>
+                                <div class="pro_list_price left">
+                                    价格
+                                </div>
+                                <div class="pro_list_count left">
+                                    数量
+                                </div>
+                                <div class="pro_list_sum left">
+                                    总价
+                                </div>
+                            </div>
+                            <div id="WaitPayList"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <form name="input" action="?type=buynow" onsubmit="return checkPayWay()" method="post">
+                <div class="getShouHuoDiZhi" id="o2oShop_AddressList" style="display:none;">
+                    <div id="Getmyself">
+                        请选择自提店铺
+                    </div>
+                    <div id="idGeto2oShop_AddressNeedHandleList"></div>
+                    <div id="idGeto2oShop_Address">
+                        <ul id="add_form">
+
+                            <li>
+                                <span>自提人姓名</span>
+                                <input type="text" name="ZitiRenName" id="ZitiRenName" value="###UserIDContactName###" />
+                            </li>
+                            <li>
+                                <span>自提人手机</span>
+                                <input type="text" name="ZitiRenMobile" id="ZitiRenMobile" value="###UserIDMobile###" />
+                            </li>
+                            <li>
+                                <span>自提日期</span>
+                                <input type="date" name="ZitiRenDate" id="ZitiRenDate" value="2016-10-10" />
+                            </li>
+                            <li>
+                                <span>自提时间</span>
+                                <input type="time" name="ZitiRenTime" id="ZitiRenTime" value="15:30" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="getShouHuoDiZhi">
+                    <button id="LijiZhiFuButton" style="text-align:center;margin: 8px;padding: 0; width:98%;" type="submit" class="button glow button-rounded button-flat-action backcolor_green" value="现在支付">现在支付</button>
+                </div>
+
+                <div class="getShouHuoDiZhi">
+                    <a class="button glow button-rounded button-flat-action backcolor_red" style="text-align:center;margin: 8px;padding: 0; width:98%" href="?type=clearshoppingcart">清空购物车</a>
+                </div>
+
+                <div class="getShouHuoDiZhi" id="ShouHuoDizhiList">
+                    ###ShouHuoDizhiPayList###
+                    <a class="button glow button-rounded button-flat-action backcolor_green" style="text-align:center;margin: 8px;padding: 0; width:98%" href="###SAgentPath###/cart_self.aspx?paymoney=addaddressfromcart">添加收货地址</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+###Webuy8Footer###
+</html>

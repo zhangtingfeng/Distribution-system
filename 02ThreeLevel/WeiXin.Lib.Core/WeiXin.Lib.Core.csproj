@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B848A5A-700E-4202-BBF7-1100BE755449}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WeiXin.Lib.Core</RootNamespace>
+    <AssemblyName>WeiXin.Lib.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'winxin|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\winxin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\..\..\0042eggsoft.cnvs2015_GaoErFu\02ThreeLevel\13DLL\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Consts\WeiXinConst.cs" />
+    <Compile Include="Helper\HttpClientHelper.cs" />
+    <Compile Include="Helper\V3-RefundHelper.cs" />
+    <Compile Include="Helper\TenpayLib\CheckRequestHandler.cs" />
+    <Compile Include="Helper\TenpayLib\ClientResponseHandler.cs" />
+    <Compile Include="Helper\TenpayLib\MD5Util.cs" />
+    <Compile Include="Helper\TenpayLib\RequestHandler.cs" />
+    <Compile Include="Helper\TenpayLib\ResponseHandler.cs" />
+    <Compile Include="Helper\V2-TenpayHelper.cs" />
+    <Compile Include="Helper\TenpayLib\TenpayHttpClient.cs" />
+    <Compile Include="Helper\TenpayLib\TenpayUtil.cs" />
+    <Compile Include="Helper\WeiXinHelper.cs" />
+    <Compile Include="Helper\WXPay\CommonUtil.cs" />
+    <Compile Include="Helper\WXPay\MD5SignUtil.cs" />
+    <Compile Include="Helper\WXPay\MD5Util.cs" />
+    <Compile Include="Helper\WXPay\SDKRuntimeException.cs" />
+    <Compile Include="Helper\WXPay\SHA1Util.cs" />
+    <Compile Include="Helper\WXPay\UnifiedWxPayModel.cs" />
+    <Compile Include="Helper\WXPay\WxPayModel.cs" />
+    <Compile Include="Models\AccessToken.cs" />
+    <Compile Include="Models\BaiduGeocoding.cs" />
+    <Compile Include="Models\Message\ErrorMessage.cs" />
+    <Compile Include="Models\Message\OrderInfo.cs" />
+    <Compile Include="Models\Message\OrderQueryMessage.cs" />
+    <Compile Include="Models\Message\PrePayMessage.cs" />
+    <Compile Include="Models\PayModel.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\UnifiedMessage\NotifyMessage.cs" />
+    <Compile Include="Models\UnifiedMessage\RefundMessage.cs" />
+    <Compile Include="Models\UnifiedMessage\ReturnMessage.cs" />
+    <Compile Include="Models\UnifiedMessage\UnifiedOrderQueryMessage.cs" />
+    <Compile Include="Models\UnifiedMessage\UnifiedPrePayMessage.cs" />
+    <Compile Include="Models\WeiXinUserInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="Lib\ThoughtWorks.QRCode.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\01EggsoftShop_Public_CL\EggsoftShop_Public_CL.csproj">
+      <Project>{9f1e52f6-96a9-4432-85e8-e03a2c75103a}</Project>
+      <Name>EggsoftShop_Public_CL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eggsoft.Common\Eggsoft.Common.csproj">
+      <Project>{df6af6e5-1df5-48b2-b3af-fea8e72bcf63}</Project>
+      <Name>Eggsoft.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggsoftWX.BLL\EggsoftWX.BLL.csproj">
+      <Project>{38910fa2-2b1c-4e94-aee3-3eacab7147fb}</Project>
+      <Name>EggsoftWX.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggsoftWX.IDAL\EggsoftWX.IDAL.csproj">
+      <Project>{bb96243c-30b8-4073-b466-99c4f24ac74e}</Project>
+      <Name>EggsoftWX.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggsoftWX.Model\EggsoftWX.Model.csproj">
+      <Project>{3d3bd020-2be2-40ab-b53b-846a5b210f9d}</Project>
+      <Name>EggsoftWX.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggsoftWX.SQLServerDAL\EggsoftWX.SQLServerDAL.csproj">
+      <Project>{1252602b-8588-433e-b8c5-24667ece6bb5}</Project>
+      <Name>EggsoftWX.SQLServerDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

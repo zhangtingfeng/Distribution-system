@@ -1,0 +1,29 @@
+﻿@charset "UTF-8";
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft YaHei","΢���ź�",STXihei,"����ϸ��",serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft YaHei","΢���ź�",STXihei,"����ϸ��",serif;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+
+.orange {
+    color: orange;
+}

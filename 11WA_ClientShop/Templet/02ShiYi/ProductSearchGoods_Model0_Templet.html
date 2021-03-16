@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- <meta http-equiv="Cache-Control" content="no-Cache"/> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+        host = window.location.host;
+
+        var path = window.location.href;
+        var pathAddInt = path.lastIndexOf("?");
+        if (pathAddInt > 0) {
+            path = path.substring(0, pathAddInt);
+        }
+        else {
+            path = path;
+        }
+        path = 'https://' + host + '###SAgentPath###/productsearchgoodsstylemodel0.aspx?searchkey=###SearchKey###';
+
+        var WeiXin_imgAllPageUrl = 'https://' + host + '/Templet/02ShiYi/skin/images/brand_enter.png';
+        var WeiXin_lineAllPageLink = path;
+        var WeiXin_descAppPageContent = "###SearchKey### 搜索商品-微店，发展下级代理，从而获得一定的销售差价提成，长期积累客户的话比一般上班的人拿工资是强多了，并且花的时间并不需要太多，所有的运营资本、客服维护工作都是由有店主提供的。";
+        var WeiXin_shareAppAllPageTitle = '全部商品-微店';
+        var WeiXin_appidAllPage = '';
+        var varUserID = "###UserID###";///传递给 product.js   传递变量
+        var varServiceURL = "###ServiceURL###";///传递给 product.js   传递变量
+        var varShopClientID = "###ShopClientID###";///传递给 product.js   传递变量
+    </script>
+    <script type="text/javascript">
+        var pub_Int_Session_CurUserID=###strpub_Int_Session_CurUserID###;
+        var strSearchKey='###SearchKey###';
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>###全部商品###</title>
+    <script src="/Templet/02ShiYi/js/jquery-1.8.3.js?version=js201709121928" type="text/javascript"></script>
+    <script src="/Templet/02ShiYi/js/header.js?version=js201709121928"></script>
+    <link href="/Templet/02ShiYi/skin/header.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/main.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/buttons.css?version=css201709121928">
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/customer.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link rel="stylesheet" href="/Templet/02ShiYi/skin/InfoAlert.css?version=css201709121928">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/mall.css?version=css201709121928">
+    <link href="/Styles/jquery.mobile-1.3.2.min.css?version=css201709121928" rel="stylesheet" />
+  <script src="/Scripts/iscroll.js?version=js201709121928"></script>
+    <script src="/Scripts/Each/ProductSearchGoods.js?version=js201709121928"></script>
+    <link href="/Styles/Each/ProductSearchGoods.css?version=css201709121928" rel="stylesheet" />
+    <script src="/Templet/01WYJS/js/Base.js?version=js201709121928"></script>
+    <script src="/Templet/01WYJS/js/func_Image.js?version=js201709121928"></script>
+    <link href="/Templet/03LiuShenMa/Css/02Templet01.css?version=css201709121928" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/SearchBar-mobile-template.css?version=css201709121928">
+    ###_PulicChageWeiXin###
+</head>
+<body>
+    ###Header###
+    <div style="display:block;" id="header">
+        <div class="oliversearch-bar" style="background: #ffffff;display:block;">
+            <div class="oliversearch-inner">
+                <i class="font-icon font-icon-oliversearch"></i>
+                <input class="oliversearch-input" style="background-color: rgb(255, 255, 255); border-color: rgb(175, 175, 175); color: rgb(127, 127, 127); width: 80%; background-position: initial initial; background-repeat: initial initial;" id="oliversearch-input_s_1447079356776" type="text" placeholder="搜索商品名/分类/种类/描述/全部" onfocus="if((this.value == '搜索商品名/分类/种类/描述/全部' ) || this.value == '') {this.value = '';this.style.width='80%';document.getElementById('oliversearch-btn_s_1447079356706').style.display='inline-block'}" onblur="if(this.value =='') {this.value = '搜索商品名/分类/种类/描述/全部';this.style.width='100%';document.getElementById('oliversearch-btn_s_1447079356706').style.display='none'}">
+                <button class="oliversearch-btn" style="background-color: rgb(255, 0, 6); border: rgb(189, 0, 4); color: rgb(255, 255, 255); display:inline-block; background-position: initial initial; background-repeat: initial initial;" onclick="btnSearch();" id="oliversearch-btn_s_1447079356706">
+                    搜索
+                </button>
+            </div>
+        </div>
+        <!--<a href="http://cubiq.org/iscroll">iScroll</a>-->
+    </div>
+    <div id="wrapper">
+        <div id="scroller">
+            ###IFSubscribeHeader###
+            <div class="income_ff" style="display:none;">
+                <div class="sum_title">
+                    下级代理商为我创造的利润¥<span class="sum_money">###AllMyMoney###元</span>
+                </div>
+            </div>
+            <!--<div id="pullDown" class="idle">
+                <span class="pullDownIcon"></span>
+                <span class="pullDownLabel">Pull down to refresh...</span>
+            </div>-->
+
+            <ul id="thelist" style="width:94%;"></ul>
+
+
+            <div id="pullUp">
+                <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+            </div>
+            <div style="clear: both;margin-bottom:50px;">
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script type="text/javascript">
+        function addThisLine(varLine) {
+            var varLineContent = "";
+            varLineContent += "<div class=\"jx_g\">\n";
+            varLineContent += "      <div class=\"jx_g_img\">\n";
+            varLineContent += "          <a  target=\"_blank\" href=\"" + varLine.strPathAgent + "/product-" + varLine.strGoodID + ".aspx\" class=\"J_bi_product_item J_ytag\" data-dap=\"\" data-pid=\"2\">\n";
+            varLineContent += "              <img class=\"\" src=\"" + varLine.strGoodIcon + "\">\n";
+            varLineContent += "          </a>\n";
+            varLineContent += "      </div>\n";
+            varLineContent += "      <div class=\"jx_g_info\">\n";
+            varLineContent += "          <p class=\"jx_g_title\">\n";
+            varLineContent += "              <a href=\"" + varLine.strPathAgent + "/product-" + varLine.strGoodID + ".aspx\" class=\"J_bi_product_item J_ytag\" data-dap=\"\" data-pid=\"2\">" + varLine.strShortInfo + "</a>\n";
+            varLineContent += "          </p>\n";
+            varLineContent += "          <p class=\"jx_g_price\">\n";
+            varLineContent += "              <span class=\"jx_g_price_wx\">惊爆价<span><i>￥</i>" + varLine.strPromotePrice + "</span>\n";
+            varLineContent += "              </span><del class=\"jx_g_price_market\">市场价￥" + varLine.strPrice + "</del>\n";
+            varLineContent += "          </p>\n";
+            varLineContent += "          <a target=\"_blank\" href=\"" + varLine.strPathAgent + "/product-" + varLine.strGoodID + ".aspx\" class=\"WX_btn jx_g_btn J_bi_product_item J_ytag\" data-dap=\"\" data-pid=\"2\">立即购买</a>\n";
+            varLineContent += "      </div>\n";
+            varLineContent += "  </div>\n";
+            return varLineContent;
+        }
+    </script>
+</body>
+###Webuy8Footer###
+</html>

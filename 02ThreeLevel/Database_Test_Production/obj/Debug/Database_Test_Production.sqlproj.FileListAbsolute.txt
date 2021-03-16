@@ -1,0 +1,9 @@
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\bin\Debug\Database_Test_Production.dacpac
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\bin\Debug\Database_Test_Production.dll
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\bin\Debug\Database_Test_Production.pdb
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\obj\Debug\Database_Test_Production.dll
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\obj\Debug\Database_Test_Production.pdb
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\obj\Debug\Model.xml
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\obj\Debug\refactor.xml
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\obj\Debug\postdeploy.sql
+F:\NetHttp_06\01Test\0055eggsoft.cnvs2015_GaoErFu\02ThreeLevel\Database_Test_Production\obj\Debug\predeploy.sql

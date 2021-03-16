@@ -1,0 +1,22 @@
+﻿@using Web_Service.ViewModels.Common
+@model AlertViewPartialViewModel
+
+<div class="modal fade" id="@Model.AlertWindowID">
+    <form role="form" class="form-horizontal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">提醒</h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="@HttpUtility.HtmlDecode(Model.PageID.Equals("") ? "alertWindowMsg" : Model.PageID + ".alertWindowMsg")"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" ng-click="@HttpUtility.HtmlDecode(Model.PageID + "AlertConfirmEvent()")" ng-disabled="isLockForm" class="btn btn-danger">确定</button>
+                    <button type="button" ng-click="@HttpUtility.HtmlDecode(Model.PageID + "AlertCanelEvent()")" class="btn btn-default">取消</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </form>
+</div>

@@ -1,0 +1,169 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>微云基石精品商品团购</title>
+    <!--http://localhost:8011/addfunction/02pingtuan/03goods.html?tuangouid=3&parentid=8568-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <link rel="stylesheet" href="/AddFunction/02PingTuan/css/font-awesome.min-4.3.0.css?version=css201709121928">
+    <link rel="stylesheet" href="/AddFunction/02PingTuan/css/03Goods.css?version=css201709121928">
+    <script src="/Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        //debugger;
+        var varServiceURL = localStorage.getItem('ServiceServicesURL201709121928_Open_0609');
+        var varUserID = localStorage.getItem('CurUserID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+        var varShopClientID = localStorage.getItem('GetShopClientID201709121928_Open_0609');///ShareShopFunction  分享商城事件 全局变量使用
+        var varSourceGoodID = 0;///ajax 会读出该变量。购买时使用
+        var varGlobalTuanGouIDNumber = 0;///参与谁的团
+        var varUserSafeCode = localStorage.getItem('CurUserID201709121928_UserSafeCode');///ShareShopFunction  分享商城事件 全局变量使用
+
+    </script>
+    <script src="/Game/GameUserID.js?version=js201709121928"></script>
+    <script src="/AddFunction/02PingTuan/JS/00TuanGou.js?version=js201709121928"></script>
+    <script src="/AddFunction/02PingTuan/JS/03Goods.js?version=js201709121928"></script>
+    <link rel="stylesheet" type="text/css" href="/Templet/02ShiYi/skin/box_swipe.css?version=css201709121928" media="all">
+    <script type="text/javascript" src="/Templet/02ShiYi/js/swipe.js?version=js201709121928"></script>
+    <script src="/Game/GameUserID.js?version=js201709121928"></script>
+    <script src="/Templet/01WYJS/js/layer.m.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/layer.css?version=css201709121928" rel="stylesheet" />
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="/Templet/01WYJS/js/Base.js?version =js201709121928"></script>
+    <script src="/Templet/02ShiYi/js/Footer_common.js?version=js201709121928"></script>
+    <link href="/Templet/01WYJS/Css/mall.css?version=css201709121928" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Templet/01WYJS/Css/common-v4.css?version=css201709121928">
+    <link href="/Templet/02ShiYi/skin/foot.css?version=css201709121928" rel="stylesheet" type="text/css">
+    <script src="/Scripts/md5.js?version=js201709121928"></script>
+</head>
+
+
+<body onload="doLoadGoodsDocumnet()">
+    <section style="padding-bottom: 50px;" class="main-view">
+        <div class="spro_con">
+            <div id="Anounce">
+                <div style="-webkit-transform: translate3d(0,0,0);">
+                    <div style="visibility: visible;" id="banner_box" class="box_swipe">
+                        <ul style="list-style: none; width: 1280px; transition: 500ms; -webkit-transition: 500ms; -webkit-transform: translate3d(0px, 0, 0);"></ul>
+                        <ol>
+                            <li class="on"></li>
+                            <li class=""></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="Countdown">
+            <div class="time-item">
+                <span>倒计时</span>
+                <strong id="day_show"></strong>天
+                <strong id="hour_show"><s id="h"></s></strong>时
+                <strong id="minute_show"><s></s></strong>分
+                <strong id="second_show"><s></s></strong>秒
+            </div>
+        </div>
+
+        <div class="xm-intro" id="idTuanZhangTeam_Content" style="color:red;display:none;">
+            <div class="mobile">
+                <h3 class="team_title" id="idTuanZhangTeam_title" style="color:red;display:none;text-align:center;margin:0 auto;"></h3>
+                <p class="xmxq" style="display:none;font-size:12px;" id="TuanYuanList">
+
+                </p>
+            </div>
+        </div>
+        <div class="xm-intro">
+            <div class="mobile">
+                <h3 class="team_title" id="TuanGoodName"></h3>
+                <p class="xmxq" style="font-size:12px;" id="TuanShortInfo"></p>
+                <!-- <span class="xmjg"> <i class="fr">已售：47份</i>
+                市场价：￥40					</span>  -->
+                <span id="JoinTuanGouTip" class="tips1">开团并邀请<span id="InviteHowmanyPeople"></span>人参团，详见下方拼团玩法</span>
+                <div class="tg-list">
+                    <ul>
+
+                        <li id="buyZuTuan" onclick="buySingleORZuTuan(2)">
+                            <a id="tuan_more_btn"
+                               href="#">
+                                <span id="TuanEachPeoplePrice"></span>
+                                <b id="TuanHowManyPeople">人团购买</b>
+                            </a>
+                        </li>
+                        <li id="buySingle" onclick="buySingleORZuTuan(1)" class="ts">
+                            <a id="tuan_one_btn"
+                               href="#">
+                                ￥ <span class="team_price" id="TuanPromotePrice"><i>/件</i></span>
+                                <b>单独购买</b>
+                            </a>
+                        </li>
+                        <li id="buyMySelfZuTuan" style="display:none;" onclick="buySingleORZuTuan(3)">
+                            <a id="tuan_more_btnMySelf" href="#">
+                                <span id="TuanEachPeoplePriceMySelf"></span>
+                                <b id="TuanHowManyPeopleMySelf">人团购买</b>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="pt-intro">
+            <div class="mobile">
+                <div class="td2_content_title">团购描述<i class="fr" style="padding-right:10px;padding-top:8px;"><img src="/AddFunction/02PingTuan/Images/plus.png"></i></div>
+                <div class="td2_content" id="content_TuanFouRule">
+
+                </div>
+            </div>
+            <div class="mobile">
+                <div class="td2_content_title">商品详情<i class="fr" style="padding-right:10px;padding-top:8px;"><img src="/AddFunction/02PingTuan/Images/plus.png"></i></div>
+                <div class="td2_content" id="content_LongInfo">
+
+                </div>
+            </div>
+        </div>
+        <div class="pt-intro">
+            <div class="mobile">
+                <a href="/AddFunction/02PingTuan/01Help.html?version=201709121928" class="fr">查看详情 ></a>
+                <h3>拼团玩法</h3>
+                <a href="/AddFunction/02PingTuan/01Help.html?version=201709121928" style="float:none;" class="fr">
+                    <div id="footItem" class="step_list">
+                        <div class="step_item step_item_on">
+                            <div class="step_num">1</div>
+                            <div class="step_detail">
+                                <p class="step_tit">
+                                    选择 <br> 心仪商品
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step_item ">
+                            <div class="step_num">2</div>
+                            <div class="step_detail">
+                                <p class="step_tit">
+                                    支付 <br> 参团/建团
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step_item ">
+                            <div class="step_num">3</div>
+                            <div class="step_detail">
+                                <p class="step_tit">
+                                    邀请好友 <br> 参团支付
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step_item">
+                            <div class="step_num">4</div>
+                            <div class="step_detail">
+                                <p class="step_tit">
+                                    达到人数 <br> 参团支付
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div id="idPub_03Footer_html_lsTuanGou">
+    </div>
+</body>
+</html>

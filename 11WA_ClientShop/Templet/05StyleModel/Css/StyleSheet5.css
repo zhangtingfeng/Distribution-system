@@ -1,0 +1,80 @@
+﻿#guoKuoHead {
+    width: 640px;
+    height: 197px;
+    display: block;
+    background-color: #BAE1FF;
+}
+
+    #guoKuoHead #imgHead {
+        width: 122px;
+        float: left;
+    }
+
+        #guoKuoHead #imgHead img {
+            border: 0px solid #379082;
+            border-radius: 96px;
+            width: 96px;
+            max-width: 96px;
+            margin-top: 25px;
+            margin-left: 23px;
+        }
+
+    #guoKuoHead #CenterShowInfo {
+        width: 321px;
+        float: left;
+    }
+
+        #guoKuoHead #CenterShowInfo #divGuoKuodeMoney {
+            padding-top: 27px;
+            line-height: 49px;
+            font-size: 30px;
+            padding-left: 79px;
+            background-image: url('/Templet/05StyleModel/Images/002RedMoney.png');
+            background-repeat: no-repeat;
+            background-position: 20px 20px;
+        }
+
+        #guoKuoHead #CenterShowInfo #divGuoKuodeMoneyShouYI {
+            line-height: 49px;
+            font-size: 30px;
+            padding-left: 79px;
+        }
+
+        #guoKuoHead #CenterShowInfo #divGuoKuodeMoneyID {
+            line-height: 49px;
+            font-size: 30px;
+            padding-left: 79px;
+        }
+
+    #guoKuoHead #DaZhuanPan {
+        float: left;
+        background-image: url('/Templet/05StyleModel/Images/003DaZhuanPan.png');
+        background-repeat: no-repeat;
+        background-position: 5px 27px;
+        width: 197px;
+        min-height: 197px;
+    }
+
+
+#divIconList {
+    width: 100%;
+}
+
+    #divIconList li {
+        width: 33%;
+        display: block;
+        height: 124px;
+        float: left;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+        #divIconList li img {
+            margin-top: 11px;
+        }
+
+        #divIconList li .navText {
+            margin-top: 11px;
+            line-height: 40px;
+            font-size:20px;
+        }

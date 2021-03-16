@@ -1,0 +1,227 @@
+﻿@using Web_Service.ViewModels.Common
+@{
+    ViewBag.Title = "报价车辆管理";
+    var userSession = new InsureApi.Mvc.XUserSession(this.Context);
+    var appSet = new Web_Service.Common.Config.AppSettings();
+}
+
+<div class="main ng-scope" ng-controller="listController">
+    <h3 class="page-header">报价车辆管理</h3>
+    <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" placeholder="提交开始时间" readonly="readonly" ng-model="formData.data.CreateStartTime">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" placeholder="提交结束时间" readonly="readonly" ng-model="formData.data.CreateEndTime">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode(" &#xf007; 车主")" ng-model="formData.data.CarMasterName">
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode(" &#xf1b9; 车牌")" ng-model="formData.data.CarNumber">
+            </div>
+        </div>
+    </div>
+
+    <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" placeholder="保险到期开始时间" readonly="readonly" ng-model="formData.data.QouteBeginTime">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="form-group">
+                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" placeholder="保险到期结束时间" readonly="readonly" ng-model="formData.data.QouteEndTime">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder" style="margin-bottom: 15px;">
+            <div class="col-md-6" style="padding: 0px 7px 0px 0px;">
+                <button type="button" ng-click="SearchFormEvent()" class="btn btn-default btn-block">
+                    @HttpUtility.HtmlDecode("&#xf002; 检索")
+                </button>
+            </div>
+            <div class="col-md-6" style="padding: 0px 7px 0px 0px;">
+                <button type="button" ng-click="resetFormEvent()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("&#xf0e2; 重置")</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th><a href="javascript:void(0)" ng-click="doSearchCarInfoCreateTime()">提交时间<i class="glyphicon glyphicon-arrow-down" ng-show="visible && a"></i><i class="glyphicon glyphicon-arrow-up" ng-show="!visible && a"></i></a></th>
+                    <th>合作渠道</th>
+                    <th>车牌号</th>
+                    <th>车主姓名</th>
+                    <th><a href="javascript:void(0)" ng-click="UpDownClick()">保险到期时间<i id="iinput" class="glyphicon glyphicon-arrow-down" ng-show="!visible1 && b"></i><i id="iinput2" class="glyphicon glyphicon-arrow-up" ng-show="visible1 && b"></i></a></th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in dataList">
+                    <td ng-bind="data.CreateTime | date:'yyyy/MM/dd HH:mm'"></td>
+                    <td ng-bind="data.ChannelNumber"></td>
+                    <td>
+                        <em style="font-style: inherit;" ng-bind="data.CarNumber"></em>
+                    </td>
+                    <td>
+                        <em style="font-style: inherit;" ng-bind="data.CarMasterName"></em>
+                    </td>
+                    <td ng-bind="data.InsureEndDate | date:'yyyy/MM/dd'"></td>
+                    <td>
+                        <a ng-href="~/InsureQuoteCar/Detail/{{data.CarInsureQueryCarID}}">详情</a>
+                        &nbsp; &nbsp;
+                        <a ng-href="~/UserOrder/Index/{{data.CarInsureQueryCarID}}?CarNumber={{data.CarNumber}}">订单</a>
+                        &nbsp; &nbsp;
+                        <a ng-href="~/Track/Index/{{data.CarInsureQueryCarID}}?CarNumber={{data.CarNumber}}">投保</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    @Html.Partial("UI/_PagingViewPartial", new PagingViewPartialViewModel(""))
+</div>
+
+@section scripts{
+    <script>
+        //日期控件
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            weekStart: 7,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            format: "yyyy-mm-dd",
+            pickerPosition: "bottom-left"
+        });
+
+        function searchForm($scope, restangular) {
+            restangular.one('Insurance/CarInsureQueryCar').post('post', $scope.formData).then(function (result) {
+                if (result.resultMessage.errorMessage !== "") {
+                    //$scope.message = result.resultmessage.errormessage;
+                    return;
+                }
+
+                $scope.dataList = result.data;
+                $scope.formData.paging.dataCount = result.paging.dataCount;
+                $scope.formData.paging.pageSize = result.paging.pageSize;
+                $scope.formData.paging.calPages();
+            }, function error(reason) {
+                // An error has occurred
+                $scope.message = '查询失败';
+            });
+        };
+
+        function resetForm($scope) {
+            $scope.formData.data = {
+                UserID: '@ViewBag.UserID',
+                CreateStartTime: '',
+                CreateEndTime: '',
+                CarMasterName: '',
+                CarNumber: '',
+                InsureEndDate: '',
+                PendingItem: '',
+                IsIncludeTest: false,
+                SortColumn: "CreateTime",//排序字段
+                SortDirection: "DESC"//排序模式
+            };
+        }
+
+        _app.controller('listController', [
+            '$scope', 'Restangular', function ($scope, Restangular) {
+                $scope.formData = new ResultAPIModel();
+
+                $scope.UserID = '@ViewBag.UserID';
+
+                resetForm($scope);
+                searchForm($scope, Restangular);
+
+                $scope.SearchFormEvent = function () {
+                    $scope.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                };
+                $scope.b = $scope.a = true;
+                $scope.visible = true;
+                $scope.resetFormEvent = function () {
+                    $scope.formData.paging.pageNumber = 1;
+                    resetForm($scope);
+                    searchForm($scope, Restangular);
+                };
+
+                $scope.doSearchCarInfoCreateTime = function () {
+                    $scope.a = true;
+                    $scope.b = !$scope.a;
+
+                    $scope.formData.data.SortColumn = "CreateTime";
+                    $scope.formData.data.SortDirection = $scope.formData.data.SortDirection.toUpperCase() === "DESC" ? "ASC" : "DESC";
+                    $scope.visible = !$scope.visible;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope.UpDownClick = function () {
+                    $scope.a = false;
+                    $scope.b = !$scope.a;
+                    $scope.formData.data.SortColumn = "InsureEndDate";
+                    $scope.formData.data.SortDirection = $scope.formData.data.SortDirection.toUpperCase() === "DESC" ? "ASC" : "DESC";
+                    $scope.visible1 = !$scope.visible1;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope.SelPendingItem = function () {
+                    $scope.formData.data.PendingItem = '待处理项';
+                    $scope.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope.GoPrevPageEvent = function () {
+                    $scope.formData.paging.pageNumber = $scope.formData.paging.getPrevPageNumber();
+                    searchForm($scope, Restangular);
+                };
+
+                $scope.GoNextPageEvent = function () {
+                    $scope.formData.paging.pageNumber = $scope.formData.paging.getNextPageNumber();
+                    searchForm($scope, Restangular);
+                };
+
+                $scope.GoPageEvent = function () {
+                    $scope.formData.paging.pageNumber = this.page ? this.page.pageNumber : $scope.formData.paging.pageNumber;
+                    searchForm($scope, Restangular);
+                }
+                $scope.GoFirstPageEvent = function () {
+                    $scope.formData.paging.pageNumber = 1;
+                    searchForm($scope, Restangular);
+                }
+
+                $scope.GoEndPageEvent = function () {
+                    $scope.formData.paging.pageNumber = $scope.formData.paging.maxPageNumber();
+                    searchForm($scope, Restangular);
+                }
+            }
+        ]);
+    </script>
+}

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Shop.Earth17.Com_ConnectionString-Web.config Connection String" description="Shop.Earth17.Com_ConnectionString 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="Data Source=139.196.200.168,21433;Initial Catalog=MHappy_Com__Pro;Persist Security Info=True;User ID=notsatest;Password=#EDC4rfv;Enlist=true;Pooling=true;Max Pool Size = 700; Min Pool Size=30; Connection Lifetime = 300;packet size=1000;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Works_Dream\\0060eggsoft\.cnvs2015_GaoErFu\\05Client\.eggsoft\.cn\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Shop.Earth17.Com_ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

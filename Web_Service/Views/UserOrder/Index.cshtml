@@ -1,0 +1,473 @@
+﻿@using InsureApi.Entity.Common
+@using Web_Service.ViewModels.Common
+@using Web_Service.ViewModels.UserOrder
+@{
+    ViewBag.Title = "订单管理";
+    Layout = "~/Views/Shared/_HeadFootLayout.cshtml";
+    var userSession = new InsureApi.Mvc.XUserSession(this.Context);
+    var appSet = new Web_Service.Common.Config.AppSettings();
+}
+
+@Html.Partial("Javascript/_JavascriptQuotePlanData")
+@section Scripts {
+    <script type="text/javascript">
+
+        //日期控件
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            weekStart: 7,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            format: "yyyy-mm-dd",
+            pickerPosition: "bottom-left"
+        });
+
+        function initSearchForm($scope) {
+            resetForm($scope);
+
+            //订单状态，1核单中，2核单失败，3核单成功（待付款），8订单失效，4付款成功，5出单成功，6出单失败，7退单
+            $scope._OrderView.OrderStatuList = _JavascriptInsuranceOrderStatusData;
+
+            $scope._OrderView.InsuranceCompanyList = [];
+
+            $scope._OrderView.VipAmountStatuList = [
+                { id: '已到帐', text: '已到帐' },
+                { id: '未到账', text: '未到账' }
+            ];
+
+            $scope._OrderView.formData.data.CarNumber = '@ViewBag.CarNumber';
+        }
+
+        function resetForm($scope) {
+            var sDate = new Date();
+            var eDate = new Date();
+            //sDate.setMonth(sDate.getMonth() - 6);
+            sDate.setDate(sDate.getDate() - 3);
+            $scope._OrderView.formData.data = {
+                InsuranceOrderTimeBegin: sDate.getFullYear() + '-' + (sDate.getMonth() + 1) + '-' + sDate.getDate(),
+                InsuranceOrderTimeEnd: eDate.getFullYear() + '-' + (eDate.getMonth() + 1) + '-' + eDate.getDate(),
+                CarMasterName: '',
+                CarNumber: '',
+                InsuranceOrderStatus: '',
+                InsuranceProvince: '',
+                InsuranceCity: '',
+                InsuranceCompany: '0',
+                UserID: '',
+                VipCarID: '@ViewBag.VipCarID',
+                PendingItem: ''
+            };
+        }
+
+        function searchForm($scope, Restangular) {
+            //user api
+            Restangular.one('order').post("UserOrdersAdmin", $scope._OrderView.formData)
+            .then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                $scope._OrderView.dataList = result.data;
+                $scope._OrderView.formData.paging.dataCount = result.paging.dataCount;
+                $scope._OrderView.formData.paging.pageSize = result.paging.pageSize;
+                $scope._OrderView.formData.paging.calPages();
+
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+            });
+        }
+
+        function GetOrderRecord($scope, Restangular) {
+            Restangular.one('Order/UserOrders').customPUT($scope._OrderView.formData).then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+                if (result.data) {
+                    $("#TotalAmount").text(NumericalConversion(result.data.TotalAmount));
+                    $("#MonthOrder").text(NumericalConversion(result.data.MonthOrder));
+                    $("#MonthOrderAmount").text(NumericalConversion(result.data.MonthOrderAmount));
+                    $("#WeekOrder").text(NumericalConversion(result.data.WeekOrder));
+                    $("#WeekOrderAmount").text(NumericalConversion(result.data.WeekOrderAmount));
+                    $("#DayOrder").text(NumericalConversion(result.data.DayOrder));
+                    $("#DayOrderAmount").text(NumericalConversion(result.data.DayOrderAmount));
+                }
+            }, function error(reason) {
+                // An error has occurred
+                alertError('审核失败');
+            });
+        }
+
+        //省信息
+        var _ProvinceInfo = function () {
+            this.ProvinceCode = '';
+            this.ProvinceName = '';
+            this.CityList = [];
+        }
+
+        //城市信息
+        var _CityInfo = function () {
+            this.CityCode = '';
+            this.CityName = '';
+        }
+
+        //设置下拉框的省市（行驶城市）
+        function IsContions($scope, pobj, cobj) {
+            if (pobj && cobj && $scope.InsuranceProvinceList) {
+                var pflag = false;
+                for (var i = 0; i < $scope.InsuranceProvinceList.length; i++) {
+                    if ($scope.InsuranceProvinceList[i].ProvinceCode == pobj.ProvinceCode) {
+                        var cflag = false;
+                        for (var j = 0; j < $scope.InsuranceProvinceList[i].CityList; j++) {
+                            if ($scope.InsuranceProvinceList[i].CityList[j].CityCode == cobj.CityCode) {
+                                cflag = true;
+                                break;
+                            }
+                        }
+
+                        if (!cflag) {
+                            $scope.InsuranceProvinceList[i].CityList.push(cobj);
+                        }
+
+                        pflag = true;
+                        break;
+                    }
+                }
+                if (!pflag) {
+                    pobj.CityList.push(cobj);
+                    $scope.InsuranceProvinceList.push(pobj);
+                }
+            }
+        }
+
+        //选择省（行驶城市的省）
+        function _SelectedProvince($scope) {
+            $scope._OrderView.formData.data.InsuranceCity = '';
+            $scope.InsuranceCityList = [];
+            if ($scope.InsuranceProvinceList) {
+                for (var i = 0; i < $scope.InsuranceProvinceList.length; i++) {
+                    if ($scope.InsuranceProvinceList[i].ProvinceCode == $scope._OrderView.formData.data.InsuranceProvince) {
+                        $scope.InsuranceCityList = $scope.InsuranceProvinceList[i].CityList;
+                        break;
+                    }
+                }
+            }
+        }
+
+        //可选城市
+        function GetInsuranceCity($scope, restangular) {
+            restangular.one('Insurance/InsuranceCity/d').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                if (result.data) {
+                    for (var i = 0; i < result.data.length; i++) {
+                        var pInfo = new _ProvinceInfo();
+                        pInfo.ProvinceCode = result.data[i].ProvinceCode;
+                        pInfo.ProvinceName = result.data[i].ProvinceName;
+                        var cInfo = new _CityInfo();
+                        cInfo.CityCode = result.data[i].CityCode;
+                        cInfo.CityName = result.data[i].CityName;
+                        IsContions($scope, pInfo, cInfo);
+                    }
+                }
+            }, function error(reason) {
+                alertError('网络通讯异常');
+            });
+        }
+
+        //保险公司
+        function GetInsuranceCompany($scope, Restangular) {
+            Restangular.one('CarOfferPriority/CarOfferPriority').get().then(function (result) {
+                if (result.resultMessage.message != ""
+                    || result.resultMessage.errorMessage != "") {
+                    alertError(result.resultMessage.message + result.resultMessage.errorMessage);
+                    return;
+                }
+
+                var InsuranceCompanyList = [];
+                for (var i = 0; i < result.data.length; i++) {
+                    InsuranceCompanyList.push(result.data[i]);
+                }
+                $scope._OrderView.InsuranceCompanyLists = InsuranceCompanyList;
+
+            }, function error(reason) {
+                // An error has occurred
+                alertError('网络通讯异常');
+                $scope.isLoading = false;
+            });
+        }
+
+        _app.controller("myController", ['$scope', 'Restangular', function ($scope, Restangular) {
+            $scope._OrderView = { formData: new ResultAPIModel() };
+            $scope.OpenWindowOrderID = '';
+            $scope.ThisCompanyCode = '';
+            $scope.OpenWindowType = '';
+            $scope.OpenWindowMessage = '';
+            $scope.buttonTextYes = '通过';
+            $scope.buttonTextNo = '不通过';
+            $scope.buttonTextNoTwo = "";
+            $scope.isLockForm = false;
+
+            $scope.CarNumber = '@ViewBag.CarNumber2';
+
+            $scope.InsuranceProvinceList = [];
+            $scope.InsuranceCityList = [];
+
+            initSearchForm($scope);
+            searchForm($scope, Restangular);
+            GetInsuranceCity($scope, Restangular);
+            GetInsuranceCompany($scope, Restangular);
+
+            GetOrderRecord($scope, Restangular);
+
+            //选择省份
+            $scope._SelectedProvinceEvent = function () {
+                _SelectedProvince($scope);
+            }
+
+            $scope._OrderViewSearchFormEvent = function () {
+                $scope._OrderView.formData.paging.pageNumber = 1;
+                searchForm($scope, Restangular);
+                GetOrderRecord($scope, Restangular);
+            };
+
+            $scope._OrderViewResetFormEvent = function () {
+                $scope._OrderView.formData.paging.pageNumber = 1;
+                resetForm($scope);
+                searchForm($scope, Restangular);
+                GetOrderRecord($scope, Restangular);
+            };
+
+            $scope._OrderViewGoPrevPageEvent = function () {
+                $scope._OrderView.formData.paging.pageNumber = $scope._OrderView.formData.paging.getPrevPageNumber();
+                searchForm($scope, Restangular);
+            };
+
+            $scope._OrderViewGoNextPageEvent = function () {
+                $scope._OrderView.formData.paging.pageNumber = $scope._OrderView.formData.paging.getNextPageNumber();
+                searchForm($scope, Restangular);
+            };
+
+            $scope._OrderViewGoPageEvent = function () {
+                $scope._OrderView.formData.paging.pageNumber = this.page ? this.page.pageNumber : $scope._OrderView.formData.paging.pageNumber;
+                searchForm($scope, Restangular);
+            }
+
+            $scope._OrderViewGoFirstPageEvent = function () {
+                $scope._OrderView.formData.paging.pageNumber = 1;
+                searchForm($scope, Restangular);
+            }
+
+            $scope._OrderViewGoEndPageEvent = function () {
+                $scope._OrderView.formData.paging.pageNumber = $scope._OrderView.formData.paging.maxPageNumber();
+                searchForm($scope, Restangular);
+            }
+
+            $scope._VehicleViewGoPrevPageEvent = function () {
+                $scope._VehicleView.formData.paging.pageNumber = $scope._VehicleView.formData.paging.getPrevPageNumber();
+                _QueryVehicle($scope, Restangular);
+            };
+
+            $scope._VehicleViewGoNextPageEvent = function () {
+                $scope._VehicleView.formData.paging.pageNumber = $scope._VehicleView.formData.paging.getNextPageNumber();
+                _QueryVehicle($scope, Restangular);
+            };
+
+            $scope._VehicleViewGoPageEvent = function () {
+                $scope._VehicleView.formData.paging.pageNumber = this.page ? this.page.pageNumber : $scope._VehicleView.formData.paging.pageNumber;
+                _QueryVehicle($scope, Restangular);
+            }
+
+            $scope._VehicleViewGoFirstPageEvent = function () {
+                $scope._VehicleView.formData.paging.pageNumber = 1;
+                _QueryVehicle($scope, Restangular);
+            }
+
+            $scope._VehicleViewGoEndPageEvent = function () {
+                $scope._VehicleView.formData.paging.pageNumber = $scope._VehicleView.formData.paging.maxPageNumber();
+                _QueryVehicle($scope, Restangular);
+            }
+        }]);
+    </script>
+
+    @Html.Partial("_OrderDetailPartial", new OrderDetailPartialViewModel("", "Javascript"))
+}
+
+<div ng-controller="myController">
+    <h3 class="page-header">订单管理</h3>
+    <div ng-show="CarNumber">
+       <b>车牌号：</b> <label ng-bind="CarNumber"></label>
+    </div>
+    <div ng-show="!CarNumber">
+        <div class="row placeholders">
+            <div class="col-xs-6 col-md-3 placeholder">
+                <div class="form-group">
+                    <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                        <input class="form-control" size="16" type="text" value="" placeholder="开始日期" readonly="readonly" ng-model="_OrderView.formData.data.InsuranceOrderTimeBegin">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3 placeholder">
+                <div class="form-group">
+                    <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-format="yyyy-mm-dd">
+                        <input class="form-control" size="16" type="text" value="" placeholder="结束日期" readonly="readonly" ng-model="_OrderView.formData.data.InsuranceOrderTimeEnd">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3 placeholder">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode(" &#xf007; 车主姓名")" ng-model="_OrderView.formData.data.CarMasterName">
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3 placeholder">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="@HttpUtility.HtmlDecode(" &#xf1b9; 车牌")" ng-model="_OrderView.formData.data.CarNumber">
+                </div>
+            </div>
+        </div>
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="_OrderView.formData.data.InsuranceProvince" ng-change="_SelectedProvinceEvent()">
+                        <option value="" selected="selected">@HttpUtility.HtmlDecode("&#xf00b; 省份")</option>
+                        <option ng-repeat="data in InsuranceProvinceList" value="{{data.ProvinceCode}}">{{data.ProvinceName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="_OrderView.formData.data.InsuranceCity">
+                        <option value="" selected="selected">@HttpUtility.HtmlDecode("&#xf00b; 城市")</option>
+                        <option ng-repeat="CityList in InsuranceCityList" value="{{CityList.CityCode}}">{{CityList.CityName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="_OrderView.formData.data.InsuranceCompany">
+                        <option value="0" selected="selected">@HttpUtility.HtmlDecode("&#xf19c; 保险公司")</option>
+                        <option ng-repeat="data in _OrderView.InsuranceCompanyLists" value="{{data.CompanyID}}">{{data.CompanyName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="_OrderView.formData.data.InsuranceOrderStatus">
+                        <option value="" selected="selected">@HttpUtility.HtmlDecode("&#xf00b; 订单状态")</option>
+                        <option ng-repeat="data in _OrderView.OrderStatuList" value="{{data.id}}">{{data.text}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row placeholders">
+            @*<div class="col-xs-6 col-md-3 placeholder">
+                <div class="form-group">
+                    <select class="form-control" ng-model="_OrderView.formData.data.VipAmountStatuText">
+                        <option value="" selected="selected">@HttpUtility.HtmlDecode("&#xf00b; 到帐状态")</option>
+                        <option ng-repeat="data in _OrderView.VipAmountStatuList" value="{{data.id}}">{{data.text}}</option>
+                    </select>
+                </div>
+            </div>*@
+            <div class="form-group col-md-3">
+                <div class="col-md-6" style="padding: 0px 7px 0px 0px;">
+                    <button type="button" ng-click="_OrderViewSearchFormEvent()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("&#xf002; 检索")</button>
+                </div>
+                <div class="col-md-6" style="padding: 0px 0px 0px 7px;">
+                    <button type="button" ng-click="_OrderViewResetFormEvent()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("&#xf0e2; 重置")</button>
+                </div>
+            </div>
+            @*<div class="col-xs-6 col-sm-3 placeholder">
+
+                <div class="col-md-6" style="padding: 0px 7px 0px 0px;">
+                    <button type="button" ng-click="Insert()" class="btn btn-primary btn-block">@HttpUtility.HtmlDecode("录单")</button>
+                </div>
+                <div class="col-md-6" style="padding: 0px 0px 0px 7px;">
+                    <a href="javascript:void(0)" ng-click="SelPendingItem()" class="btn btn-default btn-block">@HttpUtility.HtmlDecode("待处理项")</a>
+                </div>
+            </div>*@
+        </div>
+        <div>
+            <label>总金额：<em style="font-style:inherit;" id="TotalAmount">0</em>，</label>
+            <label>
+                本月订单：<em style="font-style:inherit;" id="MonthOrder">0</em>条,
+                金额：<em style="font-style:inherit;" id="MonthOrderAmount">0</em>，
+            </label>
+            <label>
+                本周订单：<em style="font-style:inherit;" id="WeekOrder">0</em>条,
+                金额：<em style="font-style:inherit;" id="WeekOrderAmount">0</em>，
+            </label>
+            <label>
+                本日订单：<em style="font-style:inherit;" id="DayOrder">0</em>条,
+                金额：<em style="font-style:inherit;" id="DayOrderAmount">0</em>
+            </label>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>下单时间</th>
+                    <th style="display:none;">订单号</th>
+                    <th>车辆</th>
+                    @*<th>车主姓名</th>*@
+                    <th>合作渠道</th>
+                    <th>城市</th>
+                    <th>保险公司</th>
+                    <th>订单金额</th>
+                    <th>订单状态</th>
+                    @*<th>到帐状态</th>*@
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in _OrderView.dataList">
+                    <td style="vertical-align:middle" ng-bind="data.InsuranceOrderTime=='0001-01-01T00:00:00'?'':data.InsuranceOrderTime | date:'yyyy/MM/dd HH:mm'"></td>
+                    <td ng-bind="data.InsuranceOrderID" style="display:none;"></td>
+                    <td style="vertical-align:middle">
+                        车主：<em style="font-style: initial" ng-bind="data.CarMasterName"></em>
+                        <br />
+                        车牌：<em style="font-style: initial" ng-bind="data.CarNumber"></em>
+                    </td>
+                    @*<td style="vertical-align:middle" ng-bind="data.CarMasterName"></td>*@
+                    <td style="vertical-align:middle" ng-bind="data.ChannelName"></td>
+                    @*<td style="vertical-align:middle" ng-bind="data.CityName_CN"></td>*@
+                    <td style="vertical-align:middle">
+                        <em style="font-style: initial" ng-bind="data.ProvinceName"></em>
+                        <br />
+                        <em style="font-style: initial" ng-bind="data.CityName"></em>
+                    </td>
+                    <td style="vertical-align:middle">
+                        @*ng-bind="data.InsuranceCompanyName"*@
+                        <img ng-src="@Href("~/Source/images/CompanyIconType2/"){{data.CompanyCode}}.png" style=" width:80px;" />
+                    </td>
+                    <td style="vertical-align:middle">
+                        <em style="font-style:inherit;" ng-bind="data.InsuranceOrderAmount | currency:'￥'"></em>
+                    </td>
+                    @*<td style="vertical-align:middle" ng-bind="data.VipAmount"></td>*@
+                    <td style="vertical-align:middle">
+                        <em style="font-style:inherit;" ng-bind="data.InsuranceOrderStatusText"></em>
+                    </td>
+                    @*<td style="vertical-align:middle" ng-bind="data.VipAmountStatuText"></td>*@
+                    <td style="vertical-align:middle">
+                        <a href="~/UserOrder/OrderDetail/{{data.InsuranceOrderID}}" target="_blank">详情</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @Html.Partial("UI/_PagingViewPartial", new PagingViewPartialViewModel("_OrderView"))
+
+</div>

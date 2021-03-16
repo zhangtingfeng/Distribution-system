@@ -1,0 +1,325 @@
+﻿@charset "UTF-8";
+
+.Divtwo {
+    width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.DivLineTR {
+    border: 1px solid #E3E3E3;
+    height: 40px;
+    cursor: pointer;
+}
+
+.DivLineTR_Arrow {
+    padding-top: 2px;
+    float: right;
+    padding-right: 30px;
+    width: 8px;
+    height: 14px;
+}
+
+.tupian {
+    margin-top: 3px;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.mywei {
+    font-size: 14px;
+    text-align: left;
+    color: #fff;
+    font-family: 微软雅黑;
+}
+
+.touxiangPx {
+    border-radius: 60%;
+    border: 1px solid grey;
+    width: 40px;
+    height: 40px;
+}
+
+.dingdan {
+    height: 30%;
+    width: 100%;
+    padding: 0;
+    border: 1px solid #E3E3E3;
+    border-left: none;
+    border-right: none;
+}
+
+.dd-zt {
+    font-family: 微软雅黑;
+    font-size: 14px;
+}
+
+.ckztPX {
+    font-family: 微软雅黑;
+    font-size: 14px;
+    color: #000;
+}
+
+.fenxiaoPX {
+    font-size: 14px;
+    color: #000;
+}
+
+.jiagePX {
+    font-size: 14px;
+    color: #000;
+}
+
+.jiantou {
+    display: inline-block;
+    background: url(images/MyWeBuy8Images_q.png) 0 0 no-repeat;
+    -webkit-background-size: 8px 14px;
+    background-size: 8px 14px;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 250ms;
+    width: 10px;
+    height: 14px;
+}
+
+.logo {
+    margin-top: 4px;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.tdAligin20Percent {
+    width: 24%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nichengPX {
+    font-family: 微软雅黑;
+    font-size: 14px;
+    font-weight: 100;
+    color: #000;
+}
+
+.fuk {
+    font-family: 微软雅黑;
+    font-size: 14px;
+}
+
+.shouyi {
+    font-family: 微软雅黑;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+@media only screen and(min-width:300px) and(max-width:350px) {
+    .mywei {
+        font-size: 14px;
+        text-align: left;
+        color: #fff;
+        font-family: 微软雅黑;
+    }
+
+    .dingdan {
+        height: 10%;
+        width: 100%;
+        padding: 0;
+        border: 1px solid #E3E3E3;
+        ;
+        border-left: none;
+        border-right: none;
+    }
+
+    .dd-zt {
+        font-family: 微软雅黑;
+        font-size: 14px;
+    }
+
+    .ck-zt {
+        font-family: 微软雅黑;
+        font-size: 14px;
+        color: #8E8E8E;
+    }
+
+    .touxiang {
+        border-radius: 50%;
+        border: .3em solid #a3ce62;
+    }
+
+    .fenxiao {
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .jiage {
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .nicheng {
+        font-family: 微软雅黑;
+        font-size: 14px;
+        font-weight: 100;
+        color: #bbf65e;
+    }
+
+    .vip {
+        width: 40%;
+        height: 25%;
+    }
+
+    .tupian {
+        width: 60%;
+        height: 70%;
+    }
+
+    .fuk {
+        font-family: 微软雅黑;
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    .shouyi {
+        font-family: 微软雅黑;
+        font-weight: 100;
+        font-size: 14px;
+    }
+
+    .jiantou {
+        width: 30%;
+        height: 60%;
+    }
+
+    .bottom_navs {
+        padding: 0;
+        background-color: #e3e3e3;
+        font-family: Helvetica,"STHeiti STXihei","Microsoft JhengHei","Microsoft YaHei",Tohoma,Arial;
+        z-index: 9999;
+        position: fixed;
+        width: 100%;
+        height: 37px;
+        line-height: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+        border-top: 1px solid #fff;
+        bottom: 0;
+    }
+
+    .b-tz {
+        font-size: 14px;
+    }
+}
+
+@media only screen and(min-width:700px) and(max-width:750px) {
+    .mywei {
+        font-size: 14px;
+        text-align: left;
+        color: #fff;
+        font-family: 微软雅黑;
+    }
+
+    .dingdan {
+        height: 30%;
+        width: 100%;
+        padding: 0;
+        border: 1px solid #E3E3E3;
+        ;
+        border-left: none;
+        border-right: none;
+    }
+
+    .dd-zt {
+        font-family: 微软雅黑;
+        font-size: 14px;
+    }
+
+    .ck-zt {
+        font-family: 微软雅黑;
+        font-size: 14px;
+        color: #8E8E8E;
+    }
+
+    .touxiang {
+        border-radius: 50%;
+        border: .3em solid #a3ce62;
+    }
+
+    .fenxiao {
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .jiage {
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .nicheng {
+        font-family: 微软雅黑;
+        font-size: 14px;
+        font-weight: 100;
+        color: #bbf65e;
+    }
+
+    .vip {
+        width: 40%;
+        height: 25%;
+    }
+
+    .tupian {
+        width: 60%;
+        height: 70%;
+    }
+
+    .fuk {
+        font-family: 微软雅黑;
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    .shouyi {
+        font-family: 微软雅黑;
+        font-weight: 100;
+        font-size: 14px;
+    }
+}
+
+
+.ShowFloatText {
+    position: relative;
+    text-align: center;
+    margin: 0px auto;
+    display: none;
+}
+
+    .ShowFloatText .ShowFloatTextChild {
+        position: absolute;
+        display: block;
+        top: -26px;
+        left: 10px;
+        background-color: #F00;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 20px;
+        filter: alpha(opacity=80);
+        -moz-opacity: 0.8;
+        -khtml-opacity: 0.8;
+        opacity: 0.8;
+    }
+
+.ShowFloatTextChildGouWuCheNumShow {
+    position: relative;
+    font-size: 16px;
+}

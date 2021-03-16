@@ -1,0 +1,252 @@
+﻿.iosCheck input {
+    display: none;
+}
+
+.iosCheck i {
+    display: inline-block;
+    cursor: pointer;
+    padding-right: 40px;
+    transition: all ease .2s;
+    -webkit-transition: all ease .2s;
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px #00e970;
+}
+
+    .iosCheck i:before {
+        display: block;
+        content: '';
+        width: 45px;
+        height: 30px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    }
+
+.iosCheck :checked + i {
+    padding-right: 0;
+    padding-left: 40px;
+    background: #00e970;
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.5),inset 0 0 40px #82c422;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.5),inset 0 0 40px #00e079;
+}
+
+.iosCheck.blue :checked + i {
+    background: #6cbff0;
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.5),inset 0 0 40px #0093ea;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.5),inset 0 0 40px #0093ea;
+}
+
+.center_all {
+    width: auto;
+    height: auto;
+    background: #f5f5f5;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.but_font {
+    width: 80%;
+    height: 95px;
+    background: #FFF;
+    margin: auto;
+    border-bottom: 1px solid #e9e9e9;
+    border-top: 1px solid #e9e9e9;
+    font-size: 150%;
+    color: #83838b;
+    font-family: "微软雅黑";
+    margin-top: 50px;
+}
+
+.but_font2 {
+    width: 80%;
+    height: 980px;
+    background: #FFF;
+    margin: auto;
+    border-bottom: 1px solid #e9e9e9;
+    border-top: 1px solid #e9e9e9;
+    font-size: 150%;
+    color: #83838b;
+    font-family: "微软雅黑";
+}
+
+.but_font3 {
+    width: 95%;
+    height: 100px;
+    background: #FFF;
+    margin: auto;
+    border-bottom: 1px solid #e9e9e9;
+    border-top: 1px solid #e9e9e9;
+    font-size: 180%;
+    color: #83838b;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.but_font_fonts {
+    width: 95%;
+    height: 100px;
+    background: #FFF;
+    margin: auto;
+    border-bottom: 1px solid #e9e9e9;
+    border-top: 1px solid #e9e9e9;
+    font-size: 250%;
+    color: #83838b;
+    font-family: "微软雅黑";
+    line-height: 100px;
+    margin-bottom: 10px;
+}
+
+.buts {
+    width: 150px;
+    height: 45px;
+    background: #FFF;
+    float: right;
+    margin-top: 25px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.buts_font {
+    float: left;
+    width: 72%;
+    height: 50px;
+    background: #FFF;
+    margin-top: 25px;
+    margin-left: 30px;
+    line-height: 45px;
+}
+
+#Quaninfo_Vouchers {
+    line-height: 5px;
+}
+
+#Quaninfo_Bean {
+    line-height: 5px;
+}
+
+#Quaninfo_Money_Vouchers {
+    line-height: 5px;
+}
+
+#Quaninfo_Money_Wealth {
+    line-height: 5px;
+}
+
+#Quaninfo_Money {
+    line-height: 5px;
+}
+
+#style_clorMMMMM {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 20px;
+    width: 60px;
+    _position: absolute;
+    _top: expression_r(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight);
+    overflow: visible;
+}
+
+#style_clor {
+    background-color: #fff;
+    display: inline-block;
+}
+
+    #style_clor a {
+        height: 10px;
+    }
+
+.style_clor_one {
+    height: 34px;
+    line-height: 34px;
+    float: left;
+}
+
+#style_clor a {
+    border: 1px solid #CCC;
+    margin: 2px;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    text-align: center;
+    line-height: 26px;
+    margin-top: 5px;
+}
+
+.style_select {
+    background: url("/Templet/02ShiYi/skin/images/qwer.jpg")no-repeat right bottom;
+    border: 1px solid red;
+    margin: 2px;
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 35px;
+    display: block;
+}
+
+#style_clor a.current {
+    border: 1px solid red;
+}
+
+#div_Shoping_Vouchers {
+    font-size: 22px;
+    line-height: 22px;
+}
+
+    #div_Shoping_Vouchers #tableID_GouWuQuan {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+        #div_Shoping_Vouchers #tableID_GouWuQuan td {
+            height: 30px;
+        }
+
+        #div_Shoping_Vouchers #tableID_GouWuQuan input {
+            height: 100%;
+        }
+
+        #div_Shoping_Vouchers #tableID_GouWuQuan select {
+            height: 100%;
+        }
+
+        #div_Shoping_Vouchers #tableID_GouWuQuan input[type="text"] {
+            font-size: 22px;
+            line-height: 22px;
+        }
+
+    #div_Shoping_Vouchers .tdLeft {
+        text-align: left;
+    }
+
+    #div_Shoping_Vouchers .tdCenter {
+        text-align: center;
+    }
+
+    #div_Shoping_Vouchers .width98 {
+        width: 98%;
+        margin: 0px;
+    }
+
+.Shoping_Vouchers_select {
+    width: 85px;
+    height: 30px;
+    overflow: hidden;
+    /*background: url(new_arrow.png) no-repeat right #ddd;*/
+}
+
+    .Shoping_Vouchers_select select {
+        /*box-shadow: inset 0 0 3px #00e970;*/
+        text-align:center;
+        border-radius: 10px;
+        width: 85px;
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        height: 30px;
+        border-color: #00e970;
+        /*background-color:#00e970;*/
+        -webkit-appearance: none; /*for chrome*/
+    }
